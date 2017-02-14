@@ -27,7 +27,7 @@ system(sprintf('cp %s/* %s', dir_master_book, dir_gh_pages))
 ## add and commit gh-pages branch
 git2r::add(repo, sprintf('%s/*html', dir_gh_pages))
 git2r::commit(repo, message="updating bookdown from toolbox_training@master::_deploy.r")
-# git2r::push(repo)
 
 setwd(dir_gh_pages)
 system(sprintf('git push https://%s@github.com/%s.git HEAD:%s', gh_token, repo_slug, 'gh-pages'))
+setwd(dir_master)
