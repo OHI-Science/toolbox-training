@@ -2,9 +2,6 @@
 .Rhistory
 .Rapp.history
 
-# Book files
-_book
-
 # Session Data files
 .RData
 
