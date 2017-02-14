@@ -24,6 +24,8 @@ repo = git2r::clone(url=repo_url, local_path=normalizePath(dir_gh_pages, mustWor
 ## copy master branch _book/*.html files to gh-pages
 system(sprintf('cp %s/* %s', dir_master_book, dir_gh_pages))
 
+## NOTE/TODO: may have to update libs/ directory too for formatting. 
+
 ## add and commit gh-pages branch
 git2r::add(repo, sprintf('%s/*html', dir_gh_pages))
 git2r::commit(repo, message="updating bookdown from toolbox_training@master::_deploy.r")
