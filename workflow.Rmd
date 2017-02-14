@@ -1,0 +1,17 @@
+# Workflow
+
+
+- what you get in the OHI+ repo (very high-level: you get data and code, you'll operate with an R package ohicore)
+- use RStudio, GitHub to work reproducibly and collaboratively
+- how you work
+
+## OHI+ Repo
+
+- what is in the OHI+ repo, not file-by-file, but high-level
+
+## RStudio-GitHub workflow
+
+## How you work
+
+- commit often (i.e. bundled as tasks you complete)
+- use the Git tab to help you check your work -- what files updated, does that make sense?

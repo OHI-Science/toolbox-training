@@ -1,0 +1,18 @@
+# Preparing data
+
+## Overview
+
+- 'data layer' and formatting requirements
+- preparing data reproducibly
+- save and register
+
+## Data layer formatting
+
+- show what final formatting should be
+
+## Data wrangling
+
+- in R
+- or better, in RMarkdown
+
+## Save and register data layer

@@ -1,0 +1,30 @@
+# Calculating scores
+
+## Overview
+
+- `calculate_scores.r` workflow.
+- substituting new data layers in current goal models
+- developing goal models and adding new data layers
+- removing goals
+
+## `calculate_scores.r` workflow
+
+- a lot of shuffling and bookkeeping. 
+- what you get when you run `calculate_scores.r` 
+    - runs the status, trend in functions.r, but also calculates pressures, resilience, lfs, and overall scores. 
+    - score.csv updated, check that in Git tab of RStudio
+
+## substituting new data layers
+
+- and learning about functions
+
+## developing goal models
+
+- and adding new data layers
+- workflow with `configure_toolbox.r`
+
+## removing goals
+
+## changing subgoals 
+
+(these last 2 may be better in a different chapter really). 

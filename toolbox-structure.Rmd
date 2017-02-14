@@ -1,0 +1,17 @@
+# Toolbox Structure
+
+## Overview
+
+- files and organization
+- how they interact with ohicore
+## Files and organization
+
+... all the files, take from manual...
+
+see also https://github.com/OHI-Science/ohi-webapps/blob/master/startup_instructions.rmd
+
+### functions.r 
+
+- goal models are R functions. Each function has status and trend. 
+
+## `ohicore`
