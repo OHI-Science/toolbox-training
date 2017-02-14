@@ -1,0 +1,5 @@
+book_filename: "toolbox-training"
+language:
+  ui:
+    chapter_name: "Chapter "
+rmd_files: ["index.Rmd", "introduction.Rmd", "workflow.Rmd", "toolbox-structure.Rmd", "preparing-data.Rmd", "calculating-scores.Rmd", "updating-your-website.Rmd"]
