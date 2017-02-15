@@ -3,6 +3,8 @@
 
 ## **IMPORTANT**: you will need to do a one-time setup of your GitHub Token first: see https://help.github.com/articles/creating-an-access-token-for-command-line-use
 
+## create the book here in the master branch!
+bookdown::render_book("index.Rmd", "bookdown::gitbook")
 
 ## read in github token outside of repo, generated with url above 
 gh_token <- scan('~/.github-token', 'character', quiet = T)

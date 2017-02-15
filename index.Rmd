@@ -12,9 +12,11 @@ github-repo: ohi-science/ohi-trainings
 description: "This is the official Ocean Health Index Toolbox training."
 ---
 
-# Overview
+# Overview {#overview}
 
 TODO, including: 
 
 - first X chapters are overview of the workflow, independent from Toolbox
 - next X chapters are Tbx specific
+
+<!---TODO @jules32: citation information --->
