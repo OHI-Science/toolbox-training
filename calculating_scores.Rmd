@@ -1,4 +1,4 @@
-# OHI workflow {#ohi-workflow} 
+# Calculating scores {#calculating-scores} 
 
 ## Overview
 
@@ -27,10 +27,8 @@ Chapter \@ref(toolbox-ecosystem)
 
 In the **toolbox-demo** repo, we have a scenario folder called **region2016**.
 
-TODO: will probably need a section "what is ohicore and how does it operate with my ohi+ repo?" 
 
-
-## Calculating scores with `calculate_scores.r`
+## The `calculate_scores.r` workflow
 
 `calculate_scores.r` is a script that you'll run a lot - in its entirety and piece-by-piece. It will load the libraries you need, check your book keeping and configure everything for `ohicore`, calculate OHI scores by calculating the required dimensions in a specific order (see below) and ultimately save scores for each goal and dimension in `scores.csv`.
 
@@ -47,7 +45,7 @@ follow along, we're doing this together...
 
 ### region2016/calculate_scores.r
 
-TODO: 
+TODO `@ningningj`: 
 Open `calculate_scores.r` by navigating to it in the `region2016` folder and clicking on it. 
 
 - comments up top to help explain 
@@ -132,14 +130,15 @@ Hopefully this first time you haven't encountered error messages, but you defini
 
 ## Update a data layer and let's see the whole process again. 
 
-TODO `@jules32`: In this example, we will substitute a single global data layer with local data and recalculate scores without modifying the goal model itself. The \@ref(update) chapter will show an example for updating goal models. 
+TODO `@ningningj`:
 
-### update data layer but with the same layer name
+In this example, we will substitute a single global data layer with the same layername (although different data file) with local data and recalculate scores without modifying the goal model itself. The \@ref(update) chapter will show an example for updating goal models. 
 
-TODO: and register it too, briefly.  
+TODO
+- make a short, fake prep_AO.R. with last step: save in layers folder. (probably keep it simple, not as a full .Rmd. and [here](https://github.com/OHI-Science/toolbox-demo/blob/master/region2016/spatial/regions_list.csv) are the regions for the toolbox-demo repo. 
+- and register it too, briefly.  
 
-- make a fake Prep.r. last step: save in layers folder
-Ning: anything we show here should be what they would do. Look at Ning's tutorials/data prep 
+Ning: anything else we should show here from your [data prep tutorial](https://github.com/OHI-Science/tutorials/tree/gh-pages/data_prep_non_spatial), or should that all go in Chapter 5?
 
 ### rerun calculate_scores.r 
 
@@ -147,6 +146,7 @@ Ning: anything we show here should be what they would do. Look at Ning's tutoria
 - and layers.csv, and your layers file
 
 **Checking your work:** Whenever there are changes made (addition, deletion, changes in .csv or r script), you will be notified in the Git window, since Git is tracking changes to your work. So here, since you added a new data layer, and also expect changes to AO scores in `score.csv`. This is a good place to double check whether you have made the right changes.
+
 
 ## `configure_toolbox.r`
 
@@ -265,7 +265,7 @@ ry <- SelectLayersData(layers, layers = 'ao_need', narrow=TRUE) %>%
 
 Once you make sure your raw data have been loaded and joined in the right format, you can start calculate status scores!
 
-**TODO `@ningningj`/`@jules32`: this syntax uses the `tidyverse` and chaining...look xxx to learn more** 
+**TODO `@ningningj`: this syntax uses the `tidyverse` and chaining...look xxx to learn more** 
 
 ```{r, eval=FALSE}
 # model: this step calculates status scores of all years, using the goal model. 

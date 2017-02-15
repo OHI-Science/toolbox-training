@@ -5,8 +5,8 @@ language:
 rmd_files: [
   "index.Rmd", 
   "introduction.Rmd", 
-  "data-science-workflow.Rmd", 
-  "toolbox-ecosystem.Rmd", 
-  "preparing-data.Rmd", 
-  "ohi-workflow.Rmd",
-  "updating-your-website.Rmd"]
+  "data_science_workflow.Rmd", 
+  "toolbox_ecosystem.Rmd", 
+  "preparing_data.Rmd", 
+  "calculating_scores.Rmd",
+  "updating_your_website.Rmd"]
