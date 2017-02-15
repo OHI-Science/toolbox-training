@@ -1,12 +1,42 @@
-## Run calculate_scores.r yourself
+# Brainstorm 
 
-### fork the toolbox-demo repo 
+THIS IS NOT A CHAPTER, but for meeting w/ `@ningningj`, `@jules32` 2/15
 
-### run install_ohicore.r
+## Overview
 
-### explanation of what's happening; workflow
+This is a 2-hour hands-on training. All training materials are below, and can also serve as a self-paced workshop without in-person instruction. 
+
+### Prerequisites
+
+Before you begin, do the following: 
+
+1. Make sure you have RStudio and GitHub setup (Chapter \@ref(workflow)), with an up-to-date version of R and RStudio
+1. Fork the [**toolbox-demo**](https://github.com/OHI-Science/toolbox-demo) repository into your own GitHub account (click Fork in the upper right corner, and select your account)
+1. Clone the **toolbox-demo** repo from your GitHub account into RStudio (Chapter X)
+1. Get comfortable: be set up in a way so that you can see this tutorial and your RStudio window (maybe 2 screens, maybe switching between programs). 
+
+## Remind yourself of the Toolbox file ecosystem
+
+Chapter \@ref(toolbox-ecosystem)
+
+In the **toolbox-demo** repo, we have a scenario folder called **region2016**.
+
+## `calculate_scores.r` workflow
+
+`calculate_scores.r` is a script that you'll run a lot - in its entirety and piece-by-piece. It will load the libraries you need, check your book keeping and configure everything for `ohicore`, calculate OHI scores by calculating the required dimensions in a specific order (see below) and ultimately save scores for each goal and dimension in `scores.csv`. <!---TODO: add figure-generation back in?--->
+
+> OHI 'dimensions' are status, trend, pressures, resilience, likely future state, and scores, and are calculated for each goal. 
+
+follow along, we're doing this together...
+
+
+### run `install_ohicore.r`
+
+TODO: explanation of what's happening, potential errors (eg not have devtools installed, typos...)
 
 ### region2016/calculate_scores.r
+
+Open `calculate_scores.r` by navigating to it in the `region2016` folder and clicking on it. 
 
 - comments up top to help explain 
 
@@ -80,15 +110,17 @@ Warning messages:
   no non-missing arguments to max; returning -Inf
 ```
 
+### Recap of what just happened
+
 ## Update a data layer and let's see the whole process again. 
 
 ### update data layer but with the same layer name
 
-### TODO: add layer in demo/ folder and have them move it to layers/ and register it too, briefly.  
+TODO: add layer in demo/ folder and have them move it to layers/ and register it too, briefly.  
 
 ### rerun calculate_scores.r 
 
-- see that now scores.csv shows up in the git window. 
+- see that now `scores.csv` shows up in the git window. Great way to check your work. Which goal do you expect to change?
 
 So now let's take a closer look, let's check out configure_toolbox.r, the first thing that runs. 
 
@@ -100,7 +132,7 @@ What does it do?
 (also, if you are requiring other libraries, this would be the place to put them)
 
 ### `ohicore::Conf()`
-```{r}
+```{r, eval=FALSE}
 ## load scenario configuration
 conf = ohicore::Conf('conf')
 
@@ -113,7 +145,7 @@ TODO: Explain
 
 It lists all of the layers that are registered. Check to make sure ours is there. 
 
-```{r}
+```{r, eval=FALSE}
 ## check that scenario layers files in the \layers folder match layers.csv registration. Layers files are not modified.
 ohicore::CheckLayers('layers.csv', 'layers', flds_id=conf$config$layers_id_fields)
 ```

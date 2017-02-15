@@ -15,3 +15,8 @@
 
 - commit often (i.e. bundled as tasks you complete)
 - use the Git tab to help you check your work -- what files updated, does that make sense?
+
+## Developing these skills {#develop-skills}
+
+2-day self-paced workshop: [Reproducible Science with RStudio and GitHub](http://jules32.github.io/2016-07-12-Oxford/overview/). This is a [Software Carpentry](https://software-carpentry.org/) workshop by our team to help you develop skills with the RStudio/GitHub workflow.
+
