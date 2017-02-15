@@ -2,9 +2,9 @@
 
 ## Overview
 
-<!---TODO @jules32
+<!---TODO `@jules32`
 
-*TODO @jules32: some kind of overview like:* This chapter will take you from prepared data to calculated scores. It requires book keeping, `R` functions, and ultimately, the `R` package `ohicore`... @jules32: i'm not sure if we should emphasize ohicore here. it's good to quickly explain what it does later. but since people are not going to modify ohicore, and it's just running in the background essentially, mentioning it here could add unnecessary confusion... 
+*TODO `@jules32`: some kind of overview like:* This chapter will take you from prepared data to calculated scores. It requires book keeping, `R` functions, and ultimately, the `R` package `ohicore`... `@jules32`: i'm not sure if we should emphasize ohicore here. it's good to quickly explain what it does later. but since people are not going to modify ohicore, and it's just running in the background essentially, mentioning it here could add unnecessary confusion... 
 
 - *In this example, we will substitute a single global data layer with local data and recalculate scores without modifying the goal model itself. The \@ref(update) chapter will show an example for updating goal models.* 
 - *screenshot of RStudio window, overview of `configure_toolbox.r` and `calculate_scores.r`, etc* 
@@ -12,7 +12,7 @@
 
 ----
 
-TODO @ningningj and @jules32: we need to be more explicit about the overview here. 
+TODO `@ningningj` and `@jules32`: we need to be more explicit about the overview here. 
 Eg: In this chapter we're going to 
     - single goal model with updated data, basically line-by-line to understand the architecture of goal models (access the correct data layers, calc status, calc trend, make sure the final output is standard for what the `scores variables` need. 
     - then calculate all goal models and scores, including pressures, and resilience. 
@@ -29,9 +29,9 @@ TODO::
 - developing goal models and adding new data layers
 - removing goals
 
-In this section, we won't be modifying goal models yet. Instead, we will get you familiar with the construct of `functions.R` and the sequence of events required to calculate scores. This means we'll take the data layer that you just prepared \@ref(prep) and follow these steps to calculate scores: 
+In this section, we won't be modifying goal models yet. Instead, we will get you familiar with the construct of `functions.R` and the sequence of events required to calculate scores. This means we'll take the data layer that you just prepared \@ref(preparing-data) and follow these steps to calculate scores: 
 
-1. Confirm that data layers are saved and registered. See \@ref(prep) 
+1. Confirm that data layers are saved and registered. See \@ref(preparing-data) 
 
 1. Load `ohicore` and check data layers _in `configure_toolbox.r`_
 
@@ -47,7 +47,7 @@ In this section, we won't be modifying goal models yet. Instead, we will get you
 
 We will go through each of the scripts mentioned above. Here is a general structure to show where those files are in relation to the entire calculation process: 
 
-**TODO @ningningj: this figure may be more clear here if the red boxes are removed and instead placed around the green top pieces "modify goal models" and "calculate scores"?** @jules32: i didn't do that because we are not updating pressures and resilience. but your point is totally valid. i updated the figure as below, highlighting only the steps and scripts used here. what do you think?
+**TODO `@ningningj`: this figure may be more clear here if the red boxes are removed and instead placed around the green top pieces "modify goal models" and "calculate scores"?** `@jules32`: i didn't do that because we are not updating pressures and resilience. but your point is totally valid. i updated the figure as below, highlighting only the steps and scripts used here. what do you think?
 ![](https://docs.google.com/drawings/d/1MAIgSAFUTFg2J9XKIYBUFttOfHex5OSMbXIDlUMlKSY/pub?h=500)
 
 Now let's get started and give it a try! 
@@ -67,9 +67,9 @@ This is what they should be able to run immediately to see what happens. So this
 
 ### Calculate overall scores 
 
-**TODISCUSS @ningningj/@jules32: I think we'll want to make this a distinct thing that also includes pressures/resilience, etc, whereas they've just been walking through the status/trend for a single goal model above. Does that make sense? We can think of the organization...**
+**TODISCUSS `@ningningj`/`@jules32`: I think we'll want to make this a distinct thing that also includes pressures/resilience, etc, whereas they've just been walking through the status/trend for a single goal model above. Does that make sense? We can think of the organization...**
 
-@jules32: umm did you mean that it's confusing to mention pressures/resilience here too, since we only walked through status/trend? i agree. what if we say it like this: 
+`@jules32`: umm did you mean that it's confusing to mention pressures/resilience here too, since we only walked through status/trend? i agree. what if we say it like this: 
 
 Hooray! You just walked through the status and trend calcuation for a single goal model. Let's take a look at how adding new data layers has changed the goal score. This is done in `calculate_scores.r`
 
@@ -99,7 +99,7 @@ _**Tip**: whenever there are changes made (addition, deletion, changes in .csv o
 
 ## Installing ohicore
 
-<!---TODO @jules32: 
+<!---TODO `@jules32`: 
 update and reference \@ref(ohicore)
 
 TODISCUSS: does this fit here, or somewhere else?
@@ -125,7 +125,7 @@ Now you have fully prepared and registered the data with the Toolbox, there is j
 ![](https://docs.google.com/drawings/d/1WvHfWe06D2x9cKB7vhWrmvmxuRpmGvzsMs9AjS23g3E/pub?h=450)
 
 This script combines everything required to calculate OHI scores and checks that they are properly formatted, and will minimize potential errors down the line. It makes sure that your data and goal models are ready to be used to calculate scores. 
-**TODO @ningningj/@jules32: add section/language about how to interpret errors: errors are identifying YOUR problems, not ohicore's (said in a nicer way)** @jules32: see below under step 3. 
+**TODO `@ningningj`/`@jules32`: add section/language about how to interpret errors: errors are identifying YOUR problems, not ohicore's (said in a nicer way)** `@jules32`: see below under step 3. 
 
 Ning's edits: 
 
@@ -135,8 +135,8 @@ More specifically, sourcing `configure_toolbox.r` will:
 1. load the necessary `R` packages, including `ohicore`
 
 
-2. load scenario configurations. TODO @ningningj: I think we need to write out what `ohicore::Conf('conf')` etc are doing, this is too vague; 
-Ning's edits:  This step links together all the data layers (for goal, pressures, resilience), goal functions, and other OHI parameters that determines how ohi scores are calculated @jules32: I also added this language to configure_toolbox.R directly. since people will follow along in that script. 
+2. load scenario configurations. TODO `@ningningj`: I think we need to write out what `ohicore::Conf('conf')` etc are doing, this is too vague; 
+Ning's edits:  This step links together all the data layers (for goal, pressures, resilience), goal functions, and other OHI parameters that determines how ohi scores are calculated `@jules32`: I also added this language to configure_toolbox.R directly. since people will follow along in that script. 
 
 3. check that data layers are properly formatted and registered 
 
@@ -147,7 +147,7 @@ Ning's edits: This is a gate-keeping step by ohicore to make sure the data layer
 
 4. load data layers so that you can call them in functions.r 
 
-_**Note**: repeat this step whenever you save a new data layer or change a goal function._ **TODO @ningningj: this is a really important point, should not be a note but a statement, and probably in the bigger overview above; 
+_**Note**: repeat this step whenever you save a new data layer or change a goal function._ **TODO `@ningningj`: this is a really important point, should not be a note but a statement, and probably in the bigger overview above; 
 
 
 _**Tip**: "Source" to run all the lines_
@@ -158,7 +158,7 @@ _**Tip**: "Source" to run all the lines_
 
 ### Explore goal model 
 
-Now you are ready to examine the goal model in `functions.r` and confirm that your data layer is appropriately called. `functions.r` is in the `conf` folder. TODO @ningningj/@jules32: more here
+Now you are ready to examine the goal model in `functions.r` and confirm that your data layer is appropriately called. `functions.r` is in the `conf` folder. TODO `@ningningj`/`@jules32`: more here
 
 ![](https://docs.google.com/drawings/d/1CKNjIORLJOEaV2XW4Z9QuFLN7q1lJ1PaEGg2dSG1-_o/pub?h=450)
 
@@ -168,9 +168,9 @@ _**Tip**: Clicking the bottom left corner of Console will show you a drop-down m
 
 ![](https://docs.google.com/drawings/d/1Z2AVtVfIZEd_5GDcmaLb8mRpErKTDzmcbg0SBMxKsxs/pub?h=450)
 
-**TODO @ningningj: see note above but this needs to be more prominent**
+**TODO `@ningningj`: see note above but this needs to be more prominent**
 
-TODO @ningningj/@jules32: develop paragraphs from these bullets: 
+TODO `@ningningj`/`@jules32`: develop paragraphs from these bullets: 
 
 Ning's edits:
 
@@ -182,8 +182,8 @@ _`functions.r` in your Full Repo are populated with `R` code from the most recen
 
 Run this chunk of code and the data layers will be loaded, joined, and ready to be manipulated further: 
 
-**TODO @ningningj/@jules32: SelectLayersData is from ohicore, what it's doing...** 
-@jules32: See inline comments. I updated them in functions.r in demo repo too. might be easier to follow there. 
+**TODO `@ningningj`/`@jules32`: SelectLayersData is from ohicore, what it's doing...** 
+`@jules32`: See inline comments. I updated them in functions.r in demo repo too. might be easier to follow there. 
 
 ```{r load data, eval=FALSE}
 
@@ -208,7 +208,7 @@ ry <- SelectLayersData(layers, layers = 'ao_need', narrow=TRUE) %>%
 
 Once you make sure your raw data have been loaded and joined in the right format, you can start calculate status scores!
 
-**TODO @ningningj/@jules32: this syntax uses the `tidyverse` and chaining...look xxx to learn more** 
+**TODO `@ningningj`/`@jules32`: this syntax uses the `tidyverse` and chaining...look xxx to learn more** 
 
 ```{r, eval=FALSE}
 # model: this step calculates status scores of all years, using the goal model. 

@@ -1,6 +1,6 @@
 # Brainstorm 
 
-THIS IS NOT A CHAPTER, but for meeting w/ `@ningningj`, `@jules32` 2/15
+THIS IS NOT A CHAPTER, but for meeting w/ `@ningningj`, ``@jules32`` 2/15
 
 ## Overview
 
@@ -116,11 +116,15 @@ Warning messages:
 
 ### update data layer but with the same layer name
 
-TODO: add layer in demo/ folder and have them move it to layers/ and register it too, briefly.  
+TODO: and register it too, briefly.  
+
+- make a fake Prep.r. last step: save in layers folder
+Ning: anything we show here should be what they would do. Look at Ning's tutorials/data prep 
 
 ### rerun calculate_scores.r 
 
 - see that now `scores.csv` shows up in the git window. Great way to check your work. Which goal do you expect to change?
+- and layers.csv, and your layers file
 
 So now let's take a closer look, let's check out configure_toolbox.r, the first thing that runs. 
 
@@ -178,8 +182,22 @@ Remember from `calculate_scores.r` that after configure_toolbox, the next thing 
 
 ## TODISCUSS
 
-If you were to add a new data layer and/or change the goal model... (?) how far can we get into that from here?
+### change the goal model with the same data layers
+ 
+### add a new layer, and have the goal model use the new layer
+ - add a new row to layers.csv
+ - use SelectLayersData() to access your new layer, and then use it in a calculation. 
+ 
+end 2-hour tutorial.
 
 ## TODISCUSS
 
 - I deleted the figure-making in calculate_scores.r for now
+
+<!---next step after Eva training: 
+
+- PlotFlower, PlotMap
+- updating pressures/resilience matrices
+- goals.csv, adding goals, removing, changing subgoals. trend years. Talk to Mel about changing this: have them just written in functions.r, and have ohicore pull from that to make a full list
+
+--->
