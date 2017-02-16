@@ -32,8 +32,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   
   
-<link rel="prev" href="index.html">
-<link rel="next" href="datascience.html">
+<link rel="prev" href="calcs-basic.html">
+<link rel="next" href="updating-your-website.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -183,22 +183,30 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="introduction" class="section level1">
-<h1><span class="header-section-number">Chapter 2</span> Introduction</h1>
-<p>TODO: intro to OHI conceptually, Tbx stuff. See Best Practices paper.</p>
-<div id="overview" class="section level2">
-<h2><span class="header-section-number">2.1</span> Overview</h2>
+<div id="calcs_advanced" class="section level1">
+<h1><span class="header-section-number">Chapter 7</span> Calculations: advanced workflow</h1>
+<p>NOTE: this filename/chapter will likely change, but this is where we’ll talk about adding/removing goals/subgoals, and goals.csv. First will talk to Mel about goals.csv’s future: maybe having them just written in functions.r, and have ohicore pull from that to make a full list</p>
 <ul>
-<li>how you move from conceptual planning to data and models in the Tbx, reference points.</li>
-<li>best practices: core and tailorable parts</li>
+<li>goals.csv, adding goals, removing, changing subgoals. trend years.</li>
 </ul>
-</div>
-<div id="ohi-conceptually" class="section level2">
-<h2><span class="header-section-number">2.2</span> OHI conceptually</h2>
-</div>
-<div id="best-practices" class="section level2">
-<h2><span class="header-section-number">2.3</span> Best practices</h2>
+<div id="changing-subgoals" class="section level2">
+<h2><span class="header-section-number">7.1</span> Changing subgoals</h2>
+<div id="update-goal-call-in-goals.csv" class="section level3">
+<h3><span class="header-section-number">7.1.1</span> Update goal call in <code>goals.csv</code>**</h3>
+<!---TODISCUSS: maybe this detail should go somewhere else and then just referenced here? Because will also need this information referenced in the ## Removing Goals and ## Changing Subgoals sections --->
+<p><code>goals.csv</code> in the <code>conf</code> folder provides input information for <code>functions.r</code>, particularly about function calls. These are indicated by two columns: <em>preindex_function</em> (functions for all goals that do not have sub-goals, and functions for all sub-goals) and <em>postindex_function</em> (functions for goals with sub-goals).</p>
+<p>In the <code>preindex_fuction</code>, you could specify variables such as <em>status_year</em> and <em>trend_year</em>, which you can call in your goal function. Note that it is not necessary to specify those variables. If you do not use them in your function as in the CS example, you could delete those variables in <code>preindex_function</code>.</p>
+<p><em>Changing goal weights will be done here by editing the value in the <em>weight</em> column. Weights do not need to be 0-1 or add up to 10; weights will be scaled as a proportion of the number of goals assessed. The ten goals are weighted equally by default.</em></p>
+<div class="figure">
+<img src="https://docs.google.com/drawings/d/17BgYSw2sHbZvHNjUqBlTG-kCOAAn7o6a65O37s0S_es/pub?h=500" />
 
+</div>
+<div class="figure">
+<img src="https://docs.google.com/drawings/d/1o2wtJ9KCPDyGPH9Y4unmALG6BlxX9lmJ_PakDDiQrLo/pub?h=500" />
+
+</div>
+
+</div>
 </div>
 </div>
             </section>
@@ -206,8 +214,8 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
           </div>
         </div>
       </div>
-<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="datascience.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="calcs-basic.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="updating-your-website.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

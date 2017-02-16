@@ -1,4 +1,4 @@
-# Removing goals
+# Calculations: advanced workflow {#calcs_advanced}
 
 NOTE: this filename/chapter will likely change, but this is where we'll talk about adding/removing goals/subgoals, and goals.csv. First will talk to Mel about goals.csv's future: maybe having them just written in functions.r, and have ohicore pull from that to make a full list
 

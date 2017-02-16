@@ -1,4 +1,4 @@
-# Data science workflow {#data-science-workflow}
+# Data science workflow {#datascience}
 
 
 - what you get in the OHI+ repo (very high-level: you get data and code, you'll operate with an R package ohicore)
