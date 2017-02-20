@@ -78,7 +78,7 @@ source('~/github/toolbox-demo/region2016/configure_toolbox.r')
 
 ### Run `CalculateAll()`
 
-Now let's **run `CalculateAll()`** and discuss the output. 
+Now let's **run `CalculateAll()`** and discuss the output. Notice too that we are saving the output to a variable called `scores`. 
 
 > Note: the prefix `ohicore::` is a way to be explicit that the `CalculateAll()` is part of the `ohicore` package.
 
@@ -137,21 +137,12 @@ Following all the calculations are the warning messages, which are due to operat
 # Warning messages:
 # 1: In left_join_impl(x, y, by$x, by$y, suffix$x, suffix$y) :
 #   joining factors with different levels, coercing to character vector
-# 2: In left_join_impl(x, y, by$x, by$y, suffix$x, suffix$y) :
-#   joining factor and character vector, coercing into character vector
-# 3: In left_join_impl(x, y, by$x, by$y, suffix$x, suffix$y) :
-#   joining factors with different levels, coercing to character vector
-# 4: In left_join_impl(x, y, by$x, by$y, suffix$x, suffix$y) :
-#   joining factor and character vector, coercing into character vector
-# 5: In min(d$x, na.rm = T) : no non-missing arguments to min; returning Inf
-# 6: In max(d$x, na.rm = T) :
-#   no non-missing arguments to max; returning -Inf
-# 7: In min(d$x, na.rm = T) : no non-missing arguments to min; returning Inf
+# ...
 # 8: In max(d$x, na.rm = T) :
 #   no non-missing arguments to max; returning -Inf
 ```
 
-### Save scores as `scores.csv`
+### Save scores variable as `scores.csv`
 
 Finally, we will save the output from `CalculateAll()`, a variable called `scores`, as a comma-separated-value file called `scores.csv`. We can inspect it and see that it is a long-formatted file with four columns for the goal, dimension, numeric region identifier, and score. 
 
@@ -165,23 +156,13 @@ write.csv(scores, 'scores.csv', na='', row.names=F)
 |AO   |future    |         0| 92.85|
 |AO   |future    |         1| 92.85|
 |AO   |future    |         2| 92.85|
-|AO   |future    |         3| 92.85|
-|AO   |future    |         4| 92.85|
-|AO   |future    |         5| 92.85|
-|AO   |future    |         6| 92.85|
-|AO   |future    |         7| 92.85|
-|AO   |future    |         8| 92.85|
-|AO   |future    |         9| 92.85|
-|AO   |future    |        10| 92.85|
-|AO   |future    |        11| 92.85|
-|AO   |future    |        12| 92.85|
-|AO   |future    |        14| 92.85|
-|AO   |future    |        15| 92.85|
-|AO   |future    |        16| 92.85|
+|...  |...       |       ...|  ... |
 |AO   |future    |        17| 92.85|
 |AO   |pressures |         1| 37.75|
 |AO   |pressures |         2| 37.75|
 |...  |...       |       ...|  ... |
+
+We have 17 regions in the **toolbox-demo** repo. An additional region 0 is the area-weighted combination of all regions.
 
 > Note: each region in your assessment will have a numeric region identifer, called a `region_id` or `rgn_id` for short. You can see a list of all regions and corresponding identifiers in [toolbox-demo/region2016/spatial/regions_list.csv](https://github.com/OHI-Science/toolbox-demo/blob/master/region2016/spatial/regions_list.csv)
 
@@ -198,6 +179,8 @@ Hopefully this first time through `calculate_scores.r` you did not encounter err
 ## Tailor a data layer and rerun `calculate_scores.r`
 
 In this example, we will substitute a single global data layer with the same layername (although different data file) with local data and recalculate scores without modifying the goal model itself. The \@ref(calcs_advanced) chapter will show an example for updating goal models. 
+
+It's always a good idea to Restart `R` before you begin something like this to make sure you don't have any variables loaded that will cause problems later on.
 
 TODO `@ningningj`:
 
@@ -231,27 +214,27 @@ So now let's take a closer look, let's check out `configure_toolbox.r`, the firs
 > ![](https://docs.google.com/drawings/d/1JvSJKyiwvp92--obTwHT3IYht1XE0823sORJ4FdnX74/pub?h=450)
 
 
-### loads libraries
+#### Load libraries
 
 TODO `@ningningj`: check this to see it's complete and a similar to style in the `Run calculate_scores.r section` above
 
 Also, if you are requiring other libraries as you develop your own goal models, this would be the place to load them. 
 
-### `ohicore::Conf()`
+#### `ohicore::Conf()`
 
 This step links together all the data layers (for goal, pressures, resilience), goal functions, and other OHI parameters that determines how ohi scores are calculated. TODO: more 
 
-```{r, eval=FALSE}
+```{r Conf(), eval=FALSE}
 ## load scenario configuration
 conf = ohicore::Conf('conf')
 ```
 
 
-### `ohicore::CheckLayers()`
+#### `ohicore::CheckLayers()`
 
 This function checks that data layers are properly formatted and registered, and returns a list of all of the layers that are registered. Check to make sure ours is there. This is a gate-keeping step by to make sure the data layers you've entered are in the right format and can be read by `ohicore` properly. 
 
-```{r, eval=FALSE}
+```{r CheckLayers(), eval=FALSE}
 ## check that scenario layers files in the \layers folder match layers.csv registration. Layers files are not modified.
 ohicore::CheckLayers('layers.csv', 'layers', flds_id=conf$config$layers_id_fields)
 ```
@@ -274,10 +257,10 @@ You'll also encounter error messages as you develop your own assessment. These m
 - typos or misnamed columns
 
 
-### `ohicore::Layers()`
+#### `ohicore::Layers()`
 
 TODO: explain
-```{r, eval=FALSE}
+```{r Layers(), eval=FALSE}
 ## load scenario layers for ohicore to access. Layers files are not modified.
 layers = ohicore::Layers('layers.csv', 'layers')
 
@@ -380,7 +363,7 @@ Trend scores are typically based on linear regression of status scores from the 
 
 ```
 
-### Combine status and trend scores 
+### Scores variable: combining status and trend
 
 Choose only region_id and score, and add two more columns identifying score dimension (status or trend) and goal name. 
 ```{r, eval=FALSE}
@@ -394,38 +377,45 @@ Choose only region_id and score, and add two more columns identifying score dime
     mutate(goal='AO')
 ```
 
+The scores variable is something that you'll see at the end of every goal model; `ohicore` will combine these all together when `CalculateAll()` runs.
 
+## Tailor goal model using original data layers
 
+Modifying a goal model involves editing the operations within that goal's model in `functions.r`. 
 
+First let's restart R and source `configure_toolbox.r`. We can do this from either `calculate_scores.r` or from `configure_toolbox.r` itself.
 
-## Update goal model with the original data layers
+Now, let's go to `functions.r` and go back to the AO model. Let's do something pretty simple to tailor the goal model. Let's say we just wanted to divide the variable `Du` by 2 in the equation. 
 
-TODO `@jules32`
+```{r tailor AO goal model, eval=FALSE}
+ ry <- ry %>%
+    mutate(Du = (1 - need) * (1 - access)) %>%
+    mutate(status = (1 - Du/2) * sustainability)
+```
+
+We can run the rest of the AO function line-by-line and inspect the scores variable at the end to see if everything looks OK. 
+
+It looks OK to me, so let's run the rest of `calculate_scores.r`, and use Git's differencing feature to see how our scores have changed. This is a great way to double-check and error-check that things are working the way you expected. 
+
+## Tailor goal model using new data layers
  
-## Update goal model by adding new layers
- 
-TODO `@jules32`
+Now, we are going to tailor a goal model by adding a new data layer, so it's the combination of what we've gone through above. 
 
- - add a new row to layers.csv
- - use SelectLayersData() to access your new layer, and then use it in a calculation. 
+### Save and register a new prepared data layer.
+
+TODO: create another AO prep.r
+
+Now, to register this layer, we'll need to add a new row to `layers.csv`
+
+Now, in `functions.r`, we'll need to use SelectLayersData() to access your new layer, and then use it in a calculation, using the same workflow from above.
  
  
  
 end 2-hour tutorial.
 
-
+<!---next steps after Eva training: 
 
 ## Update pressures and resilience matrices
-
-TODO: develop
-
-## TODISCUSS ongoing list
-
-- [this workflow figure](https://docs.google.com/drawings/d/1MAIgSAFUTFg2J9XKIYBUFttOfHex5OSMbXIDlUMlKSY/pub?h=500), do we need it anymore?
-    - **TODO `@ningningj`: this figure may be more clear here if the red boxes are removed and instead placed around the green top pieces "modify goal models" and "calculate scores"?** `@jules32`: i didn't do that because we are not updating pressures and resilience. but your point is totally valid. i updated the figure as below, highlighting only the steps and scripts used here. what do you think?
-
-
-<!---next step after Eva training: 
 
 - PlotFlower, PlotMap
 - updating pressures/resilience matrices
