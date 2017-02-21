@@ -189,7 +189,7 @@ It's always a good idea to Restart `R` before you begin something like this to m
 <!-- - make a simple, fake toolbox-demo/prep/AO/prep_AO.R. with last step: save in layers folder. (probably keep it simple, not as a full .Rmd. and [here](https://github.com/OHI-Science/toolbox-demo/blob/master/region2016/spatial/regions_list.csv) are the regions for the toolbox-demo repo.  -->
 <!-- - and register it too, briefly.   -->
 
-@jules32: I modified an exisiting global data layer from layers folder, instead of simplifying bhi's ao_prep because in bhi example, new layers would require us to modify the goal models as well, which we are not ready to do in this tutorial yet. -->
+`@jules32`: I modified an exisiting global data layer from layers folder, instead of simplifying bhi's ao_prep because in bhi example, new layers would require us to modify the goal models as well, which we are not ready to do in this tutorial yet. -->
 
 #### Save data layer
 As the last step of [data prep](link to data_prep), we save the newly modified or created data layer in layers folder and register it so that the toolbox knows where to find it. Let's use AO as an example and practice saving and registering your new data. 
@@ -237,7 +237,7 @@ The first two steps set up your working environment:
 - load `ohicore` and R packages (eg. tidyerse, stringr)
 - set working directory to your repository
 
-```{r load ohicore and libraries}
+```{r load ohicore and libraries, eval=FALSE}
 ## load ohicore and tidyverse (includes dplyr, tidyr, stringr, etc)
 if (!"ohicore" %in% (.packages())) {
   suppressWarnings(require(ohicore))
@@ -296,7 +296,9 @@ You'll also encounter error messages as you develop your own assessment. These m
 TODO: explain
 
 This function creates an R object that combines into a single object all the information 
-from the layers files and the layers.csv metadata. Individual layers can be accessed as: layer_object_name$data$layer_name???
+from the layers files and the layers.csv metadata. Individual layers can be accessed as: layers$data$layer_name???
+
+> Note: `@jules32`: describe this vs. SelectLayersData()
 
 ```{r Layers(), eval=FALSE}
 ## load scenario layers for ohicore to access. Layers files are not modified.

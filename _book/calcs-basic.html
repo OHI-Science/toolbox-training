@@ -26,7 +26,7 @@
 <meta name="author" content="Ocean Health Index Team">
 
 
-<meta name="date" content="2017-02-20">
+<meta name="date" content="2017-02-21">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -359,7 +359,7 @@ scores =<span class="st"> </span>ohicore::<span class="kw">CalculateAll</span>(c
 <!-- TODO `@ningningj`: -->
 <!-- - make a simple, fake toolbox-demo/prep/AO/prep_AO.R. with last step: save in layers folder. (probably keep it simple, not as a full .Rmd. and [here](https://github.com/OHI-Science/toolbox-demo/blob/master/region2016/spatial/regions_list.csv) are the regions for the toolbox-demo repo.  -->
 <!-- - and register it too, briefly.   -->
-<p><span class="citation">(<span class="citeproc-not-found" data-reference-id="jules32"><strong>???</strong></span>)</span>: I modified an exisiting global data layer from layers folder, instead of simplifying bhi’s ao_prep because in bhi example, new layers would require us to modify the goal models as well, which we are not ready to do in this tutorial yet. –&gt;</p>
+<p><code>@jules32</code>: I modified an exisiting global data layer from layers folder, instead of simplifying bhi’s ao_prep because in bhi example, new layers would require us to modify the goal models as well, which we are not ready to do in this tutorial yet. –&gt;</p>
 <div id="save-data-layer" class="section level4">
 <h4><span class="header-section-number">6.4.1.1</span> Save data layer</h4>
 <p>As the last step of <a href="link%20to%20data_prep">data prep</a>, we save the newly modified or created data layer in layers folder and register it so that the toolbox knows where to find it. Let’s use AO as an example and practice saving and registering your new data.</p>
@@ -408,18 +408,9 @@ if (!<span class="st">&quot;ohicore&quot;</span> %in%<span class="st"> </span>(<
   <span class="kw">suppressWarnings</span>(<span class="kw">require</span>(ohicore))
   <span class="kw">library</span>(tidyverse)    <span class="co"># install.packages(&#39;tidyverse&#39;)</span>
   <span class="kw">library</span>(stringr)
-}</code></pre></div>
-<pre><code>## Loading required package: ohicore</code></pre>
-<pre><code>## Loading tidyverse: ggplot2
-## Loading tidyverse: tibble
-## Loading tidyverse: tidyr
-## Loading tidyverse: readr
-## Loading tidyverse: purrr
-## Loading tidyverse: dplyr</code></pre>
-<pre><code>## Conflicts with tidy packages ----------------------------------------------</code></pre>
-<pre><code>## filter(): dplyr, stats
-## lag():    dplyr, stats</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">## set working directory to the scenario that contains conf and layers directories
+}
+
+## set working directory to the scenario that contains conf and layers directories
 <span class="kw">setwd</span>(<span class="st">&#39;~/github/toolbox-demo/region2016&#39;</span>)</code></pre></div>
 </div>
 <div id="ohicoreconf" class="section level4">
