@@ -182,16 +182,29 @@ In this example, we will substitute a single global data layer with the same lay
 
 It's always a good idea to Restart `R` before you begin something like this to make sure you don't have any variables loaded that will cause problems later on.
 
-TODO `@ningningj`:
-
-- make a simple, fake toolbox-demo/prep/AO/prep_AO.R. with last step: save in layers folder. (probably keep it simple, not as a full .Rmd. and [here](https://github.com/OHI-Science/toolbox-demo/blob/master/region2016/spatial/regions_list.csv) are the regions for the toolbox-demo repo. 
-- and register it too, briefly.  
-
-Ning: anything else we should show here from your [data prep tutorial](https://github.com/OHI-Science/tutorials/tree/gh-pages/data_prep_non_spatial), or should that all go in Chapter 5?
-
 ### Save and register prepared data layer
 
-TODO: have people run something from toolbox-demo/prep/AO/prep_AO.R, and register.
+<!-- TODO `@ningningj`: -->
+
+<!-- - make a simple, fake toolbox-demo/prep/AO/prep_AO.R. with last step: save in layers folder. (probably keep it simple, not as a full .Rmd. and [here](https://github.com/OHI-Science/toolbox-demo/blob/master/region2016/spatial/regions_list.csv) are the regions for the toolbox-demo repo.  -->
+<!-- - and register it too, briefly.   -->
+
+@jules32: I modified an exisiting global data layer from layers folder, instead of simplifying bhi's ao_prep because in bhi example, new layers would require us to modify the goal models as well, which we are not ready to do in this tutorial yet. -->
+
+#### Save data layer
+As the last step of [data prep](link to data_prep), we save the newly modified or created data layer in layers folder and register it so that the toolbox knows where to find it. Let's use AO as an example and practice saving and registering your new data. 
+
+Open `toolbox-demo/prep/AO/ao_prep.Rmd` and follow instructions there to save a data layer. Come back to this tutorial after that's done, and we'll continue on to registering the layer. 
+
+#### Register a data layer 
+
+Now you have prepared the data layer(s), let's register it in `layers.csv`. 
+
+`layers.csv`is where the toolbox keeps a record of all data layers - which goal they are used for, file name, column names, etc. It directs the toolbox to access data layers from appropriate places. 
+
+Usually, when you create a new data layer, you'll add a new row in the spreadsheet and fill in the first eight columns (columns A-H), as explained [here](http://ohi-science.org/manual/#register-data-layers-in-layers.csv). But in this excercise, for simiplicity, we modified an existing data layer and renamed it, and you only need to change the "filename". 
+
+Open `region2016/layers.csv` in a spreadsheet software (i.e. Microsoft Excel), and we will replace the "filename" for "ao_access" layer to the new data layer you just saved - "ao_access_demo2017.csv".
 
 ### Rerun `calculate_scores.r` 
 
@@ -214,15 +227,36 @@ So now let's take a closer look, let's check out `configure_toolbox.r`, the firs
 > ![](https://docs.google.com/drawings/d/1JvSJKyiwvp92--obTwHT3IYht1XE0823sORJ4FdnX74/pub?h=450)
 
 
-#### Load libraries
+#### Load libraries and set working directory
 
-TODO `@ningningj`: check this to see it's complete and a similar to style in the `Run calculate_scores.r section` above
+<!-- TODO `@ningningj`: check this to see it's complete and a similar to style in the `Run calculate_scores.r section` above -->
 
-Also, if you are requiring other libraries as you develop your own goal models, this would be the place to load them. 
+<!-- Also, if you are requiring other libraries as you develop your own goal models, this would be the place to load them.  -->
+
+The first two steps set up your working environment: 
+- load `ohicore` and R packages (eg. tidyerse, stringr)
+- set working directory to your repository
+
+```{r load ohicore and libraries}
+## load ohicore and tidyverse (includes dplyr, tidyr, stringr, etc)
+if (!"ohicore" %in% (.packages())) {
+  suppressWarnings(require(ohicore))
+  library(tidyverse)    # install.packages('tidyverse')
+  library(stringr)
+}
+
+## set working directory to the scenario that contains conf and layers directories
+setwd('~/github/toolbox-demo/region2016')
+```
 
 #### `ohicore::Conf()`
 
-This step links together all the data layers (for goal, pressures, resilience), goal functions, and other OHI parameters that determines how ohi scores are calculated. TODO: more 
+This function prepares for the next steps of running the toolbox, and calls forth everything you need to calculate scores: 
+
+- all data layers (for goals, pressures, resilience) 
+- goal functions, and 
+- other OHI parameters that determines how ohi scores are calculated 
+
 
 ```{r Conf(), eval=FALSE}
 ## load scenario configuration
@@ -232,7 +266,7 @@ conf = ohicore::Conf('conf')
 
 #### `ohicore::CheckLayers()`
 
-This function checks that data layers are properly formatted and registered, and returns a list of all of the layers that are registered. Check to make sure ours is there. This is a gate-keeping step by to make sure the data layers you've entered are in the right format and can be read by `ohicore` properly. 
+This function checks that data layers are properly formatted and registered (e.g., that each datalayer in layers.csv is present in the layers folder, etc.), and returns a list of all of the layers that are registered. Check to make sure ours is there. This is a gate-keeping step by to make sure the data layers you've entered are in the right format and can be read by `ohicore` properly. 
 
 ```{r CheckLayers(), eval=FALSE}
 ## check that scenario layers files in the \layers folder match layers.csv registration. Layers files are not modified.
@@ -260,6 +294,10 @@ You'll also encounter error messages as you develop your own assessment. These m
 #### `ohicore::Layers()`
 
 TODO: explain
+
+This function creates an R object that combines into a single object all the information 
+from the layers files and the layers.csv metadata. Individual layers can be accessed as: layer_object_name$data$layer_name???
+
 ```{r Layers(), eval=FALSE}
 ## load scenario layers for ohicore to access. Layers files are not modified.
 layers = ohicore::Layers('layers.csv', 'layers')
@@ -270,13 +308,11 @@ layers = ohicore::Layers('layers.csv', 'layers')
 
 ## Explore a goal model in `functions.r`
 
-TODO `@ningningj`: (I've moved this over here but make sure it still makes sense):
+Remember from `calculate_scores.r` that after configure_toolbox, the next thing that happens is that CalculateScores() runs through the goal models and calcuates status and trend. Status and Trend calculations are contained in `functions.r` in the `conf` folder.
 
 ![](https://docs.google.com/drawings/d/1CKNjIORLJOEaV2XW4Z9QuFLN7q1lJ1PaEGg2dSG1-_o/pub?h=450)
 
-Remember from `calculate_scores.r` that after configure_toolbox, the next thing that happens is that CalculateScores() runs through the goal models and calcuates status and trend. 
-
-Open `functions.r`. `functions.r` is a big list of all goal models in the assessment, each as its own `R` function. You can run all of them at the once or each individually. **Each goal model is an individual R function that calculates status and trend, and you will modify the goal model within the confines of each function**. Let's look at the goal models for Artisanal Fishing Opportunity (AO) as an example. It has models developed from the most recent global assessment as a place for you to start.
+`functions.r` is a big list of all goal models in the assessment, each as its own `R` function. You can run all of them at the once or each individually. **Each goal model is an individual R function that calculates status and trend, and you will modify the goal model within the confines of each function**. Let's look at the goal models for Artisanal Fishing Opportunity (AO) as an example. It has models developed from the most recent global assessment as a place for you to start.
 
 > **Tip**: Clicking the bottom left corner of Console will show you a drop-down menu of all functions. It's a shortcut to jump to the appropriate section or goal model
 
@@ -317,7 +353,11 @@ ry <- SelectLayersData(layers, layers = 'ao_need', narrow=TRUE) %>%
 
 Once you make sure your data layer has been loaded and joined in the right format, you can start calculate status scores!
 
-**TODO `@ningningj`: this syntax uses the `tidyverse` and chaining...look xxx to learn more** 
+<!-- **TODO `@ningningj`: this syntax uses the `tidyverse` and chaining...look xxx to learn more**  -->
+
+This syntax uses the `tidyverse` package that you loaded in `configure_toolbox.r`. It contains the commonly- used, data-wrangling functions you'll need in almost every analysis, and enables chaining (ie. %>%). We'll briefly explain some of the functions below as we encounter them. 
+
+To learn more, take a look at [tidyverse.org](http://tidyverse.org/). This [cheatsheet](https://www.rstudio.com/wp-content/uploads/2015/02/data-wrangling-cheatsheet.pdf) is also a helpful guide with quick references to each function. 
 
 ```{r, eval=FALSE}
 # model: this step calculates status scores of all years, using the goal model. 
