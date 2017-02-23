@@ -8,8 +8,11 @@
 ## OHI+ Repo
 
 - what is in the OHI+ repo, not file-by-file, but high-level
+- prep and full repos
 
 ## RStudio-GitHub workflow
+
+![](https://docs.google.com/drawings/d/1eEb8qlCWY5g0v19xMoW-Jc71cNr4GOacsxUK9FR8si4/pub?w=960&h=480)
 
 ## How you work
 
@@ -20,3 +23,8 @@
 
 2-day self-paced workshop: [Reproducible Science with RStudio and GitHub](http://jules32.github.io/2016-07-12-Oxford/overview/). This is a [Software Carpentry](https://software-carpentry.org/) workshop by our team to help you develop skills with the RStudio/GitHub workflow.
 
+## Practice by updating your website
+
+- give a face to your project
+
+- learn more with this 2-hour tutorial [Making free websites with RStudio’s R Markdown](https://jules32.github.io/rmarkdown-website-tutorial) made by our team.

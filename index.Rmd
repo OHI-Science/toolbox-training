@@ -14,9 +14,15 @@ description: "This is the official Ocean Health Index Toolbox training."
 
 # Overview {#overview}
 
+**This training program is under active development and testing**.  
+
+Development is currently focused on Chapter \@ref(calcs-basic) and outlining other chapters.
+
+
+<!---
 TODO, including: 
 
 - first X chapters are overview of the workflow, independent from Toolbox
 - next X chapters are Tbx specific
 
-<!---TODO @jules32: citation information --->
+TODO @jules32: citation information --->

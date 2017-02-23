@@ -1,4 +1,6 @@
-# Preparing data {#preparing-data}
+# Preparing data {#prep-data}
+
+<!---check out @ningningj's docs in tutorial repo--->
 
 ## Overview
 

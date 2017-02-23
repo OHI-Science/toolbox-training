@@ -1,12 +1,16 @@
-# Introduction {#introduction}
+# Introduction {#intro}
 
-TODO: intro to OHI conceptually, Tbx stuff. See Best Practices paper.
+<!--- TODO: intro to OHI conceptually, Tbx stuff. See Best Practices paper. --->
 
 ## Overview
 
-- how you move from conceptual planning to data and models in the Tbx, reference points.
+- how you move from collaborative conceptual planning -> data and models in the Toolbox, including reference points.
 - best practices: core and tailorable parts
 
 ## OHI conceptually
 
 ## Best practices
+
+## Your website
+
+- a place to communicate using the same workflow you use for analysis.
