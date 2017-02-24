@@ -6,8 +6,9 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Ocean Health Index Toolbox Training</title>
+  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
   <meta name="description" content="This is the official Ocean Health Index Toolbox training.">
-  <meta name="generator" content="bookdown 0.3.9 and GitBook 2.6.7">
+  <meta name="generator" content="bookdown 0.3 and GitBook 2.6.7">
 
   <meta property="og:title" content="Ocean Health Index Toolbox Training" />
   <meta property="og:type" content="book" />
@@ -25,7 +26,7 @@
 <meta name="author" content="Ocean Health Index Team">
 
 
-<meta name="date" content="2017-02-23">
+<meta name="date" content="2017-02-24">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -33,6 +34,7 @@
   
   
 <link rel="prev" href="calcs-advanced.html">
+
 
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -92,7 +94,6 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <body>
 
 
-
   <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
 
     <div class="book-summary">
@@ -119,7 +120,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="4.3" data-path="toolbox.html"><a href="toolbox.html#full-repo-files-and-organization"><i class="fa fa-check"></i><b>4.3</b> Full repo files and organization</a><ul>
 <li class="chapter" data-level="4.3.1" data-path="toolbox.html"><a href="toolbox.html#functions.r"><i class="fa fa-check"></i><b>4.3.1</b> functions.r</a></li>
 </ul></li>
-<li class="chapter" data-level="4.4" data-path="toolbox.html"><a href="toolbox.html#ohicore"><i class="fa fa-check"></i><b>4.4</b> <code>ohicore</code></a></li>
+<li class="chapter" data-level="4.4" data-path="toolbox.html"><a href="toolbox.html#ohicore"><i class="fa fa-check"></i><b>4.4</b> <code id="ohicore">ohicore</code></a></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="prep-data.html"><a href="prep-data.html"><i class="fa fa-check"></i><b>5</b> Preparing data</a><ul>
 <li class="chapter" data-level="5.1" data-path="prep-data.html"><a href="prep-data.html#overview-2"><i class="fa fa-check"></i><b>5.1</b> Overview</a></li>
@@ -142,19 +143,25 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="6.3.5" data-path="calcs-basic.html"><a href="calcs-basic.html#a-note-about-error-messages"><i class="fa fa-check"></i><b>6.3.5</b> A note about error messages</a></li>
 </ul></li>
 <li class="chapter" data-level="6.4" data-path="calcs-basic.html"><a href="calcs-basic.html#tailor-a-data-layer-and-rerun-calculate_scores.r"><i class="fa fa-check"></i><b>6.4</b> Tailor a data layer and rerun <code>calculate_scores.r</code></a><ul>
-<li class="chapter" data-level="6.4.1" data-path="calcs-basic.html"><a href="calcs-basic.html#save-and-register-prepared-data-layer"><i class="fa fa-check"></i><b>6.4.1</b> Save and register prepared data layer</a></li>
-<li class="chapter" data-level="6.4.2" data-path="calcs-basic.html"><a href="calcs-basic.html#rerun-calculate_scores.r"><i class="fa fa-check"></i><b>6.4.2</b> Rerun <code>calculate_scores.r</code></a></li>
-<li class="chapter" data-level="6.4.3" data-path="calcs-basic.html"><a href="calcs-basic.html#explore-configure_toolbox.r"><i class="fa fa-check"></i><b>6.4.3</b> Explore <code>configure_toolbox.r</code></a></li>
+<li class="chapter" data-level="6.4.1" data-path="calcs-basic.html"><a href="calcs-basic.html#prepare-and-save-our-data-layer"><i class="fa fa-check"></i><b>6.4.1</b> Prepare and save our data layer</a></li>
+<li class="chapter" data-level="6.4.2" data-path="calcs-basic.html"><a href="calcs-basic.html#register-our-data-layer"><i class="fa fa-check"></i><b>6.4.2</b> Register our data layer</a></li>
+<li class="chapter" data-level="6.4.3" data-path="calcs-basic.html"><a href="calcs-basic.html#rerun-calculate_scores.r"><i class="fa fa-check"></i><b>6.4.3</b> Rerun <code>calculate_scores.r</code></a></li>
 </ul></li>
-<li class="chapter" data-level="6.5" data-path="calcs-basic.html"><a href="calcs-basic.html#explore-a-goal-model-in-functions.r"><i class="fa fa-check"></i><b>6.5</b> Explore a goal model in <code>functions.r</code></a><ul>
-<li class="chapter" data-level="6.5.1" data-path="calcs-basic.html"><a href="calcs-basic.html#load-specific-data-layers-with-selectlayersdata"><i class="fa fa-check"></i><b>6.5.1</b> Load specific data layers with <code>SelectLayersData()</code></a></li>
-<li class="chapter" data-level="6.5.2" data-path="calcs-basic.html"><a href="calcs-basic.html#calculate-status"><i class="fa fa-check"></i><b>6.5.2</b> Calculate status</a></li>
-<li class="chapter" data-level="6.5.3" data-path="calcs-basic.html"><a href="calcs-basic.html#calculate-trend"><i class="fa fa-check"></i><b>6.5.3</b> Calculate trend</a></li>
-<li class="chapter" data-level="6.5.4" data-path="calcs-basic.html"><a href="calcs-basic.html#scores-variable-combining-status-and-trend"><i class="fa fa-check"></i><b>6.5.4</b> Scores variable: combining status and trend</a></li>
+<li class="chapter" data-level="6.5" data-path="calcs-basic.html"><a href="calcs-basic.html#explore-configure_toolbox.r"><i class="fa fa-check"></i><b>6.5</b> Explore <code>configure_toolbox.r</code></a><ul>
+<li class="chapter" data-level="6.5.1" data-path="calcs-basic.html"><a href="calcs-basic.html#load-libraries-and-set-working-directory"><i class="fa fa-check"></i><b>6.5.1</b> Load libraries and set working directory</a></li>
+<li class="chapter" data-level="6.5.2" data-path="calcs-basic.html"><a href="calcs-basic.html#ohicoreconf"><i class="fa fa-check"></i><b>6.5.2</b> <code>ohicore::Conf()</code></a></li>
+<li class="chapter" data-level="6.5.3" data-path="calcs-basic.html"><a href="calcs-basic.html#ohicorechecklayers"><i class="fa fa-check"></i><b>6.5.3</b> <code>ohicore::CheckLayers()</code></a></li>
+<li class="chapter" data-level="6.5.4" data-path="calcs-basic.html"><a href="calcs-basic.html#ohicorelayers"><i class="fa fa-check"></i><b>6.5.4</b> <code>ohicore::Layers()</code></a></li>
 </ul></li>
-<li class="chapter" data-level="6.6" data-path="calcs-basic.html"><a href="calcs-basic.html#tailor-goal-model-using-original-data-layers"><i class="fa fa-check"></i><b>6.6</b> Tailor goal model using original data layers</a></li>
-<li class="chapter" data-level="6.7" data-path="calcs-basic.html"><a href="calcs-basic.html#tailor-goal-model-using-new-data-layers"><i class="fa fa-check"></i><b>6.7</b> Tailor goal model using new data layers</a><ul>
-<li class="chapter" data-level="6.7.1" data-path="calcs-basic.html"><a href="calcs-basic.html#save-and-register-a-new-prepared-data-layer."><i class="fa fa-check"></i><b>6.7.1</b> Save and register a new prepared data layer.</a></li>
+<li class="chapter" data-level="6.6" data-path="calcs-basic.html"><a href="calcs-basic.html#explore-a-goal-model-in-functions.r"><i class="fa fa-check"></i><b>6.6</b> Explore a goal model in <code>functions.r</code></a><ul>
+<li class="chapter" data-level="6.6.1" data-path="calcs-basic.html"><a href="calcs-basic.html#load-specific-data-layers-with-selectlayersdata"><i class="fa fa-check"></i><b>6.6.1</b> Load specific data layers with <code>SelectLayersData()</code></a></li>
+<li class="chapter" data-level="6.6.2" data-path="calcs-basic.html"><a href="calcs-basic.html#calculate-status"><i class="fa fa-check"></i><b>6.6.2</b> Calculate status</a></li>
+<li class="chapter" data-level="6.6.3" data-path="calcs-basic.html"><a href="calcs-basic.html#calculate-trend"><i class="fa fa-check"></i><b>6.6.3</b> Calculate trend</a></li>
+<li class="chapter" data-level="6.6.4" data-path="calcs-basic.html"><a href="calcs-basic.html#scores-variable-combining-status-and-trend"><i class="fa fa-check"></i><b>6.6.4</b> Scores variable: combining status and trend</a></li>
+</ul></li>
+<li class="chapter" data-level="6.7" data-path="calcs-basic.html"><a href="calcs-basic.html#tailor-a-goal-model-using-original-data-layers"><i class="fa fa-check"></i><b>6.7</b> Tailor a goal model using original data layers</a></li>
+<li class="chapter" data-level="6.8" data-path="calcs-basic.html"><a href="calcs-basic.html#tailor-a-goal-model-using-new-data-layers"><i class="fa fa-check"></i><b>6.8</b> Tailor a goal model using new data layers</a><ul>
+<li class="chapter" data-level="6.8.1" data-path="calcs-basic.html"><a href="calcs-basic.html#save-and-register-a-new-prepared-data-layer."><i class="fa fa-check"></i><b>6.8.1</b> Save and register a new prepared data layer.</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="7" data-path="calcs-advanced.html"><a href="calcs-advanced.html"><i class="fa fa-check"></i><b>7</b> Calculations: advanced workflow</a><ul>
@@ -198,8 +205,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
       </div>
 <a href="calcs-advanced.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
 
-    </div>
-  </div>
+
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/lunr.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
@@ -237,17 +243,6 @@ gitbook.start({
 });
 </script>
 
-<!-- dynamically load mathjax for compatibility with self-contained -->
-<script>
-  (function () {
-    var script = document.createElement("script");
-    script.type = "text/javascript";
-    script.src  = "https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
-    if (location.protocol !== "file:" && /^https?:/.test(script.src))
-      script.src  = script.src.replace(/^https?:/, '');
-    document.getElementsByTagName("head")[0].appendChild(script);
-  })();
-</script>
 </body>
 
 </html>
