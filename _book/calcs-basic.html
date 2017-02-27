@@ -26,7 +26,7 @@
 <meta name="author" content="Ocean Health Index Team">
 
 
-<meta name="date" content="2017-02-24">
+<meta name="date" content="2017-02-27">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -155,14 +155,17 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </ul></li>
 <li class="chapter" data-level="6.6" data-path="calcs-basic.html"><a href="calcs-basic.html#explore-a-goal-model-in-functions.r"><i class="fa fa-check"></i><b>6.6</b> Explore a goal model in <code>functions.r</code></a><ul>
 <li class="chapter" data-level="6.6.1" data-path="calcs-basic.html"><a href="calcs-basic.html#load-specific-data-layers-with-selectlayersdata"><i class="fa fa-check"></i><b>6.6.1</b> Load specific data layers with <code>SelectLayersData()</code></a></li>
-<li class="chapter" data-level="6.6.2" data-path="calcs-basic.html"><a href="calcs-basic.html#calculate-status"><i class="fa fa-check"></i><b>6.6.2</b> Calculate status</a></li>
-<li class="chapter" data-level="6.6.3" data-path="calcs-basic.html"><a href="calcs-basic.html#calculate-trend"><i class="fa fa-check"></i><b>6.6.3</b> Calculate trend</a></li>
-<li class="chapter" data-level="6.6.4" data-path="calcs-basic.html"><a href="calcs-basic.html#scores-variable-combining-status-and-trend"><i class="fa fa-check"></i><b>6.6.4</b> Scores variable: combining status and trend</a></li>
+<li class="chapter" data-level="6.6.2" data-path="calcs-basic.html"><a href="calcs-basic.html#goal-model"><i class="fa fa-check"></i><b>6.6.2</b> Goal Model</a></li>
+<li class="chapter" data-level="6.6.3" data-path="calcs-basic.html"><a href="calcs-basic.html#calculate-status"><i class="fa fa-check"></i><b>6.6.3</b> Calculate Status</a></li>
+<li class="chapter" data-level="6.6.4" data-path="calcs-basic.html"><a href="calcs-basic.html#calculate-trend"><i class="fa fa-check"></i><b>6.6.4</b> Calculate Trend</a></li>
+<li class="chapter" data-level="6.6.5" data-path="calcs-basic.html"><a href="calcs-basic.html#scores-variable-combining-status-and-trend"><i class="fa fa-check"></i><b>6.6.5</b> Scores variable: combining status and trend</a></li>
 </ul></li>
 <li class="chapter" data-level="6.7" data-path="calcs-basic.html"><a href="calcs-basic.html#tailor-a-goal-model-using-original-data-layers"><i class="fa fa-check"></i><b>6.7</b> Tailor a goal model using original data layers</a></li>
 <li class="chapter" data-level="6.8" data-path="calcs-basic.html"><a href="calcs-basic.html#tailor-a-goal-model-using-new-data-layers"><i class="fa fa-check"></i><b>6.8</b> Tailor a goal model using new data layers</a><ul>
 <li class="chapter" data-level="6.8.1" data-path="calcs-basic.html"><a href="calcs-basic.html#save-and-register-a-new-prepared-data-layer."><i class="fa fa-check"></i><b>6.8.1</b> Save and register a new prepared data layer.</a></li>
+<li class="chapter" data-level="6.8.2" data-path="calcs-basic.html"><a href="calcs-basic.html#update-the-goal-model"><i class="fa fa-check"></i><b>6.8.2</b> Update the goal model</a></li>
 </ul></li>
+<li class="chapter" data-level="6.9" data-path="calcs-basic.html"><a href="calcs-basic.html#recap-of-this-tutorial"><i class="fa fa-check"></i><b>6.9</b> Recap of this tutorial</a></li>
 </ul></li>
 <li class="chapter" data-level="7" data-path="calcs-advanced.html"><a href="calcs-advanced.html"><i class="fa fa-check"></i><b>7</b> Calculations: advanced workflow</a><ul>
 <li class="chapter" data-level="7.1" data-path="calcs-advanced.html"><a href="calcs-advanced.html#changing-subgoals"><i class="fa fa-check"></i><b>7.1</b> Changing subgoals</a><ul>
@@ -225,6 +228,7 @@ TODO `@jules32`: (keep this?)
 <h2><span class="header-section-number">6.2</span> Review the Toolbox file ecosystem</h2>
 <!--- TODO `@ningningj`: toolbox_ecosystem.rmd--->
 <p>This was covered in Chapter <a href="toolbox.html#toolbox">4</a>. In our <strong>toolbox-demo</strong> repo, we have a scenario folder called <strong>region2016</strong>. Remember that the ecosystem structure of any OHI assessment is the same, so as you learn to navigate through and calculate scores in the <strong>toolbox-demo</strong> repository you are also learning how to navigate through and calculate scores in any other OHI assessment repository — yours or anyone else’s.</p>
+<p>TODO: 17 regions</p>
 <div id="run-install_ohicore.r" class="section level3">
 <h3><span class="header-section-number">6.2.1</span> Run <code>install_ohicore.r</code></h3>
 <p>If you don’t already hav <code>ohicore</code> installed, let’s do that now. <code>ohicore</code> is an R package developed by the OHI team that has all the essential core functions and supporting packages you will use to develop your assessment and calculate scores. You will install <code>ohicore</code> one time and then load its library from the <code>toolbox-training</code> repository whenever you work on your assessment to gain access to all those functions and packages.</p>
@@ -412,6 +416,7 @@ scores =<span class="st"> </span>ohicore::<span class="kw">CalculateAll</span>(c
 </ul>
 <p><strong>Checking your work:</strong> Whenever there are changes made (addition, deletion, changes in .csv or r script), you will be notified in the Git window, since Git is tracking changes to your work. This is a good place to confirm you have did the things you set out to do, and you can also see if you errantly did anything you didn’t mean to.</p>
 <p>So here, since you added a new data layer, and also expect changes to AO scores in <code>score.csv</code>. <code>layers.csv</code> will also change because <code>ohicore</code> will update fields in this file as it runs through its checks. But we don’t expect any other files to change at this point, so let’s make sure that’s true.</p>
+<p>TODO commit</p>
 </div>
 </div>
 <div id="explore-configure_toolbox.r" class="section level2">
@@ -520,7 +525,6 @@ layers =<span class="st"> </span>ohicore::<span class="kw">Layers</span>(<span c
 <h3><span class="header-section-number">6.6.1</span> Load specific data layers with <code>SelectLayersData()</code></h3>
 <p><code>SelectLayersData()</code> is an <code>ohicore</code> function to call the appropriate data layers by its layer name registered in <code>layers.csv</code> (eg. “ao_access”) Run this chunk of code and the data layers will be loaded, joined, and ready to be manipulated further:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">## &quot;select&quot;&quot; is a function from the dplyr package to let you select only the columns you would need
-
 r &lt;-<span class="st"> </span><span class="kw">SelectLayersData</span>(layers, <span class="dt">layers =</span> <span class="st">&#39;ao_access&#39;</span>, <span class="dt">narrow=</span><span class="ot">TRUE</span>) %&gt;%
 <span class="st">    </span><span class="kw">select</span>(<span class="dt">region_id=</span>id_num, <span class="dt">access=</span>val_num)
 r &lt;-<span class="st"> </span><span class="kw">na.omit</span>(r)
@@ -532,8 +536,20 @@ ry &lt;-<span class="st"> </span><span class="kw">SelectLayersData</span>(layers
 <p>Tip: it’s always a good idea to check what your data looks like and make sure there are no glaring errors. A couple of commonly used functions are: head() and str()</p>
 </blockquote>
 </div>
+<div id="goal-model" class="section level3">
+<h3><span class="header-section-number">6.6.2</span> Goal Model</h3>
+<p>The goal model that was developed for global assessments and described in Halpern et al. 2012 Supplemental Information (p. 19) states that the status for this goal is therefore measured by unmet demand (Du), which includes measures of opportunity for artisanal fishing, and the sustainability of the methods used.</p>
+<p><span class="math display">\[
+D_{U} = (1 - need) * (1 - access)
+\]</span> <span class="math display">\[
+status = (1 - D_{U}) * sustainability
+\]</span></p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">ry &lt;-<span class="st"> </span>ry %&gt;%
+<span class="st">    </span><span class="kw">mutate</span>(<span class="dt">Du =</span> (<span class="dv">1</span> -<span class="st"> </span>need) *<span class="st"> </span>(<span class="dv">1</span> -<span class="st"> </span>access)) %&gt;%
+<span class="st">    </span><span class="kw">mutate</span>(<span class="dt">status =</span> (<span class="dv">1</span> -<span class="st"> </span>Du) *<span class="st"> </span>sustainability)</code></pre></div>
+</div>
 <div id="calculate-status" class="section level3">
-<h3><span class="header-section-number">6.6.2</span> Calculate status</h3>
+<h3><span class="header-section-number">6.6.3</span> Calculate Status</h3>
 <p>Once you make sure your data layer has been loaded and joined in the right format, you can start calculate status scores!</p>
 <p>This syntax uses the <code>tidyverse</code> package that you loaded in <code>configure_toolbox.r</code>. It contains the commonly used data-wrangling functions you’ll need in almost every analysis, and enables chaining: <code>%&gt;%</code>. We’ll briefly explain some of the functions below as we encounter them.</p>
 <p>To learn more, take a look at <a href="http://tidyverse.org/">tidyverse.org</a>. This <a href="https://www.rstudio.com/wp-content/uploads/2015/02/data-wrangling-cheatsheet.pdf">cheatsheet</a> is also a helpful guide with quick references to each function.</p>
@@ -549,20 +565,20 @@ ry &lt;-<span class="st"> </span><span class="kw">SelectLayersData</span>(layers
 <span class="st">    </span><span class="kw">mutate</span>(<span class="dt">status =</span> (<span class="dv">1</span> -<span class="st"> </span>Du) *<span class="st"> </span>sustainability)
 
 <span class="co"># status: status scores are typically the most recent year of all the years you have calculated. </span>
-  r.status &lt;-<span class="st"> </span>ry %&gt;%
+  r_status &lt;-<span class="st"> </span>ry %&gt;%
 <span class="st">    </span><span class="kw">filter</span>(year==status_year) %&gt;%
 <span class="st">    </span><span class="kw">select</span>(region_id, status) %&gt;%
 <span class="st">    </span><span class="kw">mutate</span>(<span class="dt">status=</span>status*<span class="dv">100</span>)</code></pre></div>
 </div>
 <div id="calculate-trend" class="section level3">
-<h3><span class="header-section-number">6.6.3</span> Calculate trend</h3>
+<h3><span class="header-section-number">6.6.4</span> Calculate Trend</h3>
 <p>Trend scores are typically based on linear regression of status scores from the most recent five years.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"> <span class="co"># choose trend years (eg. most recent five years)</span>
 
   trend_years &lt;-<span class="st"> </span>(status_year<span class="dv">-4</span>):(status_year)
   adj_trend_year &lt;-<span class="st"> </span><span class="kw">min</span>(trend_years)
 
-  r.trend =<span class="st"> </span>ry %&gt;%
+  r_trend =<span class="st"> </span>ry %&gt;%
 <span class="st">    </span><span class="kw">group_by</span>(region_id) %&gt;%<span class="st"> </span>
 <span class="st">    </span><span class="co"># linear model: </span>
 <span class="st">    </span><span class="kw">do</span>(<span class="dt">mdl =</span> <span class="kw">lm</span>(status ~<span class="st"> </span>year, <span class="dt">data=</span>., <span class="dt">subset=</span>year %in%<span class="st"> </span>trend_years),
@@ -575,13 +591,13 @@ ry &lt;-<span class="st"> </span><span class="kw">SelectLayersData</span>(layers
 <span class="st">    </span><span class="kw">mutate</span>(<span class="dt">trend =</span> <span class="kw">round</span>(trend, <span class="dv">4</span>))</code></pre></div>
 </div>
 <div id="scores-variable-combining-status-and-trend" class="section level3">
-<h3><span class="header-section-number">6.6.4</span> Scores variable: combining status and trend</h3>
+<h3><span class="header-section-number">6.6.5</span> Scores variable: combining status and trend</h3>
 <p>Choose only the <code>region_id</code> and <code>score</code> columns, and add two more columns identifying score dimension (Status or Trend) and goal name.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"> scores =<span class="st"> </span>r.status %&gt;%
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"> scores =<span class="st"> </span>r_status %&gt;%
 <span class="st">    </span><span class="kw">select</span>(region_id, <span class="dt">score=</span>status) %&gt;%
 <span class="st">    </span><span class="kw">mutate</span>(<span class="dt">dimension=</span><span class="st">&#39;status&#39;</span>) %&gt;%
 <span class="st">    </span><span class="kw">rbind</span>(
-      r.trend %&gt;%
+      r_trend %&gt;%
 <span class="st">        </span><span class="kw">select</span>(region_id, <span class="dt">score=</span>trend) %&gt;%
 <span class="st">        </span><span class="kw">mutate</span>(<span class="dt">dimension=</span><span class="st">&#39;trend&#39;</span>)) %&gt;%
 <span class="st">    </span><span class="kw">mutate</span>(<span class="dt">goal=</span><span class="st">&#39;AO&#39;</span>)</code></pre></div>
@@ -607,7 +623,24 @@ ry &lt;-<span class="st"> </span><span class="kw">SelectLayersData</span>(layers
 <p>TODO: create another AO prep.r</p>
 <p>Now, to register this layer, we’ll need to add a new row to <code>layers.csv</code></p>
 <p>Now, in <code>functions.r</code>, we’ll need to use SelectLayersData() to access your new layer, and then use it in a calculation, using the same workflow from above.</p>
-<p>Usually, when you create a new data layer, you’ll add a new row in the spreadsheet and fill in the first eight columns (columns A-H), as explained <a href="http://ohi-science.org/manual/#register-data-layers-in-layers.csv">here</a>.</p>
+<p>Then, we’ll update the goal model.</p>
+</div>
+<div id="update-the-goal-model" class="section level3">
+<h3><span class="header-section-number">6.8.2</span> Update the goal model</h3>
+<p><span class="math display">\[
+D_{U} = (1 - (need + poverty) / 2)) * (1 - access)
+\]</span> <span class="math display">\[
+status = (1 - D_{U}) * sustainability
+\]</span></p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">ry &lt;-<span class="st"> </span>ry %&gt;%
+<span class="st">    </span><span class="kw">mutate</span>(<span class="dt">Du =</span> (<span class="dv">1</span> -<span class="st"> </span>(need +<span class="st"> </span>poverty) /<span class="st"> </span><span class="dv">2</span> ) *<span class="st"> </span>(<span class="dv">1</span> -<span class="st"> </span>access)) %&gt;%
+<span class="st">    </span><span class="kw">mutate</span>(<span class="dt">status =</span> (<span class="dv">1</span> -<span class="st"> </span>Du) *<span class="st"> </span>sustainability)</code></pre></div>
+</div>
+</div>
+<div id="recap-of-this-tutorial" class="section level2">
+<h2><span class="header-section-number">6.9</span> Recap of this tutorial</h2>
+<p>We have just successfully run through the basic workflow to calculate OHI scores with several variations using our <strong>toolbox-demo</strong> repository.</p>
+<p>… TODO</p>
 <!---next steps after Eva training: 
 
 ## Update pressures and resilience matrices
@@ -618,7 +651,6 @@ ry &lt;-<span class="st"> </span><span class="kw">SelectLayersData</span>(layers
 
 --->
 
-</div>
 </div>
 </div>
             </section>
@@ -666,6 +698,17 @@ gitbook.start({
 });
 </script>
 
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    if (location.protocol !== "file:" && /^https?:/.test(script.src))
+      script.src  = script.src.replace(/^https?:/, '');
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
 </body>
 
 </html>

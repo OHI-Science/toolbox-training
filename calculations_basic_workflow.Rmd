@@ -36,6 +36,8 @@ Before we begin, make sure you have done the following:
 
 This was covered in Chapter \@ref(toolbox). In our **toolbox-demo** repo, we have a scenario folder called **region2016**. Remember that the ecosystem structure of any OHI assessment is the same, so as you learn to navigate through and calculate scores in the **toolbox-demo** repository you are also learning how to navigate through and calculate scores in any other OHI assessment repository — yours or anyone else's.
 
+TODO: 17 regions
+
 ### Run `install_ohicore.r`
 
 If you don't already hav `ohicore` installed, let's do that now. `ohicore` is an R package developed by the OHI team that has all the essential core functions and supporting packages you will use to develop your assessment and calculate scores. You will install `ohicore` one time and then load its library from the `toolbox-training` repository whenever you work on your assessment to gain access to all those functions and packages. 
@@ -208,6 +210,7 @@ Now, let's rerun `calculate_scores.r`. `ohicore` will now use your tailored data
 
 So here, since you added a new data layer, and also expect changes to AO scores in `score.csv`. `layers.csv` will also change because `ohicore` will update fields in this file as it runs through its checks. But we don't expect any other files to change at this point, so let's make sure that's true. 
 
+TODO commit
 
 ## Explore `configure_toolbox.r`
 
@@ -332,7 +335,6 @@ Run this chunk of code and the data layers will be loaded, joined, and ready to 
 
 ```{r load_data, eval=FALSE}
 ## "select"" is a function from the dplyr package to let you select only the columns you would need
-
 r <- SelectLayersData(layers, layers = 'ao_access', narrow=TRUE) %>%
     select(region_id=id_num, access=val_num)
 r <- na.omit(r)
@@ -342,10 +344,26 @@ ry <- SelectLayersData(layers, layers = 'ao_need', narrow=TRUE) %>%
     left_join(r, by="region_id")
 ```
 
-
 > Tip: it's always a good idea to check what your data looks like and make sure there are no glaring errors. A couple of commonly used functions are: head() and str()
 
-### Calculate status 
+### Goal Model 
+
+The goal model that was developed for global assessments and described in Halpern et al. 2012 Supplemental Information (p. 19) states that the status for this goal is therefore measured by unmet demand (Du), which includes measures of opportunity for artisanal fishing, and the sustainability of the methods used. 
+
+$$
+D_{U} = (1 - need) * (1 - access)
+$$
+$$
+status = (1 - D_{U}) * sustainability
+$$
+
+```{r ao goal model, eval=FALSE}
+ry <- ry %>%
+    mutate(Du = (1 - need) * (1 - access)) %>%
+    mutate(status = (1 - Du) * sustainability)
+```
+
+### Calculate Status 
 
 Once you make sure your data layer has been loaded and joined in the right format, you can start calculate status scores!
 
@@ -366,13 +384,13 @@ To learn more, take a look at [tidyverse.org](http://tidyverse.org/). This [chea
     mutate(status = (1 - Du) * sustainability)
 
 # status: status scores are typically the most recent year of all the years you have calculated. 
-  r.status <- ry %>%
+  r_status <- ry %>%
     filter(year==status_year) %>%
     select(region_id, status) %>%
     mutate(status=status*100)
 ```
 
-### Calculate trend 
+### Calculate Trend 
 
 Trend scores are typically based on linear regression of status scores from the most recent five years. 
 
@@ -382,7 +400,7 @@ Trend scores are typically based on linear regression of status scores from the 
   trend_years <- (status_year-4):(status_year)
   adj_trend_year <- min(trend_years)
 
-  r.trend = ry %>%
+  r_trend = ry %>%
     group_by(region_id) %>% 
     # linear model: 
     do(mdl = lm(status ~ year, data=., subset=year %in% trend_years),
@@ -400,11 +418,11 @@ Trend scores are typically based on linear regression of status scores from the 
 
 Choose only the `region_id` and `score` columns, and add two more columns identifying score dimension (Status or Trend) and goal name. 
 ```{r, eval=FALSE}
- scores = r.status %>%
+ scores = r_status %>%
     select(region_id, score=status) %>%
     mutate(dimension='status') %>%
     rbind(
-      r.trend %>%
+      r_trend %>%
         select(region_id, score=trend) %>%
         mutate(dimension='trend')) %>%
     mutate(goal='AO')
@@ -441,10 +459,31 @@ TODO: create another AO prep.r
 Now, to register this layer, we'll need to add a new row to `layers.csv`
 
 Now, in `functions.r`, we'll need to use SelectLayersData() to access your new layer, and then use it in a calculation, using the same workflow from above.
- 
-Usually, when you create a new data layer, you'll add a new row in the spreadsheet and fill in the first eight columns (columns A-H), as explained [here](http://ohi-science.org/manual/#register-data-layers-in-layers.csv). 
 
- 
+Then, we'll update the goal model. 
+
+### Update the goal model
+
+$$
+D_{U} = (1 - (need + poverty) / 2)) * (1 - access)
+$$
+$$
+status = (1 - D_{U}) * sustainability
+$$
+
+```{r tailored ao goal model, eval=FALSE}
+ry <- ry %>%
+    mutate(Du = (1 - (need + poverty) / 2 ) * (1 - access)) %>%
+    mutate(status = (1 - Du) * sustainability)
+```
+
+## Recap of this tutorial 
+
+We have just successfully run through the basic workflow to calculate OHI scores with several variations using our **toolbox-demo** repository. 
+
+...
+TODO 
+
 
 <!---next steps after Eva training: 
 
