@@ -47,7 +47,10 @@ Let's open and source `install_ohicore.r`. Learn more about `ohicore` in Chapter
 
 ## Run `calculate_scores.r`
 
-`calculate_scores.r` is a script that you'll run a lot — both as a whole and piece-by-piece. It will load the libraries you need and `ohicore` will check your book-keeping and configuration, calculate OHI scores, and ultimately save the scores for each goal and dimension in `scores.csv`. The 'dimensions' of OHI goal scores are Status, Trend, Pressures, Resilience, Likely Future State, and overall goal Score. Dimensions are calculated for each goal in a specific order, as we will see below. `calculate_scores.r` will combine information from your tailored repository (your data layers, Status and Trend models, pressures and resilience matrices), and calculate scores with OHI core functions from `ohicore`. 
+`calculate_scores.r` takes inputs (data and models) from the Toolbox and compute OHI scores, as the file name suggests. It has several components which we will explore in turn in the rest of  the tutorial. 
+![](https://docs.google.com/drawings/d/1OhA7p5-dmrk6dGeP_gWEXFD2pI1ik8KhUYNUSLUVgd4/pub?w=960&h=720)
+
+`calculate_scores.r` is also a script that you'll run a lot — both as a whole and piece-by-piece. It will load the libraries you need and `ohicore` will check your book-keeping and configuration, calculate OHI scores, and ultimately save the scores for each goal and dimension in `scores.csv`. The 'dimensions' of OHI goal scores are Status, Trend, Pressures, Resilience, Likely Future State, and overall goal Score. Dimensions are calculated for each goal in a specific order, as we will see below. `calculate_scores.r` will combine information from your tailored repository (your data layers, Status and Trend models, pressures and resilience matrices), and calculate scores with OHI core functions from `ohicore`. 
 
 Open `calculate_scores.r` after navigating into the `region2016` folder. 
 
@@ -173,6 +176,8 @@ We have 17 regions in the **toolbox-demo** repo. An additional region 0 is the a
 
 We have just successfully run through the basic workflow to calculate OHI scores. We will build on this basic workflow, by exploring the operations above in more detail, and by updating the data, models, and configurations within the **toolbox-demo** repository. 
 
+![](https://docs.google.com/drawings/d/1CnZ2qwQQzTjJuZ3P53FuQ4qhkBdq1xl6UuZnQmt2v80/pub?h=450)
+
 ### A note about error messages
 
 Hopefully this first time through `calculate_scores.r` you did not encounter error messages, but you definitely will as you move ahead. Error messages are often due to typos or miscommunications between what you tell `R` versus what it expects. You will encounter error messages due to `R` itself, and due to `ohicore`. Error messages often have human-friendly messages to alert you to what went wrong, and we are continually improving error messages you'll encounter when you use `ohicore` so you can try to solve them more easily. Some commonly occurring errors and how to fix them can be found in the Troubleshooting section of the manual. Copy-pasting error messages into Google is also one of the best places to start. 
@@ -181,6 +186,8 @@ Hopefully this first time through `calculate_scores.r` you did not encounter err
 ## Tailor a data layer and rerun `calculate_scores.r`
 
 In this example, we will prepare local data that will substitute Global OHI data for the data layer `ao_access` and recalculate scores without modifying the goal model itself.
+
+![](https://docs.google.com/drawings/d/1kRwkY_vqAXh-nACsS39ZHEVYW_zsGSFiKs_-5W6swBs/pub?h=450)
 
 It's always a good idea to Restart `R` before you begin something like this to make sure you don't have any variables loaded that will cause problems later on.
 
@@ -216,11 +223,13 @@ TODO commit
 
 So now let's take a closer look at `configure_toolbox.r`, the first script that we run. 
 
+![](https://docs.google.com/drawings/d/1oHMdrXNSeJ6l17aMUXihThYfb-HqvGviFrBYwJ2xldY/pub?h=450)
+
 `configure_toolbox.r` combines everything required to calculate OHI scores and checks that they are properly formatted, and will minimize potential errors later on. It makes sure that your data and goal models are ready to be used to calculate scores. 
 
 ![](https://docs.google.com/drawings/d/1WvHfWe06D2x9cKB7vhWrmvmxuRpmGvzsMs9AjS23g3E/pub?h=450)
 
-Any time you make a change to a data layer or a goal model and want to recalculate scores, you will need to re-run `configure_toolbox.r` to have `ohicore` operate on the most up-to-date information. You can click "Source" to run all the lines:
+**Any time you make a change to a data layer or a goal model and want to recalculate scores, you will need to re-run `configure_toolbox.r` to have `ohicore` operate on the most up-to-date information**. You can click "Source" to run all the lines:
 
 ![](https://docs.google.com/drawings/d/1JvSJKyiwvp92--obTwHT3IYht1XE0823sORJ4FdnX74/pub?h=450)
 
@@ -229,10 +238,6 @@ It's also a good idea to go to RStudio's Session menu and select Restart R to ma
 ![](https://docs.google.com/drawings/d/1FmN6httmUUOcz1a1-2XjXxOnVWsZ8t68mVVGFSg7F1E/pub?w=960&h=432)
 
 ### Load libraries and set working directory
-
-<!-- TODO `@ningningj`: check this to see it's complete and a similar to style in the `Run calculate_scores.r section` above -->
-
-<!-- Also, if you are requiring other libraries as you develop your own goal models, this would be the place to load them.  -->
 
 The first two things that `configure_toolbox.r` does is to set up your working environment. First, it loads `ohicore` and any `R` packages that will be needed as you work with `functions.r`: `tidyverse` (which includes `dplyr` and `tidyr`) and `stringr`. As you need other packages you can add them here to load. Second, it sets your working directory to your assessment's scenario: "region2016". 
 
@@ -307,8 +312,11 @@ layers = ohicore::Layers('layers.csv', 'layers')
 
 ## Explore a goal model in `functions.r`
 
-Remember from `calculate_scores.r` that after `configure_toolbox.r` runs, the next thing that happens is that `CalculateScores()` runs through the goal models and calculates Status and Trend. Status and Trend calculations are contained in `functions.r` in the `conf` folder.
+Remember from `calculate_scores.r` that after `configure_toolbox.r` runs, the next thing that happens is that `CalculateScores()` runs through the goal models and calculates Status and Trend. Status and Trend calculations are contained in `functions.r`.
 
+![](https://docs.google.com/drawings/d/1VRckHItA151selmkBVtROk6OnLnI_ODIu2gIjSnFgmo/pub?h=450)
+
+`functions.r` is contained in the `conf` folder:
 ![](https://docs.google.com/drawings/d/1CKNjIORLJOEaV2XW4Z9QuFLN7q1lJ1PaEGg2dSG1-_o/pub?h=450)
 
 `functions.r` is a big list of all goal models in the assessment. Each goal model is an individual `R` function that calculates Status and Trend, and you will modify the goal model within the confines of each function. You can run all of them at the once or each individually.
