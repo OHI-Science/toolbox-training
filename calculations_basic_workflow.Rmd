@@ -1,38 +1,43 @@
 # Calculations: basic workflow {#calcs-basic} 
 
+The purpose of Chapter \@ref(calcs-basic) is to introduce you to the basic workflow for calculating OHI scores. This is a a 2-hour hands-on training: you will be following along on your own computer and working with a copy of the demonstration repository that is used throughout the this chapter.
+
 ## Overview
 
-This is a 2-hour hands-on training. All training materials are below, and can also serve as a self-paced workshop without guided instruction. 
-
-This training will introduce you to the workflow required to calculate OHI scores. Calculating scores requires the `ohicore` package working properly with your tailored repository. Your tailored repository will have information specific to your assessment, including formatted data layers and goal models that are written as `R` functions, and `ohicore` will perform core operations by checking your configuration before beginning calculations. 
+Calculating scores requires a tailored repository operating with the OHI `R` package `ohicore`. The tailored repo has information specific to your assessment — most importantly the data and goal models — and `ohicore` will combine these with OHI core operations to calculate scores. You will always start with a tailored repository that has data and models extracted from the most recent Global OHI assessment.
 
 ![](https://docs.google.com/drawings/d/1wGK68NRn5bmhZo_gC2A9sx-AcpIZHVp45ID5_HQKVJ0/pub?w=768&h=192)
 
-<!---
-TODO `@jules32`: (keep this?)
 
-    - single goal model with updated data, basically line-by-line to understand the architecture of goal models (access the correct data layers, calc status, calc trend, make sure the final output is standard for what the `scores variables` need. 
-    - then calculate all goal models and scores, including pressures, and resilience. 
-    - introduce which data layer we modified and which goal model we are using as an example AO
-    - a lot of shuffling and bookkeeping. 
-    - runs the status, trend in functions.r, but also calculates pressures, resilience, lfs, and overall scores. 
-    - score.csv updated, check that in Git tab of RStudio
-     book keeping, 
---->
+This training will focus around the file in tailored repo called `calculate_scores.r. We will repeat the basic workflow to calculate scores, each time introducing more complexity through several variations: 
+
+1. Calculate scores 'out of the box' using data and models extracted from the Global 2016 assessment
+1. Calculate scores using a tailored data layer and the 'out of the box' model
+1. Calculate scores using a tailored data layer and a tailored model
+
+Along the way we'll also dive deeper into the code itself, focusing particularly on required configuration with `configure_toolbox.r` and developing goal models in `functions.r`. 
+
+This is a lot to cover in a 2-hour training. But the Toolbox has a lot of moving parts, and we cannot cover all of it here. This training will give you big take home messages and experience for what you need to begin calculating scores. There are a lot of details and other operations that we won't get into here and that will be coming in future tutorials (including tailoring pressures & resilience, and how to change subgoals). 
+
 
 ### Prerequisites
 
-Before we begin, make sure you have done the following: 
+Before the training, please make sure you have done the following: 
 
-1. RStudio is configured with Git/GitHub, and you have an up-to-date version of R and RStudio (Chapter \@ref(datascience))
+1. Make sure you have up-to-date versions of `R` and RStudio and have RStudio configured with Git/GitHub
+    - https://cloud.r-project.org
+    - http://www.rstudio.com/download 
+    - http://happygitwithr.com/rstudio-git-github.html <!--- TODO (Chapter \@ref(datascience))--->
 1. Fork the **toolbox-demo** repository into your own GitHub account by going to https://github.com/OHI-Science/toolbox-demo, clicking "Fork" in the upper right corner, and selecting your account
-1. Clone the **toolbox-demo** repo from your GitHub account into RStudio
+1. Clone the **toolbox-demo** repo from your GitHub account into RStudio into a folder called "github" in your home directory (filepath "~/github")
 1. Get comfortable: be set up with two screens if possible. You will be following along in RStudio on your own computer while also watching an instructor's screen or following this tutorial.
 
+----
 
 ## Review the Toolbox file ecosystem
 
-<!--- TODO `@ningningj`: toolbox_ecosystem.rmd--->
+<!--- TODO `@ningningj`: toolbox_ecosystem.rmd
+TODO @jules32: once toolbox_ecosystem.rmd is done, move this Review section into the Prerequesites section--->
 
 This was covered in Chapter \@ref(toolbox). In our **toolbox-demo** repo, we have a scenario folder called **region2016**. Remember that the ecosystem structure of any OHI assessment is the same, so as you learn to navigate through and calculate scores in the **toolbox-demo** repository you are also learning how to navigate through and calculate scores in any other OHI assessment repository — yours or anyone else's.
 
@@ -40,7 +45,7 @@ TODO: 17 regions
 
 ### Run `install_ohicore.r`
 
-If you don't already hav `ohicore` installed, let's do that now. `ohicore` is an R package developed by the OHI team that has all the essential core functions and supporting packages you will use to develop your assessment and calculate scores. You will install `ohicore` one time and then load its library from the `toolbox-training` repository whenever you work on your assessment to gain access to all those functions and packages. 
+If you don't already have `ohicore` installed, let's do that now. `ohicore` is an R package developed by the OHI team that has all the essential core functions and supporting packages you will use to develop your assessment and calculate scores. You will install `ohicore` one time and then load its library from the `toolbox-training` repository whenever you work on your assessment to gain access to all those functions and packages. 
 
 Let's open and source `install_ohicore.r`. Learn more about `ohicore` in Chapter X. <!---TODO:: where would a section on ohicore go? Maybe need to make a vingette for it and link to it but not have a section here.---> 
 
@@ -177,15 +182,16 @@ We have 17 regions in the **toolbox-demo** repo. An additional region 0 is the a
 > Note: each region in your assessment will have a numeric region identifer, called a `region_id` or `rgn_id` for short. You can see a list of all regions and corresponding identifiers in [toolbox-demo/region2016/spatial/regions_list.csv](https://github.com/OHI-Science/toolbox-demo/blob/master/region2016/spatial/regions_list.csv)
 
 
+### A note about error messages
+
+Hopefully this first time through `calculate_scores.r` you did not encounter error messages, but you definitely will as you move ahead. Error messages are often due to typos or miscommunications between what you tell `R` versus what it expects. You will encounter error messages due to `R` itself, and due to `ohicore`. Error messages often have human-friendly messages to alert you to what went wrong, and we are continually improving error messages you'll encounter when you use `ohicore` so you can try to solve them more easily. Some commonly occurring errors and how to fix them can be found in the Troubleshooting section of the manual. Copy-pasting error messages into Google is also one of the best places to start. 
+
+
 ### Recap of what just happened
 
 We have just successfully run through the basic workflow to calculate OHI scores. We will build on this basic workflow, by exploring the operations above in more detail, and by updating the data, models, and configurations within the **toolbox-demo** repository. 
 
 ![](https://docs.google.com/drawings/d/1CnZ2qwQQzTjJuZ3P53FuQ4qhkBdq1xl6UuZnQmt2v80/pub?h=450)
-
-### A note about error messages
-
-Hopefully this first time through `calculate_scores.r` you did not encounter error messages, but you definitely will as you move ahead. Error messages are often due to typos or miscommunications between what you tell `R` versus what it expects. You will encounter error messages due to `R` itself, and due to `ohicore`. Error messages often have human-friendly messages to alert you to what went wrong, and we are continually improving error messages you'll encounter when you use `ohicore` so you can try to solve them more easily. Some commonly occurring errors and how to fix them can be found in the Troubleshooting section of the manual. Copy-pasting error messages into Google is also one of the best places to start. 
 
 
 ## Tailor a data layer and rerun `calculate_scores.r`
@@ -206,7 +212,7 @@ Open `toolbox-demo/prep/AO/access_prep.R` and source it after reading it through
 
 ### Register our data layer 
 
-Now that we have prepared and saved our data layer, we'll register it in `layers.csv`. `layers.csv`is a registry that will direct `ohicore` to appropriate data layers, and has information about each data layer - which goal it is used for, filename, column names, etc. For futher detail see Chapter \@ref(prep-data).
+Now that we have prepared and saved our data layer, we'll register it in `layers.csv`. `layers.csv`is a registry that will direct `ohicore` to appropriate data layers, and has information about each data layer - which goal it is used for, filename, column names, etc. For further detail see Chapter \@ref(prep-data).
 
 Since we have tailored an existing data layer that is already registered, we just need to have it point to our new data layer under the "filename" column. 
 
@@ -214,9 +220,7 @@ Open `region2016/layers.csv` in a spreadsheet software (i.e. Microsoft Excel or 
 
 ### Rerun `calculate_scores.r` 
 
-Now, let's rerun `calculate_scores.r`. `ohicore` will now use your tailored data when it creates the "ao_access" layer. 
-
-- and layers.csv, and your layers file
+Now, let's rerun `calculate_scores.r`. `ohicore` will now use your tailored data when it creates the "ao_access" layer because you've registered it in `layers.csv` and the file is available in the layers folder. 
 
 **Checking your work:** Whenever there are changes made (addition, deletion, changes in .csv or r script), you will be notified in the Git window, since Git is tracking changes to your work. This is a good place to confirm you have did the things you set out to do, and you can also see if you errantly did anything you didn't mean to.
 
@@ -317,7 +321,7 @@ layers = ohicore::Layers('layers.csv', 'layers')
 
 ## Explore a goal model in `functions.r`
 
-Remember from `calculate_scores.r` that after `configure_toolbox.r` runs, the next thing that happens is that `CalculateScores()` runs through the goal models and calculates Status and Trend. Status and Trend calculations are contained in `functions.r`.
+Remember from `calculate_scores.r` that after `configure_toolbox.r` runs, the next thing that happens is that `CalculateAll()` runs through the goal models and calculates Status and Trend. Status and Trend calculations are contained in `functions.r`.
 
 ![](https://docs.google.com/drawings/d/1VRckHItA151selmkBVtROk6OnLnI_ODIu2gIjSnFgmo/pub?h=450)
 
@@ -343,18 +347,19 @@ The following things happen in each goal model:
 
 ### Load specific data layers with `SelectLayersData()`
 
-`SelectLayersData()` is an `ohicore` function to call the appropriate data layers by its layer name registered in `layers.csv` (eg. "ao_access")
+`SelectLayersData()` is an `ohicore` function to call the appropriate data layers by its layer name registered in `layers.csv` (e.g. "ao_access")
 Run this chunk of code and the data layers will be loaded, joined, and ready to be manipulated further: 
 
 ```{r load_data, eval=FALSE}
-## "select"" is a function from the dplyr package to let you select only the columns you would need
-r <- SelectLayersData(layers, layers = 'ao_access', narrow=TRUE) %>%
-    select(region_id=id_num, access=val_num)
-r <- na.omit(r)
+ ## read in individual data layers
+  d1 <- SelectLayersData(layers, layers = 'ao_access', narrow=TRUE) %>%
+    select(region_id = id_num, access = val_num)
 
-ry <- SelectLayersData(layers, layers = 'ao_need', narrow=TRUE) %>%
-    select(region_id = id_num, year, need=val_num) %>%
-    left_join(r, by="region_id")
+  d2 <- SelectLayersData(layers, layers = 'ao_need', narrow=TRUE) %>%
+    select(region_id = id_num, year, need = val_num)
+
+  ## join data layers into single data frame (see RStudio cheatsheets)
+  ao_data <- left_join(d1, d2, by="region_id") 
 ```
 
 > Tip: it's always a good idea to check what your data looks like and make sure there are no glaring errors. A couple of commonly used functions are: head() and str()
@@ -371,9 +376,10 @@ status = (1 - D_{U}) * sustainability
 $$
 
 ```{r ao goal model, eval=FALSE}
-ry <- ry %>%
+ ao_model <- ao_data %>%
     mutate(Du = (1 - need) * (1 - access)) %>%
     mutate(status = (1 - Du) * sustainability)
+  # head(ao_model); summary(ao_model)
 ```
 
 ### Calculate Status 
@@ -392,12 +398,12 @@ To learn more, take a look at [tidyverse.org](http://tidyverse.org/). This [chea
   sustainability=1.0
   status_year = 2015
 
-  ry <- ry %>%
-    mutate(Du = (1 - need) * (1 - access)) %>%
+  ao_model <- ao_data %>%
+    mutate(Du = (1 - (need+poverty/2)) * (1 - access)) %>%
     mutate(status = (1 - Du) * sustainability)
-
+  
 # status: status scores are typically the most recent year of all the years you have calculated. 
-  r_status <- ry %>%
+  ao_status <- ao_model %>%
     filter(year==status_year) %>%
     select(region_id, status) %>%
     mutate(status=status*100)
@@ -413,7 +419,7 @@ Trend scores are typically based on linear regression of status scores from the 
   trend_years <- (status_year-4):(status_year)
   adj_trend_year <- min(trend_years)
 
-  r_trend = ry %>%
+  ao_trend = ao_model %>%
     group_by(region_id) %>% 
     # linear model: 
     do(mdl = lm(status ~ year, data=., subset=year %in% trend_years),
@@ -431,17 +437,18 @@ Trend scores are typically based on linear regression of status scores from the 
 
 Choose only the `region_id` and `score` columns, and add two more columns identifying score dimension (Status or Trend) and goal name. 
 ```{r, eval=FALSE}
- scores = r_status %>%
+ scores = ao_status %>%
     select(region_id, score=status) %>%
     mutate(dimension='status') %>%
     rbind(
-      r_trend %>%
+      ao_trend %>%
         select(region_id, score=trend) %>%
         mutate(dimension='trend')) %>%
     mutate(goal='AO')
 ```
 
 The scores variable is something that you'll see at the end of every goal model; `ohicore` will combine these all together when `CalculateAll()` runs.
+
 
 ## Tailor a goal model using original data layers
 
@@ -452,7 +459,7 @@ First let's restart `R` and source `configure_toolbox.r`. We can do this from ei
 Now, let's go to `functions.r` and go back to the AO model. Let's do something pretty simple to tailor the goal model. Let's say we just wanted to divide the variable `Du` by 2 in the equation. 
 
 ```{r tailor AO goal model, eval=FALSE}
- ry <- ry %>%
+ ao_model <- ao_data %>%
     mutate(Du = (1 - need) * (1 - access)) %>%
     mutate(status = (1 - Du/2) * sustainability)
 ```
@@ -461,41 +468,91 @@ We can run the rest of the AO function line-by-line and inspect the scores varia
 
 It looks OK to me, so let's run the rest of `calculate_scores.r`, and use Git's differencing feature to see how our scores have changed. This is a great way to double-check and error-check that things are working the way you expected. 
 
+
 ## Tailor a goal model using new data layers
  
-Now, we are going to tailor a goal model by adding a new data layer, so it's the combination of what we've gone through above. 
+The final thing we will do in this chapter is to tailor a goal model by adding a new variable. This will mean that we will prepare, save, and register a *new* data layer and update the goal model in `functions.r`. It will be a combination of what we've done previously in this chapter. 
 
-### Save and register a new prepared data layer.
-
-TODO: create another AO prep.r
-
-Now, to register this layer, we'll need to add a new row to `layers.csv`
-
-Now, in `functions.r`, we'll need to use SelectLayersData() to access your new layer, and then use it in a calculation, using the same workflow from above.
-
-Then, we'll update the goal model. 
-
-### Update the goal model
+Let's say we want to tailor the AO goal model by adding a new variable for *poverty* into the equation.
 
 $$
-D_{U} = (1 - (need + poverty) / 2)) * (1 - access)
+D_{U} = (1 - (need + poverty) / 2) * (1 - access)
 $$
 $$
 status = (1 - D_{U}) * sustainability
 $$
 
+
+### Prepare and save our new data layer
+
+We will create the new data layer for poverty by running a script in the prep folder. 
+
+Open `toolbox-demo/prep/AO/poverty_prep.R` and source the file after reading it through. The result will be a new data layer saved to the "layers" folder, and you should see that there is a new file saved in your Git window. 
+
+### Register our new data layer 
+
+Now that we have prepared and saved our data layer, we'll register it in `layers.csv`. This time, since we have added an additional data layer that has not been previously registered, we need to add a new row. 
+
+Open `region2016/layers.csv` in a spreadsheet software (i.e. Microsoft Excel or Open Office). Add a new row for "ao_poverty", and fill in the following information. We've added the row near the other AO data layers.
+
+![](figs/ao_poverty_demo_layers.png)
+
+> Note: you could also script updating layers.csv from your prep file (not illustrated).
+
+<!---TODO: script this from the prep file --->
+
+### Update the AO goal model
+
+We will need to do two things to update the goal model in `functions.r`.
+
+First, we'll have to load our data layer with `SelectLayersData()`. You can copy-paste the following into your `functions.r` AO goal model and then run it after running `status_year=2015; sustainability=1.0` to make sure everything is working properly:
+
+```{r SelectLayersData pov, eval=FALSE}
+ ## read in individual data layers
+  d1 <- SelectLayersData(layers, layers = 'ao_access', narrow=TRUE) %>%
+    select(region_id = id_num, access = val_num)
+
+  d2 <- SelectLayersData(layers, layers = 'ao_need', narrow=TRUE) %>%
+    select(region_id = id_num, year, need = val_num)
+
+  ## add new poverty data layer
+  d3 <- SelectLayersData(layers, layers = 'ao_poverty', narrow=TRUE) %>%
+    select(region_id = id_num, year, poverty = val_num)
+
+  ## join data layers into single data frame, including the new poverty data layer
+  ao_data <- left_join(d1, d2, by="region_id") %>%
+    left_join(d3, by=c("region_id", "year"))
+```
+
+Next, we'll tailor the goal model itself. Here is how the goal model looks as an equation and in `R`: you can copy-paste this model into `functions.r`, replacing the existing model.
+
+$$
+D_{U} = (1 - (need + poverty) / 2) * (1 - access)
+$$
+
+$$
+status = (1 - D_{U}) * sustainability
+$$
+
 ```{r tailored ao goal model, eval=FALSE}
-ry <- ry %>%
+## tailored goal model with poverty
+ao_model <- ao_data %>%
     mutate(Du = (1 - (need + poverty) / 2 ) * (1 - access)) %>%
     mutate(status = (1 - Du) * sustainability)
 ```
 
+### Rerun `calculate_scores.r`
+
+Everything is looking good in `functions.r` and in the Git tab that we're looking at as we go along. Now let's restart R and rerun `calculate_scores.r`. We'll see that `scores.csv` will also update when we run this. 
+
+
 ## Recap of this tutorial 
 
-We have just successfully run through the basic workflow to calculate OHI scores with several variations using our **toolbox-demo** repository. 
+We have completed Chapter \@ref(calcs-basic)  successfully run through the basic workflow to calculate OHI scores with several variations using our **toolbox-demo** repository. 
 
-...
-TODO 
+Each variation involves the same basic workflow of bookkeeping and running `calculate_scores.r`, and will enable you to begin tailoring the Toolbox for your assessment.
+
+![](https://docs.google.com/drawings/d/1OhA7p5-dmrk6dGeP_gWEXFD2pI1ik8KhUYNUSLUVgd4/pub?w=960&h=720)
 
 
 <!---next steps after Eva training: 
