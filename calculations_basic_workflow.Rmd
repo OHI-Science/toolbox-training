@@ -70,6 +70,7 @@ Open `calculate_scores.r` after navigating into the `region2016` folder.
 ### Source `configure_toolbox.R`
 
 We will start by **sourcing `configure_toolbox.R`**.
+![](https://docs.google.com/drawings/d/1VRIZQFkbsDXNRtDQYBVyQIJvVkzP1POjKp8g8G3Ogg8/pub?h=450)
 
 There is output printed to the console that lists all of the layers registered, and ends with any warning messages about the layers themselves. We will explore what is happening in `configure_toolbox.r` and how to interpret these warning messages further on; for now, let's move on since we have not encountered an error. 
 
@@ -93,7 +94,8 @@ source('~/github/toolbox-demo/region2016/configure_toolbox.r')
 
 ### Run `CalculateAll()`
 
-Now let's **run `CalculateAll()`** and discuss the output. Notice too that we are saving the output to a variable called `scores`. 
+Now let's **run `CalculateAll()`** and discuss the output. Notice too that we are saving the output to a variable called `scores`.
+![](https://docs.google.com/drawings/d/1mgmRwngXwVpoqBIlrQcRqKmKgSbGwAN79BD6p1zBwS4/pub?h=450)
 
 > Note: the prefix `ohicore::` is a way to be explicit that the `CalculateAll()` is part of the `ohicore` package.
 
@@ -159,7 +161,10 @@ Following all the calculations are the warning messages, which are due to operat
 
 ### Save scores variable as `scores.csv`
 
-Finally, we will save the output from `CalculateAll()`, a variable called `scores`, as a comma-separated-value file called `scores.csv`. We can inspect it and see that it is a long-formatted file with four columns for the goal, dimension, numeric region identifier, and score. 
+Finally, we will save the output from `CalculateAll()`, a variable called `scores`, as a comma-separated-value file called `scores.csv`. 
+![](https://docs.google.com/drawings/d/1A0FP2KnlHEJ5jCT5RwFJ9YtF5DhjTArHTGzn_JoJjXs/pub?h=450)
+
+We can inspect it and see that it is a long-formatted file with four columns for the goal, dimension, numeric region identifier, and score. 
 
 ```{r write_scores, eval=FALSE}
 ## save scores as scores.csv
