@@ -48,6 +48,9 @@ In our **toolbox-demo** repo, heres are a few things to highlight:
 - regions are listed in `spatial/regions_list.csv` (and the `spatial/regions_gcs.geojson` spatial file is visible on [GitHub](https://github.com/OHI-Science/toolbox-demo/blob/master/region2016/spatial/regions_gcs.geojson))
 
 
+This figure highlights the files we will go through in this tutorial: 
+![](https://docs.google.com/drawings/d/11QcBxrUNQnzuvJBLcJLMp0C7jFvZ-mz4vIj3OkvlxZ8/pub?h=500)
+
 ### Run `install_ohicore.r`
 
 If you don't already have `ohicore` installed, let's do that now. `ohicore` is an R package developed by the OHI team that has all the essential core functions and supporting packages you will use to develop your assessment and calculate scores. You will install `ohicore` one time and then load its library from the `toolbox-training` repository whenever you work on your assessment to gain access to all those functions and packages. 
@@ -233,6 +236,10 @@ So here, since you added a new data layer, and also expect changes to AO scores 
 
 TODO commit
 
+### Recap of what just happened
+
+One way to tailor your toolbox is to modify an existing data layer. We have just successfully substituted Global OHI data layer `ao_access` with new data, and rerun `calculate_scores.r` without modifying the goal model itself.
+
 ## Explore `configure_toolbox.r`
 
 So now let's take a closer look at `configure_toolbox.r`, the first script that we run. 
@@ -323,6 +330,12 @@ Note: `@jules32`: describe this vs. SelectLayersData() --->
 ## load scenario layers for ohicore to access.
 layers = ohicore::Layers('layers.csv', 'layers')
 ```
+
+### Recap of what just happened
+
+We have explored each component of `configure_toolbox.r`, which sets up for calculations by loading ohicore and other necessary R packages, and double check that your data layers are formatted and registered properly. 
+
+![](https://docs.google.com/drawings/d/1oHMdrXNSeJ6l17aMUXihThYfb-HqvGviFrBYwJ2xldY/pub?h=450)
 
 ## Explore a goal model in `functions.r`
 
@@ -454,8 +467,14 @@ Choose only the `region_id` and `score` columns, and add two more columns identi
 
 The scores variable is something that you'll see at the end of every goal model; `ohicore` will combine these all together when `CalculateAll()` runs.
 
+### Recap of what just happened
+
+`functions.r` is a collection of goal models to calculate status and trend. Each goal is written inside an R function. 
+
 
 ## Tailor a goal model using original data layers
+
+![](https://docs.google.com/drawings/d/1VRckHItA151selmkBVtROk6OnLnI_ODIu2gIjSnFgmo/pub?h=450)
 
 Modifying a goal model involves editing the operations within that goal's model in `functions.r`. 
 
@@ -477,6 +496,8 @@ It looks OK to me, so let's run the rest of `calculate_scores.r`, and use Git's 
 ## Tailor a goal model using new data layers
  
 The final thing we will do in this chapter is to tailor a goal model by adding a new variable. This will mean that we will prepare, save, and register a *new* data layer and update the goal model in `functions.r`. It will be a combination of what we've done previously in this chapter. 
+
+![](https://docs.google.com/drawings/d/1h3QLjIJCtVgNYtzYY5lQkFWxDhYC8MrNDjzdTMY_qVY/pub?h=450)
 
 Let's say we want to tailor the AO goal model by adding a new variable for *poverty* into the equation.
 
@@ -549,7 +570,6 @@ ao_model <- ao_data %>%
 ### Rerun `calculate_scores.r`
 
 Everything is looking good in `functions.r` and in the Git tab that we're looking at as we go along. Now let's restart R and rerun `calculate_scores.r`. We'll see that `scores.csv` will also update when we run this. 
-
 
 ## Recap of this tutorial 
 
