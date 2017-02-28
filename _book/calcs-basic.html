@@ -233,8 +233,13 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <h2><span class="header-section-number">6.2</span> Review the Toolbox file ecosystem</h2>
 <!--- TODO `@ningningj`: toolbox_ecosystem.rmd
 TODO @jules32: once toolbox_ecosystem.rmd is done, move this Review section into the Prerequesites section--->
-<p>This was covered in Chapter <a href="toolbox.html#toolbox">4</a>. In our <strong>toolbox-demo</strong> repo, we have a scenario folder called <strong>region2016</strong>. Remember that the ecosystem structure of any OHI assessment is the same, so as you learn to navigate through and calculate scores in the <strong>toolbox-demo</strong> repository you are also learning how to navigate through and calculate scores in any other OHI assessment repository — yours or anyone else’s.</p>
-<p>TODO: 17 regions</p>
+<p>This was covered in Chapter <a href="toolbox.html#toolbox">4</a>. Remember that the ecosystem structure of any OHI assessment is the same, so as you learn to navigate through and calculate scores in the <strong>toolbox-demo</strong> repository you are also learning how to navigate through and calculate scores in any other OHI assessment repository — yours or anyone else’s.</p>
+<p>In our <strong>toolbox-demo</strong> repo, heres are a few things to highlight:</p>
+<ul>
+<li>our scenario folder is called <code>region2016</code></li>
+<li>goal models are <code>R</code> functions in <code>conf/functions.r</code></li>
+<li>regions are listed in <code>spatial/regions_list.csv</code> (and the <code>spatial/regions_gcs.geojson</code> spatial file is visible on <a href="https://github.com/OHI-Science/toolbox-demo/blob/master/region2016/spatial/regions_gcs.geojson">GitHub</a>)</li>
+</ul>
 <div id="run-install_ohicore.r" class="section level3">
 <h3><span class="header-section-number">6.2.1</span> Run <code>install_ohicore.r</code></h3>
 <p>If you don’t already have <code>ohicore</code> installed, let’s do that now. <code>ohicore</code> is an R package developed by the OHI team that has all the essential core functions and supporting packages you will use to develop your assessment and calculate scores. You will install <code>ohicore</code> one time and then load its library from the <code>toolbox-training</code> repository whenever you work on your assessment to gain access to all those functions and packages.</p>
