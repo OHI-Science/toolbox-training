@@ -12,11 +12,14 @@ github-repo: ohi-science/ohi-trainings
 description: "This is the official Ocean Health Index Toolbox training."
 ---
 
-# Overview {#overview}
+# Home {#home}
 
 **This training program is under active development and testing**.  
 
 Development is currently focused on Chapter \@ref(calcs-basic) and outlining other chapters.
+
+
+Each Chapter are materials for a 2-hour hands-on training. These training materials can be used to teach or can serve as a self-paced workshop without guided instruction. 
 
 
 <!---
