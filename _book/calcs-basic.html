@@ -257,7 +257,7 @@ TODO @jules32: once toolbox_ecosystem.rmd is done, move this Review section into
 </div>
 <div id="source-configure_toolbox.r" class="section level3">
 <h3><span class="header-section-number">6.3.1</span> Source <code>configure_toolbox.R</code></h3>
-<p>We will start by <strong>sourcing <code>configure_toolbox.R</code></strong>.</p>
+<p>We will start by <strong>sourcing <code>configure_toolbox.R</code></strong>. <img src="https://docs.google.com/drawings/d/1VRIZQFkbsDXNRtDQYBVyQIJvVkzP1POjKp8g8G3Ogg8/pub?h=450" /></p>
 <p>There is output printed to the console that lists all of the layers registered, and ends with any warning messages about the layers themselves. We will explore what is happening in <code>configure_toolbox.r</code> and how to interpret these warning messages further on; for now, let’s move on since we have not encountered an error.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">## run the configure_toolbox.r script to check configuration
 <span class="kw">source</span>(<span class="st">&#39;~/github/toolbox-demo/region2016/configure_toolbox.r&#39;</span>)
@@ -276,7 +276,7 @@ TODO @jules32: once toolbox_ecosystem.rmd is done, move this Review section into
 </div>
 <div id="run-calculateall" class="section level3">
 <h3><span class="header-section-number">6.3.2</span> Run <code>CalculateAll()</code></h3>
-<p>Now let’s <strong>run <code>CalculateAll()</code></strong> and discuss the output. Notice too that we are saving the output to a variable called <code>scores</code>.</p>
+<p>Now let’s <strong>run <code>CalculateAll()</code></strong> and discuss the output. Notice too that we are saving the output to a variable called <code>scores</code>. <img src="https://docs.google.com/drawings/d/1mgmRwngXwVpoqBIlrQcRqKmKgSbGwAN79BD6p1zBwS4/pub?h=450" /></p>
 <blockquote>
 <p>Note: the prefix <code>ohicore::</code> is a way to be explicit that the <code>CalculateAll()</code> is part of the <code>ohicore</code> package.</p>
 </blockquote>
@@ -324,7 +324,8 @@ scores =<span class="st"> </span>ohicore::<span class="kw">CalculateAll</span>(c
 </div>
 <div id="save-scores-variable-as-scores.csv" class="section level3">
 <h3><span class="header-section-number">6.3.3</span> Save scores variable as <code>scores.csv</code></h3>
-<p>Finally, we will save the output from <code>CalculateAll()</code>, a variable called <code>scores</code>, as a comma-separated-value file called <code>scores.csv</code>. We can inspect it and see that it is a long-formatted file with four columns for the goal, dimension, numeric region identifier, and score.</p>
+<p>Finally, we will save the output from <code>CalculateAll()</code>, a variable called <code>scores</code>, as a comma-separated-value file called <code>scores.csv</code>. <img src="https://docs.google.com/drawings/d/1A0FP2KnlHEJ5jCT5RwFJ9YtF5DhjTArHTGzn_JoJjXs/pub?h=450" /></p>
+<p>We can inspect it and see that it is a long-formatted file with four columns for the goal, dimension, numeric region identifier, and score.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">## save scores as scores.csv
 <span class="kw">write.csv</span>(scores, <span class="st">&#39;scores.csv&#39;</span>, <span class="dt">na=</span><span class="st">&#39;&#39;</span>, <span class="dt">row.names=</span>F)</code></pre></div>
 <table>
