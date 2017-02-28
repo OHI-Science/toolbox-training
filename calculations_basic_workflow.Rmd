@@ -8,7 +8,6 @@ Calculating scores requires a tailored repository operating with the OHI `R` pac
 
 ![](https://docs.google.com/drawings/d/1wGK68NRn5bmhZo_gC2A9sx-AcpIZHVp45ID5_HQKVJ0/pub?w=768&h=192)
 
-----
 
 This training will focus around the file in tailored repo called `calculate_scores.r. We will repeat the basic workflow to calculate scores, each time introducing more complexity through several variations: 
 
@@ -30,9 +29,10 @@ Before the training, please make sure you have done the following:
     - http://www.rstudio.com/download 
     - http://happygitwithr.com/rstudio-git-github.html <!--- TODO (Chapter \@ref(datascience))--->
 1. Fork the **toolbox-demo** repository into your own GitHub account by going to https://github.com/OHI-Science/toolbox-demo, clicking "Fork" in the upper right corner, and selecting your account
-1. Clone the **toolbox-demo** repo from your GitHub account into RStudio
+1. Clone the **toolbox-demo** repo from your GitHub account into RStudio into a folder called "github" in your home directory (filepath "~/github")
 1. Get comfortable: be set up with two screens if possible. You will be following along in RStudio on your own computer while also watching an instructor's screen or following this tutorial.
 
+----
 
 ## Review the Toolbox file ecosystem
 
@@ -45,7 +45,7 @@ TODO: 17 regions
 
 ### Run `install_ohicore.r`
 
-If you don't already hav `ohicore` installed, let's do that now. `ohicore` is an R package developed by the OHI team that has all the essential core functions and supporting packages you will use to develop your assessment and calculate scores. You will install `ohicore` one time and then load its library from the `toolbox-training` repository whenever you work on your assessment to gain access to all those functions and packages. 
+If you don't already have `ohicore` installed, let's do that now. `ohicore` is an R package developed by the OHI team that has all the essential core functions and supporting packages you will use to develop your assessment and calculate scores. You will install `ohicore` one time and then load its library from the `toolbox-training` repository whenever you work on your assessment to gain access to all those functions and packages. 
 
 Let's open and source `install_ohicore.r`. Learn more about `ohicore` in Chapter X. <!---TODO:: where would a section on ohicore go? Maybe need to make a vingette for it and link to it but not have a section here.---> 
 
@@ -207,7 +207,7 @@ Open `toolbox-demo/prep/AO/access_prep.R` and source it after reading it through
 
 ### Register our data layer 
 
-Now that we have prepared and saved our data layer, we'll register it in `layers.csv`. `layers.csv`is a registry that will direct `ohicore` to appropriate data layers, and has information about each data layer - which goal it is used for, filename, column names, etc. For futher detail see Chapter \@ref(prep-data).
+Now that we have prepared and saved our data layer, we'll register it in `layers.csv`. `layers.csv`is a registry that will direct `ohicore` to appropriate data layers, and has information about each data layer - which goal it is used for, filename, column names, etc. For further detail see Chapter \@ref(prep-data).
 
 Since we have tailored an existing data layer that is already registered, we just need to have it point to our new data layer under the "filename" column. 
 
@@ -342,7 +342,7 @@ The following things happen in each goal model:
 
 ### Load specific data layers with `SelectLayersData()`
 
-`SelectLayersData()` is an `ohicore` function to call the appropriate data layers by its layer name registered in `layers.csv` (eg. "ao_access")
+`SelectLayersData()` is an `ohicore` function to call the appropriate data layers by its layer name registered in `layers.csv` (e.g. "ao_access")
 Run this chunk of code and the data layers will be loaded, joined, and ready to be manipulated further: 
 
 ```{r load_data, eval=FALSE}

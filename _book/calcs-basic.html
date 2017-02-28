@@ -204,7 +204,6 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <img src="https://docs.google.com/drawings/d/1wGK68NRn5bmhZo_gC2A9sx-AcpIZHVp45ID5_HQKVJ0/pub?w=768&amp;h=192" />
 
 </div>
-<hr />
 <p>This training will focus around the file in tailored repo called `calculate_scores.r. We will repeat the basic workflow to calculate scores, each time introducing more complexity through several variations:</p>
 <ol style="list-style-type: decimal">
 <li>Calculate scores ‘out of the box’ using data and models extracted from the Global 2016 assessment</li>
@@ -224,9 +223,10 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li><a href="http://happygitwithr.com/rstudio-git-github.html" class="uri">http://happygitwithr.com/rstudio-git-github.html</a> <!--- TODO (Chapter \@ref(datascience))---></li>
 </ul></li>
 <li>Fork the <strong>toolbox-demo</strong> repository into your own GitHub account by going to <a href="https://github.com/OHI-Science/toolbox-demo" class="uri">https://github.com/OHI-Science/toolbox-demo</a>, clicking “Fork” in the upper right corner, and selecting your account</li>
-<li>Clone the <strong>toolbox-demo</strong> repo from your GitHub account into RStudio</li>
+<li>Clone the <strong>toolbox-demo</strong> repo from your GitHub account into RStudio into a folder called “github” in your home directory (filepath “~/github”)</li>
 <li>Get comfortable: be set up with two screens if possible. You will be following along in RStudio on your own computer while also watching an instructor’s screen or following this tutorial.</li>
 </ol>
+<hr />
 </div>
 </div>
 <div id="review-the-toolbox-file-ecosystem" class="section level2">
@@ -237,7 +237,7 @@ TODO @jules32: once toolbox_ecosystem.rmd is done, move this Review section into
 <p>TODO: 17 regions</p>
 <div id="run-install_ohicore.r" class="section level3">
 <h3><span class="header-section-number">6.2.1</span> Run <code>install_ohicore.r</code></h3>
-<p>If you don’t already hav <code>ohicore</code> installed, let’s do that now. <code>ohicore</code> is an R package developed by the OHI team that has all the essential core functions and supporting packages you will use to develop your assessment and calculate scores. You will install <code>ohicore</code> one time and then load its library from the <code>toolbox-training</code> repository whenever you work on your assessment to gain access to all those functions and packages.</p>
+<p>If you don’t already have <code>ohicore</code> installed, let’s do that now. <code>ohicore</code> is an R package developed by the OHI team that has all the essential core functions and supporting packages you will use to develop your assessment and calculate scores. You will install <code>ohicore</code> one time and then load its library from the <code>toolbox-training</code> repository whenever you work on your assessment to gain access to all those functions and packages.</p>
 <p>Let’s open and source <code>install_ohicore.r</code>. Learn more about <code>ohicore</code> in Chapter X. <!---TODO:: where would a section on ohicore go? Maybe need to make a vingette for it and link to it but not have a section here.---></p>
 </div>
 </div>
@@ -419,7 +419,7 @@ scores =<span class="st"> </span>ohicore::<span class="kw">CalculateAll</span>(c
 </div>
 <div id="register-our-data-layer" class="section level3">
 <h3><span class="header-section-number">6.4.2</span> Register our data layer</h3>
-<p>Now that we have prepared and saved our data layer, we’ll register it in <code>layers.csv</code>. <code>layers.csv</code>is a registry that will direct <code>ohicore</code> to appropriate data layers, and has information about each data layer - which goal it is used for, filename, column names, etc. For futher detail see Chapter <a href="prep-data.html#prep-data">5</a>.</p>
+<p>Now that we have prepared and saved our data layer, we’ll register it in <code>layers.csv</code>. <code>layers.csv</code>is a registry that will direct <code>ohicore</code> to appropriate data layers, and has information about each data layer - which goal it is used for, filename, column names, etc. For further detail see Chapter <a href="prep-data.html#prep-data">5</a>.</p>
 <p>Since we have tailored an existing data layer that is already registered, we just need to have it point to our new data layer under the “filename” column.</p>
 <p>Open <code>region2016/layers.csv</code> in a spreadsheet software (i.e. Microsoft Excel or Open Office). Next, find “ao_access” in the “layer” column. The current filename it is associated with is “ao_access_gl2016.csv”. Update that to say “ao_access_demo2017.csv” — the new data layer you just saved.</p>
 </div>
@@ -538,7 +538,7 @@ layers =<span class="st"> </span>ohicore::<span class="kw">Layers</span>(<span c
 </ul>
 <div id="load-specific-data-layers-with-selectlayersdata" class="section level3">
 <h3><span class="header-section-number">6.6.1</span> Load specific data layers with <code>SelectLayersData()</code></h3>
-<p><code>SelectLayersData()</code> is an <code>ohicore</code> function to call the appropriate data layers by its layer name registered in <code>layers.csv</code> (eg. “ao_access”) Run this chunk of code and the data layers will be loaded, joined, and ready to be manipulated further:</p>
+<p><code>SelectLayersData()</code> is an <code>ohicore</code> function to call the appropriate data layers by its layer name registered in <code>layers.csv</code> (e.g. “ao_access”) Run this chunk of code and the data layers will be loaded, joined, and ready to be manipulated further:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"> ## read in individual data layers
   d1 &lt;-<span class="st"> </span><span class="kw">SelectLayersData</span>(layers, <span class="dt">layers =</span> <span class="st">&#39;ao_access&#39;</span>, <span class="dt">narrow=</span><span class="ot">TRUE</span>) %&gt;%
 <span class="st">    </span><span class="kw">select</span>(<span class="dt">region_id =</span> id_num, <span class="dt">access =</span> val_num)
