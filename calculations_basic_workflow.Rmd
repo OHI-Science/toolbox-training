@@ -39,9 +39,14 @@ Before the training, please make sure you have done the following:
 <!--- TODO `@ningningj`: toolbox_ecosystem.rmd
 TODO @jules32: once toolbox_ecosystem.rmd is done, move this Review section into the Prerequesites section--->
 
-This was covered in Chapter \@ref(toolbox). In our **toolbox-demo** repo, we have a scenario folder called **region2016**. Remember that the ecosystem structure of any OHI assessment is the same, so as you learn to navigate through and calculate scores in the **toolbox-demo** repository you are also learning how to navigate through and calculate scores in any other OHI assessment repository — yours or anyone else's.
+This was covered in Chapter \@ref(toolbox).  Remember that the ecosystem structure of any OHI assessment is the same, so as you learn to navigate through and calculate scores in the **toolbox-demo** repository you are also learning how to navigate through and calculate scores in any other OHI assessment repository — yours or anyone else's.
 
-TODO: 17 regions
+In our **toolbox-demo** repo, heres are a few things to highlight: 
+
+- our scenario folder is called `region2016`
+- goal models are `R` functions in `conf/functions.r`
+- regions are listed in `spatial/regions_list.csv` (and the `spatial/regions_gcs.geojson` spatial file is visible on [GitHub](https://github.com/OHI-Science/toolbox-demo/blob/master/region2016/spatial/regions_gcs.geojson))
+
 
 This figure highlights the files we will go through in this tutorial: 
 ![](https://docs.google.com/drawings/d/11QcBxrUNQnzuvJBLcJLMp0C7jFvZ-mz4vIj3OkvlxZ8/pub?h=500)
