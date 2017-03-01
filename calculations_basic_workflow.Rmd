@@ -4,22 +4,26 @@ The purpose of Chapter \@ref(calcs-basic) is to introduce you to the basic workf
 
 ## Overview
 
-Calculating scores requires a tailored repository operating with the OHI `R` package `ohicore`. The tailored repo has information specific to your assessment — most importantly the data and goal models — and `ohicore` will combine these with core operations to calculate OHI scores. You will always start with a tailored repository that has data and models extracted from the most recent Global OHI assessment.
+Calculating scores with the OHI Toolbox requires a tailored repository operating with the OHI `R` package `ohicore`. The tailored repo has information specific to your assessment — most importantly the data and goal models — and `ohicore` will combine these with core operations to calculate OHI scores. You will always start with a tailored repository that has data and models extracted from the most recent Global OHI assessment.
 
-![](https://docs.google.com/drawings/d/1wGK68NRn5bmhZo_gC2A9sx-AcpIZHVp45ID5_HQKVJ0/pub?w=768&h=192)
+![](https://docs.google.com/drawings/d/118-eWWsxxgz8kC0ub7racMuzjFABwjVkO2bKjQ-2qrU/pub?w=624&h=480)
 
 <br>
 
-This training will focus around the file in tailored repo called `calculate_scores.r`. We will introduce the basic workflow to calculate scores and repeat it four times, each time introducing more complexity through several variations. We will calculate scores using: 
+This training will introduce the basic workflow for calculating scores. There are many ways to build from the 'out-of-the-box' tailored repo you have instead of starting an assessment from scratch. For example, you may want to just change underlying data sources within the models, or competely change the models which also requires new data layers and data sources. 
+
+**We will repeat the basic workflow four times, each time adding complexity. We will calculate scores with:**
 
 1. 'out of the box' data and models extracted from the Global 2016 assessment
-1. tailored data and 'out of the box' models
-1. tailored data and models
-1. tailored (new) data and models
+1. tailored data (with 'out of the box' models)
+1. tailored models (with 'out of the box' data layers)
+1. tailored data and models (adding a new data layer / model variable)
 
-Along the way we'll also dive deeper into the code itself, focusing particularly on required configuration in `configure_toolbox.r` and developing goal models in `functions.r`. 
+<br>
 
-This is a lot to cover in a 2-hour training, and the purspose is to give you big take home messages and experience for what you need to begin calculating scores. But the Toolbox has a lot of moving parts, and we cannot cover all of it here. There are a lot of details and other operations that we won't get into here and that will be coming in future tutorials (including tailoring pressures & resilience, and how to change subgoals). 
+The workflow depends on the `calculate_scores.r` script found the scenario folder of any tailored repo. We'll also dive deeper into the code itself, focusing particularly on required configuration in `configure_toolbox.r` and developing goal models in `functions.r`. 
+
+This is a lot to cover in a 2-hour training, and the purpose is to give you big take home messages and experience for what you need to begin calculating scores. But the Toolbox has a lot of moving parts, and we cannot cover all of it here. There are a lot of details and other operations that we won't get into here and that will be coming in future tutorials (including tailoring pressures & resilience, and how to change subgoals). 
 
 
 ### Prerequisites
@@ -43,7 +47,7 @@ TODO @jules32: once toolbox_ecosystem.rmd is done, move this Review section into
 
 Let's quickly review some of the files you have in the **toolbox-demo** repo. Remember that the ecosystem structure of any tailored repo is the same, so as you learn to navigate through and calculate scores in this repo you are also learning how to navigate through and calculate scores in any other OHI assessment repository — yours or anyone else's.
 
-This figure highlights the files we will focus on in this tutorial (others are greyed out). 
+This figure highlights the files we will focus on in this tutorial (others are grayed out). 
 <!--- TODO (for full details see Chapter \@ref(toolbox))--->
 
 ![](https://docs.google.com/drawings/d/11QcBxrUNQnzuvJBLcJLMp0C7jFvZ-mz4vIj3OkvlxZ8/pub?h=500)
@@ -66,7 +70,9 @@ Let's open and source `install_ohicore.r`.
 where would a section on ohicore go? Maybe need to make a vingette for it and link to it but not have a section here.---> 
 
 
-## Run `calculate_scores.r`
+## Calculate with 'out-of-the-box' data and models
+
+The first time we go through the basic workflow will be with 'out-of-the-box' data and models from the 2016 Global assessment. 
 
 `calculate_scores.r` is a script that you'll run a lot — both as a whole and piece-by-piece. It takes inputs (data and models) from the Toolbox and computes OHI scores, as the file name suggests. It has several components which we will explore in turn in the rest of  the tutorial. 
 
@@ -74,7 +80,7 @@ where would a section on ohicore go? Maybe need to make a vingette for it and li
 
 `calculate_scores.r` will load the libraries you need and `ohicore` will check your book-keeping and configuration, and calculate OHI scores. **Ultimately, it will save the scores for each goal and dimension in `scores.csv`.** The 'dimensions' of OHI goal scores are Status, Trend, Pressures, Resilience, Likely Future State, and overall goal Score. Dimensions are calculated for each goal in a specific order, as we will see below. `calculate_scores.r` will combine information from your tailored repository and calculate scores with OHI core functions from `ohicore`. 
 
-Open `region2016/calculate_scores.r` and let's have a look at its operations. We will run it line-by-line using the 'out-of-the-box' data and models from the 2016 Global assessment.
+Open `region2016/calculate_scores.r` and let's have a look at its operations. We will run it line-by-line.
 
 ### Source `configure_toolbox.R`
 
@@ -211,7 +217,7 @@ We have just successfully run through the basic workflow to calculate OHI scores
 ![](https://docs.google.com/drawings/d/1CnZ2qwQQzTjJuZ3P53FuQ4qhkBdq1xl6UuZnQmt2v80/pub?h=450)
 
 
-## Tailor a data layer and rerun `calculate_scores.r`
+## Calculate with tailored data
 
 Now let's run through this basic workflow a second time, building on what we've learned. 
 
@@ -482,9 +488,9 @@ The scores variable is something that you'll see at the end of every goal model;
 - format and return the `scores` object
 
 
-## Tailor a goal model with original data layers
+## Calculate with tailored models
 
-Now let's run through the basic workflow a third time, this time modifying a goal model. We will do this without making any changes to the data layers at the moment. Modifying a goal model involves editing the operations within that goal's model in `functions.r`. 
+Now let's run through the basic workflow a third time, this time modifying a goal model but keeping all data layers the same. We will do this without making any changes to the data layers at the moment. Modifying a goal model involves editing the operations within that goal's model in `functions.r`. 
 
 ![](https://docs.google.com/drawings/d/1VRckHItA151selmkBVtROk6OnLnI_ODIu2gIjSnFgmo/pub?h=450)
 
@@ -519,7 +525,7 @@ Let's restart `R` before proceeding.
 In this third time through the basic workflow, we updated the goal model without changing any of the data layers that it depends upon. Next up, we will add a new data layer for it to work with.
 
 
-## Tailor a goal model with a new data layer
+## Calculate with tailored data and models
  
 The fourth and final example we will do in this chapter is to tailor a goal model by adding a new variable. This will mean that we will prepare, save, and register a *new* data layer and update the goal model in `functions.r`. It will be a combination of what we've done previously in this chapter. 
 
@@ -608,7 +614,9 @@ Let's commit and sync. My commit message will be "toolbox-training: tailor AO go
 
 ### Recap of fourth `calculate_scores.r` run
 
-## Recap of Chapter \@ref(calcs-basic)
+<!---TODO--->
+
+## Chapter Recap
 
 We have completed Chapter \@ref(calcs-basic) and successfully run through the basic workflow to calculate OHI scores with several variations using our **toolbox-demo** repository. 
 
