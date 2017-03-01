@@ -49,8 +49,7 @@ In our **toolbox-demo** repo, heres are a few things to highlight:
 
 - our scenario folder is called `region2016`
 - goal models are `R` functions in `conf/functions.r`
-- regions are listed in `spatial/regions_list.csv` (and the `spatial/regions_gcs.geojson` spatial file is visible on [GitHub](https://github.com/OHI-Science/toolbox-demo/blob/master/region2016/spatial/regions_gcs.geojson))
-
+- regions are listed in `spatial/regions_list.csv`. We have 17 here.
 
 
 ### Run `install_ohicore.r`
@@ -68,9 +67,6 @@ Let's open and source `install_ohicore.r`. Learn more about `ohicore` in Chapter
 `calculate_scores.r` is also a script that you'll run a lot — both as a whole and piece-by-piece. It will load the libraries you need and `ohicore` will check your book-keeping and configuration, calculate OHI scores, and ultimately save the scores for each goal and dimension in `scores.csv`. The 'dimensions' of OHI goal scores are Status, Trend, Pressures, Resilience, Likely Future State, and overall goal Score. Dimensions are calculated for each goal in a specific order, as we will see below. `calculate_scores.r` will combine information from your tailored repository (your data layers, Status and Trend models, pressures and resilience matrices), and calculate scores with OHI core functions from `ohicore`. 
 
 Open `calculate_scores.r` after navigating into the `region2016` folder. 
-
-![](https://docs.google.com/drawings/d/1uMcbzmBRgjxKVgRqLYnxpbOGIJrm1AbMw7D3E-dUFzk/pub?w=960&h=720)
-
 
 ### Source `configure_toolbox.R`
 
@@ -208,7 +204,7 @@ We have just successfully run through the basic workflow to calculate OHI scores
 
 In this example, we will prepare local data that will substitute Global OHI data for the data layer `ao_access` and recalculate scores without modifying the goal model itself.
 
-![](https://docs.google.com/drawings/d/1kRwkY_vqAXh-nACsS39ZHEVYW_zsGSFiKs_-5W6swBs/pub?h=450)
+![](https://docs.google.com/drawings/d/1ED1Xk2WELXm5y8edbWr_s9kjvm3TpSK80Via05e9Cog/pub?w=960&h=384)
 
 It's always a good idea to Restart `R` before you begin something like this to make sure you don't have any variables loaded that will cause problems later on.
 
@@ -218,7 +214,7 @@ While Chapter \@ref(prep-data) shows in detail how to prepare data layers, save 
 
 Open `toolbox-demo/prep/AO/access_prep.R` and source it after reading it through. The result will be a new data layer saved to the "layers" folder, and you should see that there is a new file saved in your Git window. 
 
-![](~/github/toolbox-training/figs/ao_access_demo_git.png)
+![](https://docs.google.com/drawings/d/1ED1Xk2WELXm5y8edbWr_s9kjvm3TpSK80Via05e9Cog/pub?w=960&h=192)
 
 ### Register our data layer 
 
@@ -250,7 +246,6 @@ So now let's take a closer look at `configure_toolbox.r`, the first script that 
 
 `configure_toolbox.r` combines everything required to calculate OHI scores and checks that they are properly formatted, and will minimize potential errors later on. It makes sure that your data and goal models are ready to be used to calculate scores. 
 
-![](https://docs.google.com/drawings/d/1WvHfWe06D2x9cKB7vhWrmvmxuRpmGvzsMs9AjS23g3E/pub?h=450)
 
 **Any time you make a change to a data layer or a goal model and want to recalculate scores, you will need to re-run `configure_toolbox.r` to have `ohicore` operate on the most up-to-date information**. You can click "Source" to run all the lines:
 
@@ -341,12 +336,10 @@ We have explored each component of `configure_toolbox.r`, which sets up for calc
 
 ## Explore a goal model in `functions.r`
 
-Remember from `calculate_scores.r` that after `configure_toolbox.r` runs, the next thing that happens is that `CalculateAll()` runs through the goal models and calculates Status and Trend. Status and Trend calculations are contained in `functions.r`.
+Remember from `calculate_scores.r` that after `configure_toolbox.r` runs, the next thing that happens is that `CalculateAll()` runs through the goal models and calculates Status and Trend. Status and Trend calculations are within `R` functions for each goal model in `functions.r`. `functions.r` is in the `conf` folder.
 
 ![](https://docs.google.com/drawings/d/1VRckHItA151selmkBVtROk6OnLnI_ODIu2gIjSnFgmo/pub?h=450)
 
-`functions.r` is contained in the `conf` folder:
-![](https://docs.google.com/drawings/d/1CKNjIORLJOEaV2XW4Z9QuFLN7q1lJ1PaEGg2dSG1-_o/pub?h=450)
 
 `functions.r` is a big list of all goal models in the assessment. Each goal model is an individual `R` function that calculates Status and Trend, and you will modify the goal model within the confines of each function. You can run all of them at the once or each individually.
 
@@ -453,7 +446,7 @@ Trend scores are typically based on linear regression of status scores from the 
 
 ```
 
-### Scores variable: combining status and trend
+### Scores variable: combining Status and Trend
 
 Choose only the `region_id` and `score` columns, and add two more columns identifying score dimension (Status or Trend) and goal name. 
 ```{r, eval=FALSE}
@@ -471,10 +464,10 @@ The scores variable is something that you'll see at the end of every goal model;
 
 ### Recap of what just happened
 
-`functions.r` is a collection of goal models to calculate status and trend. Each goal is written inside an R function. 
+`functions.r` is a collection of goal models to calculate Status and Trend. Each goal is written inside an `R` function. 
 
 
-## Tailor a goal model using original data layers
+## Tailor a goal model with original data layers
 
 ![](https://docs.google.com/drawings/d/1VRckHItA151selmkBVtROk6OnLnI_ODIu2gIjSnFgmo/pub?h=450)
 
@@ -495,7 +488,7 @@ We can run the rest of the AO function line-by-line and inspect the scores varia
 It looks OK to me, so let's run the rest of `calculate_scores.r`, and use Git's differencing feature to see how our scores have changed. This is a great way to double-check and error-check that things are working the way you expected. 
 
 
-## Tailor a goal model using new data layers
+## Tailor a goal model with a new data layer
  
 The final thing we will do in this chapter is to tailor a goal model by adding a new variable. This will mean that we will prepare, save, and register a *new* data layer and update the goal model in `functions.r`. It will be a combination of what we've done previously in this chapter. 
 
@@ -523,7 +516,7 @@ Now that we have prepared and saved our data layer, we'll register it in `layers
 
 Open `region2016/layers.csv` in a spreadsheet software (i.e. Microsoft Excel or Open Office). Add a new row for "ao_poverty", and fill in the following information. We've added the row near the other AO data layers.
 
-![](figs/ao_poverty_demo_layers.png)
+![](https://docs.google.com/drawings/d/1n9qMQuyOxfkZzTGgj2vGaGY7YwS_A3PMtDAjaKfc3Co/pub?w=960&h=192)
 
 > Note: you could also script updating layers.csv from your prep file (not illustrated).
 
@@ -588,6 +581,8 @@ Each variation involves the same basic workflow of bookkeeping and running `calc
 
 - PlotFlower, PlotMap
 - updating pressures/resilience matrices
+- goals.csv and preindex function...
+- see https://cdn.rawgit.com/OHI-Science/ohi-science.github.io/dev/assets/downloads/pres/tutorial_tbx_modifications.html
 
 
 --->
