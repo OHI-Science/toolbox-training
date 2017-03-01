@@ -579,7 +579,7 @@ We have completed Chapter \@ref(calcs-basic)  successfully run through the basic
 
 Each variation involves the same basic workflow of bookkeeping and running `calculate_scores.r`, and will enable you to begin tailoring the Toolbox for your assessment.
 
-![](https://docs.google.com/drawings/d/1OhA7p5-dmrk6dGeP_gWEXFD2pI1ik8KhUYNUSLUVgd4/pub?w=960&h=720)
+![](https://docs.google.com/drawings/d/1OhA7p5-dmrk6dGeP_gWEXFD2pI1ik8KhUYNUSLUVgd4/pub?h=450)
 
 
 <!---next steps after Eva training: 
