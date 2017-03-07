@@ -212,7 +212,9 @@ Hopefully this first time through `calculate_scores.r` you did not encounter err
 
 ### Recap of first `calculate_scores.r` run
 
-We have just successfully run through the basic workflow to calculate OHI scores. We will build on this basic workflow, by exploring the operations above in more detail, and by updating the data, models, and configurations within the **toolbox-demo** repository. 
+We have just successfully run through the basic workflow to calculate OHI scores. It first runs `configure_toolbox.r` to load necessary data, functions, and packages, then it calculates all the components of OHI scores (status, trend, pressures, resilience, overall scores), and finally it saves the new OHI `scores` in a .csv file.
+
+We will build on this basic workflow, by exploring the operations above in more detail, and by updating the data, models, and configurations within the **toolbox-demo** repository. 
 
 ![](https://docs.google.com/drawings/d/1CnZ2qwQQzTjJuZ3P53FuQ4qhkBdq1xl6UuZnQmt2v80/pub?h=450)
 
@@ -261,7 +263,10 @@ Now is a good time to commit this work and sync to GitHub. That way, the work we
 
 ### Recap of second `calculate_scores.r` run
 
-One way to tailor your toolbox is to modify an existing data layer. We have just run through the basic workflow a second time, this time successfully substituting the Global OHI data layer `ao_access` with new data, and rerunning `calculate_scores.r` without modifying the goal model itself.
+One way to tailor your toolbox is to modify an existing data layer. We have just run through the basic workflow a second time. This time we successfully 
+
+- substituting the Global OHI data layer `ao_access` with new data, which includes saving it in `layers` folder registering it in layers.csv, and 
+- rerunning `calculate_scores.r` without modifying the goal model itself
 
 ## Explore `configure_toolbox.r`
 
@@ -363,13 +368,15 @@ Remember from `calculate_scores.r` that after `configure_toolbox.r` runs, the ne
 ![](https://docs.google.com/drawings/d/1VRckHItA151selmkBVtROk6OnLnI_ODIu2gIjSnFgmo/pub?h=450)
 
 
-`functions.r` is a big list of all goal models in the assessment. Each goal model is an individual `R` function that calculates Status and Trend, and you will modify the goal model within the confines of each function. You can run all of them at the once or each individually.
+`functions.r` is a big list of all goal models in the assessment. Each goal model is an individual `R` function that calculates Status and Trend, and you will modify the goal model within the confines of each function. You can run all of them at the once or each individually. 
 
 Let's look at the goal models for Artisanal Fishing Opportunity (AO) to continue our example. It has models developed from the most recent global assessment as a place for you to start 'out-of-the-box'.
 
 > **Tip**: Clicking the bottom left corner of Console will show you a drop-down menu of all functions. It's a shortcut to jump to the appropriate section or goal model
 
  > ![](https://docs.google.com/drawings/d/1Z2AVtVfIZEd_5GDcmaLb8mRpErKTDzmcbg0SBMxKsxs/pub?h=450)
+
+When you modify an individual goal model, you will only work within the function's "{ }".
 
 The following things happen in each goal model:
   
@@ -380,6 +387,8 @@ The following things happen in each goal model:
   - format and return the `scores` object
 
 Throughout `functions.r`, you will see syntax from the `tidyverse` package that you loaded in `configure_toolbox.r`. It contains the commonly used data-wrangling functions you'll need in almost every analysis, and enables chaining: `%>%`. To learn more, take a look at [tidyverse.org](http://tidyverse.org/). This [cheatsheet](https://www.rstudio.com/wp-content/uploads/2015/02/data-wrangling-cheatsheet.pdf) is also a helpful guide with quick references to each function. 
+
+> **Tip**: changes need to be saved before it is recorded by Git and reflected in the Git window. When new changes are made, the title of your R script will be shown in red color. It will change back to black once the changes are saved. 
 
 ### Load specific data layers with `SelectLayersData()`
 
@@ -614,7 +623,11 @@ Let's commit and sync. My commit message will be "toolbox-training: tailor AO go
 
 ### Recap of fourth `calculate_scores.r` run
 
-<!---TODO--->
+In this run we combined what we have practiced in the previous two runs, and we successfully: 
+
+- created a new data layer, which includes preparing layer in the prep file, saving it in `layers`, and registering it in `layers.csv`
+- added this new model parameter (ie. new layer) in AO model in `functions.r`
+- reran `calculate_scores.r` and saw the changes reflected in Git
 
 ## Chapter Recap
 
@@ -628,6 +641,14 @@ Each variation involves the same basic workflow of bookkeeping and running `calc
 1. tailored (new) data and models
 
 ![](https://docs.google.com/drawings/d/1OhA7p5-dmrk6dGeP_gWEXFD2pI1ik8KhUYNUSLUVgd4/pub?w=960&h=720)
+
+Also, a few **best practices** we have used throughout this training that are good to remember: 
+
+- Compulsively restart R
+- Always check Git window after each change for expected changes
+- Commit, then Pull before Push
+- Rerun configure_toolbox.R after any data layer or model changes
+- Save functions.R before the changes are reflected in Git window 
 
 
 <!---next steps after March 1 training: 
