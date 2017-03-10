@@ -245,7 +245,9 @@ Now that we have prepared and saved our data layer, we'll register it in `layers
 
 Since we have tailored an existing data layer that is already registered, we just need to have it point to our new data layer under the "filename" column. 
 
-Open `region2016/layers.csv` in a spreadsheet software (i.e. Microsoft Excel or Open Office). Next, find `ao_access` in the "layer" column. The current filename it is associated with is "ao_access_gl2016.csv". Update that to say "ao_access_demo2017.csv" — the new data layer you just saved.
+Open `region2016/layers.csv` in a spreadsheet software (i.e. Microsoft Excel or Open Office). Next, find `ao_access` in the "layer" column. The current filename it is associated with is "ao_access_gl2016.csv". Update that to say "ao_access_demo2017.csv" — the new data layer you just saved. Close Excel. 
+
+> IMPORTANT! Be sure to close Excel after you have made these edits. On a PC, having `layers.csv` open in Excel will prohibit it from being accessed from R, and the Toolbox needs access to calculate scores!
 
 ### Rerun `calculate_scores.r` 
 
@@ -265,8 +267,8 @@ Now is a good time to commit this work and sync to GitHub. That way, the work we
 
 One way to tailor your toolbox is to modify an existing data layer. We have just run through the basic workflow a second time. This time we successfully 
 
-- substituting the Global OHI data layer `ao_access` with new data, which includes saving it in `layers` folder registering it in layers.csv, and 
-- rerunning `calculate_scores.r` without modifying the goal model itself
+- substituted the Global OHI data layer `ao_access` with new data, which includes saving it in `layers` folder registering it in layers.csv, and 
+- reran `calculate_scores.r` without modifying the goal model itself
 
 ## Explore `configure_toolbox.r`
 
@@ -376,7 +378,7 @@ Let's look at the goal models for Artisanal Fishing Opportunity (AO) to continue
 
  > ![](https://docs.google.com/drawings/d/1Z2AVtVfIZEd_5GDcmaLb8mRpErKTDzmcbg0SBMxKsxs/pub?h=450)
 
-When you modify an individual goal model, you will only work within the function's "{ }".
+When you modify an individual goal model, you will only work within the function's curly braces `{ }`.
 
 The following things happen in each goal model:
   
@@ -649,6 +651,7 @@ Also, a few **best practices** we have used throughout this training that are go
 - Commit, then Pull before Push
 - Rerun configure_toolbox.R after any data layer or model changes
 - Save functions.R before the changes are reflected in Git window 
+- Close Excel before returning to `R` (this is less important on a Mac but will cause errors on a PC)
 
 
 <!---next steps after March 1 training: 
