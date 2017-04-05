@@ -43,9 +43,11 @@ _When data gaps, temoral or spatial, are inevitable, various gap-filling techniq
 
 ## Data Wrangling
 
+
 How do we get from raw data to a data layer? Here is an [example](https://github.com/OHI-Science/bhi/blob/draft/baltic2015/prep/CW/eutrophication/eutrophication_prep.md) of data prep document. Let's give it a try to make one just like this. 
 
 Go to your `toolbox-demo` repository, open `prep/CW/CW_data_prep.Rmd`, and follow the tutorials from there. 
+
 
 ## Save and Register data layers 
 
