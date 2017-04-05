@@ -1,20 +1,65 @@
-# Preparing data {#prep-data}
-
-<!---check out @ningningj's docs in tutorial repo--->
+# Preparing data: Basic {#prep-data}
 
 ## Overview
 
-- 'data layer' and formatting requirements
-- preparing data reproducibly
-- save and register
+Data prep often takes the biggest chunk of time in an OHI assessment, more than the final calculation of the OHI scores itself! The Prep Repo aims to help you wade through this mundane yet important first step of the assessment. Treat the prep document as your notebook, calculator, and presentation of your work. You can explore raw data, see whether it fits within the bounds of your spatial boundaries and whether it makes sense to include it in your final calculations. If it does, you can format it further and save it as data layers. The process of data exploration is recorded and can be easily shared with anyone. 
 
-## Data layer formatting
+**Why prep here?** For transparenty and reproducibility. If someone wants to see where your data comes from, how you have processed the data, and what's the rationale for including or excluding certain data, they can find the answers here. It increases the credibility and reproducibility of your assessment. Prepping in this system will be helpful to yourself. In a few months, or years, you can visit this page and remember what you had done. It also makes your technical team more stable. If there are personale changes, your team memory is preserved. It's easy for any new memeber to pick up where it was left when your data prepation has been documented clearly and kept in one place. 
 
-- show what final formatting should be
+**Why Rmarkdown?** Rmarkdown produces a report with your comments, R code, and figures/tables embedded in it. It can be rendered as a beautiful HTML webpage to easily communicate with other people. We highly recommend it to anyone who is interested in open science, especially OHI+ users. However, if you prefer to use an r script with comments tucked into it, see `example_prep_non_spatial.r` for the same example.
 
-## Data wrangling
+**What will you learn in this chapter?** 
 
-- in R
-- or better, in RMarkdown
+We will go through: 
 
-## Save and register data layer
+- formatting requirements of each data layer
+- a hands-on tutorial in which you can use sample data to format and save
+- how to register each data layer
+
+## Data Formatting requirements
+
+The OHI Toolbox expects each data layer to be
+
+- in its own *.csv* file
+- with data available for every region within the study area
+- with data organized in 'long' format (as few columns as possible) 
+- with a unique region identifier (*rgn_id*) associated with a single score or value.
+
+As you discover and gather potential data sources, they can be prepared and explored in the Starter Repo. Data preparation is done in **R** using input data stored in **_.csv files_** (or 'comma-separated value'). These files can be opened as a spreadsheet using Microsoft Excel or similar programs. Each data layer (data input) has its own *.csv* file, which is combined with others within the Toolbox for the model calculations. These data layers are used for calculating goal scores, meaning that they are inputs for status, trend, pressures, and resilience. The global analysis included over 100 data layer files, and there will probably be as many in your own assessments. This section describes and provides examples of how to format the data layers for the Toolbox.
+
+> It is highly recommended that layer preparation occurs in your repository's `prep` folder as much as possible, as it will also be archived by GitHub for future reference. The folder is divided into sub-folders for each goal and sub-goal, where you will upload the raw data and manipulate the data in `data_prep.R` scripts.
+
+**OHI goal scores are calculated at the scale of the reporting unit**, which is called a ‘**region**’ and then combined using an area-weighted average to produce the score for the overall area assessed, called a ‘**study area**’. In order to calculate trend, input data should be available as a time series for at least 5 recent years (and the longer the time series the better, as this can be used in setting temporal reference points).
+
+>Finalized data layers have at least two columns: the `rgn_id` column and a column with data that is best identified by its units (eg. _km2_ or _score_). There often may be a `year` column or a `category` column (for natural product categories or habitat types).
+
+The example below shows information for a study area with 4 regions. There are two different (and separate) data layer files: tourism count (`tr_total.csv`) and natural products harvested, in metric tonnes (`np_harvest_tonnes.csv`). Each file has data for four regions (1-4) in different years, and the second has an additional 'categories' column for the different types of natural products that were harvested. In this example, the two data layers are appropriate for status calculations with the Toolbox because:
+
+1. At least five years of data are available,
+2. There are no data gaps
+3. Data are presented in 'long' or 'narrow' format (not 'wide' format -- see "**Long Formatting**"" section).
+
+_When data gaps, temoral or spatial, are inevitable, various gap-filling techniques can be used. We won't go through the details here. For more information and examples, visit [OHI Manual](http://ohi-science.org/manual/#gapfilling). 
+
+## Data Wrangling
+
+How do we get from raw data to a data layer? Here is an [example](https://github.com/OHI-Science/bhi/blob/draft/baltic2015/prep/CW/eutrophication/eutrophication_prep.md) of data prep document. Let's give it a try to make one just like this. 
+
+Go to your `toolbox-demo` repository, open `prep/CW/CW_data_prep.Rmd`, and follow the tutorials from there. 
+
+## Save and Register data layers 
+
+Before processed data can be used by the Toolbox for calculations, they need to be saved and registered here: 
+
+![](https://docs.google.com/drawings/d/1IwHf8pMBlpzOIYKL0hoEF5rETGA765Qtwkz7es7B3Rg/pub?h=500)
+
+You have in the data prep script saved the data layer in `layers` folder, now let's register it so that OHI Toolbox knows where to look for data when you calculate scores. 
+
+## Register data layers in `layers.csv`  
+
+Data layers are registered in `layers.csv`. 
+
+![](https://docs.google.com/drawings/d/1juueRiA0gevOoHH_8owzLNanyQ-H1mAOEl7L_l5YSJ0/pub?h=600)  
+
+_If a layer simply has a new filename, only the *filename* column needs to be updated._
+
