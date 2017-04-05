@@ -1,0 +1,26 @@
+# Data prep: non-spatial {#data-prep-basic}
+
+Data prep often takes the biggest chunk of time in an OHI assessment, more than the final calculation of the OHI scores itself! The Prep Repo aims to help you wade through this mundane yet important first step of the assessment. Treat this prep document as your notebook, calculator, and presentation of your work. You can explore raw data, see whether it fits within the bounds of your spatial boundaries and whether it makes sense to include it in your final calculations. If it does, you can format it further and save it as data layers. The process of data exploration is recorded and can be easily shared with anyone. 
+
+**Why prep here?** If someone wants to see where your data comes from, how you have processed the data, and what's the rationale for including or excluding certain data, they can find the answers here. It increases the credibility and reproducibility of your assessment. Prepping in this system will be helpful to yourself. In a few months, or years, you can visit this page and remember what you had done. It also makes your technical team more stable. If there are personale changes, your team memory is preserved. It's easy for any new memeber to pick up where it was left when your data prepation has been documented clearly and kept in one place. 
+
+**Why Rmarkdown?** Rmarkdown produces a report with your comments, R code, and figures/tables embedded in it. It can be rendered as a beautiful HTML webpage to easily communicate with other people. We highly recommend it to anyone who is interested in open science, especially OHI+ users. However, if you prefer to use an r script with comments tucked into it, see `example_prep_non_spatial.r` for the same example.
+
+Let's give it a try! Go to your `toolbox-demo` repository, open `prep/CW/CW_data_prep.Rmd`, and follow the tutorials from there. 
+
+
+# Register data layers 
+
+Before processed data can be used by the Toolbox for calculations, they need to be saved and registered here: 
+
+![](https://docs.google.com/drawings/d/1IwHf8pMBlpzOIYKL0hoEF5rETGA765Qtwkz7es7B3Rg/pub?h=500)
+
+
+## Register data layers in `layers.csv`  
+
+After you saved the data layer and named it properly, now you can register it in `layers.csv`. This will tell the Toolbox where to look for data when you calculate scores.  
+
+![](https://docs.google.com/drawings/d/1juueRiA0gevOoHH_8owzLNanyQ-H1mAOEl7L_l5YSJ0/pub?h=600)  
+
+_If a layer simply has a new filename, only the *filename* column needs to be updated._
+
