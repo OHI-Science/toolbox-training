@@ -10,7 +10,7 @@ Worth noting too that we'll be improving goals.csv operates because there are so
 
 Good practice to run `calculate_scores.r` and use Git window to check your work. 
 
-TODO: add commits, sync to this
+TODO: add commits, sync to this. we'll also be reverting a lot as we test things. 
 
 ### Prerequisites
 

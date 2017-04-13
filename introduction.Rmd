@@ -11,6 +11,13 @@
 
 ## Best practices
 
-## Your website
+## Tools and Resources
+
+<!--- Ning TODO ---> 
+
+- Google Drive folder
+- Starter Repo
+- Full Repo
+- website
 
 - a place to communicate using the same workflow you use for analysis.
