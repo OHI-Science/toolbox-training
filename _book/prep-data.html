@@ -26,7 +26,7 @@
 <meta name="author" content="Ocean Health Index Team">
 
 
-<meta name="date" content="2017-04-05">
+<meta name="date" content="2017-04-13">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -96,11 +96,26 @@
             <section class="normal" id="section-">
 <div id="prep-data" class="section level1">
 <h1><span class="header-section-number">Chapter 5</span> Preparing data: Basic</h1>
+<p>The purpose of Chapter <a href="prep-data.html#prep-data">5</a> is to introduce you to the basic workflow for preparing data for OHI. This is a a 2-hour hands-on training: you will be following along on your own computer and working with a copy of the demonstration repository that is used throughout the this chapter.</p>
+<p><em><strong>Prerequisites</strong></em></p>
+<p>Before the training, please make sure you have done the following:</p>
+<ol style="list-style-type: decimal">
+<li>Have up-to-date versions of <code>R</code> and RStudio and have RStudio configured with Git/GitHub
+<ul>
+<li><a href="https://cloud.r-project.org" class="uri">https://cloud.r-project.org</a></li>
+<li><a href="http://www.rstudio.com/download" class="uri">http://www.rstudio.com/download</a></li>
+<li><a href="http://happygitwithr.com/rstudio-git-github.html" class="uri">http://happygitwithr.com/rstudio-git-github.html</a></li>
+</ul></li>
+<li>Fork the <strong>toolbox-demo</strong> repository into your own GitHub account by going to <a href="https://github.com/OHI-Science/toolbox-demo" class="uri">https://github.com/OHI-Science/toolbox-demo</a>, clicking “Fork” in the upper right corner, and selecting your account</li>
+<li>Clone the <strong>toolbox-demo</strong> repo from your GitHub account into RStudio into a folder called “github” in your home directory (filepath “~/github”)</li>
+<li>Get comfortable: be set up with two screens if possible. You will be following along in RStudio on your own computer while also watching an instructor’s screen or following this tutorial.</li>
+</ol>
+<p>After your <code>toolbox-demo</code> repository is set up, open <code>prep/CW/CW_data_prep.Rmd</code>in the repository - that’s where we’ll spend most of our time in this tutorial. But first, let’s have a quick overview of what will do today.</p>
 <div id="overview" class="section level2">
 <h2><span class="header-section-number">5.1</span> Overview</h2>
-<p>Data prep often takes the biggest chunk of time in an OHI assessment, more than the final calculation of the OHI scores itself! The Prep Repo aims to help you wade through this mundane yet important first step of the assessment. Treat the prep document as your notebook, calculator, and presentation of your work. You can explore raw data, see whether it fits within the bounds of your spatial boundaries and whether it makes sense to include it in your final calculations. If it does, you can format it further and save it as data layers. The process of data exploration is recorded and can be easily shared with anyone.</p>
-<p><strong>Why prep here?</strong> For transparenty and reproducibility. If someone wants to see where your data comes from, how you have processed the data, and what’s the rationale for including or excluding certain data, they can find the answers here. It increases the credibility and reproducibility of your assessment. Prepping in this system will be helpful to yourself. In a few months, or years, you can visit this page and remember what you had done. It also makes your technical team more stable. If there are personale changes, your team memory is preserved. It’s easy for any new memeber to pick up where it was left when your data prepation has been documented clearly and kept in one place.</p>
-<p><strong>Why Rmarkdown?</strong> Rmarkdown produces a report with your comments, R code, and figures/tables embedded in it. It can be rendered as a beautiful HTML webpage to easily communicate with other people. We highly recommend it to anyone who is interested in open science, especially OHI+ users. However, if you prefer to use an r script with comments tucked into it, see <code>example_prep_non_spatial.r</code> for the same example.</p>
+<p>Preparing data takes the biggest chunk of time when you’re using the OHI Toolbox, more than the final calculation of the OHI scores itself! Before you get the <em>Full Repo</em>, modify models, and calculate scores, the <em>Starter Repo</em> aims to help you wade through these important steps of the assessment. Treat the prepatory, or “prep”, files as your notebook, calculator, and presentation of your work. You can explore raw data, see whether it fits with your ideal spatial boundaries and whether it makes sense to include it in your final calculations. If it does, you can format it further and save it as data layers. The process of data exploration is recorded and can be easily shared with anyone, and your team will have a record of what your explorations and decisions.</p>
+<p><strong>Why prepare data in the Toolbox?</strong> This is for transparency, reproducibility, and credibility. If someone wants to understand what data you’re using, how you have processed it, and your rationale for including it or excluding other options, they can find the answers here. With this reproducible record, you will be able to repeat these methods with additional years of data using the same code you have already written. This is helpful for you and your team. In a few months, or years, you can visit these files and remember what you had done. It also makes your technical team more stable. If there are personale changes, your team memory is preserved. It’s easier for new members to pick up where it was left when your data preparation has been documented clearly and kept in one place.</p>
+<p><strong>Why R Markdown?</strong> R Markdown produces a report with your comments, <code>R</code> code, and figures/tables embedded in it. It can be rendered as a nice HTML webpage that is easy to update and share with other people. We highly recommend it to anyone who is interested in open science, especially OHI+ users.</p>
 <p><strong>What will you learn in this chapter?</strong></p>
 <p>We will go through:</p>
 <ul>
@@ -111,33 +126,44 @@
 </div>
 <div id="data-formatting-requirements" class="section level2">
 <h2><span class="header-section-number">5.2</span> Data Formatting requirements</h2>
-<p>The OHI Toolbox expects each data layer to be</p>
+<blockquote>
+<p>The OHI Toolbox expects each data layer to be:</p>
+</blockquote>
+<blockquote>
 <ul>
 <li>in its own <em>.csv</em> file</li>
 <li>with data available for every region within the study area</li>
 <li>with data organized in ‘long’ format (as few columns as possible)</li>
 <li>with a unique region identifier (<em>rgn_id</em>) associated with a single score or value.</li>
 </ul>
-<p>As you discover and gather potential data sources, they can be prepared and explored in the Starter Repo. Data preparation is done in <strong>R</strong> using input data stored in <strong><em>.csv files</em></strong> (or ‘comma-separated value’). These files can be opened as a spreadsheet using Microsoft Excel or similar programs. Each data layer (data input) has its own <em>.csv</em> file, which is combined with others within the Toolbox for the model calculations. These data layers are used for calculating goal scores, meaning that they are inputs for status, trend, pressures, and resilience. The global analysis included over 100 data layer files, and there will probably be as many in your own assessments. This section describes and provides examples of how to format the data layers for the Toolbox.</p>
+</blockquote>
+<p>As you discover and gather potential data sources, they can be prepared and explored in the <em>Starter Repo</em>. Data preparation is done in <code>**R**</code> using input data stored in <strong><em>.csv files</em></strong> (or ‘comma-separated value’). These files can be opened as a spreadsheet using Microsoft Excel or similar programs. Each data layer (data input) has its own <em>.csv</em> file, which is combined with others within the Toolbox for the model calculations. These data layers are used for calculating goal scores, meaning that they are inputs for status, trend, pressures, and resilience. The global analysis included over 100 data layer files, and there will probably be as many in your own assessments. This section describes and provides examples of how to format the data layers for the Toolbox.</p>
 <blockquote>
-<p>It is highly recommended that layer preparation occurs in your repository’s <code>prep</code> folder as much as possible, as it will also be archived by GitHub for future reference. The folder is divided into sub-folders for each goal and sub-goal, where you will upload the raw data and manipulate the data in <code>data_prep.R</code> scripts.</p>
+<p>It is highly recommended that layer preparation occurs in your repository’s <code>prep</code> folder as much as possible, as it will also be archived by GitHub for future reference. The folder is divided into sub-folders for each goal and sub-goal so you can store raw and intermediate data as you work in <code>R</code> and R Markdown.</p>
 </blockquote>
 <p><strong>OHI goal scores are calculated at the scale of the reporting unit</strong>, which is called a ‘<strong>region</strong>’ and then combined using an area-weighted average to produce the score for the overall area assessed, called a ‘<strong>study area</strong>’. In order to calculate trend, input data should be available as a time series for at least 5 recent years (and the longer the time series the better, as this can be used in setting temporal reference points).</p>
 <blockquote>
 <p>Finalized data layers have at least two columns: the <code>rgn_id</code> column and a column with data that is best identified by its units (eg. <em>km2</em> or <em>score</em>). There often may be a <code>year</code> column or a <code>category</code> column (for natural product categories or habitat types).</p>
 </blockquote>
-<p>The example below shows information for a study area with 4 regions. There are two different (and separate) data layer files: tourism count (<code>tr_total.csv</code>) and natural products harvested, in metric tonnes (<code>np_harvest_tonnes.csv</code>). Each file has data for four regions (1-4) in different years, and the second has an additional ‘categories’ column for the different types of natural products that were harvested. In this example, the two data layers are appropriate for status calculations with the Toolbox because:</p>
+<p>The example below shows information for a study area with 4 regions. There are two different (and separate) data layer files: tourism count (<code>tr_total.csv</code>) and natural products harvested, in metric tonnes (<code>np_harvest_tonnes.csv</code>). Each file has data for four regions (1-4) in different years, and the second has an additional ‘categories’ column for the different types of natural products that were harvested.</p>
+<div class="figure">
+<img src="https://docs.google.com/drawings/d/1Hydt117b7mFAcq4wkmdGKfPWq2Kn_1EVpfyL-zkzx-o/pub?w=500" />
+
+</div>
+<p>In this example, the two data layers are appropriate for status calculations with the Toolbox because:</p>
 <ol style="list-style-type: decimal">
-<li>At least five years of data are available,</li>
+<li>At least five years of data are available</li>
 <li>There are no data gaps</li>
 <li>Data are presented in ‘long’ or ‘narrow’ format (not ‘wide’ format – see “<strong>Long Formatting</strong>”&quot; section).</li>
 </ol>
-<p>_When data gaps, temoral or spatial, are inevitable, various gap-filling techniques can be used. We won’t go through the details here. For more information and examples, visit <a href="http://ohi-science.org/manual/#gapfilling">OHI Manual</a>.</p>
+<p><em>When data gaps, temporal or spatial, are inevitable, various gap-filling techniques can be used. We won’t go through the details here. For more information and examples, visit <a href="http://ohi-science.org/manual/#gapfilling">OHI Manual</a></em></p>
 </div>
 <div id="data-wrangling" class="section level2">
 <h2><span class="header-section-number">5.3</span> Data Wrangling</h2>
-<p>How do we get from raw data to a data layer? Here is an <a href="https://github.com/OHI-Science/bhi/blob/draft/baltic2015/prep/CW/eutrophication/eutrophication_prep.md">example</a> of data prep document. Let’s give it a try to make one just like this.</p>
-<p>Go to your <code>toolbox-demo</code> repository, open <code>prep/CW/CW_data_prep.Rmd</code>, and follow the tutorials from there.</p>
+<p>So how do we get from raw data to a data layer that looks like the ones shown above? When we first access a data set, we often don’t know whether it is suitable for our purpose, or if it provides adequate information. Raw data can be in a different format than the desired long format and have extra or incomplete information. The main task of data preparation is to comb through the raw data, combine different sources, and sometimes fill in the infomration gap. We call this process “data wrangling.”</p>
+<p>For reproducibity and transparency, it is also good practice to record and share the decision-making process - trials and errors, why you decide to include, or more importantly, exclude a certain data source. Fortunately, we can take notes on the data exploration process and code in one place!</p>
+<p>Here is an <a href="https://github.com/OHI-Science/bhi/blob/draft/baltic2015/prep/CW/eutrophication/eutrophication_prep.md">example</a> of a data prep document. Let’s give it a try to make one just like this.</p>
+<p>Now let’s switch to <code>prep/CW/CW_data_prep.Rmd</code>in the <code>toolbox-demo</code> repository you just set up on your computer and follow the tutorial from there. There you will learn how to process a data layer, and save it in <code>layers</code> folder.</p>
 </div>
 <div id="save-and-register-data-layers" class="section level2">
 <h2><span class="header-section-number">5.4</span> Save and Register data layers</h2>
@@ -150,11 +176,24 @@
 </div>
 <div id="register-data-layers-in-layers.csv" class="section level2">
 <h2><span class="header-section-number">5.5</span> Register data layers in <code>layers.csv</code></h2>
-<p>Data layers are registered in <code>layers.csv</code>.</p>
+<p>After we have saved a data layer in <code>layers</code> folder, we will catalogue the layer in <code>layers.csv</code>. <code>layers.csv</code> is a registry that contains information about each layer - which goal it is used for, filename, column names, etc., and it will direct ohicore to appropriate data layers during calculations.</p>
 <div class="figure">
 <img src="https://docs.google.com/drawings/d/1juueRiA0gevOoHH_8owzLNanyQ-H1mAOEl7L_l5YSJ0/pub?h=600" />
 
 </div>
+<p>If a layer simply has a new filename, only the <em>filename</em> column needs to be updated:</p>
+<p>However, <strong>if a new layer has been added (for example when a new goal model is developed)</strong>, you will open <code>layers.csv</code> in a spreadsheet software (i.e. Microsoft Excel), add a new row in the registry for the new data layer and fill in the first eight columns (columns A-H):</p>
+<ul>
+<li><strong>targets:</strong> Add the goal/dimension that the new data layer relates to. Goals are indicated with two-letter codes and sub-goals are indicated with three-letter codes, with pressures, resilience, and spatial layers indicated separately.</li>
+<li><strong>layer:</strong> Add an identifying name for the new data layer, which will be referenced in R scripts like <code>functions.R</code> and <em>.csv</em> files like <code>pressures_matrix.csv</code> and <code>resilience_matrix.csv</code>.</li>
+<li><strong>name:</strong> Add a longer title for the data layer.</li>
+<li><strong>description:</strong> Add a longer description of the new data layer.</li>
+<li><strong>fld_value:</strong> Add the appropriate units for the new data layer. It is <em>the same as the column name in the data file</em>, which will be referenced in R scripts in subsequent calculations. (example: area_km2)</li>
+<li><strong>units:</strong> Add a description about the <em>units</em> chosen in the <em>fld_value</em> column above. Think about what units you would like to be displayed online when filling out “units.” (example: km^2)</li>
+<li><strong>filename:</strong> Add a filename for the new data layer that matches the name of the <em>.csv</em> file that was created previously in the <code>layers</code> folder.</li>
+<li><strong>fld_id_num:</strong> Area designation that applies to the newly created data layer, such as: <em>rgn_id</em> and <em>fao_id</em>.</li>
+</ul>
+<p>It is important to check that you have filled you the fields correctly, for instance, if “fld_value” does not match the header of the source data layer, you will see an error message when you try to calculate scores. Other columns are generated later by the Toolbox as it confirms data formatting and content.</p>
 <p><em>If a layer simply has a new filename, only the <em>filename</em> column needs to be updated.</em></p>
 
 </div>
