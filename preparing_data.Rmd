@@ -5,7 +5,7 @@ The purpose of Chapter \@ref(prep-data) is to introduce you to the basic workflo
 
 ## Overview
 
-Preparing data takes the biggest chunk of time when you're using the OHI Toolbox, even more than the final scores calculation itself. That when you explore raw data, see whether it fits with your ideal spatial boundaries and whether it makes sense to include it in your final calculations. If it does, you can format it further and save it as data layers, or Toolbox inputs for scores calculations.
+Preparing data takes the biggest chunk of time when you're using the OHI Toolbox, even more than the final scores calculation itself. That's when you explore raw data, see whether it fits with your ideal spatial boundaries and whether it makes sense to include it in your final calculations. If it does, you can format it further and save it as data layers, or Toolbox inputs for scores calculations.
 
 The _Starter Repo_ \@ref(ecosystem) aims to help you wade through these important first steps of the assessment. Treat the prepatory, or "prep", files as your notebook, calculator, and presentation of your work. Here, the process of data exploration is recorded and can be easily shared with anyone.
 
