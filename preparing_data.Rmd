@@ -7,7 +7,7 @@ The purpose of Chapter \@ref(prep-data) is to introduce you to the basic workflo
 
 Preparing data takes the biggest chunk of time when you're using the OHI Toolbox, even more than the final scores calculation itself. That's when you explore raw data, see whether it fits with your ideal spatial boundaries and whether it makes sense to include it in your final calculations. If it does, you can format it further and save it as data layers, or Toolbox inputs for scores calculations.
 
-The _Starter Repo_ \@ref(ecosystem) aims to help you wade through these important first steps of the assessment. Treat the prepatory, or "prep", files as your notebook, calculator, and presentation of your work. Here, the process of data exploration is recorded and can be easily shared with anyone.
+The _Starter Repo_ \@ref(ecosystem) aims to help you wade through these important first steps of the assessment. Treat the preparatory, or "prep", files as your notebook, calculator, and presentation of your work. Here, the process of data exploration is recorded and can be easily shared with anyone.
 
 <!-- MOVE THESE TO ECOSYSTEM SECTIONS? **Why prepare data in the Toolbox?** This is for transparency, reproducibility, and credibility. If someone wants to understand what data you're using, how you have processed it, and your rationale for including it or excluding other options, they can find the answers here. With this reproducible record, you will be able to repeat these methods with additional years of data using the same code you have already written. It also makes your technical team more stable. If there are personale changes, your team memory is preserved. It's easier for new members to pick up where it was left when your data preparation has been documented clearly and kept in one place.  -->
 
@@ -50,7 +50,7 @@ A data layer is a data file used to calculate scores. The global analysis includ
 
 >- data for every region within the study area
 >- a unique region identifier (*rgn_id*) associated with a single score or value.
->- data organized in 'long' format (as few columns as possible.) 
+>- data organized in 'long' format - as few columns as possible. (_You can read more about long formatting [here](http://ohi-science.org/manual/#long-formatting)_) 
 
 **OHI goal scores are calculated at the scale of the reporting unit**, which is called a ‘**region**’ and then combined to produce the score for the overall area assessed, called a ‘**study area**’. For example, the _U.S._ is a _study area_, and each _coastal state_ is a _region_. 
 
@@ -66,34 +66,37 @@ In this example, the two data layers are appropriate for _status calculations_ w
 
 1. At least five years of data are available
 2. There are no data gaps
-3. Data are presented in 'long' or 'narrow' format (_You can read more about long formatting [here](http://ohi-science.org/manual/#long-formatting)_).
-
-
-
+3. Data are presented in 'long' or 'narrow' format 
 
 _When data gaps, temporal or spatial, are inevitable, various gap-filling techniques can be used. We won't go through the details here. For more information and examples, visit [OHI Manual](http://ohi-science.org/manual/#gapfilling)_ 
 
 ## Data Wrangling
 
-So how do we get from raw data to a data layer that looks like the ones shown above? When we first access a data set, we often don't know whether it is suitable for our purpose, or if it provides adequate information. Raw data can be in a different format than the desired long format and have extra or incomplete information. The main task of data preparation is to comb through the raw data, combine different sources, and sometimes fill in the infomration gap. We call this process "data wrangling." 
+So how do we get from raw data to a data layer that looks like the ones shown above? When we first access a data set, we often don't know whether it is suitable for our purpose, or if it provides adequate information. Raw data can be in a different format than the desired long format and have extra or incomplete information. The main task of data preparation is to comb through the raw data, combine different sources, and sometimes fill in the information gap. We call this process "data wrangling." 
 
-For reproducibity and transparency, it is also good practice to record and share the decision-making process - trials and errors, why you decide to include, or more importantly, exclude a certain data source. Fortunately, we can take notes on the data exploration process and code in one place!
+For reproducibility and transparency, it is also good practice to record and share the decision-making process - trials and errors, why you decide to include, or more importantly, exclude a certain data source. Fortunately, we can take notes on the data exploration process and code in one place!
 
 Here is an [example](https://github.com/OHI-Science/bhi/blob/draft/baltic2015/prep/CW/eutrophication/eutrophication_prep.md) of a data prep document. Let's give it a try to make one just like this. 
 
-Now let's switch to the `demo` repo. Today we will use the _Clean Water (CW)_ goal as an hands-on example. Click on the `CW` folder and open `CW_data_prep.Rmd`. We will follow the tutorial from there.
+Now let's switch to the `demo` repo. Today we will use the _Clean Water (CW)_ goal as an hands-on example. We will get sample secchi depth data, as an indicator of water clarity. 
+
+Click on the `CW` folder and open `CW_data_prep.Rmd`. We will follow the tutorial from there.
 
 ## Save and Register data layers 
 
-Before processed data can be used by the Toolbox for calculations, they need to be saved and registered here: 
+After you have successfully processed a data layer, and it can be used by the Toolbox for calculations, it needs to be saved and registered here: 
 
 ![](https://docs.google.com/drawings/d/1IwHf8pMBlpzOIYKL0hoEF5rETGA765Qtwkz7es7B3Rg/pub?h=500)
 
-You have in the data prep script saved the data layer in `layers` folder, now let's register it so that OHI Toolbox knows where to look for data when you calculate scores. 
+`layers` folder is where all data layers live, and where the Toolbox pulls a layer out when needed. 
+
+`layers.csv` is a giant spreadsheet that contains information about each layer - which goal it is used for, filename, column names, etc., and it will direct ohicore to appropriate data layers during calculations. 
+
+Let's first save the layer. You can do that in the prep script. Let's switch back to the Demo repository, and follow the last section. 
 
 ## Register data layers in `layers.csv`  
 
-After we have saved a data layer in `layers` folder, we will catalogue the layer in `layers.csv`. `layers.csv` is a registry that contains information about each layer - which goal it is used for, filename, column names, etc., and it will direct ohicore to appropriate data layers during calculations. 
+After we have saved a data layer in `layers` folder, we will catalogue the layer in `layers.csv`. `
 
 ![](https://docs.google.com/drawings/d/1juueRiA0gevOoHH_8owzLNanyQ-H1mAOEl7L_l5YSJ0/pub?h=600) 
 
@@ -112,5 +115,26 @@ However, **if a new layer has been added (for example when a new goal model is d
 
  It is important to check that you have filled you the fields correctly, for instance, if "fld_value" does not match the header of the source data layer, you will see an error message when you try to calculate scores. Other columns are generated later by the Toolbox as it confirms data formatting and content.
 
-_If a layer simply has a new filename, only the *filename* column needs to be updated._
+Let's open your layers.csv from your Finder, and we will fill it out together from there: 
+
+![](https://docs.google.com/drawings/d/1AYmvy3ZVSW_4jFvuV6FcFCmefEvLDd4XHg9rAuExtD0/pub?w=960&h=720)
+
+This is what the new line should look like: 
+
+![](https://docs.google.com/drawings/d/1qjraupQuobcxVolubwqtIzOoqv_ovqO6NYi4O_sT3IE/pub?w=900)
+
+## Chapter Recap: 
+
+Hooray! You have just learned: how to process data, save, and register a data layer for the OHI Toolbox! 
+
+- OHI data layer formatting requirements
+  - data for each region
+  - long format
+  - best to have at least five years of continuous data
+- how to process a messy and large raw data layer (secchi depth data for CW goal)
+- how to saved and register the prepared data layer
+
+Now the layer is ready to be used by the toolbox to calculate status and trend scores. We'll see you at Chapter 6 \@ref(calcs-basic) to learn that! 
+
+
 

@@ -26,7 +26,7 @@
 <meta name="author" content="Ocean Health Index Team">
 
 
-<meta name="date" content="2017-04-25">
+<meta name="date" content="2017-04-26">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -99,18 +99,18 @@
 <p>The purpose of Chapter <a href="prep-data.html#prep-data">5</a> is to introduce you to the basic workflow for preparing data for OHI. This is a a 2-hour hands-on training: you will be following along on your own computer and working with a copy of the demonstration repository (<em>toolbox-demo</em>) that is used throughout the this chapter.</p>
 <div id="overview" class="section level2">
 <h2><span class="header-section-number">5.1</span> Overview</h2>
-<p>Preparing data takes the biggest chunk of time when you’re using the OHI Toolbox, more than the final calculation of the OHI scores itself! The <em>Starter Repo</em> <a href="#ecosystem"><strong>??</strong></a> aims to help you wade through these important steps of the assessment. Treat the prepatory, or “prep”, files as your notebook, calculator, and presentation of your work. You can explore raw data, see whether it fits with your ideal spatial boundaries and whether it makes sense to include it in your final calculations. If it does, you can format it further and save it as data layers. The process of data exploration is recorded and can be easily shared with anyone, and your team will have a record of what your explorations and decisions.</p>
-<!-- MOVE THESE TO ECOSYSTEM SECTIONS??? **Why prepare data in the Toolbox?** This is for transparency, reproducibility, and credibility. If someone wants to understand what data you're using, how you have processed it, and your rationale for including it or excluding other options, they can find the answers here. With this reproducible record, you will be able to repeat these methods with additional years of data using the same code you have already written. It also makes your technical team more stable. If there are personale changes, your team memory is preserved. It's easier for new members to pick up where it was left when your data preparation has been documented clearly and kept in one place.  -->
+<p>Preparing data takes the biggest chunk of time when you’re using the OHI Toolbox, even more than the final scores calculation itself. That’s when you explore raw data, see whether it fits with your ideal spatial boundaries and whether it makes sense to include it in your final calculations. If it does, you can format it further and save it as data layers, or Toolbox inputs for scores calculations.</p>
+<p>The <em>Starter Repo</em> <a href="#ecosystem"><strong>??</strong></a> aims to help you wade through these important first steps of the assessment. Treat the prepatory, or “prep”, files as your notebook, calculator, and presentation of your work. Here, the process of data exploration is recorded and can be easily shared with anyone.</p>
+<!-- MOVE THESE TO ECOSYSTEM SECTIONS? **Why prepare data in the Toolbox?** This is for transparency, reproducibility, and credibility. If someone wants to understand what data you're using, how you have processed it, and your rationale for including it or excluding other options, they can find the answers here. With this reproducible record, you will be able to repeat these methods with additional years of data using the same code you have already written. It also makes your technical team more stable. If there are personale changes, your team memory is preserved. It's easier for new members to pick up where it was left when your data preparation has been documented clearly and kept in one place.  -->
 <!-- **Why R Markdown?** R Markdown produces a report with your comments, `R` code, and figures/tables embedded in it. It can be rendered as a nice HTML webpage that is easy to update and share with other people. We highly recommend it to anyone who is interested in open science, especially OHI+ users. -->
-<!-- **What will you learn in this chapter?**  -->
-<p>In this chapter, we will go through the basic steps of preparing an OHI data layer from raw data:</p>
+<p>In this chapter, we will go through the basic requirements and steps of preparing a data layer:</p>
 <ul>
-<li>formatting requirements of each data layer</li>
-<li>a hands-on tutorial in which you can use sample data to format and save</li>
-<li>how to register each data layer</li>
+<li>understand the formatting requirements</li>
+<li>try a hands-on tutorial in which you can use sample data to format and save</li>
+<li>register a data layer</li>
 </ul>
 <p><em><strong>Prerequisites</strong></em></p>
-<p>Before the training, please make sure you have done the following:</p>
+<p>Before the training starts, please make sure you have done the following:</p>
 <ol style="list-style-type: decimal">
 <li>Have up-to-date versions of <code>R</code> and RStudio and have RStudio configured with Git/GitHub
 <ul>
@@ -127,8 +127,7 @@
 <img src="https://docs.google.com/drawings/d/1JOeYc-4Izf3h9FHPKQhkTou2uZgOB8dh0melYhV5s44/pub?w=450" />
 
 </div>
-<p>Each goal and sub-goal has its own sub-folder, so you can store raw and intermediate data as you work in R Markdown (or <code>R</code>). It is highly recommended that data preparation occurs in your repository’s <code>prep</code> folder as much as possible, as it will also be archived by GitHub for future reference.</p>
-<p>Today we will use the <em>Clean Water (CW)</em> goal as an example. Clock on the <code>CW</code> folder, and open <code>CW_data_prep.Rmd</code> - that’s where we’ll spend most of our time in this tutorial.</p>
+<p>Each goal and sub-goal has its own sub-folder, so you can store raw and intermediate data as you work in R Markdown (or <code>R</code>). It is highly recommended that data preparation occurs in the <code>prep</code> folder as much as possible, as it will also be archived by GitHub for future reference.</p>
 <p>But before we start preparing a data layer, let’s first go over the data formatting requirements.</p>
 </div>
 <div id="data-formatting-requirements" class="section level2">
@@ -141,7 +140,7 @@
 <ul>
 <li>data for every region within the study area</li>
 <li>a unique region identifier (<em>rgn_id</em>) associated with a single score or value.</li>
-<li>data organized in ‘long’ format (as few columns as possible)</li>
+<li>data organized in ‘long’ format - as few columns as possible. (<em>You can read more about long formatting <a href="http://ohi-science.org/manual/#long-formatting">here</a></em>)</li>
 </ul>
 </blockquote>
 <p><strong>OHI goal scores are calculated at the scale of the reporting unit</strong>, which is called a ‘<strong>region</strong>’ and then combined to produce the score for the overall area assessed, called a ‘<strong>study area</strong>’. For example, the <em>U.S.</em> is a <em>study area</em>, and each <em>coastal state</em> is a <em>region</em>.</p>
@@ -158,7 +157,7 @@
 <ol style="list-style-type: decimal">
 <li>At least five years of data are available</li>
 <li>There are no data gaps</li>
-<li>Data are presented in ‘long’ or ‘narrow’ format (<em>You can read more about long formatting <a href="http://ohi-science.org/manual/#long-formatting">here</a></em>).</li>
+<li>Data are presented in ‘long’ or ‘narrow’ format</li>
 </ol>
 <p><em>When data gaps, temporal or spatial, are inevitable, various gap-filling techniques can be used. We won’t go through the details here. For more information and examples, visit <a href="http://ohi-science.org/manual/#gapfilling">OHI Manual</a></em></p>
 </div>
@@ -167,20 +166,23 @@
 <p>So how do we get from raw data to a data layer that looks like the ones shown above? When we first access a data set, we often don’t know whether it is suitable for our purpose, or if it provides adequate information. Raw data can be in a different format than the desired long format and have extra or incomplete information. The main task of data preparation is to comb through the raw data, combine different sources, and sometimes fill in the infomration gap. We call this process “data wrangling.”</p>
 <p>For reproducibity and transparency, it is also good practice to record and share the decision-making process - trials and errors, why you decide to include, or more importantly, exclude a certain data source. Fortunately, we can take notes on the data exploration process and code in one place!</p>
 <p>Here is an <a href="https://github.com/OHI-Science/bhi/blob/draft/baltic2015/prep/CW/eutrophication/eutrophication_prep.md">example</a> of a data prep document. Let’s give it a try to make one just like this.</p>
-<p>Now let’s switch to <code>prep/CW/CW_data_prep.Rmd</code>in the <code>toolbox-demo</code> repository you just set up on your computer and follow the tutorial from there. There you will learn how to process a data layer, and save it in <code>layers</code> folder.</p>
+<p>Now let’s switch to the <code>demo</code> repo. Today we will use the <em>Clean Water (CW)</em> goal as an hands-on example. We will get sample secchi depth data, as an indicator of water clarity.</p>
+<p>Click on the <code>CW</code> folder and open <code>CW_data_prep.Rmd</code>. We will follow the tutorial from there.</p>
 </div>
 <div id="save-and-register-data-layers" class="section level2">
 <h2><span class="header-section-number">5.4</span> Save and Register data layers</h2>
-<p>Before processed data can be used by the Toolbox for calculations, they need to be saved and registered here:</p>
+<p>After you have successfully processed a data layer, and it can be used by the Toolbox for calculations, it needs to be saved and registered here:</p>
 <div class="figure">
 <img src="https://docs.google.com/drawings/d/1IwHf8pMBlpzOIYKL0hoEF5rETGA765Qtwkz7es7B3Rg/pub?h=500" />
 
 </div>
-<p>You have in the data prep script saved the data layer in <code>layers</code> folder, now let’s register it so that OHI Toolbox knows where to look for data when you calculate scores.</p>
+<p><code>layers</code> folder is where all data layers live, and where the Toolbox pulls a layer out when needed.</p>
+<p><code>layers.csv</code> is a giant spreadsheet that contains information about each layer - which goal it is used for, filename, column names, etc., and it will direct ohicore to appropriate data layers during calculations.</p>
+<p>Let’s first save the layer. You can do that in the prep script. Let’s swtich back to the Demo repository, and follow the last section.</p>
 </div>
 <div id="register-data-layers-in-layers.csv" class="section level2">
 <h2><span class="header-section-number">5.5</span> Register data layers in <code>layers.csv</code></h2>
-<p>After we have saved a data layer in <code>layers</code> folder, we will catalogue the layer in <code>layers.csv</code>. <code>layers.csv</code> is a registry that contains information about each layer - which goal it is used for, filename, column names, etc., and it will direct ohicore to appropriate data layers during calculations.</p>
+<p>After we have saved a data layer in <code>layers</code> folder, we will catalogue the layer in <code>layers.csv</code>. `</p>
 <div class="figure">
 <img src="https://docs.google.com/drawings/d/1juueRiA0gevOoHH_8owzLNanyQ-H1mAOEl7L_l5YSJ0/pub?h=600" />
 
@@ -198,7 +200,18 @@
 <li><strong>fld_id_num:</strong> Area designation that applies to the newly created data layer, such as: <em>rgn_id</em> and <em>fao_id</em>.</li>
 </ul>
 <p>It is important to check that you have filled you the fields correctly, for instance, if “fld_value” does not match the header of the source data layer, you will see an error message when you try to calculate scores. Other columns are generated later by the Toolbox as it confirms data formatting and content.</p>
-<p><em>If a layer simply has a new filename, only the <em>filename</em> column needs to be updated.</em></p>
+<p>Let’s open your layers.csv from your Finder, and we will fill it out together from there:</p>
+<div class="figure">
+<img src="https://docs.google.com/drawings/d/1AYmvy3ZVSW_4jFvuV6FcFCmefEvLDd4XHg9rAuExtD0/pub?w=960&amp;h=720" />
+
+</div>
+<p>This is what the new line should look like:</p>
+<div class="figure">
+<img src="https://docs.google.com/drawings/d/1qjraupQuobcxVolubwqtIzOoqv_ovqO6NYi4O_sT3IE/pub?w=900" />
+
+</div>
+<p>TODO:</p>
+<p>Recap: - data requirements - raw data for clean waters and processed it to be a data layer - saved and registered layer is ready to be used by the toolbox to calcualte status and trend scores. what you will learn in chapter 6.</p>
 
 </div>
 </div>
