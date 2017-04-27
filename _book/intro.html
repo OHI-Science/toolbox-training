@@ -6,8 +6,9 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Ocean Health Index Toolbox Training</title>
+  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
   <meta name="description" content="This is the official Ocean Health Index Toolbox training.">
-  <meta name="generator" content="bookdown 0.3.9 and GitBook 2.6.7">
+  <meta name="generator" content="bookdown 0.3 and GitBook 2.6.7">
 
   <meta property="og:title" content="Ocean Health Index Toolbox Training" />
   <meta property="og:type" content="book" />
@@ -25,7 +26,7 @@
 <meta name="author" content="Ocean Health Index Team">
 
 
-<meta name="date" content="2017-03-20">
+<meta name="date" content="2017-04-27">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -34,6 +35,7 @@
   
 <link rel="prev" href="index.html">
 <link rel="next" href="datascience.html">
+
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -92,7 +94,6 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <body>
 
 
-
   <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
 
     <div class="book-summary">
@@ -104,7 +105,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="2.1" data-path="intro.html"><a href="intro.html#overview"><i class="fa fa-check"></i><b>2.1</b> Overview</a></li>
 <li class="chapter" data-level="2.2" data-path="intro.html"><a href="intro.html#ohi-conceptually"><i class="fa fa-check"></i><b>2.2</b> OHI conceptually</a></li>
 <li class="chapter" data-level="2.3" data-path="intro.html"><a href="intro.html#best-practices"><i class="fa fa-check"></i><b>2.3</b> Best practices</a></li>
-<li class="chapter" data-level="2.4" data-path="intro.html"><a href="intro.html#your-website"><i class="fa fa-check"></i><b>2.4</b> Your website</a></li>
+<li class="chapter" data-level="2.4" data-path="intro.html"><a href="intro.html#tools-and-resources"><i class="fa fa-check"></i><b>2.4</b> Tools and Resources</a></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="datascience.html"><a href="datascience.html"><i class="fa fa-check"></i><b>3</b> Data science workflow</a><ul>
 <li class="chapter" data-level="3.1" data-path="datascience.html"><a href="datascience.html#ohi-repo"><i class="fa fa-check"></i><b>3.1</b> OHI+ Repo</a></li>
@@ -119,13 +120,15 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="4.3" data-path="toolbox.html"><a href="toolbox.html#full-repo-files-and-organization"><i class="fa fa-check"></i><b>4.3</b> Full repo files and organization</a><ul>
 <li class="chapter" data-level="4.3.1" data-path="toolbox.html"><a href="toolbox.html#functions.r"><i class="fa fa-check"></i><b>4.3.1</b> functions.r</a></li>
 </ul></li>
-<li class="chapter" data-level="4.4" data-path="toolbox.html"><a href="toolbox.html#ohicore"><i class="fa fa-check"></i><b>4.4</b> <code>ohicore</code></a></li>
+<li class="chapter" data-level="4.4" data-path="toolbox.html"><a href="toolbox.html#ohicore"><i class="fa fa-check"></i><b>4.4</b> <code id="ohicore">ohicore</code></a></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="prep-data.html"><a href="prep-data.html"><i class="fa fa-check"></i><b>5</b> Preparing data</a><ul>
+<li class="chapter" data-level="5" data-path="prep-data.html"><a href="prep-data.html"><i class="fa fa-check"></i><b>5</b> Preparing data: Basic</a><ul>
 <li class="chapter" data-level="5.1" data-path="prep-data.html"><a href="prep-data.html#overview-2"><i class="fa fa-check"></i><b>5.1</b> Overview</a></li>
-<li class="chapter" data-level="5.2" data-path="prep-data.html"><a href="prep-data.html#data-layer-formatting"><i class="fa fa-check"></i><b>5.2</b> Data layer formatting</a></li>
-<li class="chapter" data-level="5.3" data-path="prep-data.html"><a href="prep-data.html#data-wrangling"><i class="fa fa-check"></i><b>5.3</b> Data wrangling</a></li>
-<li class="chapter" data-level="5.4" data-path="prep-data.html"><a href="prep-data.html#save-and-register-data-layer"><i class="fa fa-check"></i><b>5.4</b> Save and register data layer</a></li>
+<li class="chapter" data-level="5.2" data-path="prep-data.html"><a href="prep-data.html#data-formatting-requirements"><i class="fa fa-check"></i><b>5.2</b> Data Formatting requirements</a></li>
+<li class="chapter" data-level="5.3" data-path="prep-data.html"><a href="prep-data.html#data-wrangling"><i class="fa fa-check"></i><b>5.3</b> Data Wrangling</a></li>
+<li class="chapter" data-level="5.4" data-path="prep-data.html"><a href="prep-data.html#save-and-register-data-layers"><i class="fa fa-check"></i><b>5.4</b> Save and Register data layers</a></li>
+<li class="chapter" data-level="5.5" data-path="prep-data.html"><a href="prep-data.html#register-data-layers-in-layers.csv"><i class="fa fa-check"></i><b>5.5</b> Register data layers in <code>layers.csv</code></a></li>
+<li class="chapter" data-level="5.6" data-path="prep-data.html"><a href="prep-data.html#chapter-recap"><i class="fa fa-check"></i><b>5.6</b> Chapter Recap:</a></li>
 </ul></li>
 <li class="chapter" data-level="6" data-path="calcs-basic.html"><a href="calcs-basic.html"><i class="fa fa-check"></i><b>6</b> Calculations: basic workflow</a><ul>
 <li class="chapter" data-level="6.1" data-path="calcs-basic.html"><a href="calcs-basic.html#overview-3"><i class="fa fa-check"></i><b>6.1</b> Overview</a><ul>
@@ -177,7 +180,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="6.8.5" data-path="calcs-basic.html"><a href="calcs-basic.html#calculate-scores-check-and-sync-1"><i class="fa fa-check"></i><b>6.8.5</b> Calculate scores, check, and sync</a></li>
 <li class="chapter" data-level="6.8.6" data-path="calcs-basic.html"><a href="calcs-basic.html#recap-of-fourth-calculate_scores.r-run"><i class="fa fa-check"></i><b>6.8.6</b> Recap of fourth <code>calculate_scores.r</code> run</a></li>
 </ul></li>
-<li class="chapter" data-level="6.9" data-path="calcs-basic.html"><a href="calcs-basic.html#chapter-recap"><i class="fa fa-check"></i><b>6.9</b> Chapter Recap</a></li>
+<li class="chapter" data-level="6.9" data-path="calcs-basic.html"><a href="calcs-basic.html#chapter-recap-1"><i class="fa fa-check"></i><b>6.9</b> Chapter Recap</a></li>
 </ul></li>
 <li class="chapter" data-level="7" data-path="calcs-advanced.html"><a href="calcs-advanced.html"><i class="fa fa-check"></i><b>7</b> Calculations: advanced workflow</a><ul>
 <li class="chapter" data-level="7.1" data-path="calcs-advanced.html"><a href="calcs-advanced.html#overview-4"><i class="fa fa-check"></i><b>7.1</b> Overview</a><ul>
@@ -196,7 +199,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="7.5" data-path="calcs-advanced.html"><a href="calcs-advanced.html#adding-a-new-goal"><i class="fa fa-check"></i><b>7.5</b> Adding a new goal</a></li>
 <li class="chapter" data-level="7.6" data-path="calcs-advanced.html"><a href="calcs-advanced.html#adding-subgoals"><i class="fa fa-check"></i><b>7.6</b> Adding subgoals</a></li>
 <li class="chapter" data-level="7.7" data-path="calcs-advanced.html"><a href="calcs-advanced.html#modifying-subgoals"><i class="fa fa-check"></i><b>7.7</b> Modifying subgoals</a></li>
-<li class="chapter" data-level="7.8" data-path="calcs-advanced.html"><a href="calcs-advanced.html#chapter-recap-1"><i class="fa fa-check"></i><b>7.8</b> Chapter recap</a></li>
+<li class="chapter" data-level="7.8" data-path="calcs-advanced.html"><a href="calcs-advanced.html#chapter-recap-2"><i class="fa fa-check"></i><b>7.8</b> Chapter recap</a></li>
 <li class="chapter" data-level="7.9" data-path="calcs-advanced.html"><a href="calcs-advanced.html#changing-subgoals"><i class="fa fa-check"></i><b>7.9</b> Changing subgoals</a><ul>
 <li class="chapter" data-level="7.9.1" data-path="calcs-advanced.html"><a href="calcs-advanced.html#update-goal-call-in-goals.csv"><i class="fa fa-check"></i><b>7.9.1</b> Update goal call in <code>goals.csv</code></a></li>
 </ul></li>
@@ -237,10 +240,15 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <div id="best-practices" class="section level2">
 <h2><span class="header-section-number">2.3</span> Best practices</h2>
 </div>
-<div id="your-website" class="section level2">
-<h2><span class="header-section-number">2.4</span> Your website</h2>
+<div id="tools-and-resources" class="section level2">
+<h2><span class="header-section-number">2.4</span> Tools and Resources</h2>
+<!--- Ning TODO --->
 <ul>
-<li>a place to communicate using the same workflow you use for analysis.</li>
+<li>Google Drive folder</li>
+<li>Starter Repo</li>
+<li>Full Repo</li>
+<li><p>website</p></li>
+<li><p>a place to communicate using the same workflow you use for analysis.</p></li>
 </ul>
 
 </div>
@@ -251,9 +259,8 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
         </div>
       </div>
 <a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="datascience.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
-    </div>
-  </div>
+<a href="datascience.html" class="navigation navigation-next " aria-label="Next page""><i class="fa fa-angle-right"></i></a>
+
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/lunr.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
