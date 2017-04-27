@@ -1,13 +1,16 @@
-# Toolbox Ecosystem {#toolbox}
+# Toolbox Ecosystem {#toolbox-ecosystem}
 
-In development. 
+**In development.** 
 
 ## Overview
 
+<!---
 - will identify files, their purpose, organization, and how they work together. TODISCUSS: make a table with rows=file, cols=location,purpose,how they contribute
 - how they interact with ohicore
 - the ecosystem here is the same in any assessment. So, if you want to explore the goal model for the Gulf of Guayaquil assessment, you could navigate to their models in the same way. 
 - 2 step repo process: prep, full
+
+--->
 
 ## Prep repo files and organization
 
