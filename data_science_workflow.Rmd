@@ -29,4 +29,20 @@
 
 - give a face to your project
 
+
+### Branches: master and gh-pages
+
+#### What you need to know 
+
+super powerful; parallel universe workspace. we'll just be taking advantage of the gh-pages, special branch.
+
+#### Setting up
+
+#### Switching branches
+
+- make sure you've committed and pushed before switching (I compuslively pull each time again, just to be sure)
+- if you have scripts open, it may say that they don't exist anymore and would you like to delete them. Say yes. They do exist, just in a different branch
+
+#### Updating content
+
 - learn more with this 2-hour tutorial [Making free websites with RStudio’s R Markdown](https://jules32.github.io/rmarkdown-website-tutorial) made by our team.
