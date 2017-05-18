@@ -7,7 +7,7 @@
 - use RStudio, GitHub to work reproducibly and collaboratively
 - how you work
 
-## OHI+ Repo
+## OHI Overview
 
 - what is in the OHI+ repo, not file-by-file, but high-level
 - prep and full repos
@@ -15,6 +15,10 @@
 ## RStudio-GitHub workflow
 
 ![](https://docs.google.com/drawings/d/1eEb8qlCWY5g0v19xMoW-Jc71cNr4GOacsxUK9FR8si4/pub?w=960&h=480)
+
+http://happygitwithr.com/troubleshooting.html
+"Push/Pull buttons greyed out in RStudio"
+"I have no idea if my local repo and my remote repo are connected."
 
 ## How you work
 
