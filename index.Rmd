@@ -14,7 +14,7 @@ description: "This is the official Ocean Health Index Toolbox training."
 
 # Home {#home}
 
-**Welcome.**  
+**Welcome.**   
 
 **This training program is under active development and testing** — development is currently focused on Chapters \@ref(data-science) and \@ref(toolbox-ecosystem). Chapters \@ref(prep-data) and \@ref(calcs-basic) are nearly complete, and we are also outlining other chapters.
 
