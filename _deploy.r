@@ -13,7 +13,7 @@ Sys.setenv(GH_TOKEN=gh_token)
 ## book variables
 repo_name = 'toolbox-training'
 repo_slug = sprintf('OHI-Science/toolbox-training')
-repo_url = sprintf('https://github.com/%s', repo_slug)
+repo_slug = sprintf('OHI-Science/%s', repo_name)
 dir_gh_pages = sprintf('~/github/clip-n-ship/%s', repo_name)
 dir_master = sprintf('~/github/%s', repo_name)
 dir_master_book = sprintf('~/github/%s/_book', repo_name)
