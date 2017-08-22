@@ -15,7 +15,21 @@
 
 <!--- Ning TODO ---> 
 
-- Google Drive folder
+### Google Drive folder
+
+In preparation of the Conduct phase of your project or your technical workshop, each OHI+ project is provided a [Google Drive folder](link to folder). It contains presentations, Terms of Reference (TOR), workshop agenda, notes, and a OHI+ Planner. All materials are intended to be used during the workshop and beyond. 
+
+_Why Google Drive?_ OHI is a long-term, highly collaborative process. To make working together effecient, you will use many open science tools, including Google Drive, Rstudio, and Github. Lets start with collaborating in Google Drive, where all participants can view and edit the same materials, and take notes. The advantage of using a shared Google Drive folder is that all your decision-making and insights are collected here in one place, rahter than in disparate emails or notes, or even lost without being recorded. 
+
+Let's take a look inside and see how you can best use it. 
+
+_Presentations, TOR, and agenda_ are fairly self-explanatory. They will help you navigate the workshop. 
+
+_Notes_ will be used throughout the workshop. Rather than having individual participants taking their own notes and stitching them together later, your could assign a few master notetakers who collaboratively and simultaneously record questions and discussions in this one shared document, while others can focus on the discussion itself. Participants can refer back to these notes at any time online. 
+
+_OHI+ Planner_ will be used most often during the workshop and after. It is a spreadsheet that organize and explore existing data to suit your Goals, Pressures, and Resilience, and to help you finalize spatial boundaries of your assessment. There are three main sheets - _Status data, Pressures data, and Resilience data_, followed by examples and explanations of how to fill out the main sheets. 
+
+
 - Starter Repo
 - Full Repo
 - website
