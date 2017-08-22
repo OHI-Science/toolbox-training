@@ -13,7 +13,7 @@ Sys.setenv(GH_TOKEN=gh_token)
 ## book variables
 repo_name = 'toolbox-training'
 repo_slug = sprintf('OHI-Science/toolbox-training')
-repo_url = sprintf('https://github.com/%s', repo_slug)
+repo_slug = sprintf('OHI-Science/%s', repo_name)
 dir_gh_pages = sprintf('~/github/clip-n-ship/%s', repo_name)
 dir_master = sprintf('~/github/%s', repo_name)
 dir_master_book = sprintf('~/github/%s/_book', repo_name)
@@ -30,7 +30,7 @@ system(sprintf('cp %s/* %s', dir_master_book, dir_gh_pages))
 
 ## add and commit gh-pages branch
 git2r::add(repo, sprintf('%s/*html', dir_gh_pages))
-git2r::commit(repo, message="updating bookdown from toolbox_training@master::_deploy.r")
+git2r::commit(repo, message=sprintf("updating bookdown from %s@master::_deploy.r", repo_name))
 
 setwd(dir_gh_pages)
 system(sprintf('git push https://%s@github.com/%s.git HEAD:%s', gh_token, repo_slug, 'gh-pages'))
