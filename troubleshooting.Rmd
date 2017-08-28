@@ -1,0 +1,139 @@
+# Troubleshooting, score checking, error checking {#troubleshooting} 
+
+Even if everything is going smoothly with calculating OHI scores, it is a good idea to check your work and inspect scores to make sure they make sense.
+
+## Checking likely future state
+
+<!--- TODO: change this example to toolbox-demo not mhi --->
+Let's look at the FIS scores. First glance: there is a super small trend and resilience is twice as high as pressures, so high future scores look right.  so this looks right:
+
+``` r
+library(tidyverse)
+scores <- read_csv('https://raw.githubusercontent.com/OHI-Science/mhi/master/region2017/scores.csv')
+
+
+scores %>%
+  filter(goal == "FIS") %>% as.data.frame()
+#>    goal  dimension region_id  score
+#> 1   FIS     future         0 100.00
+#> 2   FIS     future         1 100.00
+#> 3   FIS     future         2 100.00
+#> 4   FIS     future         3 100.00
+#> 5   FIS     future         4 100.00
+#> 6   FIS  pressures         1  30.89
+#> 7   FIS  pressures         2  30.38
+#> 8   FIS  pressures         3  33.06
+#> 9   FIS  pressures         4  31.75
+#> 10  FIS resilience         1  60.41
+#> 11  FIS resilience         2  71.45
+#> 12  FIS resilience         3  60.65
+#> 13  FIS resilience         4  58.90
+#> 14  FIS      score         0  96.66
+#> 15  FIS      score         1  96.35
+#> 16  FIS      score         2  96.30
+#> 17  FIS      score         3  96.60
+#> 18  FIS      score         4  97.40
+#> 19  FIS     status         0  93.33
+#> 20  FIS     status         1  92.70
+#> 21  FIS     status         2  92.60
+#> 22  FIS     status         3  93.20
+#> 23  FIS     status         4  94.80
+#> 24  FIS      trend         1  -0.01
+#> 25  FIS      trend         2  -0.01
+#> 26  FIS      trend         3  -0.01
+#> 27  FIS      trend         4  -0.02
+```
+
+But let's check to make sure the likely future state calculation makes sense.
+ 
+>likely future state = [1 + 0.67*trend + (1 - 0.67)*(resilience - pressures)]*status
+
+Here is a working example; you can use your own `scores` variable and explore the goals and regions you would like to here: 
+
+``` r
+## load tidyverse library and scores variable
+library(tidyverse)
+scores <- read_csv('https://raw.githubusercontent.com/OHI-Science/mhi/master/region2017/scores.csv')
+
+## let's walk through for just one region. How about region_id 2, and spread it so that each value has its own column header.
+fis2 <- scores %>%
+  filter(goal == "FIS", region_id == 2) %>%
+  spread(dimension, score)
+
+
+## confirm likely future state (lfs) score.
+fis2 %>%
+  ## multiply to bring status, resilience, pressures onto same scale with trend
+  mutate(status     = status     /100,
+         resilience = resilience /100,
+         pressures  = pressures  /100) %>%
+  ## likely future state equation
+  mutate(lfs =
+           (1 +
+              (0.67*trend) +
+              ((1 - 0.67)*(resilience - pressures))) *
+           status * 100)
+#> # A tibble: 1 x 9
+#>    goal region_id future pressures resilience score status trend      lfs
+#>   <chr>     <int>  <dbl>     <dbl>      <dbl> <dbl>  <dbl> <dbl>    <dbl>
+#> 1   FIS         2    100    0.3038     0.7145  96.3  0.926 -0.01 104.5298
+## lfs score will be capped at 100.
+
+
+## confirm overall score.
+fis2 %>%
+  mutate(score_check = (future + status)/2)
+#> # A tibble: 1 x 9
+#>    goal region_id future pressures resilience score status trend
+#>   <chr>     <int>  <dbl>     <dbl>      <dbl> <dbl>  <dbl> <dbl>
+#> 1   FIS         2    100     30.38      71.45  96.3   92.6 -0.01
+#> # ... with 1 more variables: score_check <dbl>
+
+
+### now check coastal protection
+## let's walk through for just one region. How about region_id 1, and spread it so that each value has its own column header.
+(cp1 <- scores %>%
+  filter(goal == "CP", region_id == 1) %>%
+  as.data.frame() %>%
+  spread(dimension, score))
+#>   goal region_id future pressures resilience score status trend
+#> 1   CP         1  80.11     30.04      81.43 79.34  78.57 -0.22
+
+
+## confirm likely future state (lfs) score.
+cp1 %>%
+  ## multiply to bring status, resilience, pressures onto same scale with trend
+  mutate(status     = status     /100,
+         resilience = resilience /100,
+         pressures  = pressures  /100) %>%
+  ## likely future state equation
+  mutate(lfs =
+           (1 +
+              (0.67*trend) +
+              ((1 - 0.67)*(resilience - pressures))) *
+           status * 100)
+#>   goal region_id future pressures resilience score status trend      lfs
+#> 1   CP         1  80.11    0.3004     0.8143 79.34 0.7857 -0.22 80.31323
+## lfs score will be capped at 100.
+
+## here it is by hand:
+status <- 0.7857046
+pressure <- 0.3004
+resil <- 0.8143
+trend <- -0.223814
+
+(lfs =
+  (1 +
+     (0.67*trend) +
+     ((1 - 0.67)*(resil - pressure))) *
+  status * 100)
+#> [1] 80.11293
+```
+TODO: 
+- explain /100
+
+## visualizations
+
+TODO: 
+- change_plot()
+- maps
