@@ -1,15 +1,35 @@
-# Troubleshooting, score checking, error checking {#troubleshooting} 
+# Checks and troubleshooting {#checks} 
 
-Even if everything is going smoothly with calculating OHI scores, it is a good idea to check your work and inspect scores to make sure they make sense.
+***In development***
+
+
+## Overview
+
+Checking your work is important as you go along, since there are so many pieces to an OHI assessment. It's important to check data you'll be using and to confirm that data layers were made correctly. And even if everything is going smoothly with calculating OHI scores, it is a good idea to check your work and inspect scores to make sure they make sense.
 
 We are going to walk through some score checking here using scores from the `toolbox-demo` repo; you can also follow along with your own `scores` variable from your repo.
 
 
+*TODO: switch this out with toolbox-demo, not mhi*
 ``` {r, eval=FALSE}
 ## load tidyverse library and scores variable
 library(tidyverse)
 scores <- read_csv('https://raw.githubusercontent.com/OHI-Science/mhi/master/region2017/scores.csv')
 ```
+
+## Basic Checks
+
+### Use GitHub to check files
+
+- Which files do you expect to change, and how?  
+
+### Check for NAs
+
+- Tracking how many NAs (missing data) you have is important, particularly if you have data that is not reported for all of your regions. 
+- Discuss Gapfilling
+
+### Visualize data
+
 
 ## Checking likely future status
 
@@ -188,13 +208,10 @@ To see where likely future status is calculated in `ohicore`, we can first navig
 
 Now let's look at [`CalculateGoalIndex`](https://github.com/OHI-Science/ohicore/blob/master/R/CalculateGoalIndex.R). Here you can again search for 'future' and see the equation we just did, although with different variable names (and DISCOUNT in our equation set to 1)  `d$xF <- with(d, (DISCOUNT * (1 + (BETA * t) + ((1-BETA) * (r - p)))) * x)`
 
-In progress...
-
-## visualizations
-
-<!---
-
 ## overall score
+
+Here is a quick way to confirm the overall score, using the `fis2` example from above:
+
 ```{r, eval=FALSE}
 ## confirm overall score.
 fis2 %>%
@@ -206,6 +223,17 @@ fis2 %>%
 #> # ... with 1 more variables: score_check <dbl>
 ```
 
+
+In progress...
+
+## checking for NAs
+
+
+
+## visualizations
+
+<!---
+
 ## visualizations
 
 https://github.com/OHI-Science/ohiprep/blob/master/src/R/VisGlobal.R
@@ -213,6 +241,7 @@ https://github.com/OHI-Science/ohiprep/blob/master/src/R/VisGlobal.R
 TODO: 
 - change_plot()
 - maps
+- casey's data timeseries display
 
 - [Mel's Global Checking Data cheatsheet](https://github.com/OHI-Science/ohiprep/blob/master/Reference/CheckingData.pptx) (need to modify from global to OHI+)
 
