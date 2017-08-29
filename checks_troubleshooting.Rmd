@@ -2,7 +2,6 @@
 
 ***In development***
 
-
 ## Overview
 
 Checking your work is important as you go along, since there are so many pieces to an OHI assessment. It's important to check data you'll be using and to confirm that data layers were made correctly. And even if everything is going smoothly with calculating OHI scores, it is a good idea to check your work and inspect scores to make sure they make sense.
@@ -19,6 +18,32 @@ scores <- read_csv('https://raw.githubusercontent.com/OHI-Science/mhi/master/reg
 
 ## Basic Checks
 
+### Checking prepared data
+
+Depending on the type of data you're reviewing, here are useful `R` functions that are good to get a quick sense of the data:
+
+```
+hist()
+summary()
+dim()
+table()
+plot(old_data, new_data)
+skimr::skim()
+```
+And here are questions you can ask yourself: 
+
+- Does range/distribution seem reasonable?
+- Does the number of NA values make sense? 
+- Is the sample size correct (i.e., length of data)? 
+
+
+You may encounter these common problems:
+
+- Check again after joining data (i.e. with `dplyr::left_join`) (check sample size, NAs)!
+- Compare distribution of NA values between raw/processed data!
+
+
+
 ### Use GitHub to check files
 
 - Which files do you expect to change, and how?  
@@ -29,6 +54,22 @@ scores <- read_csv('https://raw.githubusercontent.com/OHI-Science/mhi/master/reg
 - Discuss Gapfilling
 
 ### Visualize data
+
+A GoogleVis plot is good for visualizing multiple years of data and looking through it interactively. You'll need your data to have columns like this:
+
+`rgn_id, year, value` *TODO: make this with toolbox-demo data*
+
+<!---
+(note: if you have a lot of regions it could be more useful to join this with the names of the regions; you can do this using spatial/...) --->
+
+## Check functions.r
+
+From Mel's cheatsheet:
+- `browser()` 
+
+
+## Checking calculated scores
+
 
 
 ## Checking likely future status
