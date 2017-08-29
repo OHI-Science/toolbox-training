@@ -11,7 +11,7 @@ library(tidyverse)
 scores <- read_csv('https://raw.githubusercontent.com/OHI-Science/mhi/master/region2017/scores.csv')
 ```
 
-## Checking likely future state
+## Checking likely future status
 
 <!--- TODO: change this example to toolbox-demo not mhi --->
 Let's look at the FIS scores. There are very high `future` scores, does this make sense? Well, the status scores are very high, and although the trend is negative, it is very small. Resilience is twice as high as pressures, so this could boost the status scores. 
@@ -49,7 +49,7 @@ scores %>%
 #> 27  FIS      trend         4  -0.02
 ```
 
-These scores were calculated by the OHI Toolbox, i.e. `ohicore`. But we can check right here without using `ohicore` to make sure the likely future state calculation makes sense. 
+These scores were calculated by the OHI Toolbox, i.e. `ohicore`. But we can check right here without using `ohicore` to make sure the likely future status calculation makes sense. 
 
 Let's walk through for just one region. 
 
@@ -66,11 +66,11 @@ How about region 2, and we will use `tidyr::spread()` so that each value has its
 #> 1  FIS         2    100    0.3038     0.7145  96.3  0.926 -0.01
 ```
 
-Now we can use these values to calculate likely future state using this equation: 
+Now we can use these values to calculate likely future status using this equation: 
  
-> likely future state = [1 + 0.67*trend + (1 - 0.67)*(resilience - pressures)]*status
+> likely future status = [1 + 0.67\*trend + (1 - 0.67)\*(resilience - pressures)] \*status
 
-And here it is in `R`; let's compare it to the other values by adding a `lfs` column for 'likely future state':
+And here it is in `R`; let's compare it to the other values by adding a `lfs` column for 'likely future status':
 
 ```{r, eval=FALSE}
 fis2 %>%
@@ -87,11 +87,47 @@ fis2 %>%
 
 Our `lfs` column is 104, and the `future` column calculated by `ohicore` is 100. This is correct because something `ohicore` does that we did not do is to cap any value above 100 to 100. 
 
-So this is correct, but let's look at another example where the values aren't capped to 100. Let's look at coastal protection:
+So this confirms that `ohicore` calculated `future` correctly. 
+
+But now let's look at another example where the values aren't capped to 100. Let's look at coastal protection:
+
+```{r, eval=FALSE}
+scores %>%
+  filter(goal == "CP") %>% as.data.frame()
+#>    goal  dimension region_id score
+#> 1    CP     future         0 65.21
+#> 2    CP     future         1 80.11
+#> 3    CP     future         2 64.83
+#> 4    CP     future         3 59.65
+#> 5    CP     future         4 56.27
+#> 6    CP  pressures         1 30.04
+#> 7    CP  pressures         2 31.99
+#> 8    CP  pressures         3 37.54
+#> 9    CP  pressures         4 30.95
+#> 10   CP resilience         1 81.43
+#> 11   CP resilience         2 76.54
+#> 12   CP resilience         3 65.81
+#> 13   CP resilience         4 53.08
+#> 14   CP      score         0 65.86
+#> 15   CP      score         1 79.34
+#> 16   CP      score         2 64.70
+#> 17   CP      score         3 61.12
+#> 18   CP      score         4 58.29
+#> 19   CP     status         0 66.51
+#> 20   CP     status         1 78.57
+#> 21   CP     status         2 64.58
+#> 22   CP     status         3 62.60
+#> 23   CP     status         4 60.31
+#> 24   CP      trend         1 -0.22
+#> 25   CP      trend         2 -0.21
+#> 26   CP      trend         3 -0.21
+#> 27   CP      trend         4 -0.21
+```
+
+Let's look at just one region for CP, and divide by 100:
 ```{r, eval=FALSE}
 (cp1 <- scores %>%
   filter(goal == "CP", region_id == 1) %>%
-  as.data.frame() %>%
   spread(dimension, score) %>%
   mutate(status     = status     /100,
          resilience = resilience /100,
@@ -100,7 +136,7 @@ So this is correct, but let's look at another example where the values aren't ca
 #> 1   CP         1  80.11    0.3004     0.8143 79.34 0.7857 -0.22
 ```
 
-And then we'll confirm the likely future state (lfs) score:
+And then we'll confirm the likely future status (lfs) score:
 ```{r, eval=FALSE}
 cp1 %>%
   mutate(lfs =
@@ -111,7 +147,8 @@ cp1 %>%
 #>   goal region_id future pressures resilience score status trend      lfs
 #> 1   CP         1  80.11    0.3004     0.8143 79.34 0.7857 -0.22 80.31323
 ```
-So here the `lfs` column is 80.31323, and the `future` column is 80.11, which are close, but different. And this comes down to rounding that `ohicore` does when calculating the scores. We can turn this off (temporarily) to see this:
+
+So here the `lfs` column is 80.31323, and the `future` column is 80.11. These are close, but different. And this comes down to rounding that `ohicore` does when calculating the scores. We can turn this off (temporarily) to see this:
 
 First, go to `functions.r` and scroll down to the final function called `FinalizeScores()`. Scroll to the bottom and comment-out where the scores are rounded:
 
@@ -123,6 +160,13 @@ First, go to `functions.r` and scroll down to the final function called `Finaliz
 Second, rerun `configure_toolbox.R` and `calculate_scores.R` to recalculate the `scores` variable without rounding. Now we can see that this gives us: 
 
 ```{r, eval=FALSE}
+cp1 <- scores %>%
+  filter(goal == "CP", region_id == 1) %>%
+  spread(dimension, score) %>%
+  mutate(status     = status     /100,
+         resilience = resilience /100,
+         pressures  = pressures  /100))
+
 cp1 %>%
   mutate(lfs =
            (1 +
@@ -140,9 +184,13 @@ Now that we've confirmed this, we would advise you go back to `functions.r` and 
 
 ### Digging deeper
 
-To see where likely future state is calculated in `ohicore`, we can first navigate to [`CalculateAll` on GitHub](https://github.com/OHI-Science/ohicore/blob/master/R/CalculateAll.R), and searching for 'future' and scrolling down takes us to a function called `CalculateGoalIndex`. We'll look at that function in a second but here you can also see where status, pressures, and resilience were all divided by 100 just like we dia above.
+To see where likely future status is calculated in `ohicore`, we can first navigate to [`CalculateAll` on GitHub](https://github.com/OHI-Science/ohicore/blob/master/R/CalculateAll.R), and searching for 'future' and scrolling down takes us to a function called `CalculateGoalIndex`. We'll look at that function in a second but here you can also see where status, pressures, and resilience were all divided by 100 just like we dia above.
 
 Now let's look at [`CalculateGoalIndex`](https://github.com/OHI-Science/ohicore/blob/master/R/CalculateGoalIndex.R). Here you can again search for 'future' and see the equation we just did, although with different variable names (and DISCOUNT in our equation set to 1)  `d$xF <- with(d, (DISCOUNT * (1 + (BETA * t) + ((1-BETA) * (r - p)))) * x)`
+
+In progress...
+
+## visualizations
 
 <!---
 
