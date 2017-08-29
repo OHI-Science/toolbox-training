@@ -116,35 +116,35 @@ So here the `lfs` column is 80.31323, and the `future` column is 80.11, which ar
 First, go to `functions.r` and scroll down to the final function called `FinalizeScores()`. Scroll to the bottom and comment-out where the scores are rounded:
 
 ```{r, eval=FALSE}
-
+# round scores
+# scores$score = round(scores$score, 2)
 ```
 
+Second, rerun `configure_toolbox.R` and `calculate_scores.R` to recalculate the `scores` variable without rounding. Now we can see that this gives us: 
 
-
-```{r}
-## lfs score will be capped at 100.
-
-## here it is by hand:
-status <- 0.7857046
-pressure <- 0.3004
-resil <- 0.8143
-trend <- -0.223814
-
-(lfs =
-  (1 +
-     (0.67*trend) +
-     ((1 - 0.67)*(resil - pressure))) *
-  status * 100)
-#> [1] 80.11293
+```{r, eval=FALSE}
+cp1 %>%
+  mutate(lfs =
+           (1 +
+              (0.67*trend) +
+              ((1 - 0.67)*(resilience - pressures))) *
+           status * 100)
+#>  goal region_id   future pressures resilience   score    status     trend      lfs
+#> 1   CP         1 80.11293    0.3004     0.8143 79.3417 0.7857046 -0.223814 80.11293
 ```
 
-TODO: 
-- functions.r — FinalizeScores()
+When recalculating without rounding first, our `lfs` column is now equal to the `future` column: 80.11. 
+
+Now that we've confirmed this, we would advise you go back to `functions.r` and undo the commenting so that scores are again rounded; we round the final scores because although we can calculate out to many decimal points that implies a level of precision for ocean health that we do not report.
+
 
 ### Digging deeper
 
-ohicore::CalculateAll
-ohicore::CalculateGoalIndex
+To see where likely future state is calculated in `ohicore`, we can first navigate to [`CalculateAll` on GitHub](https://github.com/OHI-Science/ohicore/blob/master/R/CalculateAll.R), and searching for 'future' and scrolling down takes us to a function called `CalculateGoalIndex`. We'll look at that function in a second but here you can also see where status, pressures, and resilience were all divided by 100 just like we dia above.
+
+Now let's look at [`CalculateGoalIndex`](https://github.com/OHI-Science/ohicore/blob/master/R/CalculateGoalIndex.R). Here you can again search for 'future' and see the equation we just did, although with different variable names (and DISCOUNT in our equation set to 1)  `d$xF <- with(d, (DISCOUNT * (1 + (BETA * t) + ((1-BETA) * (r - p)))) * x)`
+
+<!---
 
 ## overall score
 ```{r, eval=FALSE}
@@ -160,10 +160,12 @@ fis2 %>%
 
 ## visualizations
 
-<!---https://github.com/OHI-Science/ohiprep/blob/master/src/R/VisGlobal.R--->
+https://github.com/OHI-Science/ohiprep/blob/master/src/R/VisGlobal.R
 
 TODO: 
 - change_plot()
 - maps
 
 - [Mel's Global Checking Data cheatsheet](https://github.com/OHI-Science/ohiprep/blob/master/Reference/CheckingData.pptx) (need to modify from global to OHI+)
+
+--->
