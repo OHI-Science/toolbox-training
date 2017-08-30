@@ -1,0 +1,289 @@
+# Checks and troubleshooting {#checks} 
+
+***In development***
+
+## Overview
+
+Checking your work is important as you go along, since there are so many pieces to an OHI assessment. It's important to check data you'll be using and to confirm that data layers were made correctly. And even if everything is going smoothly with calculating OHI scores, it is a good idea to check your work and inspect scores to make sure they make sense.
+
+We are going to walk through some score checking here using scores from the `toolbox-demo` repo; you can also follow along with your own `scores` variable from your repo.
+
+
+*TODO: switch this out with toolbox-demo, not mhi*
+``` {r, eval=FALSE}
+## load tidyverse library and scores variable
+library(tidyverse)
+scores <- read_csv('https://raw.githubusercontent.com/OHI-Science/mhi/master/region2017/scores.csv')
+```
+
+## Basic Checks
+
+### Checking prepared data
+
+Depending on the type of data you're reviewing, here are useful `R` functions that are good to get a quick sense of the data:
+
+```
+hist()
+summary()
+dim()
+table()
+plot(old_data, new_data)
+skimr::skim()
+```
+And here are questions you can ask yourself: 
+
+- Does range/distribution seem reasonable?
+- Does the number of NA values make sense? 
+- Is the sample size correct (i.e., length of data)? 
+
+
+You may encounter these common problems:
+
+- Check again after joining data (i.e. with `dplyr::left_join`) (check sample size, NAs)!
+- Compare distribution of NA values between raw/processed data!
+
+
+
+### Use GitHub to check files
+
+- Which files do you expect to change, and how?  
+
+### Check for NAs
+
+- Tracking how many NAs (missing data) you have is important, particularly if you have data that is not reported for all of your regions. 
+- Discuss Gapfilling
+
+### Visualize data
+
+A GoogleVis plot is good for visualizing multiple years of data and looking through it interactively. You'll need your data to have columns like this:
+
+`rgn_id, year, value` *TODO: make this with toolbox-demo data*
+
+<!---
+(note: if you have a lot of regions it could be more useful to join this with the names of the regions; you can do this using spatial/...) --->
+
+## Check functions.r
+
+From Mel's cheatsheet:
+- `browser()` 
+
+
+## Checking calculated scores
+
+
+
+## Checking likely future status
+
+<!--- TODO: change this example to toolbox-demo not mhi --->
+Let's look at the FIS scores. There are very high `future` scores, does this make sense? Well, the status scores are very high, and although the trend is negative, it is very small. Resilience is twice as high as pressures, so this could boost the status scores. 
+
+``` {r, eval=FALSE}
+scores %>%
+  filter(goal == "FIS") %>% as.data.frame()
+#>    goal  dimension region_id  score
+#> 1   FIS     future         0 100.00
+#> 2   FIS     future         1 100.00
+#> 3   FIS     future         2 100.00
+#> 4   FIS     future         3 100.00
+#> 5   FIS     future         4 100.00
+#> 6   FIS  pressures         1  30.89
+#> 7   FIS  pressures         2  30.38
+#> 8   FIS  pressures         3  33.06
+#> 9   FIS  pressures         4  31.75
+#> 10  FIS resilience         1  60.41
+#> 11  FIS resilience         2  71.45
+#> 12  FIS resilience         3  60.65
+#> 13  FIS resilience         4  58.90
+#> 14  FIS      score         0  96.66
+#> 15  FIS      score         1  96.35
+#> 16  FIS      score         2  96.30
+#> 17  FIS      score         3  96.60
+#> 18  FIS      score         4  97.40
+#> 19  FIS     status         0  93.33
+#> 20  FIS     status         1  92.70
+#> 21  FIS     status         2  92.60
+#> 22  FIS     status         3  93.20
+#> 23  FIS     status         4  94.80
+#> 24  FIS      trend         1  -0.01
+#> 25  FIS      trend         2  -0.01
+#> 26  FIS      trend         3  -0.01
+#> 27  FIS      trend         4  -0.02
+```
+
+These scores were calculated by the OHI Toolbox, i.e. `ohicore`. But we can check right here without using `ohicore` to make sure the likely future status calculation makes sense. 
+
+Let's walk through for just one region. 
+
+How about region 2, and we will use `tidyr::spread()` so that each value has its own column header, which makes it easier to think about. Something we need to do also is to divide status, resilience, and pressures by 100 so that they are on the same scale as trend is. There's more information below on exactly where that happens if you're interested.
+
+```{r, eval=FALSE}
+(fis2 <- scores %>%
+  filter(goal == "FIS", region_id == 2) %>%
+  spread(dimension, score) %>%
+  mutate(status     = status     /100,
+         resilience = resilience /100,
+         pressures  = pressures  /100))
+#>   goal region_id future pressures resilience score status trend
+#> 1  FIS         2    100    0.3038     0.7145  96.3  0.926 -0.01
+```
+
+Now we can use these values to calculate likely future status using this equation: 
+ 
+> likely future status = [1 + 0.67\*trend + (1 - 0.67)\*(resilience - pressures)] \*status
+
+And here it is in `R`; let's compare it to the other values by adding a `lfs` column for 'likely future status':
+
+```{r, eval=FALSE}
+fis2 %>%
+  mutate(lfs =
+           (1 +
+              (0.67*trend) +
+              ((1 - 0.67)*(resilience - pressures))) *
+           status * 100)
+#> # A tibble: 1 x 9
+#>    goal region_id future pressures resilience score status trend      lfs
+#>   <chr>     <int>  <dbl>     <dbl>      <dbl> <dbl>  <dbl> <dbl>    <dbl>
+#> 1   FIS         2    100    0.3038     0.7145  96.3  0.926 -0.01 104.5298
+```
+
+Our `lfs` column is 104, and the `future` column calculated by `ohicore` is 100. This is correct because something `ohicore` does that we did not do is to cap any value above 100 to 100. 
+
+So this confirms that `ohicore` calculated `future` correctly. 
+
+But now let's look at another example where the values aren't capped to 100. Let's look at coastal protection:
+
+```{r, eval=FALSE}
+scores %>%
+  filter(goal == "CP") %>% as.data.frame()
+#>    goal  dimension region_id score
+#> 1    CP     future         0 65.21
+#> 2    CP     future         1 80.11
+#> 3    CP     future         2 64.83
+#> 4    CP     future         3 59.65
+#> 5    CP     future         4 56.27
+#> 6    CP  pressures         1 30.04
+#> 7    CP  pressures         2 31.99
+#> 8    CP  pressures         3 37.54
+#> 9    CP  pressures         4 30.95
+#> 10   CP resilience         1 81.43
+#> 11   CP resilience         2 76.54
+#> 12   CP resilience         3 65.81
+#> 13   CP resilience         4 53.08
+#> 14   CP      score         0 65.86
+#> 15   CP      score         1 79.34
+#> 16   CP      score         2 64.70
+#> 17   CP      score         3 61.12
+#> 18   CP      score         4 58.29
+#> 19   CP     status         0 66.51
+#> 20   CP     status         1 78.57
+#> 21   CP     status         2 64.58
+#> 22   CP     status         3 62.60
+#> 23   CP     status         4 60.31
+#> 24   CP      trend         1 -0.22
+#> 25   CP      trend         2 -0.21
+#> 26   CP      trend         3 -0.21
+#> 27   CP      trend         4 -0.21
+```
+
+Let's look at just one region for CP, and divide by 100:
+```{r, eval=FALSE}
+(cp1 <- scores %>%
+  filter(goal == "CP", region_id == 1) %>%
+  spread(dimension, score) %>%
+  mutate(status     = status     /100,
+         resilience = resilience /100,
+         pressures  = pressures  /100)) 
+#>   goal region_id future pressures resilience score status trend
+#> 1   CP         1  80.11    0.3004     0.8143 79.34 0.7857 -0.22
+```
+
+And then we'll confirm the likely future status (lfs) score:
+```{r, eval=FALSE}
+cp1 %>%
+  mutate(lfs =
+           (1 +
+              (0.67*trend) +
+              ((1 - 0.67)*(resilience - pressures))) *
+           status * 100)
+#>   goal region_id future pressures resilience score status trend      lfs
+#> 1   CP         1  80.11    0.3004     0.8143 79.34 0.7857 -0.22 80.31323
+```
+
+So here the `lfs` column is 80.31323, and the `future` column is 80.11. These are close, but different. And this comes down to rounding that `ohicore` does when calculating the scores. We can turn this off (temporarily) to see this:
+
+First, go to `functions.r` and scroll down to the final function called `FinalizeScores()`. Scroll to the bottom and comment-out where the scores are rounded:
+
+```{r, eval=FALSE}
+# round scores
+# scores$score = round(scores$score, 2)
+```
+
+Second, rerun `configure_toolbox.R` and `calculate_scores.R` to recalculate the `scores` variable without rounding. Now we can see that this gives us: 
+
+```{r, eval=FALSE}
+cp1 <- scores %>%
+  filter(goal == "CP", region_id == 1) %>%
+  spread(dimension, score) %>%
+  mutate(status     = status     /100,
+         resilience = resilience /100,
+         pressures  = pressures  /100))
+
+cp1 %>%
+  mutate(lfs =
+           (1 +
+              (0.67*trend) +
+              ((1 - 0.67)*(resilience - pressures))) *
+           status * 100)
+#>  goal region_id   future pressures resilience   score    status     trend      lfs
+#> 1   CP         1 80.11293    0.3004     0.8143 79.3417 0.7857046 -0.223814 80.11293
+```
+
+When recalculating without rounding first, our `lfs` column is now equal to the `future` column: 80.11. 
+
+Now that we've confirmed this, we would advise you go back to `functions.r` and undo the commenting so that scores are again rounded; we round the final scores because although we can calculate out to many decimal points that implies a level of precision for ocean health that we do not report.
+
+
+### Digging deeper
+
+To see where likely future status is calculated in `ohicore`, we can first navigate to [`CalculateAll` on GitHub](https://github.com/OHI-Science/ohicore/blob/master/R/CalculateAll.R), and searching for 'future' and scrolling down takes us to a function called `CalculateGoalIndex`. We'll look at that function in a second but here you can also see where status, pressures, and resilience were all divided by 100 just like we dia above.
+
+Now let's look at [`CalculateGoalIndex`](https://github.com/OHI-Science/ohicore/blob/master/R/CalculateGoalIndex.R). Here you can again search for 'future' and see the equation we just did, although with different variable names (and DISCOUNT in our equation set to 1)  `d$xF <- with(d, (DISCOUNT * (1 + (BETA * t) + ((1-BETA) * (r - p)))) * x)`
+
+## overall score
+
+Here is a quick way to confirm the overall score, using the `fis2` example from above:
+
+```{r, eval=FALSE}
+## confirm overall score.
+fis2 %>%
+  mutate(score_check = (future + status)/2)
+#> # A tibble: 1 x 9
+#>    goal region_id future pressures resilience score status trend
+#>   <chr>     <int>  <dbl>     <dbl>      <dbl> <dbl>  <dbl> <dbl>
+#> 1   FIS         2    100     30.38      71.45  96.3   92.6 -0.01
+#> # ... with 1 more variables: score_check <dbl>
+```
+
+
+In progress...
+
+## checking for NAs
+
+
+
+## visualizations
+
+<!---
+
+## visualizations
+
+https://github.com/OHI-Science/ohiprep/blob/master/src/R/VisGlobal.R
+
+TODO: 
+- change_plot()
+- maps
+- casey's data timeseries display
+
+- [Mel's Global Checking Data cheatsheet](https://github.com/OHI-Science/ohiprep/blob/master/Reference/CheckingData.pptx) (need to modify from global to OHI+)
+
+--->
