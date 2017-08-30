@@ -3,7 +3,7 @@
 
 **In development.** 
 
-<!--- TODO: intro to OHI conceptually, Tbx stuff. See Best Practices paper. --->
+<!--- Julie TODO: intro to OHI conceptually, Tbx stuff. See Best Practices paper. --->
 
 ## Overview
 
@@ -16,9 +16,13 @@
 
 ## Tools and Resources
 
-<!--- Ning TODO ---> 
+<!--- Ning TODO
+create a separate chapter on Planner, 
+pre-req: reading list, etc. before using google drive 
+Julie will update demo repo. 
+---> 
 
-It might seem like a daunting task to plan and conduct a multi-disciplinary, multi-stakeholder, transparent, and highly collaborative assessment. There are several open-science, collaborative tools to aid you in this process. All the tools we will introduce aim to streamline the collaboration process and keep all records of decision making in one place. The tools include: 
+It might seem like a daunting task to plan and conduct a multi-disciplinary, multi-stakeholder, transparent, and highly collaborative assessment. But we have several open-science, collaborative tools to aid you in this process. All the tools we will introduce aim to streamline the collaboration process and keep all records of decision making in one place. The tools include: 
 
 - _Google Drive folder_ to gather thoughts and plan for the assessment
 - _OHI Toolbox_, or Repositories where you organize and prepare data, and calculate scores. It includes: 
@@ -27,13 +31,13 @@ It might seem like a daunting task to plan and conduct a multi-disciplinary, mul
 
 ### Google Drive folder
 
-In preparation of the Conduct phase of your project or your technical workshop, each OHI+ project is first provided a [Google Drive folder](link to folder). It contains presentations, Terms of Reference (TOR), workshop agenda, notes, and a OHI+ Planner. All materials are intended to be used during an OHI+ workshop and beyond. 
+In preparation of the Conduct phase of your project or your technical workshop, each OHI+ project is first provided a [Google Drive folder](link to folder). It contains presentations, workshop agenda, notes, and a OHI+ Planner. All materials are intended to be used during an OHI+ workshop and beyond. 
 
 _Why Google Drive?_ OHI is a long-term, highly collaborative process. To make working together with multiple team members effecient, you will use many open-science tools, including Google Drive, Rstudio, and Github. Lets start with collaborating in Google Drive, where all participants can view and edit the same materials, and take notes. The advantage of using a shared Google Drive folder is that all your decision-making and insights are collected here in one place, rahter than in disparate emails or notes, or lost without even being recorded. 
 
 Let's take a look inside and see how you can best use it. 
 
-_Presentations, TOR, and workshop agenda_ are fairly self-explanatory. They will help you navigate the workshop. 
+_Presentations and workshop agenda_ are fairly self-explanatory. They will help you navigate the workshop. 
 
 _Notes_ will be used throughout the workshop. Rather than having individual participants taking their own notes and stitching them together later, your could assign a few master notetakers who collaboratively and simultaneously record questions and discussions in this one shared document, while others can focus on the discussion itself. Participants can refer back to these notes at any time online. 
 
@@ -42,6 +46,8 @@ _OHI+ Planner_ will be used most often during the workshop and after. It is a sp
 **How to use the Planner**
 
 Let's open the Planner and take a closer look together. There are three main sheets - _Status data, Pressures data, and Resilience data_, followed by examples and explanations of how to fill out the main sheets. 
+
+<!---  ---> 
 
 _After you have used the Planner to explore data availability and conceptually map out the assessment, you can start using the OHI Toolbox to further prepare the data for calculations. At the start of your conduct phase, you will first get your Starter Repository._
 

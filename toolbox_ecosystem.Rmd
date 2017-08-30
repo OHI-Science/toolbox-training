@@ -2,7 +2,20 @@
 
 **In development.** 
 
+- no needs to reintroduce two repos. 
+- clone demo repo. follow along to learn different folders and scripts
+- prereq. steal from basic workflow. 
+- no deleting manual materials. make notes on what's moved over, changed, etc. 
+
 ## Overview
+
+In this chapter, we will introduce you to the OHI Toolbox ecosystem. The Toolbox is the engine behind an OHI+ assessment. It allows you to store data, do calculations, as well as record decision-makings and produce reports. Here let's take a look at what files are in there, their purpose, organization, and how they work together. 
+
+The Toolbox mainly consists of two repositories, or two places where files are stored - The Starter Repository and the Full Repository. The Starter Repository, as the name suggests, gets you started with data preparation, while the Full repository contains more scripts and files that help you complete calculations and make reports.
+
+When you work on your OHI+ Planner to begin conducting your assessment, and even before you have defined your regions, we can immediately provide you with a Starter Github repository (_Starter Repo_) to get you familiar with the Github/RStudio workflow, and to help you through the data exploration and region-defining stage.
+
+Once you have finalized your regions and provide us with appropriate files (see next section), we will upgrade you with a Full repository (_Full Repo_) with pre-populated data layers extracted from the most recent [Global OHI assessment](http://ohi-science.org/ohi-global).
 
 <!---
 - will identify files, their purpose, organization, and how they work together. TODISCUSS: make a table with rows=file, cols=location,purpose,how they contribute
@@ -12,7 +25,7 @@
 
 --->
 
-## Prep repo files and organization
+## Starter Repository 
 
 - getting organized and collaborative
 - jump ahead to Chapter \@ref(prep-data)
@@ -57,14 +70,7 @@ JSL: until we have these done don't list:
 - _Example Data Prep Tutorials_ with data and scripts
 --->
 
-Within each folder, it's up to you how to populate and organize the contents. We recommend that within each folder you save the raw data files if possible, and create a data preparation script (eg. `CW_data_prep.R` or `CW_data_prep.Rmd` for Clean Water) to explore data and document decision making.
-
-
-# Requesting your repositories
-
-Using the OHI Toolbox for your assessment is divided into two steps. When you decide to conduct an OHI+ assessment, and even before you have defined your regions, we can immediately provide you with a Starter Github repository (_Starter Repo_) to get you familiar with the Github/RStudio workflow, and to help you through the data exploration and region-defining stage.
-
-Once you have finalized your regions and provide us with appropriate files (see next section), we will upgrade you with a Full repository (_Full Repo_) with pre-populated data layers extracted from the most recent [Global OHI assessment](http://ohi-science.org/ohi-global).
+Within each folder, it's up to you how to populate and organize the contents. We recommend that within each folder you save the raw data files, and create a data preparation script (eg. `CW_data_prep.R` or `CW_data_prep.Rmd` for Clean Water) to explore data and document decision making.
 
 ### How to request a Starter Repo?
 
@@ -72,9 +78,9 @@ You can create a GitHub account at http://github.com with a username and passwor
 
 - your Github username
 - the name of your assessment area (eg. the Gulf of Guayaquil)
-- a shortened name for the repository (our convention is a **3-letter code**). For example, the Gulf of Guayaquil assessment had `gye` as their code.
+- a shortened name for the repository (our convention is a **3-letter code**). For example, the Gulf of Guayaquil assessment had `gye` as their repository name.
 
-## Full repo files and organization
+## Full Repository
 
 After you have explored your data and finalized spatial boundaries, the Full Repo offers the rest of the scripts and files you need to complete your OHI+ assessment.
 
