@@ -1,18 +1,14 @@
 # Toolbox Ecosystem {#toolbox-ecosystem}
 
-TODO: 
-add overview colorful figure at the end of chapter - recap. 
-
-
 ## Overview
 
-Welcome to the OHI Toolbox, the engine behind all OHI assessments! The Toolbox is an ecosystem of R scripts and data files, organized in folders and sub-folders. In this chapter, we will learn how the toolbox is structured - where you would store data, modify models, make calculations, as well as record decision-makings and produce reports. 
+Welcome to the OHI Toolbox, the engine behind all OHI assessments. The Toolbox is an ecosystem of R scripts and data files, organized in folders and sub-folders. In this chapter, we will learn how the Toolbox is structured - where you would store data, modify models, make calculations, as well as record decision-makings. 
 
-_The Toolbox ecosystem introduced here is the same in any assessment. So, if you want to explore the goal model for the Gulf of Guayaquil assessment, you could navigate to their models in the same way._
+The Toolbox ecosystem introduced here is the same in any assessment. So, if you want to explore the goal model for the [Gulf of Guayaquil assessment](http://github.com/OHI-Science/gye) for example, you could navigate to their models in the same way.
 
 Let's get started! 
 
-### Prerequisites
+## Prerequisites
 
 Before the training, please make sure you have done the following: 
 
@@ -28,22 +24,22 @@ Now you have set up your computer, let's open the toolbox-demo repository on you
 
 ### Main folder
 
-When you first open the repository, in the main folder, you'll encouter these files. 
+When you first open the repository, in the main folder, you'll encounter these files and folders: 
 
 ![](https://docs.google.com/drawings/d/e/2PACX-1vTWGVIHdpK5UirBr2prb1rjly7t0QQNygRCL8MnvBG4Sxw_eEZJyfCu423LFzNLQ316q27YToAMJGRA/pub?w=960&h=720)
 
-Over all, all the main files you will encounter are either of the two file types:
+Overall, all the main files you will see are either of the two file types:
 
-** .csv files** contain data inputs or configuration information.
-** .R or .Rmd scripts** are written in the programming language R and use data inputs for processing and calculations.
+- **.csv** files contain data inputs or configuration information.
+- **.R** or **.Rmd** scripts are written in the programming language R and use data inputs for processing and calculations. 
 
-The most important files are: 
+Among all the files on your screen, the most important files are: 
 
-- `install_ohicore.r`. `ohicore` is the backbone software package of the toolbox. It is a suite of scripts that contain all the formulas to string together the data and models that you will provide for your assessment, and calculate OHI scores. You don't need to interact with or see the inside of `ohicore` yourself during the assessment, but you do need to install this software package once at the start of your assessment by running this script. 
+- `install_ohicore.r`. `ohicore` is the backbone software package of the toolbox. It is a suite of scripts that contain all the formulas to string together the data and models that you provide for your assessment, and calculate OHI scores. You don't need to interact with or see the inside of `ohicore` yourself during the assessment, but you do need to install this software package once at the start of your assessment by running this script. 
 
-- `prep` is a data preparation folder. As the name suggests, this is where you will store raw data, explore and format those data, and make trial runs of different models. You will spend about half the time here during an assessment.
+- `prep` is a data preparation folder. As the name suggests, this is where you will store raw data, explore and format those data, and make trial runs of different models. You will spend roughly the first half of your time during an assessment here.
 
-- `region2016` is the scenario folder. The scenario folder is probably the most important folder within the repository; by default it is named regionYEAR (eg. cnc2016 for New Caledonia 2016) to indicate that the assessment is conducted at the region scale (province, state, district, etc.), based on input layers and goal models used in the most recent global assessment. It contains all of the inputs needed to calculate OHI scores, and you will modify these inputs when conducting your assessment. 
+- `region2016` is the scenario folder. The scenario folder is probably the most important folder within the repository. It contains all of the inputs needed to calculate OHI scores, and you will modify these inputs when conducting your assessment. By default it is named regionYEAR (eg. cnc2016 for New Caledonia 2016) to indicate that the assessment is conducted at the region scale (province, state, district, etc.), based on input layers and goal models used in the most recent global assessment (eg. 2016). 
 
 - `README.md` file accompanys most folders or files, as you will discover. It's a place to take notes for yourself, your team, and anyone interested in the future.  
 
@@ -55,15 +51,17 @@ Click on `prep` and let's see what's inside:
 
 ![](https://docs.google.com/drawings/d/e/2PACX-1vRC6jKA-cwwnCDck_pGDgYjN4uA13E9a2PyFqrE-HJbQa9EIclOLLARFmYNYMyaHfdkOcaIlCXgTCSh/pub?w=960&h=720)
 
-Within `prep`, there is a sub-folder for each goal and subgoal, as well as pressures and resilience. Within each sub-folder, there are typically a _.Rmd_ script and a folder to contain data, as shown in the _CW_ sub-folder. 
+Within `prep`, there is a sub-folder for each goal and subgoal, as well as pressures and resilience.
 
-The `CSW_data_prep.Rmd` document is a script where you will explore your raw data, format the data, try different models, make graphs and maps, as well as document decision makings. We will come back to this script in a later chapter to learn how to prepare data for calculations. 
+Click on the `CW' folder. Within each goal folder, there are typically a _.Rmd_ script and a sub-folder to contain data. 
+
+The `CW_data_prep.Rmd` document is a script where you will explore your raw data, format the data, try different models, make graphs and maps, as well as document decision makings. We will come back to this script in Chapter \@ref(data prep) to learn how to prepare data for calculations. 
 
 We use .Rmd files because it can be rendered to a webpage, as in `CW_data_prep.html` in the same CW folder. Click open it in a web browser, and you will see a clean, human-readable webpage that can be shared and viewed by anyone.  
 
-_Now let's go back to the main folder, and click open the `region2016` folder._
+_Now we've walked through the prep folder, let's take a look at the scenario folder. Click back to the main toolbox-demo folder, and open the `region2016` folder._
 
-### region2016
+### region2016 folder
 
 ![](https://docs.google.com/drawings/d/e/2PACX-1vT9zIRR6AsCOHwSyuDtQBBurQ2YRo4TpRlkrO6j193ldSZN9FuAkm70mqYPJrVSzeLUokCn4CcOmpkm/pub?w=960&h=720)
 
@@ -138,9 +136,15 @@ It is a table that indicates which individual resilience measures affect which g
 
 #### config.R 
 
-It configures labeling and constants appropriately. You will only need to modify this file when working with goals that have categories (example: habitat types or economy sectors) that are affected differently by pressures and resilience measures.
+![](https://docs.google.com/drawings/d/e/2PACX-1vSmsay5W22clkc4XXknNILZxE5j88wjMuVNIovcyhX2RqiPqDTehKZr-oUkviozWawJF3ybCc81YS9t/pub?w=960&h=720)
+
+`config.R` configures labeling and constants appropriately. You will only need to modify this file when working with goals that have categories (example: habitat types or economy sectors) that are affected differently by pressures and resilience measures.
 
 #### goals.csv
+
+`goals.csv` is another spreadsheet file that's best to be opened in Excel. 
+
+![](https://docs.google.com/drawings/d/e/2PACX-1vRa9TITgRU9zHHMnbUtMqkIQM-RDCarFa9th-v3_zq_W1kResrS75JEgn39fN3C8EMpqe7OaZD7M7sZ/pub?w=960&h=720)
 
 goals.csv is a table with information about goals and sub-goals, including:
 
@@ -151,9 +155,7 @@ goals.csv is a table with information about goals and sub-goals, including:
 - preindex_function: indicate what parameters are called to calculate scores for goals and - sub-goals in functions.r
 - postindex_function: indicate what parameters are called to calculate scores for supra-goals in functions.r
 
-_We have just gone over the files in the `conf` folder. Let's take a step back to the `region2016` folder, and check out what else are there._
-
-
+_We have just gone over the files in the `conf` folder. To recap, `conf` folder contains important configuration files required to calculate OHI scores, including functions.R, pressures and resilience files, etc. Now let's take a step back to the `region2016` folder, and check out what else are there._
 
 ### configure_toolbox.r
 
@@ -175,7 +177,7 @@ Toolbox is a ecosystem of data layers and scripts, contained in folders and thei
 
 Behind the scenes in the Toolbox, there is a backbone package called `ohicore`. You won't interact with it directly, but you will need to install this package at the beginning of your assessment. 
 
-At the first stage of your asssessmemt, you will spend most of your time in `prep` folder, where you upload, explore, and format your data layers to be saved in the scenario folder `region2016` for the next step of calculations. 
+At the first stage of your assessment, you will spend most of your time in `prep` folder, where you upload, explore, and format your data layers to be saved in the scenario folder `region2016` for the next step of calculations. 
 
 `region2016` is a folder with all the data layers, files, and scripts you'll need to calculate scores. There you will register finished data layers, modify goal models, modify pressures and resilience, calculate OHI scores, and make flowerplots. 
 
