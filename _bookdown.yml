@@ -9,6 +9,7 @@ rmd_files: [
   "toolbox_ecosystem.Rmd", 
   "preparing_data.Rmd", 
   "calculations_basic_workflow.Rmd",
-  "calculations_advanced_workflow.Rmd",
+  # calculations_pressures_resilience.Rmd ## make this
+  "calculations_advanced_workflow.Rmd", 
   #"troubleshooting.Rmd",
   "updating_your_website.Rmd"]
