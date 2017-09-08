@@ -2,9 +2,9 @@
 
 ## Overview
 
-Welcome to the OHI Toolbox, the engine behind all OHI assessments. The Toolbox is an ecosystem of R scripts and data files, organized in folders and sub-folders. In this chapter, we will learn how the Toolbox is structured - where you would store data, modify models, make calculations, as well as record all decision-making. 
+Welcome to the OHI Toolbox, the engine behind all OHI assessments. The Toolbox is an ecosystem of R scripts and data files, organized in folders and sub-folders. In this chapter, we will learn how the Toolbox is structured - where you would store data, modify models, make calculations, as well as record decision-makings. This tutorial will take roughly 30 minutes. 
 
-The Toolbox ecosystem introduced here is the same in any assessment. So, if you want to explore a goal model that, for example, the [Gulf of Guayaquil](http://github.com/OHI-Science/gye) developed, you could navigate to their models in the same way.
+The Toolbox ecosystem introduced here is the same in any assessment. So, if you want to explore the goal model for the [Gulf of Guayaquil assessment](http://github.com/OHI-Science/gye) for example, you could navigate to their models in the same way. 
 
 Let's get started! 
 
@@ -183,7 +183,7 @@ As you begin your assessment, you will spend most of your time in `prep` folder,
 
 `region2016` is a folder with all the data layers, files, and scripts you'll need to calculate scores. There you will register finished data layers, modify goal models, modify pressures and resilience, calculate OHI scores, and make flowerplots. 
 
-Below is a figure that summarizes the information we just went through, in relation to the steps you would take in an assessment for future reference. 
+Now we have walked thorugh the files, how do they fit into the OHI process? Below is a figure that summarizes how each file will be used in relation to the steps you would take in an assessment for future reference. 
 
 ![](https://docs.google.com/drawings/d/e/2PACX-1vRlYbRI6_ljU7FYP3RivcR5Pvz04cx00Fpq_tflrSN8loS46YtI3DbqyBwZ_OI68IvWCZzWl8HsqX3u/pub?w=960&h=600)
 
