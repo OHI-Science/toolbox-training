@@ -1,20 +1,35 @@
-# How to use OHI Planner  {#planner-guide}
+# The OHI Planner  {#planner-guide}
 
-A successful OHI+ assessment depends on representative data and models. With so much (or sometimes so little) information out there, how do you select the optimal data to be included in your study? How do you develop models that best reflect the conditions of your ocean health? Here we have developed a OHI Planner to guide you through this important, yet sometimes daunting, process of data selection and model exploration. 
+The purpose of Chapter \@ref(planner-guide) is to help you think about data for your assessment in a structured way. This is a 1-hour hands-on training: you will be following along on your own computer and working with a copy of the demonstration repository that is used throughout this chapter.
+
+## Overview
+
+A successful OHI+ assessment depends on representative data and models. With so much (or sometimes so little) information out there, how do you select the optimal data to be included in your study? How do you develop models that best reflect the conditions of your ocean health? How do you keep track of ideas you have and decisions you make? Here we have developed a OHI Planner to guide you through this important, yet sometimes daunting, process of data selection and model exploration. 
+
+### Prerequisites
+
+<!---Ning, do you want to add here what they need as prereqs? I suppose they need to make sure they have access to their Assessment's Google Drive folder, how do they get it, etc. --->
+
+## Data Planner spreadsheet
+<!---Ning, I think the spreadsheet is called "Data Planner", not "Planner" like below; do you want to change whichever one so that they match?--->
 
 In the Google Drive folder that we shared with you, there is a spreadsheet called _Planner_. Let's open the planner in your folder and walk through how to use it together. 
 
+<!---Ning, does this statement below mean three tabs? They have slightly different names and there are other tabs with examples, and a home page...just want to make sure we're super clear
+--->
 You'll see the next three panels to be filled out: Status, Pressures, and Resilience. We'll talk about each one of them in turn. 
 
-## Status 
+## Status Data tab
 
-Open up the Status sheet, you'll see these headings, or columns to be evaluated for each goal: 
+Open up the "Status Data" tab, you'll see these headings, or columns to be evaluated for each goal: 
 
 ![](https://docs.google.com/drawings/d/e/2PACX-1vQCvSiXZdlEiThyX6_DWryKDOZImQFj_0dtVL4Co6YvupBx-60mx3amZqJ023vxRPhILeHehPxn9MIf/pub?w=960&h=96)
 
-Each colored block represent a component of the OHI framework. Generally you would want to work through this Planner from left to right. But note that _the process of building models, finding data, and defining spatial boundaries is iterative_. You might work on those components simultaneously in order to strike a balance between an ideal approach and data limitations. We will walk through each component in turn. 
+This sheet is colored to help structure your thinking as you consider data. Generally you would want to work through this Planner from left to right. But note that _the process of building models, finding data, and defining spatial boundaries is iterative_. You might work on those components simultaneously in order to strike a balance between an ideal approach and data limitations. 
 
-### Goal check
+Let's walk through each header first. 
+
+### Goals and subgoals
 
 ![](https://docs.google.com/drawings/d/e/2PACX-1vQF_jJF0FgtFoZiGf8oMEacVslyQZdO7uoYEvRi5_mEG2kCcR--t34mMj7GYrdBnv4M7RCNY-81Nvgw/pub?w=960&h=144)
 
@@ -22,17 +37,22 @@ In the Global assessment, we identified ten “goals” - universally valued ben
 
 You could also modify some of the goals. For example, the Natural Products goal strives to capture the non-food products humans extract from the ocean (eg. sea shells, minerals, etc). In Israel, people do not extract these resources on a notable scale, but they do rely on the ocean to provide drinking water through Desalination. Desalination replaces Natural Products as a goal in OHI-Israel. 
 
+<!---Ning: note for above: in Israel they still call it the NP goal, it just uses desal data instead of shell data. Maybe a cleaner example here would be that the Baltic Sea doesn't get big storms because of its geography so they don't include Coastal Protection?
+--->
+
 ### Model + Data + Spatial Boundaries
 
 ![](https://docs.google.com/drawings/d/e/2PACX-1vQwRzxEuSxD09EyNUY5igXS7RdQFnk5XrAr3RXYkdBGzDIEMk73xWfR78urrju4oYTAy1TzRBJzFWFd/pub?w=960&h=144)
 
-Model Development and Spatial Boundaries can be developed simultaneously, and validated with data. 
+Model development and Spatial Boundaries can be developed simultaneously, particularly when gathering available data. <!---Ning I switched this wording but I don't think it's very good; but I thought "validating with data" was too vague. Maybe it needs another sentence or two?  --->
+
+Let's look at these individually: 
 
 **Represent goals with models**
 
 ![](https://docs.google.com/drawings/d/e/2PACX-1vTFUwZQ6MKe-1ihCUMDWAv4yuX-D8oQnLYrGS4dEbMYIugvnj8j94sfquN9g09SMeHzg2GzKY4QyvPs/pub?w=960&h=125)
 
-_What ideal indicators best represent the goal?_ For Tourism and Recreation, ideally you want to include both local and tourists, and capture what activities they do and how often they enjoy them. However, it would be difficult to capture all those information in a model.  You will want to think through what are the most ideal indicators to capture information, then find data DATA to represent those indicators. 
+_What ideal indicators best represent the goal?_ For Tourism and Recreation, ideally you want to include both locals and tourists, and capture what activities they do and how often they enjoy them. However, it would be difficult to capture all those information in a model.  You will want to think through what are the most ideal indicators to capture information, then find data to represent those indicators. 
 
 Different OHI+ projects have been creative at how they represent this goal as data permits. For example, Coastal activity Participation surveys can directly measure how often locals and tourists enjoy certain ocean activities. If that’s not available, hotel employment or hotel vacancy rate can be used as proxy indicators since they indirectly reflect how many visitors visit a region. 
 
