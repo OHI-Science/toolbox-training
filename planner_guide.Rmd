@@ -6,6 +6,11 @@ The purpose of Chapter \@ref(planner-guide) is to help you think about data for 
 
 A successful OHI+ assessment depends on representative data and models. With so much (or sometimes so little) information out there, how do you select the optimal data to be included in your study? How do you develop models that best reflect the conditions of your ocean health? How do you keep track of ideas you have and decisions you make? Here we have developed a OHI Planner to guide you through this important, yet sometimes daunting, process of data selection and model exploration. 
 
+<!---Ning: maybe add something like:
+
+We'll start by exploring the columns in the spreadsheet and what they are for, and then walk through an example. 
+--->
+
 ### Prerequisites
 
 <!---Ning, do you want to add here what they need as prereqs? I suppose they need to make sure they have access to their Assessment's Google Drive folder, how do they get it, etc. --->
@@ -20,6 +25,9 @@ In the Google Drive folder that we shared with you, there is a spreadsheet calle
 You'll see the next three panels to be filled out: Status, Pressures, and Resilience. We'll talk about each one of them in turn. 
 
 ## Status Data tab
+
+<!---Ning: something that doesn't come through as much that would be great if you could emphasize: this is a way to track ideas and see what they would look like/if they're possible. It seems intimidating to have to write down what you want the model to be and the reference points to be; this is where you can say what you're thinking, what the ideal would be; it's a starting point that you can then share with your colleagues to think about together, and start looking for data, etc. You say that it's iterative but I think to spend more time saying that in a few different ways and helping people see that this is a tool for them, and its structure is supposed to help them think and collaborate. Maybe even say that this is not going to be used directly by the Toolbox, this is for them to think about and collaborate with even if they don't know R or aren't on the technical team or whatever. It's in Google Docs to start the collaborative process and document (relying on Google's version control) as they go forward, etc...
+--->
 
 Open up the "Status Data" tab, you'll see these headings, or columns to be evaluated for each goal: 
 
@@ -52,9 +60,13 @@ Let's look at these individually:
 
 ![](https://docs.google.com/drawings/d/e/2PACX-1vTFUwZQ6MKe-1ihCUMDWAv4yuX-D8oQnLYrGS4dEbMYIugvnj8j94sfquN9g09SMeHzg2GzKY4QyvPs/pub?w=960&h=125)
 
+<!---Ning: since 'indicators' mean a lot of things to a lot of people, I think we should be careful about how we use it. So far in the Planner, we've only talked about data. I think it is important to also talk about how you can use indicators, but we need to say that explicitly and not just switch back and forth between 'data' and 'indicators'. What do you think? Maybe 'indicators' isn't the right thing to name that column. Maybe it should be 'data ideas' or something?
+
+Also, since there is a full Example that you walk through after this short introduction, maybe it's better not to have this TR example now. It seems like this first section is just to give an overview of the column names. --->
+
 _What ideal indicators best represent the goal?_ For Tourism and Recreation, ideally you want to include both locals and tourists, and capture what activities they do and how often they enjoy them. However, it would be difficult to capture all those information in a model.  You will want to think through what are the most ideal indicators to capture information, then find data to represent those indicators. 
 
-Different OHI+ projects have been creative at how they represent this goal as data permits. For example, Coastal activity Participation surveys can directly measure how often locals and tourists enjoy certain ocean activities. If that’s not available, hotel employment or hotel vacancy rate can be used as proxy indicators since they indirectly reflect how many visitors visit a region. 
+Different OHI+ projects have been creative at how they represent this goal as data permits. For example, coastal activity participation surveys can directly measure how often locals and tourists enjoy certain ocean activities. If that’s not available, hotel employment or hotel vacancy rate can be used as proxy indicators since they indirectly reflect how many visitors visit a region. 
 
 Another important factor that determines OHI scores is _Reference Point_, ie. what status of this goal can be awarded a score of 100? Has the government set a target to achieve? Is there a model region that has become a standard other regions should aspire to? Is there a historical point the regions should return to?
 
@@ -62,11 +74,24 @@ Another important factor that determines OHI scores is _Reference Point_, ie. wh
 
 ![](https://docs.google.com/drawings/d/e/2PACX-1vSoBJMg2MbiwD7xkQQEOD-v6YqOpajRpIbKeawYSfimytwxCPe1aSTyv0HmLfV6O5RCoqf9HqncZBtf/pub?w=960&h=125)
 
-Choice of indicators and reference point are often limited by data availability, time frame, and resolution. 
+<!---Ning:
+I think you could flush this out a bit more with the overall comment above: this is a place to make a list of the data that could work: from your knowledge, when you ask your colleagues, digging through databases online, the gvt, etc. Add as many rows as you need to to catelog your ideas...
+
+And for the text that you do have here I think you could explain a big; disaggregating isn't a concept that a lot of people have thought about with data so you'll need to explain that more, and explain by 3-5 years is recommended...I would say that it should be 5, but if that's not possible, fewer are possible...
+--->
+
+Choice of indicators and reference points are often limited by data availability, time frame, and resolution. 
 
 Only one year of data is not enough to objectively reflect the status of a goal. 3-5 year data recommended. 
 
 Data might need to be disaggregated from large-scale to small-scale. If you only have national level data for an indicator you’ll need to find ways to separate state-level data. 
+
+<!---Ning: you'll also want to explain the green and orange columns here too. And say that if you can add more columns for regions (and remind them what regions are)
+
+
+Also, the pressures and resilience tabs too. 
+
+--->
 
 ### Examples 
 
@@ -76,13 +101,19 @@ Now we have run through the basic theories behind each column, let's walk throug
 
 ![](https://docs.google.com/drawings/d/e/2PACX-1vSY6WtpVw6VzNfSBu_Mafu5JyTuSnIWh2yVdMi5jrC7xT4GJb7b6OmatsZoWSPGFyvSDnqDODVFsF5-/pub?w=960&h=240)
 
+<!---Ning: It would be great to flush this out a lot more. What did you enter as indicators and why? Walk through the thought process behind them (maybe not all of them, but enough to get a good sense. This is the thinking that we need to teach people.
+--->
+
 Models are relationships among indicators. Before gathering any data, think about ideal indicators that could represent the goal. How could each indicator be relevant/representative of ocean health? 
 
-As you might have notices, to the right side of the sheet, there is a column for notes, in this case for Artisanal Fishing Opportunities (AO), Fish catch is deemed not suitable as an indicator here because it doesn't directly reflect the _capacity_ for artisanal fishing, which AO measures. 
+As you might have noticed, to the right side of the sheet, there is a column for notes. In this case for Artisanal Fishing Opportunities (AO), Fish catch is deemed not suitable as an indicator here because it doesn't directly reflect the _capacity_ for artisanal fishing, which AO measures. 
 
 **Example 2 - Data**
 
 ![](https://docs.google.com/drawings/d/e/2PACX-1vTLmLMCMJMWzYW05Zhorwya3a1nB5uIZZ5vhHY0sjv6h-Cs4HSJCCm7tK_EBbv4o-Rygd3FRx21pIkS/pub?w=960&h=240)
+
+<!---Ning: same as above, I think you can flush this out a bit more. Walk through the rows you introduce above and say what you enter on the sheet. Maybe make some dummy data and take a screenshot if that makes sense, or just describe it.
+--->
 
 Do you have data for each of the indicators you choose to use? What's the spatial resolution and temporal coverage? 
 
@@ -100,7 +131,11 @@ In the data exploration process, however, you might find that the geopolitical b
 
 ![](https://docs.google.com/drawings/d/e/2PACX-1vQZjvRbXPAj_VKdJ4Nm5BfFSnivlr-d8K23qHY0HS9CBIcriifSVVIzll1GqpA3QD_lSMKINB_Drsg5/pub?w=960&h=336)
 
-As you might have notices, there is a difference between "N" and "NA" for missing data. "N" is used when there is no known data for this region, even though there should be, as in the case of _Trash_ subgoal. You know there are people living in this region and there are trash on the beach, but this data has not been collected, you could put an "N" here. This data will need to be gap-filled (ie. extrapolated) from other known data. 
+<!---Ning: Maybe it would be better to start this part off by saying that sometimes there isn't data available, and sometimes data isn't relevant to a region, e.g. if there are no mangroves growing in Region 4. So it's important to have a system for distinguishing these two things. Here, we'll use NA if it's not relevant; that's the syntax that `R` and the OHI Toolbox will use so we can be consistent. When data are not available but they should be, here we'll mark it with an N. (Otherwise it seems more rigid than it is; we want people to think about this stuff but not get tripped up by N/NA syntax at this point)
+
+--->
+
+As you might have noticed, there is a difference between "N" and "NA" for missing data. "N" is used when there is no known data for this region, even though there should be, as in the case of _Trash_ subgoal. You know there are people living in this region and there are trash on the beach, but this data has not been collected, you could put an "N" here. This data will need to be gap-filled (ie. extrapolated) from other known data. 
 
 "NA" is used when there should be no data for this region. In this example, if no one lives in region 4, there would be no Livelihoods data for this region.  
 
@@ -108,6 +143,10 @@ As you might have notices, there is a difference between "N" and "NA" for missin
 **Example 4 - Reference Point**
 
 ![](https://docs.google.com/drawings/d/e/2PACX-1vTR8bSMiV-QEovbuUOWOXBjeueRGXqIK1Z1kCa6DVprbWCo2HaPcl1ktjWP_mR8TWf-HHDvuZH64aJg/pub?w=960&h=240)
+
+<!---Ning: I think the fisherman example is too simplistic and a bit misleading, and in the screenshot it's temporal v. spatial...I think you want to explain the thinking behind temporal v. spatial here instead of the specific number examples. 
+
+--->
 
 Reference points, or targets, are essential for rescaling and scoring. For example, if the target number of fishermen is 100, and the data only records 50, that could bring AO score down to 50. 
 
