@@ -7,7 +7,7 @@ The purpose of Chapter \@ref(prep-data) is to introduce you to the basic workflo
 
 Preparing data takes the biggest chunk of time when you're using the OHI Toolbox, even more than the final scores calculation itself. That's when you explore raw data, see whether it fits with your ideal spatial boundaries and whether it makes sense to include it in your final calculations. If it does, you can format it further and save it as data layers, or Toolbox inputs for scores calculations.
 
-The _Starter Repo_ \@ref(ecosystem) aims to help you wade through these important first steps of the assessment. Treat the preparatory, or "prep", files as your notebook, calculator, and presentation of your work. Here, the process of data exploration is recorded and can be easily shared with anyone.
+The _Starter Repo_ \@ref(toolbox-ecosystem) aims to help you wade through these important first steps of the assessment. Treat the preparatory, or "prep", files as your notebook, calculator, and presentation of your work. Here, the process of data exploration is recorded and can be easily shared with anyone.
 
 <!-- MOVE THESE TO ECOSYSTEM SECTIONS? **Why prepare data in the Toolbox?** This is for transparency, reproducibility, and credibility. If someone wants to understand what data you're using, how you have processed it, and your rationale for including it or excluding other options, they can find the answers here. With this reproducible record, you will be able to repeat these methods with additional years of data using the same code you have already written. It also makes your technical team more stable. If there are personale changes, your team memory is preserved. It's easier for new members to pick up where it was left when your data preparation has been documented clearly and kept in one place.  -->
 
@@ -82,7 +82,9 @@ Now let's switch to the `demo` repo. Today we will use the _Clean Water (CW)_ go
 
 Click on the `CW` folder and open `CW_data_prep.Rmd`. We will follow the tutorial from there.
 
-## Save and Register data layers 
+## Save and register data layers 
+
+> Note: if you are preparing data from your Starter/Prep repository, you won't have the layers folder and `layers.csv`. You won't be able to do the following steps until you have the Full repository.
 
 After you have successfully processed a data layer, and it can be used by the Toolbox for calculations, it needs to be saved and registered here: 
 

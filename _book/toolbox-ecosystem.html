@@ -6,9 +6,8 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Ocean Health Index Toolbox Training</title>
-  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
   <meta name="description" content="This is the official Ocean Health Index Toolbox training.">
-  <meta name="generator" content="bookdown 0.3 and GitBook 2.6.7">
+  <meta name="generator" content="bookdown 0.5 and GitBook 2.6.7">
 
   <meta property="og:title" content="Ocean Health Index Toolbox Training" />
   <meta property="og:type" content="book" />
@@ -26,7 +25,7 @@
 <meta name="author" content="Ocean Health Index Team">
 
 
-<meta name="date" content="2017-09-07">
+<meta name="date" content="2017-09-14">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -35,7 +34,6 @@
   
 <link rel="prev" href="data-science.html">
 <link rel="next" href="prep-data.html">
-
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -51,10 +49,48 @@
 
 
 
+<style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+</style>
 
 </head>
 
 <body>
+
 
 
   <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
@@ -64,23 +100,133 @@
 
 <ul class="summary">
 <li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Home</a></li>
-<li class="chapter" data-level="2" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>2</b> Introduction</a></li>
-<li class="chapter" data-level="3" data-path="data-science.html"><a href="data-science.html"><i class="fa fa-check"></i><b>3</b> Data science workflow</a></li>
-<li class="chapter" data-level="4" data-path="toolbox-ecosystem.html"><a href="toolbox-ecosystem.html"><i class="fa fa-check"></i><b>4</b> Toolbox Ecosystem</a><ul>
-<li class="chapter" data-level="4.1" data-path="toolbox-ecosystem.html"><a href="toolbox-ecosystem.html#overview"><i class="fa fa-check"></i><b>4.1</b> Overview</a></li>
-<li class="chapter" data-level="4.2" data-path="toolbox-ecosystem.html"><a href="toolbox-ecosystem.html#prerequisites"><i class="fa fa-check"></i><b>4.2</b> Prerequisites</a><ul>
-<li class="chapter" data-level="4.2.1" data-path="toolbox-ecosystem.html"><a href="toolbox-ecosystem.html#main-folder"><i class="fa fa-check"></i><b>4.2.1</b> Main folder</a></li>
-<li class="chapter" data-level="4.2.2" data-path="toolbox-ecosystem.html"><a href="toolbox-ecosystem.html#prep-folder"><i class="fa fa-check"></i><b>4.2.2</b> prep folder</a></li>
-<li class="chapter" data-level="4.2.3" data-path="toolbox-ecosystem.html"><a href="toolbox-ecosystem.html#region2016-folder"><i class="fa fa-check"></i><b>4.2.3</b> region2016 folder</a></li>
-<li class="chapter" data-level="4.2.4" data-path="toolbox-ecosystem.html"><a href="toolbox-ecosystem.html#configure_toolbox.r"><i class="fa fa-check"></i><b>4.2.4</b> configure_toolbox.r</a></li>
-<li class="chapter" data-level="4.2.5" data-path="toolbox-ecosystem.html"><a href="toolbox-ecosystem.html#calculate_scores.r"><i class="fa fa-check"></i><b>4.2.5</b> calculate_scores.R</a></li>
-<li class="chapter" data-level="4.2.6" data-path="toolbox-ecosystem.html"><a href="toolbox-ecosystem.html#recap"><i class="fa fa-check"></i><b>4.2.6</b> Recap</a></li>
+<li class="chapter" data-level="2" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>2</b> Introduction</a><ul>
+<li class="chapter" data-level="2.1" data-path="intro.html"><a href="intro.html#overview"><i class="fa fa-check"></i><b>2.1</b> Overview</a></li>
+<li class="chapter" data-level="2.2" data-path="intro.html"><a href="intro.html#ohi-conceptually"><i class="fa fa-check"></i><b>2.2</b> OHI conceptually</a></li>
+<li class="chapter" data-level="2.3" data-path="intro.html"><a href="intro.html#best-practices"><i class="fa fa-check"></i><b>2.3</b> Best practices</a></li>
+<li class="chapter" data-level="2.4" data-path="intro.html"><a href="intro.html#tools-and-resources"><i class="fa fa-check"></i><b>2.4</b> Tools and Resources</a><ul>
+<li class="chapter" data-level="2.4.1" data-path="intro.html"><a href="intro.html#google-drive-folder"><i class="fa fa-check"></i><b>2.4.1</b> Google Drive folder</a></li>
+<li class="chapter" data-level="2.4.2" data-path="intro.html"><a href="intro.html#starter-repository"><i class="fa fa-check"></i><b>2.4.2</b> Starter Repository</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="prep-data.html"><a href="prep-data.html"><i class="fa fa-check"></i><b>5</b> Preparing data: Basic</a></li>
-<li class="chapter" data-level="6" data-path="calcs-basic.html"><a href="calcs-basic.html"><i class="fa fa-check"></i><b>6</b> Calculations: basic workflow</a></li>
-<li class="chapter" data-level="7" data-path="calcs-advanced.html"><a href="calcs-advanced.html"><i class="fa fa-check"></i><b>7</b> Calculations: advanced workflow</a></li>
-<li class="chapter" data-level="8" data-path="updating-your-website.html"><a href="updating-your-website.html"><i class="fa fa-check"></i><b>8</b> Updating your website</a></li>
+<li class="chapter" data-level="3" data-path="planner-guide.html"><a href="planner-guide.html"><i class="fa fa-check"></i><b>3</b> The OHI Planner</a><ul>
+<li class="chapter" data-level="3.1" data-path="planner-guide.html"><a href="planner-guide.html#overview-1"><i class="fa fa-check"></i><b>3.1</b> Overview</a><ul>
+<li class="chapter" data-level="3.1.1" data-path="planner-guide.html"><a href="planner-guide.html#prerequisites"><i class="fa fa-check"></i><b>3.1.1</b> Prerequisites</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="planner-guide.html"><a href="planner-guide.html#data-planner-spreadsheet"><i class="fa fa-check"></i><b>3.2</b> Data Planner spreadsheet</a></li>
+<li class="chapter" data-level="3.3" data-path="planner-guide.html"><a href="planner-guide.html#status-data-tab"><i class="fa fa-check"></i><b>3.3</b> Status Data tab</a><ul>
+<li class="chapter" data-level="3.3.1" data-path="planner-guide.html"><a href="planner-guide.html#goals-and-subgoals"><i class="fa fa-check"></i><b>3.3.1</b> Goals and subgoals</a></li>
+<li class="chapter" data-level="3.3.2" data-path="planner-guide.html"><a href="planner-guide.html#model-data-spatial-boundaries"><i class="fa fa-check"></i><b>3.3.2</b> Model + Data + Spatial Boundaries</a></li>
+<li class="chapter" data-level="3.3.3" data-path="planner-guide.html"><a href="planner-guide.html#examples"><i class="fa fa-check"></i><b>3.3.3</b> Examples</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="data-science.html"><a href="data-science.html"><i class="fa fa-check"></i><b>4</b> Data science workflow</a><ul>
+<li class="chapter" data-level="4.1" data-path="data-science.html"><a href="data-science.html#rstudio-github-workflow"><i class="fa fa-check"></i><b>4.1</b> RStudio-GitHub workflow</a></li>
+<li class="chapter" data-level="4.2" data-path="data-science.html"><a href="data-science.html#how-you-work"><i class="fa fa-check"></i><b>4.2</b> How you work</a></li>
+<li class="chapter" data-level="4.3" data-path="data-science.html"><a href="data-science.html#how-this-fits-with-the-ohi-workflow"><i class="fa fa-check"></i><b>4.3</b> How this fits with the OHI workflow</a></li>
+<li class="chapter" data-level="4.4" data-path="data-science.html"><a href="data-science.html#develop-skills"><i class="fa fa-check"></i><b>4.4</b> Developing these skills</a></li>
+<li class="chapter" data-level="4.5" data-path="data-science.html"><a href="data-science.html#practice-by-updating-your-website"><i class="fa fa-check"></i><b>4.5</b> Practice by updating your website</a><ul>
+<li class="chapter" data-level="4.5.1" data-path="data-science.html"><a href="data-science.html#background-on-branches-master-and-gh-pages"><i class="fa fa-check"></i><b>4.5.1</b> Background on branches: master and gh-pages</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="toolbox-ecosystem.html"><a href="toolbox-ecosystem.html"><i class="fa fa-check"></i><b>5</b> Toolbox Ecosystem</a><ul>
+<li class="chapter" data-level="5.1" data-path="toolbox-ecosystem.html"><a href="toolbox-ecosystem.html#overview-2"><i class="fa fa-check"></i><b>5.1</b> Overview</a></li>
+<li class="chapter" data-level="5.2" data-path="toolbox-ecosystem.html"><a href="toolbox-ecosystem.html#prerequisites-1"><i class="fa fa-check"></i><b>5.2</b> Prerequisites</a></li>
+<li class="chapter" data-level="5.3" data-path="toolbox-ecosystem.html"><a href="toolbox-ecosystem.html#main-repository-folder"><i class="fa fa-check"></i><b>5.3</b> main repository folder</a></li>
+<li class="chapter" data-level="5.4" data-path="toolbox-ecosystem.html"><a href="toolbox-ecosystem.html#prep-folder"><i class="fa fa-check"></i><b>5.4</b> Prep folder</a><ul>
+<li class="chapter" data-level="5.4.1" data-path="toolbox-ecosystem.html"><a href="toolbox-ecosystem.html#region2016-folder"><i class="fa fa-check"></i><b>5.4.1</b> region2016 folder</a></li>
+<li class="chapter" data-level="5.4.2" data-path="toolbox-ecosystem.html"><a href="toolbox-ecosystem.html#conf-folder"><i class="fa fa-check"></i><b>5.4.2</b> conf folder</a></li>
+<li class="chapter" data-level="5.4.3" data-path="toolbox-ecosystem.html"><a href="toolbox-ecosystem.html#configure_toolbox.r"><i class="fa fa-check"></i><b>5.4.3</b> configure_toolbox.r</a></li>
+<li class="chapter" data-level="5.4.4" data-path="toolbox-ecosystem.html"><a href="toolbox-ecosystem.html#calculate_scores.r"><i class="fa fa-check"></i><b>5.4.4</b> calculate_scores.R</a></li>
+<li class="chapter" data-level="5.4.5" data-path="toolbox-ecosystem.html"><a href="toolbox-ecosystem.html#recap"><i class="fa fa-check"></i><b>5.4.5</b> Recap</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="prep-data.html"><a href="prep-data.html"><i class="fa fa-check"></i><b>6</b> Preparing data: Basic</a><ul>
+<li class="chapter" data-level="6.1" data-path="prep-data.html"><a href="prep-data.html#overview-3"><i class="fa fa-check"></i><b>6.1</b> Overview</a></li>
+<li class="chapter" data-level="6.2" data-path="prep-data.html"><a href="prep-data.html#data-formatting-requirements"><i class="fa fa-check"></i><b>6.2</b> Data Formatting requirements</a></li>
+<li class="chapter" data-level="6.3" data-path="prep-data.html"><a href="prep-data.html#data-wrangling"><i class="fa fa-check"></i><b>6.3</b> Data Wrangling</a></li>
+<li class="chapter" data-level="6.4" data-path="prep-data.html"><a href="prep-data.html#save-and-register-data-layers"><i class="fa fa-check"></i><b>6.4</b> Save and register data layers</a></li>
+<li class="chapter" data-level="6.5" data-path="prep-data.html"><a href="prep-data.html#register-data-layers-in-layers.csv"><i class="fa fa-check"></i><b>6.5</b> Register data layers in <code>layers.csv</code></a></li>
+<li class="chapter" data-level="6.6" data-path="prep-data.html"><a href="prep-data.html#chapter-recap"><i class="fa fa-check"></i><b>6.6</b> Chapter Recap:</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="calcs-basic.html"><a href="calcs-basic.html"><i class="fa fa-check"></i><b>7</b> Calculations: basic workflow</a><ul>
+<li class="chapter" data-level="7.1" data-path="calcs-basic.html"><a href="calcs-basic.html#overview-4"><i class="fa fa-check"></i><b>7.1</b> Overview</a><ul>
+<li class="chapter" data-level="7.1.1" data-path="calcs-basic.html"><a href="calcs-basic.html#prerequisites-2"><i class="fa fa-check"></i><b>7.1.1</b> Prerequisites</a></li>
+</ul></li>
+<li class="chapter" data-level="7.2" data-path="calcs-basic.html"><a href="calcs-basic.html#review-the-toolbox-file-ecosystem"><i class="fa fa-check"></i><b>7.2</b> Review the Toolbox file ecosystem</a><ul>
+<li class="chapter" data-level="7.2.1" data-path="calcs-basic.html"><a href="calcs-basic.html#run-install_ohicore.r"><i class="fa fa-check"></i><b>7.2.1</b> Run <code>install_ohicore.r</code></a></li>
+</ul></li>
+<li class="chapter" data-level="7.3" data-path="calcs-basic.html"><a href="calcs-basic.html#calculate-with-out-of-the-box-data-and-models"><i class="fa fa-check"></i><b>7.3</b> Calculate with ‘out-of-the-box’ data and models</a><ul>
+<li class="chapter" data-level="7.3.1" data-path="calcs-basic.html"><a href="calcs-basic.html#source-configure_toolbox.r"><i class="fa fa-check"></i><b>7.3.1</b> Source <code>configure_toolbox.R</code></a></li>
+<li class="chapter" data-level="7.3.2" data-path="calcs-basic.html"><a href="calcs-basic.html#run-calculateall"><i class="fa fa-check"></i><b>7.3.2</b> Run <code>CalculateAll()</code></a></li>
+<li class="chapter" data-level="7.3.3" data-path="calcs-basic.html"><a href="calcs-basic.html#save-scores-variable-as-scores.csv"><i class="fa fa-check"></i><b>7.3.3</b> Save scores variable as <code>scores.csv</code></a></li>
+<li class="chapter" data-level="7.3.4" data-path="calcs-basic.html"><a href="calcs-basic.html#a-note-about-error-messages"><i class="fa fa-check"></i><b>7.3.4</b> A note about error messages</a></li>
+<li class="chapter" data-level="7.3.5" data-path="calcs-basic.html"><a href="calcs-basic.html#recap-of-first-calculate_scores.r-run"><i class="fa fa-check"></i><b>7.3.5</b> Recap of first <code>calculate_scores.r</code> run</a></li>
+</ul></li>
+<li class="chapter" data-level="7.4" data-path="calcs-basic.html"><a href="calcs-basic.html#calculate-with-tailored-data"><i class="fa fa-check"></i><b>7.4</b> Calculate with tailored data</a><ul>
+<li class="chapter" data-level="7.4.1" data-path="calcs-basic.html"><a href="calcs-basic.html#prepare-and-save-our-data-layer"><i class="fa fa-check"></i><b>7.4.1</b> Prepare and save our data layer</a></li>
+<li class="chapter" data-level="7.4.2" data-path="calcs-basic.html"><a href="calcs-basic.html#register-our-data-layer"><i class="fa fa-check"></i><b>7.4.2</b> Register our data layer</a></li>
+<li class="chapter" data-level="7.4.3" data-path="calcs-basic.html"><a href="calcs-basic.html#rerun-calculate_scores.r"><i class="fa fa-check"></i><b>7.4.3</b> Rerun <code>calculate_scores.r</code></a></li>
+<li class="chapter" data-level="7.4.4" data-path="calcs-basic.html"><a href="calcs-basic.html#checking-our-work-and-syncing"><i class="fa fa-check"></i><b>7.4.4</b> Checking our work and syncing</a></li>
+<li class="chapter" data-level="7.4.5" data-path="calcs-basic.html"><a href="calcs-basic.html#recap-of-second-calculate_scores.r-run"><i class="fa fa-check"></i><b>7.4.5</b> Recap of second <code>calculate_scores.r</code> run</a></li>
+</ul></li>
+<li class="chapter" data-level="7.5" data-path="calcs-basic.html"><a href="calcs-basic.html#explore-configure_toolbox.r"><i class="fa fa-check"></i><b>7.5</b> Explore <code>configure_toolbox.r</code></a><ul>
+<li class="chapter" data-level="7.5.1" data-path="calcs-basic.html"><a href="calcs-basic.html#load-libraries-and-set-working-directory"><i class="fa fa-check"></i><b>7.5.1</b> Load libraries and set working directory</a></li>
+<li class="chapter" data-level="7.5.2" data-path="calcs-basic.html"><a href="calcs-basic.html#ohicoreconf"><i class="fa fa-check"></i><b>7.5.2</b> <code>ohicore::Conf()</code></a></li>
+<li class="chapter" data-level="7.5.3" data-path="calcs-basic.html"><a href="calcs-basic.html#ohicorechecklayers"><i class="fa fa-check"></i><b>7.5.3</b> <code>ohicore::CheckLayers()</code></a></li>
+<li class="chapter" data-level="7.5.4" data-path="calcs-basic.html"><a href="calcs-basic.html#ohicorelayers"><i class="fa fa-check"></i><b>7.5.4</b> <code>ohicore::Layers()</code></a></li>
+<li class="chapter" data-level="7.5.5" data-path="calcs-basic.html"><a href="calcs-basic.html#recap-of-exploring-configure_toolbox.r"><i class="fa fa-check"></i><b>7.5.5</b> Recap of exploring <code>configure_toolbox.r</code></a></li>
+</ul></li>
+<li class="chapter" data-level="7.6" data-path="calcs-basic.html"><a href="calcs-basic.html#explore-a-goal-model-in-functions.r"><i class="fa fa-check"></i><b>7.6</b> Explore a goal model in <code>functions.r</code></a><ul>
+<li class="chapter" data-level="7.6.1" data-path="calcs-basic.html"><a href="calcs-basic.html#load-specific-data-layers-with-selectlayersdata"><i class="fa fa-check"></i><b>7.6.1</b> Load specific data layers with <code>SelectLayersData()</code></a></li>
+<li class="chapter" data-level="7.6.2" data-path="calcs-basic.html"><a href="calcs-basic.html#goal-model"><i class="fa fa-check"></i><b>7.6.2</b> Goal model</a></li>
+<li class="chapter" data-level="7.6.3" data-path="calcs-basic.html"><a href="calcs-basic.html#calculate-status"><i class="fa fa-check"></i><b>7.6.3</b> Calculate Status</a></li>
+<li class="chapter" data-level="7.6.4" data-path="calcs-basic.html"><a href="calcs-basic.html#calculate-trend"><i class="fa fa-check"></i><b>7.6.4</b> Calculate Trend</a></li>
+<li class="chapter" data-level="7.6.5" data-path="calcs-basic.html"><a href="calcs-basic.html#scores-variable-combining-status-and-trend"><i class="fa fa-check"></i><b>7.6.5</b> Scores variable: combining Status and Trend</a></li>
+<li class="chapter" data-level="7.6.6" data-path="calcs-basic.html"><a href="calcs-basic.html#recap-of-exploring-functions.r"><i class="fa fa-check"></i><b>7.6.6</b> Recap of exploring <code>functions.r</code></a></li>
+</ul></li>
+<li class="chapter" data-level="7.7" data-path="calcs-basic.html"><a href="calcs-basic.html#calculate-with-tailored-models"><i class="fa fa-check"></i><b>7.7</b> Calculate with tailored models</a><ul>
+<li class="chapter" data-level="7.7.1" data-path="calcs-basic.html"><a href="calcs-basic.html#source-configure_toolbox.r-1"><i class="fa fa-check"></i><b>7.7.1</b> Source <code>configure_toolbox.r</code></a></li>
+<li class="chapter" data-level="7.7.2" data-path="calcs-basic.html"><a href="calcs-basic.html#tailor-ao-goal-model"><i class="fa fa-check"></i><b>7.7.2</b> Tailor AO goal model</a></li>
+<li class="chapter" data-level="7.7.3" data-path="calcs-basic.html"><a href="calcs-basic.html#calculate-scores-check-and-sync"><i class="fa fa-check"></i><b>7.7.3</b> Calculate scores, check, and sync</a></li>
+<li class="chapter" data-level="7.7.4" data-path="calcs-basic.html"><a href="calcs-basic.html#recap-of-third-calculate_scores.r-run"><i class="fa fa-check"></i><b>7.7.4</b> Recap of third <code>calculate_scores.r</code> run</a></li>
+<li class="chapter" data-level="7.7.5" data-path="calcs-basic.html"><a href="calcs-basic.html#troubleshooting"><i class="fa fa-check"></i><b>7.7.5</b> Troubleshooting</a></li>
+</ul></li>
+<li class="chapter" data-level="7.8" data-path="calcs-basic.html"><a href="calcs-basic.html#calculate-with-tailored-data-and-models"><i class="fa fa-check"></i><b>7.8</b> Calculate with tailored data and models</a><ul>
+<li class="chapter" data-level="7.8.1" data-path="calcs-basic.html"><a href="calcs-basic.html#prepare-and-save-our-new-data-layer"><i class="fa fa-check"></i><b>7.8.1</b> Prepare and save our new data layer</a></li>
+<li class="chapter" data-level="7.8.2" data-path="calcs-basic.html"><a href="calcs-basic.html#register-our-new-data-layer"><i class="fa fa-check"></i><b>7.8.2</b> Register our new data layer</a></li>
+<li class="chapter" data-level="7.8.3" data-path="calcs-basic.html"><a href="calcs-basic.html#source-configure_toolbox.r-2"><i class="fa fa-check"></i><b>7.8.3</b> Source <code>configure_toolbox.r</code></a></li>
+<li class="chapter" data-level="7.8.4" data-path="calcs-basic.html"><a href="calcs-basic.html#update-the-ao-goal-model"><i class="fa fa-check"></i><b>7.8.4</b> Update the AO goal model</a></li>
+<li class="chapter" data-level="7.8.5" data-path="calcs-basic.html"><a href="calcs-basic.html#calculate-scores-check-and-sync-1"><i class="fa fa-check"></i><b>7.8.5</b> Calculate scores, check, and sync</a></li>
+<li class="chapter" data-level="7.8.6" data-path="calcs-basic.html"><a href="calcs-basic.html#recap-of-fourth-calculate_scores.r-run"><i class="fa fa-check"></i><b>7.8.6</b> Recap of fourth <code>calculate_scores.r</code> run</a></li>
+</ul></li>
+<li class="chapter" data-level="7.9" data-path="calcs-basic.html"><a href="calcs-basic.html#chapter-recap-1"><i class="fa fa-check"></i><b>7.9</b> Chapter Recap</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="calcs-advanced.html"><a href="calcs-advanced.html"><i class="fa fa-check"></i><b>8</b> Calculations: advanced workflow</a><ul>
+<li class="chapter" data-level="8.1" data-path="calcs-advanced.html"><a href="calcs-advanced.html#overview-5"><i class="fa fa-check"></i><b>8.1</b> Overview</a><ul>
+<li class="chapter" data-level="8.1.1" data-path="calcs-advanced.html"><a href="calcs-advanced.html#prerequisites-3"><i class="fa fa-check"></i><b>8.1.1</b> Prerequisites</a></li>
+</ul></li>
+<li class="chapter" data-level="8.2" data-path="calcs-advanced.html"><a href="calcs-advanced.html#explore-goals.csv"><i class="fa fa-check"></i><b>8.2</b> Explore goals.csv</a></li>
+<li class="chapter" data-level="8.3" data-path="calcs-advanced.html"><a href="calcs-advanced.html#round-1-poke-at-it-to-see-how-it-works"><i class="fa fa-check"></i><b>8.3</b> Round 1: Poke at it to see how it works</a><ul>
+<li class="chapter" data-level="8.3.1" data-path="calcs-advanced.html"><a href="calcs-advanced.html#delete-a-goal-cell-in-goals.csv"><i class="fa fa-check"></i><b>8.3.1</b> Delete a goal cell in goals.csv</a></li>
+<li class="chapter" data-level="8.3.2" data-path="calcs-advanced.html"><a href="calcs-advanced.html#remove-a-goal-whole-row-in-goals.csv"><i class="fa fa-check"></i><b>8.3.2</b> Remove a goal (whole row) in goals.csv</a></li>
+</ul></li>
+<li class="chapter" data-level="8.4" data-path="calcs-advanced.html"><a href="calcs-advanced.html#round-2-break-it-to-see-how-it-works"><i class="fa fa-check"></i><b>8.4</b> Round 2: Break it to see how it works</a><ul>
+<li class="chapter" data-level="8.4.1" data-path="calcs-advanced.html"><a href="calcs-advanced.html#change-preindex_function-goals.csv"><i class="fa fa-check"></i><b>8.4.1</b> Change <code>preindex_function</code> goals.csv</a></li>
+<li class="chapter" data-level="8.4.2" data-path="calcs-advanced.html"><a href="calcs-advanced.html#add-a-new-goal-in-goals.csv"><i class="fa fa-check"></i><b>8.4.2</b> Add a new goal in goals.csv</a></li>
+<li class="chapter" data-level="8.4.3" data-path="calcs-advanced.html"><a href="calcs-advanced.html#delete-a-goal-model-from-functions.r"><i class="fa fa-check"></i><b>8.4.3</b> Delete a goal model from <code>functions.r</code></a></li>
+</ul></li>
+<li class="chapter" data-level="8.5" data-path="calcs-advanced.html"><a href="calcs-advanced.html#adding-a-new-goal"><i class="fa fa-check"></i><b>8.5</b> Adding a new goal</a></li>
+<li class="chapter" data-level="8.6" data-path="calcs-advanced.html"><a href="calcs-advanced.html#adding-subgoals"><i class="fa fa-check"></i><b>8.6</b> Adding subgoals</a></li>
+<li class="chapter" data-level="8.7" data-path="calcs-advanced.html"><a href="calcs-advanced.html#modifying-subgoals"><i class="fa fa-check"></i><b>8.7</b> Modifying subgoals</a></li>
+<li class="chapter" data-level="8.8" data-path="calcs-advanced.html"><a href="calcs-advanced.html#chapter-recap-2"><i class="fa fa-check"></i><b>8.8</b> Chapter recap</a></li>
+<li class="chapter" data-level="8.9" data-path="calcs-advanced.html"><a href="calcs-advanced.html#changing-subgoals"><i class="fa fa-check"></i><b>8.9</b> Changing subgoals</a><ul>
+<li class="chapter" data-level="8.9.1" data-path="calcs-advanced.html"><a href="calcs-advanced.html#update-goal-call-in-goals.csv"><i class="fa fa-check"></i><b>8.9.1</b> Update goal call in <code>goals.csv</code></a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="updating-your-website.html"><a href="updating-your-website.html"><i class="fa fa-check"></i><b>9</b> Updating your website</a><ul>
+<li class="chapter" data-level="9.1" data-path="updating-your-website.html"><a href="updating-your-website.html#overview-6"><i class="fa fa-check"></i><b>9.1</b> Overview</a></li>
+</ul></li>
 </ul>
 
       </nav>
@@ -99,15 +245,15 @@
 
             <section class="normal" id="section-">
 <div id="toolbox-ecosystem" class="section level1">
-<h1><span class="header-section-number">Chapter 4</span> Toolbox Ecosystem</h1>
-<div id="overview" class="section level2">
-<h2><span class="header-section-number">4.1</span> Overview</h2>
-<p>Welcome to the OHI Toolbox, the engine behind all OHI assessments. The Toolbox is an ecosystem of R scripts and data files, organized in folders and sub-folders. In this chapter, we will learn how the Toolbox is structured - where you would store data, modify models, make calculations, as well as record decision-makings.</p>
-<p>The Toolbox ecosystem introduced here is the same in any assessment. So, if you want to explore the goal model for the Gulf of Guayaquil assessment, you could navigate to their models in the same way.</p>
+<h1><span class="header-section-number">Chapter 5</span> Toolbox Ecosystem</h1>
+<div id="overview-2" class="section level2">
+<h2><span class="header-section-number">5.1</span> Overview</h2>
+<p>Welcome to the OHI Toolbox, the engine behind all OHI assessments. The Toolbox is an ecosystem of R scripts and data files, organized in folders and sub-folders. In this chapter, we will learn how the Toolbox is structured - where you would store data, modify models, make calculations, as well as record decision-makings. This tutorial will take roughly 30 minutes.</p>
+<p>The Toolbox ecosystem introduced here is the same in any assessment. So, if you want to explore the goal model for the <a href="http://github.com/OHI-Science/gye">Gulf of Guayaquil assessment</a> for example, you could navigate to their models in the same way.</p>
 <p>Let’s get started!</p>
 </div>
-<div id="prerequisites" class="section level2">
-<h2><span class="header-section-number">4.2</span> Prerequisites</h2>
+<div id="prerequisites-1" class="section level2">
+<h2><span class="header-section-number">5.2</span> Prerequisites</h2>
 <p>Before the training, please make sure you have done the following:</p>
 <ol style="list-style-type: decimal">
 <li>Have up-to-date versions of <code>R</code> and RStudio and have RStudio configured with Git/GitHub
@@ -120,10 +266,11 @@
 <li>Clone the <strong>toolbox-demo</strong> repo from your GitHub account into RStudio into a folder called “github” in your home directory (filepath “~/github”)</li>
 <li>Get comfortable: be set up with two screens if possible. You will be following along in RStudio on your own computer while also watching an instructor’s screen or following this tutorial.</li>
 </ol>
-<p>Now you have set up your computer, let’s open the toolbox-demo repository on your computer, and go from there.</p>
-<div id="main-folder" class="section level3">
-<h3><span class="header-section-number">4.2.1</span> Main folder</h3>
-<p>When you first open the repository, in the main folder, you’ll encounter these files and folders:</p>
+<p>Now you have set up your computer, let’s open the <code>toolbox-demo</code> repository on your computer, and go from there.</p>
+</div>
+<div id="main-repository-folder" class="section level2">
+<h2><span class="header-section-number">5.3</span> main repository folder</h2>
+<p>When you first open the repository, you’ll encounter the following files and folders. <em>Note</em>: if you have a starter repository, you’ll have a <code>prep</code> folder but not a <code>scenario</code> folder.</p>
 <div class="figure">
 <img src="https://docs.google.com/drawings/d/e/2PACX-1vTWGVIHdpK5UirBr2prb1rjly7t0QQNygRCL8MnvBG4Sxw_eEZJyfCu423LFzNLQ316q27YToAMJGRA/pub?w=960&amp;h=720" />
 
@@ -135,37 +282,36 @@
 </ul>
 <p>Among all the files on your screen, the most important files are:</p>
 <ul>
-<li><p><code>install_ohicore.r</code>. <code>ohicore</code> is the backbone software package of the toolbox. It is a suite of scripts that contain all the formulas to string together the data and models that you provide for your assessment, and calculate OHI scores. You don’t need to interact with or see the inside of <code>ohicore</code> yourself during the assessment, but you do need to install this software package once at the start of your assessment by running this script.</p></li>
-<li><p><code>prep</code> is a data preparation folder. As the name suggests, this is where you will store raw data, explore and format those data, and make trial runs of different models. You will spend roughly the first half of your time during an assessment here.</p></li>
-<li><p><code>region2016</code> is the scenario folder. The scenario folder is probably the most important folder within the repository. It contains all of the inputs needed to calculate OHI scores, and you will modify these inputs when conducting your assessment. By default it is named regionYEAR (eg. cnc2016 for New Caledonia 2016) to indicate that the assessment is conducted at the region scale (province, state, district, etc.), based on input layers and goal models used in the most recent global assessment (eg. 2016).</p></li>
+<li><p><code>install_ohicore.r</code>. <code>ohicore</code> is the backbone software package of the Toolbox. It is a <code>R</code> package of functions that contain all the core operations for the data and models that you provide for your assessment, and it will calculate OHI scores. You don’t need to interact with or see the inside of <code>ohicore</code> yourself during the assessment, but you do need to install this software package once at the start of your assessment by running this script.</p></li>
+<li><p><code>prep</code> is a data preparation folder. As the name suggests, this is where you will store raw and/or intermediate data, explore and format those data, and make trial runs of different models. You will spend roughly the first half of your time during an assessment here.</p></li>
+<li><p><code>region2016</code> is the scenario folder. The scenario folder is probably the most important folder within the repository. It contains all of the inputs needed to calculate OHI scores, and you will modify these inputs when conducting your assessment. By default it is named regionYEAR (e.g. cnc2016 for New Caledonia 2016) to indicate that the assessment is conducted at the region scale (province, state, district, etc.), based on input layers and goal models used in the most recent global assessment (e.g. 2016).</p></li>
 <li><p><code>README.md</code> file accompanys most folders or files, as you will discover. It’s a place to take notes for yourself, your team, and anyone interested in the future.</p></li>
 </ul>
 <p>Let’s take a closer look at the <code>prep</code> and <code>region2016</code> folders.</p>
 </div>
-<div id="prep-folder" class="section level3">
-<h3><span class="header-section-number">4.2.2</span> prep folder</h3>
+<div id="prep-folder" class="section level2">
+<h2><span class="header-section-number">5.4</span> Prep folder</h2>
 <p>Click on <code>prep</code> and let’s see what’s inside:</p>
 <div class="figure">
 <img src="https://docs.google.com/drawings/d/e/2PACX-1vRC6jKA-cwwnCDck_pGDgYjN4uA13E9a2PyFqrE-HJbQa9EIclOLLARFmYNYMyaHfdkOcaIlCXgTCSh/pub?w=960&amp;h=720" />
 
 </div>
 <p>Within <code>prep</code>, there is a sub-folder for each goal and subgoal, as well as pressures and resilience.</p>
-<p>Click on the `CW’ folder. Within each goal folder, there are typically a <em>.Rmd</em> script and a sub-folder to contain data.</p>
-<p>The <code>CW_data_prep.Rmd</code> document is a script where you will explore your raw data, format the data, try different models, make graphs and maps, as well as document decision makings. We will come back to this script in Chapter @ref(data prep) to learn how to prepare data for calculations.</p>
-<p>We use .Rmd files because it can be rendered to a webpage, as in <code>CW_data_prep.html</code> in the same CW folder. Click open it in a web browser, and you will see a clean, human-readable webpage that can be shared and viewed by anyone.</p>
-<p><em>Now we’ve walked through the prep folder, let’s take a look at the scenario folder. Click back to the main toolbox-demo folder, and open the <code>region2016</code> folder.</em></p>
-</div>
+<p>Click on the ‘CW’ folder. Within each goal folder, there are typically a <em>.Rmd</em> script and a sub-folder to contain data.</p>
+<p>The <code>CW_data_prep.Rmd</code> document is a script where you will explore your raw data, format the data, try different models, make graphs and maps, as well as document decision making. We will come back to this script in Chapter <a href="prep-data.html#prep-data">6</a> to learn how to prepare data for calculations.</p>
+<p>We use RMarkdown (.Rmd) files because they can be rendered as webpages (for example, <code>CW_data_prep.html</code> in the same CW folder) and can help explain the data processing steps and motivation behind them in written language. Click ‘Knit’ from the RStudio editor or click on the <code>.html</code> file from the file pane and select ’View in web browser`, and you will see a clean, human-readable webpage that can be shared online and viewed by anyone.</p>
+<p><em>Now we’ve walked through the prep folder, let’s take a look at the scenario folder. Click back to the main <code>toolbox-demo</code> folder, and open the <code>region2016</code> folder.</em></p>
 <div id="region2016-folder" class="section level3">
-<h3><span class="header-section-number">4.2.3</span> region2016 folder</h3>
+<h3><span class="header-section-number">5.4.1</span> region2016 folder</h3>
 <div class="figure">
 <img src="https://docs.google.com/drawings/d/e/2PACX-1vT9zIRR6AsCOHwSyuDtQBBurQ2YRo4TpRlkrO6j193ldSZN9FuAkm70mqYPJrVSzeLUokCn4CcOmpkm/pub?w=960&amp;h=720" />
 
 </div>
 <p>Again, this scenario folder contains all the data layers and scripts for you to calculate OHI scores. Let’s look into the sub-folders and see what they do.</p>
-<div id="layers-layers.csv" class="section level4">
-<h4><span class="header-section-number">4.2.3.1</span> layers &amp; layers.csv</h4>
-<p>After you prepared your data layers in the <code>prep</code> folder, you will save them in the <code>layers</code> folder, and register them in <code>layers.csv</code>. (You will learn how to do so in Chapter @ref(data prep)).</p>
-<p><code>layers</code> folder contains individual data layers as .csv files for each goal and subgoal, named in a specific manner for easy organization and recognition, as shown here.</p>
+<div id="layers-folder-layers.csv" class="section level4">
+<h4><span class="header-section-number">5.4.1.1</span> layers folder &amp; layers.csv</h4>
+<p>After you prepared your data layers in the <code>prep</code> folder, you will save them in the <code>layers</code> folder, and register them in <code>layers.csv</code>. (You will learn how to do so in Chapter <a href="prep-data.html#prep-data">6</a>).</p>
+<p>The <code>layers</code> folder contains individual data layers as .csv files for each goal and subgoal, named in a specific manner for easy organization and recognition, as shown here.</p>
 <div class="figure">
 <img src="https://docs.google.com/drawings/d/e/2PACX-1vTVEC9P0g1mBsK3lFPKsl9P-RwrG0ivJdEKEa5dblQMieiVVOg5ujDG1h9_90MRnWzY4ESDAuwGzbqh/pub?w=960&amp;h=720" />
 
@@ -176,15 +322,17 @@
 
 </div>
 </div>
-<div id="conf" class="section level4">
-<h4><span class="header-section-number">4.2.3.2</span> conf</h4>
+</div>
+<div id="conf-folder" class="section level3">
+<h3><span class="header-section-number">5.4.2</span> conf folder</h3>
+<p>The <code>conf</code> folder includes important configuration files required to calculate OHI scores, as shown here.</p>
 <div class="figure">
 <img src="https://docs.google.com/drawings/d/e/2PACX-1vTuZY4xoL1urgQSYtv093jxpneudRZmebIhW9C8JAuWOpS940Q2yP9kzVeaBwj_ajD2GTsBylLnkzD1/pub?w=960&amp;h=720" />
 
 </div>
-<p><code>conf</code> folder includes important configuration files required to calculate OHI scores. Most of the maneuvering in the Conduct phase of the assessment is done within this folder. There are both .R scripts and .csv files. Let’s see what they are.</p>
+<p>Most of the maneuvering in the Conduct phase of the assessment is done within this folder. There are both .R scripts and .csv files. Let’s see what they are.</p>
 <div id="functions.r" class="section level5">
-<h5><span class="header-section-number">4.2.3.2.1</span> functions.R</h5>
+<h5><span class="header-section-number">5.4.2.0.1</span> functions.R</h5>
 <div class="figure">
 <img src="https://docs.google.com/drawings/d/e/2PACX-1vS2ePP1saxdgCYsy7bC1UxlwiJCyHgzIj-zDdKLrRWKzecp7NI8aRoZOsPddCwTb6RADiZ9xji-RzQx/pub?w=960&amp;h=720" />
 
@@ -193,9 +341,8 @@
 <p>Each goal and sub-goal equation is stored as a separate function within the script. These functions calculate the status and trend using prepared layers saved in the ‘layers’ folder and registered in layers.csv.</p>
 <!--- info about the rest of the conf files are modified from the manual --->
 </div>
-</div>
 <div id="pressures-resilience" class="section level4">
-<h4><span class="header-section-number">4.2.3.3</span> pressures &amp; resilience</h4>
+<h4><span class="header-section-number">5.4.2.1</span> pressures &amp; resilience</h4>
 <p>There are four .csv files relating to pressures and resilience.</p>
 <ul>
 <li>pressures_categories.csv</li>
@@ -203,40 +350,40 @@
 <li>pressures_categories.csv</li>
 <li>pressures_matrix.csv</li>
 </ul>
-<p>They are spreadsheets best to be opened with Excel.</p>
+<p>They are spreadsheets that are best opened with Excel.</p>
 <div class="figure">
 <img src="https://docs.google.com/drawings/d/e/2PACX-1vQDM2iViRuigEadiGHhoG1CV_5DAvowpDZI4qTR7jZbg7-0QXfHxDJHjgxN2Z4g4bBTCQNknMkG_qiT/pub?w=960&amp;h=720" />
 
 </div>
-<p>Pressures and Resilience are two of the four dimensions used to evaluate each goal or sub-goal, along with Status and Trend that you calculate in functions.R. We will go through how to modify these tables in Chapter @ref(pressures resilience) later.</p>
+<p>Pressures and Resilience are two of the four dimensions used to evaluate each goal or sub-goal, along with Status and Trend that you calculate in <code>functions.R</code>. We will go through how to modify these tables in Chapter @ref(pressures resilience) later.</p>
 <p>Now, we won’t dwell on these files much except to show you where they are, but you can refer back to this section for the detailed information listed below when you get to Chapter @ref(pressures resilience) <!--- too muchh info?? it takes up a lot of room for information that's above the introductory level. people are pretty far from using these files. but i think we should have this info here for future reference. ---></p>
 <p><strong>pressures_categories.csv</strong></p>
-<p>This is a table to record the name of each pressures data layer, its category, and sub-category. Each data layer name is the same name that’s saved in the layers folder and is registered in layers.csv. Each layer falls under one of two categories - ecological or social pressures, and one of several sub-categories to further represent the origin of the pressure (e.g. climate change, fishing, etc), which is also indicated by a prefix of each data layer name (for example: po_ for the pollution sub-category). For more information, see how to modify pressures layers.</p>
+<p>This is a table to record the name of each pressures data layer, its category, and sub-category. Each data layer name is the same name that’s saved in the layers folder and is registered in layers.csv. Each layer falls under one of two categories - ecological or social pressures, and one of several sub-categories to further represent the origin of the pressure (e.g. climate change, fishing, etc), which is also indicated by a prefix of each data layer name (for example: po_ for the pollution sub-category).</p>
 <p><strong>pressures_matrix.csv</strong></p>
-<p>It is a table that indicates which individual pressures (stressors) affect which goal, sub-goals, or components, and weights them from 1-3 (a weight of 0 is shown as a blank). A higher weight indicates more negative impacts on that goal or component of the goal. These weights are relative to each row of the matrix (goal, sub-goal, or component). These weights are used in global assessments based on scientific literature and expert opinion, and you can modify the weightings if necessary for your assessment. The pressures matrix is the same as Table S25 in the Supplementary Information for Halpern et al. 2012.</p>
-<p>Each pressure (column) of the pressures matrix is the layer name of the pressures layer file that is saved in the layers folder and is registered in layers.csv, matching what’s recorded in the pressures_categories.csv. For more information, see how to modify pressures layers.</p>
+<p>This is a table that indicates which individual pressures (stressors) affect which goal, sub-goals, or components, and weights them from 1-3 (a weight of 0 is shown as a blank). A higher weight indicates more negative impacts on that goal or component of the goal. These weights are relative to each row of the matrix (goal, sub-goal, or component). These weights are used in global assessments based on scientific literature and expert opinion, and you can modify the weightings if necessary for your assessment. The pressures matrix is the same as Table S25 in the Supplementary Information for Halpern et al. 2012.</p>
+<p>Each pressure (column) of the pressures matrix is the layer name of the pressures layer file that is saved in the layers folder and is registered in layers.csv, matching what’s recorded in the pressures_categories.csv.</p>
 <p><strong>resilience_categories.csv</strong></p>
 <p>Similar to pressures_categories.csv, this file contains information on each resilience data layer, including its name, category, and sub-category. Each resilience layer’s name is the same as the data layer to be saved in the layers folder and is registered in layers.csv. In addition, it also includes information on category type - ecosystem, regulatory, or social, indicating the origin of the resilience layer.</p>
-<p>Each resilience layer is also assigned a weight of 0-1, representing the level of resilience against pressures. Different from the values used in pressures matrix, the resilience weights depend on the level of information available. For more information, read how to modify resilience layers.</p>
+<p>Each resilience layer is also assigned a weight of 0-1, representing the level of resilience against pressures. Different from the values used in pressures matrix, the resilience weights depend on the level of information available.</p>
 <p><strong>resilience_matrix.csv</strong></p>
-<p>It is a table that indicates which individual resilience measures affect which goal, sub-goals, or components. These weights are stored in a separate file in the conf folder: resilience_weights.csv. The resilience matrix is the same as Table S26 in the Supplementary Information for Halpern et al. 2012. For more information, read how to modify resilience layers.</p>
+<p>This is a table that indicates which individual resilience measures affect which goal, sub-goals, or components. The resilience matrix is the same as Table S26 in the Supplementary Information for Halpern et al. 2012.</p>
 </div>
 <div id="config.r" class="section level4">
-<h4><span class="header-section-number">4.2.3.4</span> config.R</h4>
+<h4><span class="header-section-number">5.4.2.2</span> config.R</h4>
 <div class="figure">
 <img src="https://docs.google.com/drawings/d/e/2PACX-1vSmsay5W22clkc4XXknNILZxE5j88wjMuVNIovcyhX2RqiPqDTehKZr-oUkviozWawJF3ybCc81YS9t/pub?w=960&amp;h=720" />
 
 </div>
-<p>It configures labeling and constants appropriately. You will only need to modify this file when working with goals that have categories (example: habitat types or economy sectors) that are affected differently by pressures and resilience measures.</p>
+<p><code>config.R</code> configures labeling and constants appropriately. You will only need to modify this file when working with goals that have categories (example: habitat types or economy sectors) that are affected differently by pressures and resilience measures.</p>
 </div>
 <div id="goals.csv" class="section level4">
-<h4><span class="header-section-number">4.2.3.5</span> goals.csv</h4>
-<p><code>goals.csv</code> is another spreadsheet file that’s best to be opened in Excel.</p>
+<h4><span class="header-section-number">5.4.2.3</span> goals.csv</h4>
+<p><code>goals.csv</code> is another spreadsheet file that’s best opened in Excel.</p>
 <div class="figure">
 <img src="https://docs.google.com/drawings/d/e/2PACX-1vRa9TITgRU9zHHMnbUtMqkIQM-RDCarFa9th-v3_zq_W1kResrS75JEgn39fN3C8EMpqe7OaZD7M7sZ/pub?w=960&amp;h=720" />
 
 </div>
-<p>goals.csv is a table with information about goals and sub-goals, including:</p>
+<p><code>goals.csv</code> has information about goals and sub-goals, and controls which goals are calculated, and how they are represented in figures. If a goal exists in this list, it will be calculated, and needs an accompanying function in <code>functions.r</code>. Here are the columns within <code>goals.csv</code>:</p>
 <ul>
 <li>order_color &amp; order_hierarchy: the order to display in flower plots</li>
 <li>order_calculate: the order in which the goals and sub-goals are calculated for the overall index scores</li>
@@ -245,11 +392,11 @@
 <li>preindex_function: indicate what parameters are called to calculate scores for goals and - sub-goals in functions.r</li>
 <li>postindex_function: indicate what parameters are called to calculate scores for supra-goals in functions.r</li>
 </ul>
-<p><em>We have just gone over the files in the <code>conf</code> folder. To recap, <code>conf</code> folder contains important configuration files required to calculate OHI scores, including functions.R, pressures and resilience files, etc. Now let’s take a step back to the <code>region2016</code> folder, and check out what else are there.</em></p>
+<p><em>We have just gone over the files in the <code>conf</code> folder. To recap, the <code>conf</code> folder contains important configuration files required to calculate OHI scores, including functions.R, pressures and resilience files, etc. Now let’s take a step back to the <code>region2016</code> folder, and check out what else is there.</em></p>
 </div>
 </div>
 <div id="configure_toolbox.r" class="section level3">
-<h3><span class="header-section-number">4.2.4</span> configure_toolbox.r</h3>
+<h3><span class="header-section-number">5.4.3</span> configure_toolbox.r</h3>
 <div class="figure">
 <img src="https://docs.google.com/drawings/d/e/2PACX-1vSfm3eOmTbowpx1e2zUYIz08a_aWW16fhVhnH47AUz4GZZEsJMtTR4Flplx-5Wwex0TG31PoGy4E5nA/pub?w=960&amp;h=720" />
 
@@ -257,7 +404,7 @@
 <p>This script does the pre-checks before running goal models and calculate scores. It loads <code>ohicore</code>, calls all goal functions and data layers in the “conf” folder, and check that all data layers are registered properly. You are encouraged to use this script when you’re working on individual goal models. After you register data layers for a goal, or make any changes to the data layers, source this script before running model-specific functions in functions.R.</p>
 </div>
 <div id="calculate_scores.r" class="section level3">
-<h3><span class="header-section-number">4.2.5</span> calculate_scores.R</h3>
+<h3><span class="header-section-number">5.4.4</span> calculate_scores.R</h3>
 <div class="figure">
 <img src="https://docs.google.com/drawings/d/e/2PACX-1vTeKKHmsK8hy6kICeJ-tAZsvBy_QqAeYdn7JcthxM4AbCeJDcpZ8UhHnGMXdy1DcJBfF0IJrpFFSKke/pub?w=960&amp;h=720" />
 
@@ -266,12 +413,12 @@
 <p>This script runs everything required to calculate OHI scores using the prepared layers the layers folder that are registered in layers.csv. Scores will be saved in scores.csv.</p>
 </div>
 <div id="recap" class="section level3">
-<h3><span class="header-section-number">4.2.6</span> Recap</h3>
-<p>Toolbox is a ecosystem of data layers and scripts, contained in folders and their sub-folders.</p>
-<p>Behind the scenes in the Toolbox, there is a backbone package called <code>ohicore</code>. You won’t interact with it directly, but you will need to install this package at the beginning of your assessment.</p>
-<p>At the first stage of your assessment, you will spend most of your time in <code>prep</code> folder, where you upload, explore, and format your data layers to be saved in the scenario folder <code>region2016</code> for the next step of calculations.</p>
+<h3><span class="header-section-number">5.4.5</span> Recap</h3>
+<p>The OHI Toolbox is a ecosystem of data layers and scripts, contained in folders and their sub-folders.</p>
+<p>The information in your Toolbox repository will interact with an <code>R</code> package called <code>ohicore</code>, which does the core operations to calculate OHI scores. You will need to install this package at the beginning of your assessment, and then call it as a library after that.</p>
+<p>As you begin your assessment, you will spend most of your time in <code>prep</code> folder, where you upload, explore, and format your data layers to be saved in the scenario folder <code>region2016</code> for the next step of calculations.</p>
 <p><code>region2016</code> is a folder with all the data layers, files, and scripts you’ll need to calculate scores. There you will register finished data layers, modify goal models, modify pressures and resilience, calculate OHI scores, and make flowerplots.</p>
-<p>Below is a figure that summarizes the information we just went through, in relation to the steps you would take in an assessment for future reference.</p>
+<p>Now we have walked thorugh the files, how do they fit into the OHI process? Below is a figure that summarizes how each file will be used in relation to the steps you would take in an assessment for future reference.</p>
 <div class="figure">
 <img src="https://docs.google.com/drawings/d/e/2PACX-1vRlYbRI6_ljU7FYP3RivcR5Pvz04cx00Fpq_tflrSN8loS46YtI3DbqyBwZ_OI68IvWCZzWl8HsqX3u/pub?w=960&amp;h=600" />
 
@@ -286,8 +433,9 @@
         </div>
       </div>
 <a href="data-science.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="prep-data.html" class="navigation navigation-next " aria-label="Next page""><i class="fa fa-angle-right"></i></a>
-
+<a href="prep-data.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/lunr.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
@@ -296,7 +444,7 @@
 <script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
 <script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
 <script>
-require(["gitbook"], function(gitbook) {
+gitbook.require(["gitbook"], function(gitbook) {
 gitbook.start({
 "sharing": {
 "github": false,
@@ -325,6 +473,17 @@ gitbook.start({
 });
 </script>
 
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:" && /^https?:/.test(script.src))
+      script.src  = script.src.replace(/^https?:/, '');
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
 </body>
 
 </html>

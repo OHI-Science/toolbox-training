@@ -1,6 +1,6 @@
 # Calculations: basic workflow {#calcs-basic} 
 
-The purpose of Chapter \@ref(calcs-basic) is to introduce you to the basic workflow for calculating OHI scores. This is a a 2-hour hands-on training: you will be following along on your own computer and working with a copy of the demonstration repository that is used throughout the this chapter.
+The purpose of Chapter \@ref(calcs-basic) is to introduce you to the basic workflow for calculating OHI scores. This is a 2-hour hands-on training: you will be following along on your own computer and working with a copy of the demonstration repository that is used throughout this chapter.
 
 ## Overview
 
@@ -536,6 +536,19 @@ Let's restart `R` before proceeding.
 In this third time through the basic workflow, we updated the goal model without changing any of the data layers that it depends upon. Next up, we will add a new data layer for it to work with.
 
 
+### Troubleshooting
+
+If you've tailored a goal model function, you need to make sure that its output is still a data frame, and one that is not grouped. Otherwise, when you run `calculate_scores.r`, you may get a cryptic error. Examples of some of the ones we've seen are: 
+
+```{r, eval=FALSE}
+# Error in left_join_impl(x, y, by$x, by$y, suffix$x, suffix$y, check_na_matches(na_matches)) : 
+#  Can't join on 'region_id' x 'region_id' because of incompatible types (integer / list)
+```
+
+We are constantly improving `ohicore` with more human-readable error messages, but it is still best practice to ensure your goal model output is returning a dataframe. 
+
+You can do this in a few ways. The way we commonly do this is by adding `ungroup()` or `as.data.frame()` as the final step before returning the scores variable at the end of a goal model function. 
+
 ## Calculate with tailored data and models
  
 The fourth and final example we will do in this chapter is to tailor a goal model by adding a new variable. This will mean that we will prepare, save, and register a *new* data layer and update the goal model in `functions.r`. It will be a combination of what we've done previously in this chapter. 
@@ -652,6 +665,7 @@ Also, a few **best practices** we have used throughout this training that are go
 - Rerun configure_toolbox.R after any data layer or model changes
 - Save functions.R before the changes are reflected in Git window 
 - Close Excel before returning to `R` (this is less important on a Mac but will cause errors on a PC)
+
 
 
 <!---next steps after March 1 training: 

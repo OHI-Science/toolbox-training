@@ -20,11 +20,11 @@ Before the training, please make sure you have done the following:
 1. Clone the **toolbox-demo** repo from your GitHub account into RStudio into a folder called "github" in your home directory (filepath "~/github")
 1. Get comfortable: be set up with two screens if possible. You will be following along in RStudio on your own computer while also watching an instructor's screen or following this tutorial.
 
-Now you have set up your computer, let's open the toolbox-demo repository on your computer, and go from there.
+Now you have set up your computer, let's open the `toolbox-demo` repository on your computer, and go from there.
 
 ## main repository folder
 
-When you first open the repository, in the main folder, you'll encounter these files and folders: 
+When you first open the repository, you'll encounter the following files and folders. *Note*: if you have a starter repository, you'll have a `prep` folder but not a `scenario` folder. 
 
 ![](https://docs.google.com/drawings/d/e/2PACX-1vTWGVIHdpK5UirBr2prb1rjly7t0QQNygRCL8MnvBG4Sxw_eEZJyfCu423LFzNLQ316q27YToAMJGRA/pub?w=960&h=720)
 
@@ -35,11 +35,11 @@ Overall, all the main files you will see are either of the two file types:
 
 Among all the files on your screen, the most important files are: 
 
-- `install_ohicore.r`. `ohicore` is the backbone software package of the toolbox. It is a `R` package of functions that contain all the core operations for the data and models that you provide for your assessment, and it will calculate OHI scores. You don't need to interact with or see the inside of `ohicore` yourself during the assessment, but you do need to install this software package once at the start of your assessment by running this script. 
+- `install_ohicore.r`. `ohicore` is the backbone software package of the Toolbox. It is a `R` package of functions that contain all the core operations for the data and models that you provide for your assessment, and it will calculate OHI scores. You don't need to interact with or see the inside of `ohicore` yourself during the assessment, but you do need to install this software package once at the start of your assessment by running this script. 
 
 - `prep` is a data preparation folder. As the name suggests, this is where you will store raw and/or intermediate data, explore and format those data, and make trial runs of different models. You will spend roughly the first half of your time during an assessment here.
 
-- `region2016` is the scenario folder. The scenario folder is probably the most important folder within the repository. It contains all of the inputs needed to calculate OHI scores, and you will modify these inputs when conducting your assessment. By default it is named regionYEAR (eg. cnc2016 for New Caledonia 2016) to indicate that the assessment is conducted at the region scale (province, state, district, etc.), based on input layers and goal models used in the most recent global assessment (eg. 2016). 
+- `region2016` is the scenario folder. The scenario folder is probably the most important folder within the repository. It contains all of the inputs needed to calculate OHI scores, and you will modify these inputs when conducting your assessment. By default it is named regionYEAR (e.g. cnc2016 for New Caledonia 2016) to indicate that the assessment is conducted at the region scale (province, state, district, etc.), based on input layers and goal models used in the most recent global assessment (e.g. 2016). 
 
 - `README.md` file accompanys most folders or files, as you will discover. It's a place to take notes for yourself, your team, and anyone interested in the future.  
 
@@ -53,13 +53,13 @@ Click on `prep` and let's see what's inside:
 
 Within `prep`, there is a sub-folder for each goal and subgoal, as well as pressures and resilience.
 
-Click on the `CW' folder. Within each goal folder, there are typically a _.Rmd_ script and a sub-folder to contain data. 
+Click on the 'CW' folder. Within each goal folder, there are typically a _.Rmd_ script and a sub-folder to contain data. 
 
 The `CW_data_prep.Rmd` document is a script where you will explore your raw data, format the data, try different models, make graphs and maps, as well as document decision making. We will come back to this script in Chapter \@ref(prep-data) to learn how to prepare data for calculations. 
 
 We use RMarkdown (.Rmd) files because they can be rendered as webpages (for example, `CW_data_prep.html` in the same CW folder) and can help explain the data processing steps and motivation behind them in written language. Click 'Knit' from the RStudio editor or click on the `.html` file from the file pane and select 'View in web browser`, and you will see a clean, human-readable webpage that can be shared online and viewed by anyone.  
 
-_Now we've walked through the prep folder, let's take a look at the scenario folder. Click back to the main toolbox-demo folder, and open the `region2016` folder._
+_Now we've walked through the prep folder, let's take a look at the scenario folder. Click back to the main `toolbox-demo` folder, and open the `region2016` folder._
 
 ### region2016 folder
 
