@@ -57,7 +57,7 @@ The Baltic Sea region doesn't get big storms because of its geography. The Coast
 
 ![](https://docs.google.com/drawings/d/e/2PACX-1vQwRzxEuSxD09EyNUY5igXS7RdQFnk5XrAr3RXYkdBGzDIEMk73xWfR78urrju4oYTAy1TzRBJzFWFd/pub?w=960&h=144)
 
-Goal models and Spatial Boundaries need to be considered simultaneously, particularly in the initial data gathering stage. Spatial boundaries based on political and geological boundaries are set at the beginning of a study, validated and maybe adjusted with data. For example, if you have 5 provinces to assess separately, and data for province 1 and 2 are always lumped together and difficult to tease apart, then you might need to consider combining region 1 and 2 into one region in your assessment. 
+Goal models and Spatial Boundaries need to be considered simultaneously, particularly in the initial data gathering stage. Spatial boundaries based on political and geological boundaries are set at the beginning of a study, validated and maybe adjusted with data. For example, if you have 5 provinces to assess separately, and data for province 1 and 2 are reported together and difficult to tease apart, then you might need to consider combining region 1 and 2 into one region in your assessment. 
 
 <!---Ning I switched this wording but I don't think it's very good; but I thought "validating with data" was too vague. Maybe it needs another sentence or two?  
 
@@ -116,16 +116,26 @@ Also, the pressures and resilience tabs too.
 
 Now we have run through the basic theories behind each column, let's walk through a few examples together over the next few panels of spreadsheets (Example 1 - 4). 
 
-**Example 1 - Model & Indicators**
+**Example 1 - (Model &) Variables** <!--- Julie: maybe delete the model column, only have model variables, see earlier comments --->
 
 ![](https://docs.google.com/drawings/d/e/2PACX-1vSY6WtpVw6VzNfSBu_Mafu5JyTuSnIWh2yVdMi5jrC7xT4GJb7b6OmatsZoWSPGFyvSDnqDODVFsF5-/pub?w=960&h=240)
 
 <!---Ning: It would be great to flush this out a lot more. What did you enter as indicators and why? Walk through the thought process behind them (maybe not all of them, but enough to get a good sense. This is the thinking that we need to teach people.
 --->
 
-Models are relationships among indicators. Before gathering any data, think about ideal indicators that could represent the goal. How could each indicator be relevant/representative of ocean health? 
+Models are relationships among variables. Before gathering any data, think about ideal variables that could represent the goal. How could each variable be relevant/representative of ocean health? 
 
-As you might have noticed, to the right side of the sheet, there is a column for notes. In this case for Artisanal Fishing Opportunities (AO), Fish catch is deemed not suitable as an indicator here because it doesn't directly reflect the _capacity_ for artisanal fishing, which AO measures. 
+In this example, [artisanal fishing opportunities](http://ohi-science.org/goals/#artisanal-fishing-opportunities) measure whether people who need to fish on a small, local scale have the opportunity to do so. Thus the variables need to reflect the _need_ for artisanal fishing, how easy or hard it is for fishermen to _access_ ocean resources when they need them, and the _sustainability_ of harvest of all fish stocks that fishermen use. 
+
+_The number of artisanal fishermen_ and/or _the number of people below poverty line_ could reflect the need for artisanal fishing. 
+
+_Fish stock health_ can tell the sustainability of fishing in the region. 
+
+_Catch_ might be unsuitable, because it reflects the amount fished in the past, not the sustainable capacity for artisanal fishing. The fish stocks might have been over- or under- fished in the past. 
+
+_Gas price_ and _number of ports_ could limit the fishermen's ability to access ocean resources. 
+
+As you might have noticed, to the right side of the sheet, there is a column for **notes**. In this case for Artisanal Fishing Opportunities (AO), Fish catch is deemed not suitable for the reasons stated above. _It's just as important to document the rationales for excluding a data source as it is to record why you included one._ 
 
 **Example 2 - Data**
 
@@ -134,23 +144,28 @@ As you might have noticed, to the right side of the sheet, there is a column for
 <!---Ning: same as above, I think you can flush this out a bit more. Walk through the rows you introduce above and say what you enter on the sheet. Maybe make some dummy data and take a screenshot if that makes sense, or just describe it.
 --->
 
-Do you have data for each of the indicators you choose to use? What's the spatial resolution and temporal coverage? 
+These few columns detail the data you find for each of the variables you decided suitable for your model. 
 
-Spatial resolution should be compatible with the geopolitical boundaries of the regions in your study area. For example, if in your country, there are four provinces to be assessed, the spatial resolution from your data should be fine enough to extrapolate to the provincial level. 
+Are data available? For fish stock health, there is no readily accessible datasets. So this variable can't be used in your study. But other variables seem to have data. 
 
-Temporal coverage also matters. As OHI measures _trend_ for each goal, the trend is derived from ocean health status over time, ideally 5 years. 
+Are they from a credible source? The quality of your assessment depends on the quality of your data. Government agencies (eg. Energy Information Administration), or research institutes tend to be more credible. <!---anything else to include? NGO? not all provide relialbe data though...--->
+
+How many years does it cover? As OHI measures _trend_ for each goal, the trend is derived from ocean health status over time, ideally 5 years. In this case, there is sufficient data (1950-2016). 
+
+Also, what's the spatial resolution of this source? Spatial resolution should be compatible with the geopolitical boundaries of the regions in your study area. If the source only provides a national average, but the assessment requires provincial-level data, you need to look further. 
+
 
 **Example 3 - Spatial resolution**
 
 ![](https://docs.google.com/drawings/d/e/2PACX-1vTlPhVKT-a9rJUkWOof6o2OIGudmQ-IMjeYr16QcIhwmvheZTGwjlxUeO9OszaBXEREUQU2B970JKZd/pub?w=960&h=240)
 
-As mentioned above, data should be disaggregated to the regional level that you determine to be the optimal geopolitical boundaries of your study. 
+As mentioned above, data should be disaggregated to the regional level that you determine to be the optimal spatial boundaries of your study. 
 
-In the data exploration process, however, you might find that the geopolitical boundaries you initially thought to be ideal are not supported by data. For example, if region 1 and 2 do not have independent data (eg. data can only be disaggregated from national level data and region 1 and 2 may end up with non-distinguishable data), you might consider combining region 1 and 2 into the same region for your assessment. 
+In the data exploration process, however, you might find that the geopolitical boundaries you initially thought to be ideal are not supported by data. For example, if region 1 and 2 do not have independent data - that data can only be disaggregated from national level data, and region 1 and 2 may end up with non-distinguishable data, you might consider combining region 1 and 2 into the same region for your assessment. 
 
 ![](https://docs.google.com/drawings/d/e/2PACX-1vQZjvRbXPAj_VKdJ4Nm5BfFSnivlr-d8K23qHY0HS9CBIcriifSVVIzll1GqpA3QD_lSMKINB_Drsg5/pub?w=960&h=336)
 
-Sometimes there isn't data available, and sometimes data isn't relevant to a region, e.g. if there are no mangroves growing in Region 4. So it's important to have a system for distinguishing these two things. Here, we'll use NA if it's not relevant; that's the syntax that `R` and the OHI Toolbox will use so we can be consistent. When data are not available but they should be, here we'll mark it with an N. 
+Sometimes there isn't data available, and sometimes data isn't relevant to a region, e.g. if there are no mangroves growing in Region 4. So it's important to have a system for distinguishing these two things. Here, we'll use _NA_ if it's not relevant; that's the syntax that `R` and the OHI Toolbox will use so we can be consistent. When data are not available but they should be, here we'll mark it with an _N_. 
 
 "NA" is used when there should be no data for this region. In this example, if no one lives in region 4, there would be no Livelihoods data for this region.  
 
@@ -166,5 +181,7 @@ Sometimes there isn't data available, and sometimes data isn't relevant to a reg
 Reference points, or targets, are essential for rescaling and scoring. For example, if the target number of fishermen is 100, and the data only records 50, that could bring AO score down to 50. 
 
 What the reference point for the indicators (or goal) should be? It could be from published policy targets, scientific studies, etc. It is not necessary that each indicator has a reference point, although most indicators need a reference point for rescaling. 
+
+_Gas prices_ fluctuates often. It's difficult to set a reference point where it's optimal. You could set the reference point to be
 
 
