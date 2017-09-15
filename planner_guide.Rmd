@@ -75,7 +75,7 @@ Also, since there is a full Example that you walk through after this short intro
 
 Julie: see below. may need more work. --->
 
-_Model approaches?_ You don't need to decide on the mathmatical formula of your model here. Together with the next "variables" column, this column mainly aims to get you start thinking of model approaches. Is the global OHI model adequate for your needs? What should the goal capture? <!--- Julie, I think maybe we should get rid of this column. It's very similar to the next column, since thinking about variables require people to understand the philosophy and other model approaches. It will also make this sheet less scary, and focus people's attention on variables and data gathering...--->
+_Model approaches?_ You don't need to decide on the mathmatical formula here. Together with the next "variables" column, this column mainly aims to get you start thinking of model approaches. Is the global OHI model adequate for your needs? What should the goal capture? <!--- Julie, I think maybe we should get rid of this column. It's very similar to the next column, since thinking about variables require people to understand the philosophy and other model approaches. It will also make this sheet less scary, and focus people's attention on variables and data gathering...--->
 
 _What ideal variables best represent the goal?_ Before even thinking about data, let's think broadly, in your study area, what variables, or characteristics, of a goal best represent the philosophy of it, regardless if there is data available? 
 
@@ -91,6 +91,7 @@ Another important factor that determines OHI scores is _Reference Point_, ie. wh
 
 Choice of model variables and reference points are often limited by data availability, time frame, and resolution. The data columns are a place to catelog a list of the data that could work: from your knowledge, when you ask your colleagues, digging through databases online, etc. Add as many rows as you need to to record your ideas. Having this master sheet of ideas will help you keep track of your thoughts and make collaboration with your collegues easier.  
 
+
 <!---Ning:
 I think you could flush this out a bit more with the overall comment above: this is a place to make a list of the data that could work: from your knowledge, when you ask your colleagues, digging through databases online, the gvt, etc. Add as many rows as you need to to catelog your ideas...
 
@@ -102,6 +103,7 @@ Julie: see above and below.
 _Years_: Typically having only one year of data is not enough to objectively reflect the status and trend of a goal. Five years of data are recommended. If that's not available, using fewing years of data is possible. 
 
 _Spatial resolution_: When you find a data source (eg. national poverty level), you might need to be _disaggregate_, or separate the data from large-scale (eg. national) to small-scale (eg. provential). You could contact the agency that publishes the data and see if they have gathered small-scale data. If that's not possible, there are means (eg. GIS) to separate the large-scale data to local scales, although that could reduce the accuracy of the data. 
+
 
 <!---Ning: you'll also want to explain the green and orange columns here too. And say that if you can add more columns for regions (and remind them what regions are)
 
