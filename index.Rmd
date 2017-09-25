@@ -14,11 +14,17 @@ description: "This is the official Ocean Health Index Toolbox training."
 
 # Welcome {#welcome}
 
-This book will help you learn to use the OHI Toolbox. Each chapter is hands-on training that we use to teach, but they can also be used as self-paced learning.
- 
-**OHI assessments use collaborative open software so that they are transparent and reproducible.** Openness is important for science and especially solution-driven science; we've shared how we work and why in a new publication in *Nature Ecology & Evolution:* [Our path to better science in less time using open data science tools](https://www.nature.com/articles/s41559-017-0160). It's open access (available for free), and there are also accompanying interviews and press listed [here](http://ohi-science.org/betterscienceinlesstime/) that you can read to get more of a sense of why we work the way we do. 
 
-***This training program is under active development and testing***
+ 
+**OHI assessments use collaborative open software so that they are transparent and reproducible; we call this software the OHI Toolbox.**   
+  
+Openness is an important part of how we work; we describe how and why in Lowndes *et al.* 2017, *Nature Ecology & Evolution:* [Our path to better science in less time using open data science tools](https://www.nature.com/articles/s41559-017-0160). 
+
+This book will train you to prepare for and use the OHI Toolbox. It can be used to teach workshops or for self-paced learning.
+
+<br>
+
+***This book is under active development and testing***
 
 
 
