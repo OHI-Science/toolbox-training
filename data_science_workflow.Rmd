@@ -11,7 +11,9 @@ The OHI Toolbox depends upon the 'open data science tools' R, RStudio, Git, and 
 
 ## RStudio-GitHub workflow
 
-The OHI Toolbox depends upon R, RStudio, Git, and GitHub and is important for reproduciblity, collaboration, and communication.  You'll get your computer set up with these tools and you will get into a workflow working from RStudio and syncing your work online to GitHub; hence, we call this the RStudio-GitHub workflow. 
+The OHI Toolbox depends upon R, RStudio, Git, and GitHub and is important for reproduciblity, collaboration, and communication. This book and the [ohi-science.org](http://ohi-science.org) website are created using these same tools. 
+
+You'll get your computer set up with these tools and you will get into a workflow working from RStudio and syncing your work online to GitHub; hence, we call this the RStudio-GitHub workflow. 
 
 
 ![](https://docs.google.com/drawings/d/1eEb8qlCWY5g0v19xMoW-Jc71cNr4GOacsxUK9FR8si4/pub?w=960&h=480)

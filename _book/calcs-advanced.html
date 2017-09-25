@@ -7,7 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Ocean Health Index Toolbox Training</title>
   <meta name="description" content="This is the official Ocean Health Index Toolbox training.">
-  <meta name="generator" content="bookdown 0.4 and GitBook 2.6.7">
+  <meta name="generator" content="bookdown 0.5 and GitBook 2.6.7">
 
   <meta property="og:title" content="Ocean Health Index Toolbox Training" />
   <meta property="og:type" content="book" />
@@ -274,7 +274,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li>note “goal” and “parent”</li>
 </ul>
 <p>This is where it happens:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">conf =<span class="st"> </span>ohicore<span class="op">::</span><span class="kw">Conf</span>(<span class="st">&#39;conf&#39;</span>)</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">conf =<span class="st"> </span>ohicore::<span class="kw">Conf</span>(<span class="st">&#39;conf&#39;</span>)</code></pre></div>
 <!--- TODO ohicore: Conf() should check that all entries in goals.csv are present in functions.r, but it doesn't. 
 --->
 </div>
@@ -314,7 +314,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 
 </div>
 <p>This will fail at the scores calculation.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">scores =<span class="st"> </span>ohicore<span class="op">::</span><span class="kw">CalculateAll</span>(conf, layers)
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">scores =<span class="st"> </span>ohicore::<span class="kw">CalculateAll</span>(conf, layers)
 <span class="co"># Running Setup()...</span>
 <span class="co"># Calculating Status and Trend for each region for FIS...</span>
 <span class="co"># ...</span>
@@ -394,7 +394,7 @@ _Changing goal weights will be done here by editing the value in the *weight* co
 <script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
 <script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
 <script>
-require(["gitbook"], function(gitbook) {
+gitbook.require(["gitbook"], function(gitbook) {
 gitbook.start({
 "sharing": {
 "github": false,

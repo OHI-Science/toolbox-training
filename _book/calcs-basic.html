@@ -7,7 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Ocean Health Index Toolbox Training</title>
   <meta name="description" content="This is the official Ocean Health Index Toolbox training.">
-  <meta name="generator" content="bookdown 0.4 and GitBook 2.6.7">
+  <meta name="generator" content="bookdown 0.5 and GitBook 2.6.7">
 
   <meta property="og:title" content="Ocean Health Index Toolbox Training" />
   <meta property="og:type" content="book" />
@@ -344,7 +344,7 @@ where would a section on ohicore go? Maybe need to make a vingette for it and li
 <p>Note: the prefix <code>ohicore::</code> is a way to be explicit that the <code>CalculateAll()</code> is part of the <code>ohicore</code> package.</p>
 </blockquote>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">## calculate scenario scores
-scores =<span class="st"> </span>ohicore<span class="op">::</span><span class="kw">CalculateAll</span>(conf, layers)</code></pre></div>
+scores =<span class="st"> </span>ohicore::<span class="kw">CalculateAll</span>(conf, layers)</code></pre></div>
 <p><code>CalculateAll()</code> first calculates the Status and Trend for every goal and subgoal. These models are in your tailored repository’s <code>functions.r</code> (we will explore <code>functions.r</code> below). You can choose to add messages to print during calculation like is shown below for Mariculture (MAR).</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Running Setup()...</span>
 <span class="co"># Calculating Status and Trend for each region for FIS...</span>
@@ -545,7 +545,7 @@ scores =<span class="st"> </span>ohicore<span class="op">::</span><span class="k
 <h3><span class="header-section-number">7.5.1</span> Load libraries and set working directory</h3>
 <p>The first two things that <code>configure_toolbox.r</code> does is to set up your working environment. First, it loads <code>ohicore</code> and any <code>R</code> packages that will be needed as you work with <code>functions.r</code>: <code>tidyverse</code> (which includes <code>dplyr</code> and <code>tidyr</code>) and <code>stringr</code>. As you need other packages you can add them here to load. Second, it sets your working directory to your assessment’s scenario: “region2016”.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">## load ohicore and tidyverse
-<span class="cf">if</span> (<span class="op">!</span><span class="st">&quot;ohicore&quot;</span> <span class="op">%in%</span><span class="st"> </span>(<span class="kw">.packages</span>())) {
+if (!<span class="st">&quot;ohicore&quot;</span> %in%<span class="st"> </span>(<span class="kw">.packages</span>())) {
   <span class="kw">suppressWarnings</span>(<span class="kw">require</span>(ohicore))
   <span class="kw">library</span>(tidyverse)    <span class="co"># install.packages(&#39;tidyverse&#39;)</span>
   <span class="kw">library</span>(stringr)
@@ -563,23 +563,23 @@ scores =<span class="st"> </span>ohicore<span class="op">::</span><span class="k
 <li>other OHI parameters that determines how OHI scores are calculated</li>
 </ul>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">## load scenario configuration
-conf =<span class="st"> </span>ohicore<span class="op">::</span><span class="kw">Conf</span>(<span class="st">&#39;conf&#39;</span>)</code></pre></div>
+conf =<span class="st"> </span>ohicore::<span class="kw">Conf</span>(<span class="st">&#39;conf&#39;</span>)</code></pre></div>
 </div>
 <div id="ohicorechecklayers" class="section level3">
 <h3><span class="header-section-number">7.5.3</span> <code>ohicore::CheckLayers()</code></h3>
 <p>The <code>CheckLayers()</code> function from <code>ohicore</code> checks that data layers are properly formatted and registered (e.g., that each data layer in <code>layers.csv</code> is present in the layers folder), and returns a list of all of the layers that are registered. Check to make sure ours is there. This is a gate-keeping step by to make sure the data layers you’ve entered are in the right format and can be read by <code>ohicore</code> properly.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">## check that layers in the layers folder match layers.csv registration. 
-ohicore<span class="op">::</span><span class="kw">CheckLayers</span>(<span class="st">&#39;layers.csv&#39;</span>, <span class="st">&#39;layers&#39;</span>, <span class="dt">flds_id=</span>conf<span class="op">$</span>config<span class="op">$</span>layers_id_fields)</code></pre></div>
+ohicore::<span class="kw">CheckLayers</span>(<span class="st">&#39;layers.csv&#39;</span>, <span class="st">&#39;layers&#39;</span>, <span class="dt">flds_id=</span>conf$config$layers_id_fields)</code></pre></div>
 <div id="warning-messages" class="section level4">
 <h4><span class="header-section-number">7.5.3.1</span> Warning messages</h4>
 <p>Warning messages alert you to problems with specific layers: this is showing that there are unused fields and duplicate rows. These warning messages are not a problem now (they are a byproduct of extracting this repo based on Global OHI assessments; you’ll be changing this layer anyways).</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">Warning messages<span class="op">:</span>
-<span class="dv">1</span><span class="op">:</span><span class="st"> </span>In ohicore<span class="op">::</span><span class="kw">CheckLayers</span>(<span class="st">&quot;layers.csv&quot;</span>, <span class="st">&quot;layers&quot;</span>, <span class="dt">flds_id =</span> conf<span class="op">$</span>config<span class="op">$</span>layers_id_fields) <span class="op">:</span>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">Warning messages:
+<span class="dv">1</span>:<span class="st"> </span>In ohicore::<span class="kw">CheckLayers</span>(<span class="st">&quot;layers.csv&quot;</span>, <span class="st">&quot;layers&quot;</span>, <span class="dt">flds_id =</span> conf$config$layers_id_fields) :
 <span class="st">  </span>Unused fields...
-    ico_spp_iucn_status<span class="op">:</span><span class="st"> </span>iucn_sid
-<span class="dv">2</span><span class="op">:</span><span class="st"> </span>In ohicore<span class="op">::</span><span class="kw">CheckLayers</span>(<span class="st">&quot;layers.csv&quot;</span>, <span class="st">&quot;layers&quot;</span>, <span class="dt">flds_id =</span> conf<span class="op">$</span>config<span class="op">$</span>layers_id_fields) <span class="op">:</span>
+    ico_spp_iucn_status:<span class="st"> </span>iucn_sid
+<span class="dv">2</span>:<span class="st"> </span>In ohicore::<span class="kw">CheckLayers</span>(<span class="st">&quot;layers.csv&quot;</span>, <span class="st">&quot;layers&quot;</span>, <span class="dt">flds_id =</span> conf$config$layers_id_fields) :
 <span class="st">  </span>Rows duplicated...
-    ico_spp_iucn_status<span class="op">:</span><span class="st"> </span><span class="dv">816</span></code></pre></div>
+    ico_spp_iucn_status:<span class="st"> </span><span class="dv">816</span></code></pre></div>
 <p>You will encounter error messages as you develop your own assessment. These messages intend to alert you that there are errors in data entry. Some common errors are:</p>
 <ul>
 <li>improper formatting or missing columns in your data layer</li>
@@ -594,7 +594,7 @@ ohicore<span class="op">::</span><span class="kw">CheckLayers</span>(<span class
 <!---TODO Individual layers can be accessed as: layers$data$layer_name??? 
 Note: `@jules32`: describe this vs. SelectLayersData() --->
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">## load scenario layers for ohicore to access.
-layers =<span class="st"> </span>ohicore<span class="op">::</span><span class="kw">Layers</span>(<span class="st">&#39;layers.csv&#39;</span>, <span class="st">&#39;layers&#39;</span>)</code></pre></div>
+layers =<span class="st"> </span>ohicore::<span class="kw">Layers</span>(<span class="st">&#39;layers.csv&#39;</span>, <span class="st">&#39;layers&#39;</span>)</code></pre></div>
 </div>
 <div id="recap-of-exploring-configure_toolbox.r" class="section level3">
 <h3><span class="header-section-number">7.5.5</span> Recap of exploring <code>configure_toolbox.r</code></h3>
@@ -640,10 +640,10 @@ layers =<span class="st"> </span>ohicore<span class="op">::</span><span class="k
 <h3><span class="header-section-number">7.6.1</span> Load specific data layers with <code>SelectLayersData()</code></h3>
 <p><code>SelectLayersData()</code> is an <code>ohicore</code> function to call the appropriate data layers by its layer name registered in <code>layers.csv</code> (e.g. <code>ao_access</code>). Run this chunk of code and the data layers will be loaded, joined, and ready to be manipulated further:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"> ## read in individual data layers
-  d1 &lt;-<span class="st"> </span><span class="kw">SelectLayersData</span>(layers, <span class="dt">layers =</span> <span class="st">&#39;ao_access&#39;</span>, <span class="dt">narrow=</span><span class="ot">TRUE</span>) <span class="op">%&gt;%</span>
+  d1 &lt;-<span class="st"> </span><span class="kw">SelectLayersData</span>(layers, <span class="dt">layers =</span> <span class="st">&#39;ao_access&#39;</span>, <span class="dt">narrow=</span><span class="ot">TRUE</span>) %&gt;%
 <span class="st">    </span><span class="kw">select</span>(<span class="dt">region_id =</span> id_num, <span class="dt">access =</span> val_num)
 
-  d2 &lt;-<span class="st"> </span><span class="kw">SelectLayersData</span>(layers, <span class="dt">layers =</span> <span class="st">&#39;ao_need&#39;</span>, <span class="dt">narrow=</span><span class="ot">TRUE</span>) <span class="op">%&gt;%</span>
+  d2 &lt;-<span class="st"> </span><span class="kw">SelectLayersData</span>(layers, <span class="dt">layers =</span> <span class="st">&#39;ao_need&#39;</span>, <span class="dt">narrow=</span><span class="ot">TRUE</span>) %&gt;%
 <span class="st">    </span><span class="kw">select</span>(<span class="dt">region_id =</span> id_num, year, <span class="dt">need =</span> val_num)
 
   ## join data layers into single data frame (see RStudio cheatsheets)
@@ -661,9 +661,9 @@ D_{U} = (1 - need) * (1 - access)
 status = (1 - D_{U}) * sustainability
 \]</span></p>
 <p>And this is how it looks in <code>R</code>:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"> ao_model &lt;-<span class="st"> </span>ao_data <span class="op">%&gt;%</span>
-<span class="st">    </span><span class="kw">mutate</span>(<span class="dt">Du =</span> (<span class="dv">1</span> <span class="op">-</span><span class="st"> </span>need) <span class="op">*</span><span class="st"> </span>(<span class="dv">1</span> <span class="op">-</span><span class="st"> </span>access)) <span class="op">%&gt;%</span>
-<span class="st">    </span><span class="kw">mutate</span>(<span class="dt">status =</span> (<span class="dv">1</span> <span class="op">-</span><span class="st"> </span>Du) <span class="op">*</span><span class="st"> </span>sustainability)
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"> ao_model &lt;-<span class="st"> </span>ao_data %&gt;%
+<span class="st">    </span><span class="kw">mutate</span>(<span class="dt">Du =</span> (<span class="dv">1</span> -<span class="st"> </span>need) *<span class="st"> </span>(<span class="dv">1</span> -<span class="st"> </span>access)) %&gt;%
+<span class="st">    </span><span class="kw">mutate</span>(<span class="dt">status =</span> (<span class="dv">1</span> -<span class="st"> </span>Du) *<span class="st"> </span>sustainability)
   <span class="co"># head(ao_model); summary(ao_model)</span></code></pre></div>
 </div>
 <div id="calculate-status" class="section level3">
@@ -675,41 +675,41 @@ status = (1 - D_{U}) * sustainability
   status_year =<span class="st"> </span><span class="dv">2015</span>
 
 <span class="co"># status: status scores are typically the most recent year of all the years you have calculated. </span>
-  ao_status &lt;-<span class="st"> </span>ao_model <span class="op">%&gt;%</span>
-<span class="st">    </span><span class="kw">filter</span>(year<span class="op">==</span>status_year) <span class="op">%&gt;%</span>
-<span class="st">    </span><span class="kw">select</span>(region_id, status) <span class="op">%&gt;%</span>
-<span class="st">    </span><span class="kw">mutate</span>(<span class="dt">status=</span>status<span class="op">*</span><span class="dv">100</span>)</code></pre></div>
+  ao_status &lt;-<span class="st"> </span>ao_model %&gt;%
+<span class="st">    </span><span class="kw">filter</span>(year==status_year) %&gt;%
+<span class="st">    </span><span class="kw">select</span>(region_id, status) %&gt;%
+<span class="st">    </span><span class="kw">mutate</span>(<span class="dt">status=</span>status*<span class="dv">100</span>)</code></pre></div>
 </div>
 <div id="calculate-trend" class="section level3">
 <h3><span class="header-section-number">7.6.4</span> Calculate Trend</h3>
 <p>Next is the Trend scores. They are typically based on linear regression of status scores from the most recent five years.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"> <span class="co"># choose trend years (eg. most recent five years)</span>
 
-  trend_years &lt;-<span class="st"> </span>(status_year<span class="op">-</span><span class="dv">4</span>)<span class="op">:</span>(status_year)
+  trend_years &lt;-<span class="st"> </span>(status_year<span class="dv">-4</span>):(status_year)
   adj_trend_year &lt;-<span class="st"> </span><span class="kw">min</span>(trend_years)
 
-  ao_trend =<span class="st"> </span>ao_model <span class="op">%&gt;%</span>
-<span class="st">    </span><span class="kw">group_by</span>(region_id) <span class="op">%&gt;%</span><span class="st"> </span>
+  ao_trend =<span class="st"> </span>ao_model %&gt;%
+<span class="st">    </span><span class="kw">group_by</span>(region_id) %&gt;%<span class="st"> </span>
 <span class="st">    </span><span class="co"># linear model: </span>
-<span class="st">    </span><span class="kw">do</span>(<span class="dt">mdl =</span> <span class="kw">lm</span>(status <span class="op">~</span><span class="st"> </span>year, <span class="dt">data=</span>., <span class="dt">subset=</span>year <span class="op">%in%</span><span class="st"> </span>trend_years),
-       <span class="dt">adjust_trend =</span> .<span class="op">$</span>status[.<span class="op">$</span>year <span class="op">==</span><span class="st"> </span>adj_trend_year]) <span class="op">%&gt;%</span>
+<span class="st">    </span><span class="kw">do</span>(<span class="dt">mdl =</span> <span class="kw">lm</span>(status ~<span class="st"> </span>year, <span class="dt">data=</span>., <span class="dt">subset=</span>year %in%<span class="st"> </span>trend_years),
+       <span class="dt">adjust_trend =</span> .$status[.$year ==<span class="st"> </span>adj_trend_year]) %&gt;%
 <span class="st">    </span><span class="co"># extract the coefficient of year and produce a trend score</span>
-<span class="st">    </span><span class="kw">summarize</span>(region_id, <span class="dt">trend =</span> <span class="kw">ifelse</span>(<span class="kw">coef</span>(mdl)[<span class="st">&#39;year&#39;</span>]<span class="op">==</span><span class="dv">0</span>, <span class="dv">0</span>, <span class="kw">coef</span>(mdl)[<span class="st">&#39;year&#39;</span>]<span class="op">/</span>adjust_trend <span class="op">*</span><span class="st"> </span><span class="dv">5</span>)) <span class="op">%&gt;%</span>
+<span class="st">    </span><span class="kw">summarize</span>(region_id, <span class="dt">trend =</span> <span class="kw">ifelse</span>(<span class="kw">coef</span>(mdl)[<span class="st">&#39;year&#39;</span>]==<span class="dv">0</span>, <span class="dv">0</span>, <span class="kw">coef</span>(mdl)[<span class="st">&#39;year&#39;</span>]/adjust_trend *<span class="st"> </span><span class="dv">5</span>)) %&gt;%
 <span class="st">    </span><span class="co"># make sure that the scores are between -1 and 1</span>
-<span class="st">    </span><span class="kw">mutate</span>(<span class="dt">trend =</span> <span class="kw">ifelse</span>(trend<span class="op">&gt;</span><span class="dv">1</span>, <span class="dv">1</span>, trend)) <span class="op">%&gt;%</span>
-<span class="st">    </span><span class="kw">mutate</span>(<span class="dt">trend =</span> <span class="kw">ifelse</span>(trend<span class="op">&lt;</span>(<span class="op">-</span><span class="dv">1</span>), (<span class="op">-</span><span class="dv">1</span>), trend)) <span class="op">%&gt;%</span>
+<span class="st">    </span><span class="kw">mutate</span>(<span class="dt">trend =</span> <span class="kw">ifelse</span>(trend&gt;<span class="dv">1</span>, <span class="dv">1</span>, trend)) %&gt;%
+<span class="st">    </span><span class="kw">mutate</span>(<span class="dt">trend =</span> <span class="kw">ifelse</span>(trend&lt;(-<span class="dv">1</span>), (-<span class="dv">1</span>), trend)) %&gt;%
 <span class="st">    </span><span class="kw">mutate</span>(<span class="dt">trend =</span> <span class="kw">round</span>(trend, <span class="dv">4</span>))</code></pre></div>
 </div>
 <div id="scores-variable-combining-status-and-trend" class="section level3">
 <h3><span class="header-section-number">7.6.5</span> Scores variable: combining Status and Trend</h3>
 <p>Combining the Status and Trend into the scores variable involves selecting only the <code>region_id</code> and <code>score</code> columns, and adding two more columns identifying score dimension (Status or Trend) and goal name.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"> scores =<span class="st"> </span>ao_status <span class="op">%&gt;%</span>
-<span class="st">    </span><span class="kw">select</span>(region_id, <span class="dt">score=</span>status) <span class="op">%&gt;%</span>
-<span class="st">    </span><span class="kw">mutate</span>(<span class="dt">dimension=</span><span class="st">&#39;status&#39;</span>) <span class="op">%&gt;%</span>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"> scores =<span class="st"> </span>ao_status %&gt;%
+<span class="st">    </span><span class="kw">select</span>(region_id, <span class="dt">score=</span>status) %&gt;%
+<span class="st">    </span><span class="kw">mutate</span>(<span class="dt">dimension=</span><span class="st">&#39;status&#39;</span>) %&gt;%
 <span class="st">    </span><span class="kw">rbind</span>(
-      ao_trend <span class="op">%&gt;%</span>
-<span class="st">        </span><span class="kw">select</span>(region_id, <span class="dt">score=</span>trend) <span class="op">%&gt;%</span>
-<span class="st">        </span><span class="kw">mutate</span>(<span class="dt">dimension=</span><span class="st">&#39;trend&#39;</span>)) <span class="op">%&gt;%</span>
+      ao_trend %&gt;%
+<span class="st">        </span><span class="kw">select</span>(region_id, <span class="dt">score=</span>trend) %&gt;%
+<span class="st">        </span><span class="kw">mutate</span>(<span class="dt">dimension=</span><span class="st">&#39;trend&#39;</span>)) %&gt;%
 <span class="st">    </span><span class="kw">mutate</span>(<span class="dt">goal=</span><span class="st">&#39;AO&#39;</span>)</code></pre></div>
 <p>The scores variable is something that you’ll see at the end of every goal model; <code>ohicore</code> will combine these all together when <code>CalculateAll()</code> runs.</p>
 </div>
@@ -739,9 +739,9 @@ status = (1 - D_{U}) * sustainability
 <div id="tailor-ao-goal-model" class="section level3">
 <h3><span class="header-section-number">7.7.2</span> Tailor AO goal model</h3>
 <p>Now, let’s go to <code>functions.r</code> and go back to the AO model. Let’s do something pretty simple to tailor the goal model. Let’s say we just wanted to divide the variable <code>Du</code> by 2 in the equation.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"> ao_model &lt;-<span class="st"> </span>ao_data <span class="op">%&gt;%</span>
-<span class="st">    </span><span class="kw">mutate</span>(<span class="dt">Du =</span> (<span class="dv">1</span> <span class="op">-</span><span class="st"> </span>need) <span class="op">*</span><span class="st"> </span>(<span class="dv">1</span> <span class="op">-</span><span class="st"> </span>access)) <span class="op">%&gt;%</span>
-<span class="st">    </span><span class="kw">mutate</span>(<span class="dt">status =</span> (<span class="dv">1</span> <span class="op">-</span><span class="st"> </span>Du<span class="op">/</span><span class="dv">2</span>) <span class="op">*</span><span class="st"> </span>sustainability)</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"> ao_model &lt;-<span class="st"> </span>ao_data %&gt;%
+<span class="st">    </span><span class="kw">mutate</span>(<span class="dt">Du =</span> (<span class="dv">1</span> -<span class="st"> </span>need) *<span class="st"> </span>(<span class="dv">1</span> -<span class="st"> </span>access)) %&gt;%
+<span class="st">    </span><span class="kw">mutate</span>(<span class="dt">status =</span> (<span class="dv">1</span> -<span class="st"> </span>Du/<span class="dv">2</span>) *<span class="st"> </span>sustainability)</code></pre></div>
 <p>We can run the rest of the AO function line-by-line and inspect the scores variable at the end to see if everything looks OK.</p>
 </div>
 <div id="calculate-scores-check-and-sync" class="section level3">
@@ -804,18 +804,18 @@ status = (1 - D_{U}) * sustainability
 <p>We will need to do two things to update the goal model in <code>functions.r</code>.</p>
 <p>First, we’ll have to load our data layer with <code>SelectLayersData()</code>. You can copy-paste the following into your <code>functions.r</code> AO goal model and then run it after running <code>status_year=2015; sustainability=1.0</code> to make sure everything is working properly:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"> ## read in individual data layers
-  d1 &lt;-<span class="st"> </span><span class="kw">SelectLayersData</span>(layers, <span class="dt">layers =</span> <span class="st">&#39;ao_access&#39;</span>, <span class="dt">narrow=</span><span class="ot">TRUE</span>) <span class="op">%&gt;%</span>
+  d1 &lt;-<span class="st"> </span><span class="kw">SelectLayersData</span>(layers, <span class="dt">layers =</span> <span class="st">&#39;ao_access&#39;</span>, <span class="dt">narrow=</span><span class="ot">TRUE</span>) %&gt;%
 <span class="st">    </span><span class="kw">select</span>(<span class="dt">region_id =</span> id_num, <span class="dt">access =</span> val_num)
 
-  d2 &lt;-<span class="st"> </span><span class="kw">SelectLayersData</span>(layers, <span class="dt">layers =</span> <span class="st">&#39;ao_need&#39;</span>, <span class="dt">narrow=</span><span class="ot">TRUE</span>) <span class="op">%&gt;%</span>
+  d2 &lt;-<span class="st"> </span><span class="kw">SelectLayersData</span>(layers, <span class="dt">layers =</span> <span class="st">&#39;ao_need&#39;</span>, <span class="dt">narrow=</span><span class="ot">TRUE</span>) %&gt;%
 <span class="st">    </span><span class="kw">select</span>(<span class="dt">region_id =</span> id_num, year, <span class="dt">need =</span> val_num)
 
   ## add new poverty data layer
-  d3 &lt;-<span class="st"> </span><span class="kw">SelectLayersData</span>(layers, <span class="dt">layers =</span> <span class="st">&#39;ao_poverty&#39;</span>, <span class="dt">narrow=</span><span class="ot">TRUE</span>) <span class="op">%&gt;%</span>
+  d3 &lt;-<span class="st"> </span><span class="kw">SelectLayersData</span>(layers, <span class="dt">layers =</span> <span class="st">&#39;ao_poverty&#39;</span>, <span class="dt">narrow=</span><span class="ot">TRUE</span>) %&gt;%
 <span class="st">    </span><span class="kw">select</span>(<span class="dt">region_id =</span> id_num, year, <span class="dt">poverty =</span> val_num)
 
   ## join data layers into single data frame, including the new poverty data layer
-  ao_data &lt;-<span class="st"> </span><span class="kw">left_join</span>(d1, d2, <span class="dt">by=</span><span class="st">&quot;region_id&quot;</span>) <span class="op">%&gt;%</span>
+  ao_data &lt;-<span class="st"> </span><span class="kw">left_join</span>(d1, d2, <span class="dt">by=</span><span class="st">&quot;region_id&quot;</span>) %&gt;%
 <span class="st">    </span><span class="kw">left_join</span>(d3, <span class="dt">by=</span><span class="kw">c</span>(<span class="st">&quot;region_id&quot;</span>, <span class="st">&quot;year&quot;</span>))</code></pre></div>
 <p>Next, we’ll tailor the goal model itself. Here is how the goal model looks as an equation and in <code>R</code>: you can copy-paste this model into <code>functions.r</code>, replacing the existing model.</p>
 <p><span class="math display">\[
@@ -825,9 +825,9 @@ D_{U} = (1 - (need + poverty) / 2) * (1 - access)
 status = (1 - D_{U}) * sustainability
 \]</span></p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">## tailored goal model with poverty
-ao_model &lt;-<span class="st"> </span>ao_data <span class="op">%&gt;%</span>
-<span class="st">    </span><span class="kw">mutate</span>(<span class="dt">Du =</span> (<span class="dv">1</span> <span class="op">-</span><span class="st"> </span>(need <span class="op">+</span><span class="st"> </span>poverty) <span class="op">/</span><span class="st"> </span><span class="dv">2</span> ) <span class="op">*</span><span class="st"> </span>(<span class="dv">1</span> <span class="op">-</span><span class="st"> </span>access)) <span class="op">%&gt;%</span>
-<span class="st">    </span><span class="kw">mutate</span>(<span class="dt">status =</span> (<span class="dv">1</span> <span class="op">-</span><span class="st"> </span>Du) <span class="op">*</span><span class="st"> </span>sustainability)</code></pre></div>
+ao_model &lt;-<span class="st"> </span>ao_data %&gt;%
+<span class="st">    </span><span class="kw">mutate</span>(<span class="dt">Du =</span> (<span class="dv">1</span> -<span class="st"> </span>(need +<span class="st"> </span>poverty) /<span class="st"> </span><span class="dv">2</span> ) *<span class="st"> </span>(<span class="dv">1</span> -<span class="st"> </span>access)) %&gt;%
+<span class="st">    </span><span class="kw">mutate</span>(<span class="dt">status =</span> (<span class="dv">1</span> -<span class="st"> </span>Du) *<span class="st"> </span>sustainability)</code></pre></div>
 </div>
 <div id="calculate-scores-check-and-sync-1" class="section level3">
 <h3><span class="header-section-number">7.8.5</span> Calculate scores, check, and sync</h3>
@@ -897,7 +897,7 @@ ao_model &lt;-<span class="st"> </span>ao_data <span class="op">%&gt;%</span>
 <script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
 <script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
 <script>
-require(["gitbook"], function(gitbook) {
+gitbook.require(["gitbook"], function(gitbook) {
 gitbook.start({
 "sharing": {
 "github": false,
