@@ -7,7 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Ocean Health Index Toolbox Training</title>
   <meta name="description" content="This is the official Ocean Health Index Toolbox training.">
-  <meta name="generator" content="bookdown 0.5 and GitBook 2.6.7">
+  <meta name="generator" content="bookdown 0.4 and GitBook 2.6.7">
 
   <meta property="og:title" content="Ocean Health Index Toolbox Training" />
   <meta property="og:type" content="book" />
@@ -25,7 +25,7 @@
 <meta name="author" content="Ocean Health Index Team">
 
 
-<meta name="date" content="2017-09-15">
+<meta name="date" content="2017-09-25">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -99,7 +99,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
       <nav role="navigation">
 
 <ul class="summary">
-<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Home</a></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Welcome</a></li>
 <li class="chapter" data-level="2" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>2</b> Introduction</a><ul>
 <li class="chapter" data-level="2.1" data-path="intro.html"><a href="intro.html#overview"><i class="fa fa-check"></i><b>2.1</b> Overview</a></li>
 <li class="chapter" data-level="2.2" data-path="intro.html"><a href="intro.html#ohi-conceptually"><i class="fa fa-check"></i><b>2.2</b> OHI conceptually</a></li>
@@ -120,7 +120,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="3.3.3" data-path="planner-guide.html"><a href="planner-guide.html#examples"><i class="fa fa-check"></i><b>3.3.3</b> Examples</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="data-science.html"><a href="data-science.html"><i class="fa fa-check"></i><b>4</b> Data science workflow</a><ul>
+<li class="chapter" data-level="4" data-path="data-science.html"><a href="data-science.html"><i class="fa fa-check"></i><b>4</b> Open data science workflow</a><ul>
 <li class="chapter" data-level="4.1" data-path="data-science.html"><a href="data-science.html#rstudio-github-workflow"><i class="fa fa-check"></i><b>4.1</b> RStudio-GitHub workflow</a></li>
 <li class="chapter" data-level="4.2" data-path="data-science.html"><a href="data-science.html#how-you-work"><i class="fa fa-check"></i><b>4.2</b> How you work</a></li>
 <li class="chapter" data-level="4.3" data-path="data-science.html"><a href="data-science.html#how-this-fits-with-the-ohi-workflow"><i class="fa fa-check"></i><b>4.3</b> How this fits with the OHI workflow</a></li>
@@ -282,7 +282,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li>note “goal” and “parent”</li>
 </ul>
 <p>This is where it happens:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">conf =<span class="st"> </span>ohicore::<span class="kw">Conf</span>(<span class="st">&#39;conf&#39;</span>)</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">conf =<span class="st"> </span>ohicore<span class="op">::</span><span class="kw">Conf</span>(<span class="st">&#39;conf&#39;</span>)</code></pre></div>
 <!--- TODO ohicore: Conf() should check that all entries in goals.csv are present in functions.r, but it doesn't. 
 --->
 </div>
@@ -322,7 +322,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 
 </div>
 <p>This will fail at the scores calculation.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">scores =<span class="st"> </span>ohicore::<span class="kw">CalculateAll</span>(conf, layers)
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">scores =<span class="st"> </span>ohicore<span class="op">::</span><span class="kw">CalculateAll</span>(conf, layers)
 <span class="co"># Running Setup()...</span>
 <span class="co"># Calculating Status and Trend for each region for FIS...</span>
 <span class="co"># ...</span>
@@ -402,7 +402,7 @@ _Changing goal weights will be done here by editing the value in the *weight* co
 <script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
 <script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
 <script>
-gitbook.require(["gitbook"], function(gitbook) {
+require(["gitbook"], function(gitbook) {
 gitbook.start({
 "sharing": {
 "github": false,

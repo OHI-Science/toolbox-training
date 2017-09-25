@@ -12,13 +12,15 @@ github-repo: ohi-science/ohi-trainings
 description: "This is the official Ocean Health Index Toolbox training."
 ---
 
-# Home {#home}
+# Welcome {#welcome}
 
-**Welcome.**   
+This book will help you learn to use the OHI Toolbox. Each chapter is hands-on training that we use to teach, but they can also be used as self-paced learning.
+ 
+**OHI assessments use collaborative open software so that they are transparent and reproducible.** Openness is important for science and especially solution-driven science; we've shared how we work and why in a new publication in *Nature Ecology & Evolution:* [Our path to better science in less time using open data science tools](https://www.nature.com/articles/s41559-017-0160). It's open access (available for free), and there are also accompanying interviews and press listed [here](http://ohi-science.org/betterscienceinlesstime/) that you can read to get more of a sense of why we work the way we do. 
 
-**This training program is under active development and testing** 
+***This training program is under active development and testing***
 
-Each chapter has materials for a 2-hour hands-on training. These training materials can be used to teach or can serve as a self-paced workshop without guided instruction. 
+
 
 
 <!---

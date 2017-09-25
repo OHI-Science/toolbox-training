@@ -28,9 +28,9 @@ Before the training starts, please make sure you have done the following:
     - http://www.rstudio.com/download 
     - http://happygitwithr.com/rstudio-git-github.html 
     
-1. Fork the **toolbox-demo** repository into your own GitHub account by going to https://github.com/OHI-Science/toolbox-demo, clicking "Fork" in the upper right corner, and selecting your account
+1. Fork the **toolbox-demo** repository into your own GitHub account by going to https://github.com/OHI-Science/toolbox-demo, clicking "Fork" in the upper right corner, and selecting your account. 
 
-1. Clone the **toolbox-demo** repo from your GitHub account into RStudio into a folder called "github" in your home directory (filepath "~/github")
+1. Clone the **toolbox-demo** repo from your GitHub account into RStudio into a folder called "github" in your home directory (filepath "~/github"). **Note**: If you've already forked and cloned the demo, you can instead pull from your computer to make sure you have the most recent versions of all the files. 
 
 1. Get comfortable: be set up with two screens if possible. You will be following along in RStudio on your own computer while also watching an instructor's screen or following this tutorial.
 
@@ -46,11 +46,11 @@ But before we start preparing a data layer, let's first go over the data formatt
 
 A data layer is a data file used to calculate scores. The global analysis included over 100 data layer files, and there will probably be as many in your own assessments. Each data layer (data input) **has its own _.csv_ file**. These data layers are combined to calculate goal scores, meaning that they are inputs for status, trend, pressures, and resilience.
 
->The OHI Toolbox expects each _.csv_ file to have:
+The OHI Toolbox expects each _.csv_ file to have:
 
->- data for every region within the study area
->- a unique region identifier (*rgn_id*) associated with a single score or value.
->- data organized in 'long' format - as few columns as possible. (_You can read more about long formatting [here](http://ohi-science.org/manual/#long-formatting)_) 
+- data for every region within the study area
+- a unique region identifier (*rgn_id*) associated with a single score or value.
+- data organized in 'long' format - as few columns as possible. (_You can read more about long formatting [here](http://ohi-science.org/manual/#long-formatting)_) 
 
 **OHI goal scores are calculated at the scale of the reporting unit**, which is called a ‘**region**’ and then combined to produce the score for the overall area assessed, called a ‘**study area**’. For example, the _U.S._ is a _study area_, and each _coastal state_ is a _region_. 
 

@@ -1,13 +1,15 @@
-# Data science workflow {#data-science}
+# Open data science workflow {#data-science}
 
-**In development.** 
+**This chapter is under development.** 
 
 
-- This is how you'll work: OHI assessments use R, RStudio, Git, and GitHub to work reproducibly and collaboratively. 
-- See our publication in *Nature Ecology & Evolution:* [Our path to better science in less time using open data science tools](https://www.nature.com/articles/s41559-017-0160) and accompanying interviews and press listed [here](http://ohi-science.org/betterscienceinlesstime/) to get more of a sense of why we work the way we do. 
+**OHI assessments use open, collaborative, data science software so that they are transparent and reproducible.** Openness is important for science and especially solution-driven science; we've shared how we work and why in a new publication in *Nature Ecology & Evolution:* [Our path to better science in less time using open data science tools](https://www.nature.com/articles/s41559-017-0160). It's open access (available for free), and there are also accompanying interviews and press listed [here](http://ohi-science.org/betterscienceinlesstime/) that you can read to get more of a sense of why we work the way we do. 
 
 
 ## RStudio-GitHub workflow
+
+You'll be using R, RStudio, Git, and GitHub. Learning these skills are important for your OHI assessment but they are also transferrable to your other projects in the future because you're not learning something that is relevant only to the OHI. 
+
 
 ![](https://docs.google.com/drawings/d/1eEb8qlCWY5g0v19xMoW-Jc71cNr4GOacsxUK9FR8si4/pub?w=960&h=480)
 

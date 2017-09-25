@@ -51,7 +51,7 @@ Click on `prep` and let's see what's inside:
 
 ![](https://docs.google.com/drawings/d/e/2PACX-1vRC6jKA-cwwnCDck_pGDgYjN4uA13E9a2PyFqrE-HJbQa9EIclOLLARFmYNYMyaHfdkOcaIlCXgTCSh/pub?w=960&h=720)
 
-Within `prep`, there is a sub-folder for each goal and subgoal, as well as pressures and resilience.
+Within `prep`, there is a sub-folder for each goal and subgoal, as well as pressures and resilience. These folders are meant to help you be organized, but if you have another way you're welcome to go ahead with your own way. Note that some goals depend on the same data and thus data can be prepared into layers from one place instead of for each goal. This is the case for goals dependent on habitat data: CP, CS, HAB, and goals dependent on species data: SPP, ICO. 
 
 Click on the 'CW' folder. Within each goal folder, there are typically a _.Rmd_ script and a sub-folder to contain data. 
 
