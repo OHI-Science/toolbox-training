@@ -1,16 +1,32 @@
-# Data science workflow {#data-science}
+# Open data science {#data-science}
 
-**In development.** 
+**This chapter is under development.** 
 
 
-- This is how you'll work: OHI assessments use R, RStudio, Git, and GitHub to work reproducibly and collaboratively. 
-- See our publication in *Nature Ecology & Evolution:* [Our path to better science in less time using open data science tools](https://www.nature.com/articles/s41559-017-0160) and accompanying interviews and press listed [here](http://ohi-science.org/betterscienceinlesstime/) to get more of a sense of why we work the way we do. 
+**OHI assessments use collaborative open software so that they are transparent and reproducible.**  
+Openness is an important part of how we work; we describe how and why in Lowndes *et al.* 2017, *Nature Ecology & Evolution:* [Our path to better science in less time using open data science tools](https://www.nature.com/articles/s41559-017-0160), and at [ohi-science.org/betterscienceinlesstime](http://ohi-science.org/betterscienceinlesstime).
 
+The OHI Toolbox depends upon the 'open data science tools' R, RStudio, Git, and GitHub. They are free to download and use, they are cross-platform (meaning they work on OSX and Windows), and they can be used to help organize, create, reproduce, and communite collaborative analyses. And that's what OHI is all about! But something important is that these skills are transferrable; they are not only relevant to OHI but will serve you well for your other projects in the future.
+ 
 
 ## RStudio-GitHub workflow
 
+The OHI Toolbox depends upon R, RStudio, Git, and GitHub and is important for reproduciblity, collaboration, and communication. This book and the [ohi-science.org](http://ohi-science.org) website are created using these same tools. 
+
+You'll get your computer set up with these tools and you will get into a workflow working from RStudio and syncing your work online to GitHub; hence, we call this the RStudio-GitHub workflow. 
+
+
 ![](https://docs.google.com/drawings/d/1eEb8qlCWY5g0v19xMoW-Jc71cNr4GOacsxUK9FR8si4/pub?w=960&h=480)
 
+## How to learn
+
+We are writing training materials for a 2-day intensive workshop to teach R, RStudio, Git, and GitHub so that you are best equipped to practice these skills and start working with the OHI Toolbox.
+
+Until these materials are finished, please use this 2-day self-paced workshop: [Reproducible Science with RStudio and GitHub](http://jules32.github.io/2016-07-12-Oxford/overview/), which were developed by our team for a Software Carpentry workshop in 2016. 
+
+There are also many resources available online, which we list [here](http://ohi-science.org/betterscienceinlesstime/resources_and_community.html). We highly recommend Hadley Wickham & Garret Grolemund's [R for Data Science](http://r4ds.had.co.nz/) and Jenny Bryan's [Happy Git with R](http://happygitwithr.com/).
+
+<!---
 http://happygitwithr.com/troubleshooting.html
 "Push/Pull buttons greyed out in RStudio"
 "I have no idea if my local repo and my remote repo are connected."
@@ -34,7 +50,8 @@ http://happygitwithr.com/troubleshooting.html
 To get more comfortable with the RStudio-GitHub workflow, we'll update your website before diving deeper and learning R. This should already be set-up for you.  
 
 Here is an [2-hour tutorial to get you started making free websites with RStudio’s R Markdown](https://jules32.github.io/rmarkdown-website-tutorial/first_observations.html) made by our team. This will let you practice with a non-OHI website. 
-<!---TODO julie: modify for OHI websites --->
+
+TODO julie: modify for OHI websites
 
 When you're ready to update your own website:  
 
@@ -63,3 +80,4 @@ super powerful; parallel universe workspace. we'll just be taking advantage of t
 
 #### Updating content
 
+--->

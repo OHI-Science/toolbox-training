@@ -3,7 +3,7 @@
 
 **In development.** 
 
-<!--- Julie TODO: intro to OHI conceptually, Tbx stuff. See Best Practices paper. --->
+<!--- Julie TODO: intro to OHI conceptually, Tbx stuff. See Best Practices paper. 
 
 ## Overview
 
@@ -13,6 +13,8 @@
 ## OHI conceptually
 
 ## Best practices
+
+--->
 
 ## Tools and Resources
 
