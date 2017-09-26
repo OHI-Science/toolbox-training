@@ -142,6 +142,8 @@ As you might have noticed, to the right side of the sheet, there is a column for
 ![](https://docs.google.com/drawings/d/e/2PACX-1vTLmLMCMJMWzYW05Zhorwya3a1nB5uIZZ5vhHY0sjv6h-Cs4HSJCCm7tK_EBbv4o-Rygd3FRx21pIkS/pub?w=960&h=240)
 
 <!---Ning: same as above, I think you can flush this out a bit more. Walk through the rows you introduce above and say what you enter on the sheet. Maybe make some dummy data and take a screenshot if that makes sense, or just describe it.
+
+See below...
 --->
 
 These few columns detail the data you find for each of the variables you decided suitable for your model. 
@@ -176,12 +178,20 @@ Sometimes there isn't data available, and sometimes data isn't relevant to a reg
 
 <!---Ning: I think the fisherman example is too simplistic and a bit misleading, and in the screenshot it's temporal v. spatial...I think you want to explain the thinking behind temporal v. spatial here instead of the specific number examples. 
 
+See below: 
 --->
 
 Reference points, or targets, are essential for rescaling and scoring. For example, if the target number of fishermen is 100, and the data only records 50, that could bring AO score down to 50. 
 
-What the reference point for the indicators (or goal) should be? It could be from published policy targets, scientific studies, etc. It is not necessary that each indicator has a reference point, although most indicators need a reference point for rescaling. 
+What reference point(s) for the model variables should be? Reference point could be gathered from published policy targets (eg. government-set targets to achieve), scientific studies (eg. maximum sustainable yield for a fishery), etc. Sometimes there is no easy-to-find reference point from literature. In those cases, you'll need to excersize your best judgment and set a reference point that makes the most sense to your study. 
 
-_Gas prices_ fluctuates often. It's difficult to set a reference point where it's optimal. You could set the reference point to be
+Often, reference points are temporal (eg. historical coverage of mangrove) or spatial (eg. the region that has the highest number of tourists). Let's look at a few examples: 
+
+_Gas prices_ fluctuates often. It's difficult to set a reference point where it's optimal. In this case, we set the reference point to be a spatial one. It is 110% of the lowest gas price across all regions in a given year. 
+
+_Number of artisanal fishermen_ might be dwindling over time, and we might want to preserve the number of fishermen in a region. So we set the reference point to be the highest number of fishermen in a region within the past 5 years. 
+_Number of people below poverty line_ often is a government set standard to achieve, so is _the number of ports_. 
+
+ 
 
 
