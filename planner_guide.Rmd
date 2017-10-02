@@ -16,7 +16,7 @@ Julie, I added one more sentence for people who don't start OHI+ from a workshop
 
 The OHI Data Planner is a document you can download online. It is housed in a Google Drive folder [link to it once it has a permanent location] that is shared with OHI participants before an OHI Technical Training workshop. Make sure you have access to the folder as there are other files in the folder to aid the process of the workshop. 
 
-However, if you are using this document as a stand-alone document, you can downdoad it [here]() directly.
+However, if you are using this document as a stand-alone document, you can download it [here]() directly.
 
 Click open the Planner, and let's walk through it together. 
 
@@ -26,7 +26,7 @@ Information from the spreadsheet is not going to be used directly by the Toolbox
 
 The Data Planner serves as a way to track ideas of data and see what they look like or if they are possible to use for your assessment. It seems daunting to have to write down what you want the models to be, but here you can record simply what you're thinking, and what the ideal would be. It's a starting point that you can then share with your colleagues to think about together, and start looking for data. 
 
-The data searching process is not a definitive phase of an assessment. You might find your initial data ideas not adequate or feasbile to use for calculations later, or they don't fit into the spatial boundaries you wanted to use. That's okay. OHI is an iterative process, and you can always come back to this spreadsheet and edit further. Having this spreadsheet thus serves as a collaborative note for your and your colleagues to record ideas for future references. 
+The data searching process is not a definitive phase of an assessment. You might find your initial data ideas not adequate or feasible to use for calculations later, or they don't fit into the spatial boundaries you wanted to use. That's okay. OHI is an iterative process, and you can always come back to this spreadsheet and edit further. Having this spreadsheet thus serves as a collaborative note for your and your colleagues to record ideas for future references. 
 
 There are three tabs to be filled out: Status Data, Pressures Data, and Resilience Data. Now let's take a look at each one of them. 
 
@@ -51,7 +51,7 @@ Let's walk through each header first.
 
 In the Global assessment, we identified ten “goals” - universally valued benefits provided by the ocean. However, they might not be as relevant in your region. You may remove the goals that are irrelevant on the spreadsheet. 
 
-The Baltic Sea region doesn't get big storms because of its geography. The Coastal Protection goal is therefore irrelavent here and removed from this study. 
+The Baltic Sea region doesn't get big storms because of its geography. The Coastal Protection goal is therefore irrelevant here and removed from this study. 
 
 ### Model + Data + Spatial Boundaries
 
@@ -75,7 +75,7 @@ Also, since there is a full Example that you walk through after this short intro
 
 Julie: see below. may need more work. --->
 
-_Model approaches?_ You don't need to decide on the mathmatical formula here. Together with the next "variables" column, this column mainly aims to get you start thinking of model approaches. Is the global OHI model adequate for your needs? What should the goal capture? <!--- Julie, I think maybe we should get rid of this column. It's very similar to the next column, since thinking about variables require people to understand the philosophy and other model approaches. It will also make this sheet less scary, and focus people's attention on variables and data gathering...--->
+_Model approaches?_ You don't need to decide on the mathematical formula here. Together with the next "variables" column, this column mainly aims to get you start thinking of model approaches. Is the global OHI model adequate for your needs? What should the goal capture? <!--- Julie, I think maybe we should get rid of this column. It's very similar to the next column, since thinking about variables require people to understand the philosophy and other model approaches. It will also make this sheet less scary, and focus people's attention on variables and data gathering...--->
 
 _What ideal variables best represent the goal?_ Before even thinking about data, let's think broadly, in your study area, what variables, or characteristics, of a goal best represent the philosophy of it, regardless if there is data available? 
 
@@ -89,7 +89,7 @@ Another important factor that determines OHI scores is _Reference Point_, ie. wh
 
 ![](https://docs.google.com/drawings/d/e/2PACX-1vSoBJMg2MbiwD7xkQQEOD-v6YqOpajRpIbKeawYSfimytwxCPe1aSTyv0HmLfV6O5RCoqf9HqncZBtf/pub?w=960&h=125)
 
-Choice of model variables and reference points are often limited by data availability, time frame, and resolution. The data columns are a place to catelog a list of the data that could work: from your knowledge, when you ask your colleagues, digging through databases online, etc. Add as many rows as you need to to record your ideas. Having this master sheet of ideas will help you keep track of your thoughts and make collaboration with your collegues easier.  
+Choice of model variables and reference points are often limited by data availability, time frame, and resolution. The data columns are a place to catalog a list of the data that could work: from your knowledge, when you ask your colleagues, digging through databases online, etc. Add as many rows as you need to to record your ideas. Having this master sheet of ideas will help you keep track of your thoughts and make collaboration with your colleagues easier.  
 
 
 <!---Ning:
@@ -100,9 +100,9 @@ And for the text that you do have here I think you could explain a big; disaggre
 Julie: see above and below. 
 --->
 
-_Years_: Typically having only one year of data is not enough to objectively reflect the status and trend of a goal. Five years of data are recommended. If that's not available, using fewing years of data is possible. 
+_Years_: Typically having only one year of data is not enough to objectively reflect the status and trend of a goal. Five years of data are recommended. If that's not available, using fewer years of data is possible. 
 
-_Spatial resolution_: When you find a data source (eg. national poverty level), you might need to be _disaggregate_, or separate the data from large-scale (eg. national) to small-scale (eg. provential). You could contact the agency that publishes the data and see if they have gathered small-scale data. If that's not possible, there are means (eg. GIS) to separate the large-scale data to local scales, although that could reduce the accuracy of the data. 
+_Spatial resolution_: When you find a data source (eg. national poverty level), you might need to be _disaggregate_, or separate the data from large-scale (eg. national) to small-scale (eg. provincial). You could contact the agency that publishes the data and see if they have gathered small-scale data. If that's not possible, there are means (eg. GIS) to separate the large-scale data to local scales, although that could reduce the accuracy of the data. 
 
 
 <!---Ning: you'll also want to explain the green and orange columns here too. And say that if you can add more columns for regions (and remind them what regions are)
@@ -183,7 +183,7 @@ See below:
 
 Reference points, or targets, are essential for rescaling and scoring. For example, if the target number of fishermen is 100, and the data only records 50, that could bring AO score down to 50. 
 
-What reference point(s) for the model variables should be? Reference point could be gathered from published policy targets (eg. government-set targets to achieve), scientific studies (eg. maximum sustainable yield for a fishery), etc. Sometimes there is no easy-to-find reference point from literature. In those cases, you'll need to excersize your best judgment and set a reference point that makes the most sense to your study. 
+What reference point(s) for the model variables should be? Reference point could be gathered from published policy targets (eg. government-set targets to achieve), scientific studies (eg. maximum sustainable yield for a fishery), etc. Sometimes there is no easy-to-find reference point from literature. In those cases, you'll need to exercise your best judgment and set a reference point that makes the most sense to your study. 
 
 Often, reference points are temporal (eg. historical coverage of mangrove) or spatial (eg. the region that has the highest number of tourists). Let's look at a few examples: 
 
