@@ -4,17 +4,13 @@ The purpose of Chapter \@ref(planner-guide) is to help you think about data for 
 
 ## Overview
 
-A successful OHI+ assessment depends on representative data and models. With so much (or sometimes so little) information out there, how do you select the optimal data to be included in your study? How do you develop models that best reflect the conditions of your ocean health? How do you keep track of ideas you have and decisions you make? Here we have developed a OHI Planner to guide you through this important, yet sometimes daunting, process of data selection and model exploration. 
+A successful OHI+ assessment depends on representative data and models. With so much (or sometimes so little) information out there, how do you select the optimal data to be included in your study? How do you develop models that best reflect the conditions of your ocean health? How do you keep track of ideas you have and decisions you make? How do you work with your team so that you can contribute to ideas? Here we have developed a OHI Planner to guide you through this important, yet sometimes daunting, process of data selection and model exploration. 
 
 We'll start by exploring the columns in the spread sheet and what they are for, and then walk through examples of how to fill them out. 
 
 ### Prerequisites
 
-<!---Ning, do you want to add here what they need as prereqs? I suppose they need to make sure they have access to their Assessment's Google Drive folder, how do they get it, etc. 
-
-Julie, I added one more sentence for people who don't start OHI+ from a workshop, such as Mike. So that they can download the doc as a separate document.--->
-
-The OHI Data Planner is a document you can download online. It is housed in a Google Drive folder [link to it once it has a permanent location] that is shared with OHI participants before an OHI Technical Training workshop. Make sure you have access to the folder as there are other files in the folder to aid the process of the workshop. 
+The OHI Data Planner is a document you can download online. It is housed in a Google Drive folder <!---[link to it once it has a permanent location] ---> that is shared with OHI participants before an OHI Technical Training workshop. Make sure you have access to the folder as there are other files in the folder to aid the process of the workshop. 
 
 However, if you are using this document as a stand-alone document, you can download it [here]() directly.
 
@@ -22,7 +18,7 @@ Click open the Planner, and let's walk through it together.
 
 ## Data Planner spreadsheet
 
-Information from the spreadsheet is not going to be used directly by the Toolbox. Rather, this Data Planner is built to help you think about data and start the collaborative OHI process before your technical team make calculations with R. So that participants who are not on the technical team can also contribute ideas here. 
+Information from the spreadsheet is not going to be used directly by the Toolbox. Rather, this Data Planner is built to start the collaborative OHI process and help you think about data. The Planner will help your whole team design your plan and contribute ideas. Then, the technical team will be able to translate this plan into calculations in the Toolbox. 
 
 The Data Planner serves as a way to track ideas of data and see what they look like or if they are possible to use for your assessment. It seems daunting to have to write down what you want the models to be, but here you can record simply what you're thinking, and what the ideal would be. It's a starting point that you can then share with your colleagues to think about together, and start looking for data. 
 
@@ -31,11 +27,6 @@ The data searching process is not a definitive phase of an assessment. You might
 There are three tabs to be filled out: Status Data, Pressures Data, and Resilience Data. Now let's take a look at each one of them. 
 
 ## Status Data tab
-
-<!---Ning: something that doesn't come through as much that would be great if you could emphasize: this is a way to track ideas and see what they would look like/if they're possible. It seems intimidating to have to write down what you want the model to be and the reference points to be; this is where you can say what you're thinking, what the ideal would be; it's a starting point that you can then share with your colleagues to think about together, and start looking for data, etc. You say that it's iterative but I think to spend more time saying that in a few different ways and helping people see that this is a tool for them, and its structure is supposed to help them think and collaborate. Maybe even say that this is not going to be used directly by the Toolbox, this is for them to think about and collaborate with even if they don't know R or aren't on the technical team or whatever. It's in Google Docs to start the collaborative process and document (relying on Google's version control) as they go forward, etc...
-
-Julie: added a few paragraphs above. please see if that carries through the ideas you mentioned.  
---->
 
 Open up the "Status Data" tab, you'll see these headings, or columns to be evaluated for each goal: 
 
@@ -57,11 +48,7 @@ The Baltic Sea region doesn't get big storms because of its geography. The Coast
 
 ![](https://docs.google.com/drawings/d/e/2PACX-1vQwRzxEuSxD09EyNUY5igXS7RdQFnk5XrAr3RXYkdBGzDIEMk73xWfR78urrju4oYTAy1TzRBJzFWFd/pub?w=960&h=144)
 
-Goal models and Spatial Boundaries need to be considered simultaneously, particularly in the initial data gathering stage. Spatial boundaries based on political and geological boundaries are set at the beginning of a study, validated and maybe adjusted with data. For example, if you have 5 provinces to assess separately, and data for province 1 and 2 are reported together and difficult to tease apart, then you might need to consider combining region 1 and 2 into one region in your assessment. 
-
-<!---Ning I switched this wording but I don't think it's very good; but I thought "validating with data" was too vague. Maybe it needs another sentence or two?  
-
-Julie: see above--->
+Goal Models and Spatial Boundaries need to be considered simultaneously, particularly in the initial data gathering stage. You may choose to set spatial boundaries based on political or geological boundaries (or some combination), and your choice will be either validated or need adjusted based on the data that are available for those boundaries. For example, let's say you choose to assess 5 provinces separately. Then, as you gather available data, you learn that data for province 1 and 2 are reported together and are difficult to tease apart. In this case, you will need to consider combining region 1 and 2 into one region in your assessment, or looking for other data sources that are available to represent this goal. It is also important to look across other goals and the data available for those goals; do most data sets report province 1 and 2 together, or is this the only one? This will help you decide whether you would want to explore new spatial boundaries or new data sources.
 
 Let's look at these individually: 
 
@@ -75,13 +62,15 @@ Also, since there is a full Example that you walk through after this short intro
 
 Julie: see below. may need more work. --->
 
-_Model approaches?_ You don't need to decide on the mathematical formula here. Together with the next "variables" column, this column mainly aims to get you start thinking of model approaches. Is the global OHI model adequate for your needs? What should the goal capture? <!--- Julie, I think maybe we should get rid of this column. It's very similar to the next column, since thinking about variables require people to understand the philosophy and other model approaches. It will also make this sheet less scary, and focus people's attention on variables and data gathering...--->
+_Model approaches?_ You don't need to decide on the mathematical formula here. Together with the next "variables" column, this column mainly aims to get you start thinking of model approaches. Is the global OHI model adequate for your needs? What should the goal capture? <!--- Julie, I think maybe we should get rid of this column. It's very similar to the next column, since thinking about variables require people to understand the philosophy and other model approaches. It will also make this sheet less scary, and focus people's attention on variables and data gathering...
+
+Hi Ning, if you think it's less scary and easier for people, I'm fine with that. Or do you think it's nice for them to have a place for a 'summary' or plan for the goal?--->
 
 _What ideal variables best represent the goal?_ Before even thinking about data, let's think broadly, in your study area, what variables, or characteristics, of a goal best represent the philosophy of it, regardless if there is data available? 
 
-Sometimes we tend to constrain our model development with the data we know we have. You can build a more representative model by thinking through what are _the most ideal variables_ (eg. popularity of a region among tourists) to capture information, then find _data that best reflect those variables_ (eg. hotel vacancy rates? international flights to this region? surf shop revenue? cruise ship revenue? etc).  
+Sometimes we tend to constrain our model development with the data we know we have. You can build a more representative model by thinking through what are _the most ideal variables_ (eg. popularity of a region among tourists) to capture information, then find _data that best reflect those variables_ (eg. hotel vacancy rates? international flights to this region? surf shop revenue? cruise ship revenue? etc).  <!---This part was so great!--->
 
-Different OHI+ projects have been creative at how they represent this goal as data permits. Check out the OHI-Science portal, Goals page ([ohi-science.org/goals](http://ohi-science.org/goals/)) page. It can help you understand the philosophy of a goal and shares what has been done. Let that catalyze your discussions. Do any of the past approaches suitable, or are there other obvious variables to better represent your goal in your country/region?
+Different OHI+ projects have been creative at how they represent this goal as data permits. Check out the OHI-Science Goals page ([ohi-science.org/goals](http://ohi-science.org/goals/)) page. It can help you understand the philosophy of a goal by illustrating what has been done in other locations. Let that catalyze your discussions. Are any of the past approaches suitable, or are there other obvious variables to better represent your goal in your country/region?
 
 Another important factor that determines OHI scores is _Reference Point_, ie. what status of this goal can be awarded a score of 100? Has the government set a target to achieve? Is there a model region that has become a standard other regions should aspire to? Is there a historical point the regions should return to?
 
@@ -90,15 +79,6 @@ Another important factor that determines OHI scores is _Reference Point_, ie. wh
 ![](https://docs.google.com/drawings/d/e/2PACX-1vSoBJMg2MbiwD7xkQQEOD-v6YqOpajRpIbKeawYSfimytwxCPe1aSTyv0HmLfV6O5RCoqf9HqncZBtf/pub?w=960&h=125)
 
 Choice of model variables and reference points are often limited by data availability, time frame, and resolution. The data columns are a place to catalog a list of the data that could work: from your knowledge, when you ask your colleagues, digging through databases online, etc. Add as many rows as you need to to record your ideas. Having this master sheet of ideas will help you keep track of your thoughts and make collaboration with your colleagues easier.  
-
-
-<!---Ning:
-I think you could flush this out a bit more with the overall comment above: this is a place to make a list of the data that could work: from your knowledge, when you ask your colleagues, digging through databases online, the gvt, etc. Add as many rows as you need to to catelog your ideas...
-
-And for the text that you do have here I think you could explain a big; disaggregating isn't a concept that a lot of people have thought about with data so you'll need to explain that more, and explain by 3-5 years is recommended...I would say that it should be 5, but if that's not possible, fewer are possible...
-
-Julie: see above and below. 
---->
 
 _Years_: Typically having only one year of data is not enough to objectively reflect the status and trend of a goal. Five years of data are recommended. If that's not available, using fewer years of data is possible. 
 
@@ -114,14 +94,11 @@ Also, the pressures and resilience tabs too.
 
 ### Examples 
 
-Now we have run through the basic theories behind each column, let's walk through a few examples together over the next few panels of spreadsheets (Example 1 - 4). 
+Now we have run through the basic theories behind each column, let's walk through a few examples together. They are on the next tabs of the spreadsheets (Example 1 - 4). 
 
 **Example 1 - (Model &) Variables** <!--- Julie: maybe delete the model column, only have model variables, see earlier comments --->
 
 ![](https://docs.google.com/drawings/d/e/2PACX-1vSY6WtpVw6VzNfSBu_Mafu5JyTuSnIWh2yVdMi5jrC7xT4GJb7b6OmatsZoWSPGFyvSDnqDODVFsF5-/pub?w=960&h=240)
-
-<!---Ning: It would be great to flush this out a lot more. What did you enter as indicators and why? Walk through the thought process behind them (maybe not all of them, but enough to get a good sense. This is the thinking that we need to teach people.
---->
 
 Models are relationships among variables. Before gathering any data, think about ideal variables that could represent the goal. How could each variable be relevant/representative of ocean health? 
 
@@ -150,7 +127,7 @@ These few columns detail the data you find for each of the variables you decided
 
 Are data available? For fish stock health, there is no readily accessible datasets. So this variable can't be used in your study. But other variables seem to have data. 
 
-Are they from a credible source? The quality of your assessment depends on the quality of your data. Government agencies (eg. Energy Information Administration), or research institutes tend to be more credible. <!---anything else to include? NGO? not all provide relialbe data though...--->
+Are they from a credible source? The quality of your assessment depends on the quality of your data. Government agencies (eg. Energy Information Administration), or research institutes tend to be more credible.
 
 How many years does it cover? As OHI measures _trend_ for each goal, the trend is derived from ocean health status over time, ideally 5 years. In this case, there is sufficient data (1950-2016). 
 
@@ -169,8 +146,6 @@ In the data exploration process, however, you might find that the geopolitical b
 
 Sometimes there isn't data available, and sometimes data isn't relevant to a region, e.g. if there are no mangroves growing in Region 4. So it's important to have a system for distinguishing these two things. Here, we'll use _NA_ if it's not relevant; that's the syntax that `R` and the OHI Toolbox will use so we can be consistent. When data are not available but they should be, here we'll mark it with an _N_. 
 
-"NA" is used when there should be no data for this region. In this example, if no one lives in region 4, there would be no Livelihoods data for this region.  
-
 
 **Example 4 - Reference Point**
 
@@ -181,9 +156,9 @@ Sometimes there isn't data available, and sometimes data isn't relevant to a reg
 See below: 
 --->
 
-Reference points, or targets, are essential for rescaling and scoring. For example, if the target number of fishermen is 100, and the data only records 50, that could bring AO score down to 50. 
+Reference points, or targets, are essential for rescaling and scoring. For example, if the target is to have 100 fishermen fishing, and the data shows only 50 fishermen are fishing, if the AO model depends only on fishermen, the AO score could be about 50 (there will also be pressures and resilience acting). 
 
-What reference point(s) for the model variables should be? Reference point could be gathered from published policy targets (eg. government-set targets to achieve), scientific studies (eg. maximum sustainable yield for a fishery), etc. Sometimes there is no easy-to-find reference point from literature. In those cases, you'll need to exercise your best judgment and set a reference point that makes the most sense to your study. 
+How should reference point(s) for the model variables be set? They could be set based on information from published policy targets (e.g. government-set targets to achieve), scientific studies (e.g. maximum sustainable yield for a fishery), etc. Sometimes there is no easy-to-find reference point from literature. In those cases, you'll need to discuss with experts and your team to set a reference point that makes the most sense to your area.   
 
 Often, reference points are temporal (eg. historical coverage of mangrove) or spatial (eg. the region that has the highest number of tourists). Let's look at a few examples: 
 

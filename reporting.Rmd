@@ -1,0 +1,13 @@
+# Reporting {#reporting}
+
+**This chapter is under development.** 
+
+## Flower plots
+
+Flower plots draw information from conf/goals.csv. 
+
+Goal labeling for flower plots is set in goals.csv in the `name_flower` column. Add a carriage return `\n` between words in goal names to have them display on separate lines in the flower plots. 
+
+<!---TODO: 
+Include stuff about create_layers_rmds etc.
+--->
