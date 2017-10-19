@@ -25,7 +25,7 @@
 <meta name="author" content="Ocean Health Index Team">
 
 
-<meta name="date" content="2017-09-25">
+<meta name="date" content="2017-10-04">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -139,7 +139,8 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="6.3" data-path="prep-data.html"><a href="prep-data.html#data-wrangling"><i class="fa fa-check"></i><b>6.3</b> Data Wrangling</a></li>
 <li class="chapter" data-level="6.4" data-path="prep-data.html"><a href="prep-data.html#save-and-register-data-layers"><i class="fa fa-check"></i><b>6.4</b> Save and register data layers</a></li>
 <li class="chapter" data-level="6.5" data-path="prep-data.html"><a href="prep-data.html#register-data-layers-in-layers.csv"><i class="fa fa-check"></i><b>6.5</b> Register data layers in <code>layers.csv</code></a></li>
-<li class="chapter" data-level="6.6" data-path="prep-data.html"><a href="prep-data.html#chapter-recap"><i class="fa fa-check"></i><b>6.6</b> Chapter Recap:</a></li>
+<li class="chapter" data-level="6.6" data-path="prep-data.html"><a href="prep-data.html#organizing-metadata"><i class="fa fa-check"></i><b>6.6</b> Organizing metadata</a></li>
+<li class="chapter" data-level="6.7" data-path="prep-data.html"><a href="prep-data.html#chapter-recap"><i class="fa fa-check"></i><b>6.7</b> Chapter Recap:</a></li>
 </ul></li>
 <li class="chapter" data-level="7" data-path="calcs-basic.html"><a href="calcs-basic.html"><i class="fa fa-check"></i><b>7</b> Calculations: basic workflow</a><ul>
 <li class="chapter" data-level="7.1" data-path="calcs-basic.html"><a href="calcs-basic.html#overview-3"><i class="fa fa-check"></i><b>7.1</b> Overview</a><ul>
@@ -216,8 +217,11 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="8.9.1" data-path="calcs-advanced.html"><a href="calcs-advanced.html#update-goal-call-in-goals.csv"><i class="fa fa-check"></i><b>8.9.1</b> Update goal call in <code>goals.csv</code></a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="9" data-path="updating-your-website.html"><a href="updating-your-website.html"><i class="fa fa-check"></i><b>9</b> Updating your website</a><ul>
-<li class="chapter" data-level="9.1" data-path="updating-your-website.html"><a href="updating-your-website.html#overview-5"><i class="fa fa-check"></i><b>9.1</b> Overview</a></li>
+<li class="chapter" data-level="9" data-path="reporting.html"><a href="reporting.html"><i class="fa fa-check"></i><b>9</b> Reporting</a><ul>
+<li class="chapter" data-level="9.1" data-path="reporting.html"><a href="reporting.html#flower-plots"><i class="fa fa-check"></i><b>9.1</b> Flower plots</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="updating-your-website.html"><a href="updating-your-website.html"><i class="fa fa-check"></i><b>10</b> Updating your website</a><ul>
+<li class="chapter" data-level="10.1" data-path="updating-your-website.html"><a href="updating-your-website.html#overview-5"><i class="fa fa-check"></i><b>10.1</b> Overview</a></li>
 </ul></li>
 </ul>
 
@@ -352,8 +356,16 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 
 </div>
 </div>
+<div id="organizing-metadata" class="section level2">
+<h2><span class="header-section-number">6.6</span> Organizing metadata</h2>
+<p>Keeping track of metadata is important as you create these layers. Metadata is information about the data, most importantly, its source. It’s best to provide not only a reference like Feely et al. 2009, but also a url link to where other people could access the data. Other information that can be really useful is the years of data you use, and which goal models the data are used in.</p>
+<p>You can keep track of metadata in whatever way makes most sense to you. Since <code>layers.csv</code> is a file that you will keep updated with every data layer, it can make sense to add information there. You can add as many columns to layers.csv as you’d like. However, this will create a really huge spreadsheet, so maybe you want to keep this information in another place.</p>
+<p>If you’ve been using the Data Planner from Chapter <a href="planner-guide.html#planner-guide">3</a>, that can be a good place to continue keeping track of all the metadata. Or, you could start another spreadsheet.</p>
+<p>It doesn’t matter where or how you keep this information, but be sure that you keep it somewhere, and keep it organized and consistent. You’ll need information for every single layer you include, and it’s easier to do as you go along than all at the end. We recommend copying the structure of <code>layers.csv</code> (if you’re not using <code>layers.csv</code> for metadata) and having at a minimum columns that are for the data name, Toolbox data layer name, description, reference, and url.</p>
+<p>Later on in your assessment, we’ll be able to take information from the columns of your csv and use them for reporting and on your website. An example of this is from the Global assessment: see <a href="http://ohi-science.org/ohi-global/layers" class="uri">http://ohi-science.org/ohi-global/layers</a>.</p>
+</div>
 <div id="chapter-recap" class="section level2">
-<h2><span class="header-section-number">6.6</span> Chapter Recap:</h2>
+<h2><span class="header-section-number">6.7</span> Chapter Recap:</h2>
 <p>Hooray! You have just learned: how to process data, save, and register a data layer for the OHI Toolbox!</p>
 <ul>
 <li>OHI data layer formatting requirements</li>

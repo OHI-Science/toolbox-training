@@ -125,6 +125,18 @@ This is what the new line should look like:
 
 ![](https://docs.google.com/drawings/d/1qjraupQuobcxVolubwqtIzOoqv_ovqO6NYi4O_sT3IE/pub?w=900)
 
+## Organizing metadata
+
+Keeping track of metadata is important as you create these layers. Metadata is information about the data, most importantly, its source. It's best to provide not only a reference like Feely et al. 2009, but also a url link to where other people could access the data. Other information that can be really useful is the years of data you use, and which goal models the data are used in. 
+
+You can keep track of metadata in whatever way makes most sense to you. Since `layers.csv` is a file that you will keep updated with every data layer, it can make sense to add information there. You can add as many columns to layers.csv as you'd like. However, this will create a really huge spreadsheet, so maybe you want to keep this information in another place. 
+
+If you've been using the Data Planner from Chapter \@ref(planner-guide), that can be a good place to continue keeping track of all the metadata. Or, you could start another spreadsheet. 
+
+It doesn't matter where or how you keep this information, but be sure that you keep it somewhere, and keep it organized and consistent. You'll need information for every single layer you include, and it's easier to do as you go along than all at the end. We recommend copying the structure of `layers.csv` (if you're not using `layers.csv` for metadata) and having at a minimum columns that are for the data name, Toolbox data layer name, description, reference, and url. 
+
+Later on in your assessment, we'll be able to take information from the columns of your csv and use them for reporting and on your website. An example of this is from the Global assessment: see http://ohi-science.org/ohi-global/layers. 
+
 ## Chapter Recap: 
 
 Hooray! You have just learned: how to process data, save, and register a data layer for the OHI Toolbox! 

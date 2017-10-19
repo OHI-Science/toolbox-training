@@ -13,4 +13,5 @@ rmd_files: [
   # calculations_pressures_resilience.Rmd ## make this
   "calculations_advanced_workflow.Rmd", 
   #"troubleshooting.Rmd",
+  "reporting.Rmd", # write this, maybe broader comm/reporting/figs?
   "updating_your_website.Rmd"]
