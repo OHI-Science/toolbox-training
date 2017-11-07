@@ -56,19 +56,11 @@ Let's look at these individually:
 
 ![](https://docs.google.com/drawings/d/e/2PACX-1vTFUwZQ6MKe-1ihCUMDWAv4yuX-D8oQnLYrGS4dEbMYIugvnj8j94sfquN9g09SMeHzg2GzKY4QyvPs/pub?w=960&h=125)
 
-<!---Ning: since 'indicators' mean a lot of things to a lot of people, I think we should be careful about how we use it. So far in the Planner, we've only talked about data. I think it is important to also talk about how you can use indicators, but we need to say that explicitly and not just switch back and forth between 'data' and 'indicators'. What do you think? Maybe 'indicators' isn't the right thing to name that column. Maybe it should be 'data ideas' or something?
-
-Also, since there is a full Example that you walk through after this short introduction, maybe it's better not to have this TR example now. It seems like this first section is just to give an overview of the column names. 
-
-Julie: see below. may need more work. --->
-
-_Model approaches?_ You don't need to decide on the mathematical formula here. Together with the next "variables" column, this column mainly aims to get you start thinking of model approaches. Is the global OHI model adequate for your needs? What should the goal capture? <!--- Julie, I think maybe we should get rid of this column. It's very similar to the next column, since thinking about variables require people to understand the philosophy and other model approaches. It will also make this sheet less scary, and focus people's attention on variables and data gathering...
-
-Hi Ning, if you think it's less scary and easier for people, I'm fine with that. Or do you think it's nice for them to have a place for a 'summary' or plan for the goal?--->
+_Model approaches?_ You don't need to decide on the mathematical formula here. Together with the next "variables" column, this column mainly aims to get you start thinking of model approaches. Is the global OHI model adequate for your needs? What should the goal capture? 
 
 _What ideal variables best represent the goal?_ Before even thinking about data, let's think broadly, in your study area, what variables, or characteristics, of a goal best represent the philosophy of it, regardless if there is data available? 
 
-Sometimes we tend to constrain our model development with the data we know we have. You can build a more representative model by thinking through what are _the most ideal variables_ (eg. popularity of a region among tourists) to capture information, then find _data that best reflect those variables_ (eg. hotel vacancy rates? international flights to this region? surf shop revenue? cruise ship revenue? etc).  <!---This part was so great!--->
+Sometimes we tend to constrain our model development with the data we know we have. You can build a more representative model by thinking through what are _the most ideal variables_ (eg. popularity of a region among tourists) to capture information, then find _data that best reflect those variables_ (eg. hotel vacancy rates? international flights to this region? surf shop revenue? cruise ship revenue? etc).  
 
 Different OHI+ projects have been creative at how they represent this goal as data permits. Check out the OHI-Science Goals page ([ohi-science.org/goals](http://ohi-science.org/goals/)) page. It can help you understand the philosophy of a goal by illustrating what has been done in other locations. Let that catalyze your discussions. Are any of the past approaches suitable, or are there other obvious variables to better represent your goal in your country/region?
 
@@ -82,13 +74,19 @@ Choice of model variables and reference points are often limited by data availab
 
 _Years_: Typically having only one year of data is not enough to objectively reflect the status and trend of a goal. Five years of data are recommended. If that's not available, using fewer years of data is possible. 
 
-_Spatial resolution_: When you find a data source (eg. national poverty level), you might need to be _disaggregate_, or separate the data from large-scale (eg. national) to small-scale (eg. provincial). You could contact the agency that publishes the data and see if they have gathered small-scale data. If that's not possible, there are means (eg. GIS) to separate the large-scale data to local scales, although that could reduce the accuracy of the data. 
+_Spatial resolution_: Data needs to be presented to the _region_ level. Regions are sub-units, or assessment units, of your study area. At the region level, each OHI goals/sub-goals will be analyzed and scored. For example, you study area may be an entire country, while you regions are each coastal province or state. You can add more regions as needed on the spreadsheet. 
+
+When you find a data source (eg. national poverty level), you might need to be _disaggregate_, or separate the data from large-scale (eg. national) to small-scale (eg. provincial). You could contact the agency that publishes the data and see if they have gathered small-scale data. If that's not possible, there are means (eg. GIS) to separate the large-scale data to local scales, although that could reduce the accuracy of the data. 
+
+_Pressures & Resilience_ are an important yet often overlooked component of the OHI. _Pressures_ are factors that negatively affect the status of each goal/subgoal, while _Resilience_ are factors that will improve the status or negate the impacts of the pressures. They will be used to predict the _Future State_. You will need to quantify each factor later on in the assessment. But at this stage, we suggest you brainstorm and jog down as many ideas as you could think of first. 
 
 
 <!---Ning: you'll also want to explain the green and orange columns here too. And say that if you can add more columns for regions (and remind them what regions are)
 
 
 Also, the pressures and resilience tabs too. 
+
+Julie, see above. Also I added another column "region ..." in the spread sheet itself.
 
 --->
 
@@ -110,7 +108,7 @@ _Fish stock health_ can tell the sustainability of fishing in the region.
 
 _Catch_ might be unsuitable, because it reflects the amount fished in the past, not the sustainable capacity for artisanal fishing. The fish stocks might have been over- or under- fished in the past. 
 
-_Gas price_ and _number of ports_ could limit the fishermen's ability to access ocean resources. 
+_Gas price_ and _number of ports_ could limit the fisherman's ability to access ocean resources. 
 
 As you might have noticed, to the right side of the sheet, there is a column for **notes**. In this case for Artisanal Fishing Opportunities (AO), Fish catch is deemed not suitable for the reasons stated above. _It's just as important to document the rationales for excluding a data source as it is to record why you included one._ 
 
@@ -120,12 +118,12 @@ As you might have noticed, to the right side of the sheet, there is a column for
 
 <!---Ning: same as above, I think you can flush this out a bit more. Walk through the rows you introduce above and say what you enter on the sheet. Maybe make some dummy data and take a screenshot if that makes sense, or just describe it.
 
-See below...
+Julie, see below...
 --->
 
 These few columns detail the data you find for each of the variables you decided suitable for your model. 
 
-Are data available? For fish stock health, there is no readily accessible datasets. So this variable can't be used in your study. But other variables seem to have data. 
+Are data available? For fish stock health, there is no readily accessible data sets. So this variable can't be used in your study. But other variables seem to have data. 
 
 Are they from a credible source? The quality of your assessment depends on the quality of your data. Government agencies (eg. Energy Information Administration), or research institutes tend to be more credible.
 
@@ -153,7 +151,7 @@ Sometimes there isn't data available, and sometimes data isn't relevant to a reg
 
 <!---Ning: I think the fisherman example is too simplistic and a bit misleading, and in the screenshot it's temporal v. spatial...I think you want to explain the thinking behind temporal v. spatial here instead of the specific number examples. 
 
-See below: 
+Julie, see below: 
 --->
 
 Reference points, or targets, are essential for rescaling and scoring. For example, if the target is to have 100 fishermen fishing, and the data shows only 50 fishermen are fishing, if the AO model depends only on fishermen, the AO score could be about 50 (there will also be pressures and resilience acting). 
@@ -167,6 +165,20 @@ _Gas prices_ fluctuates often. It's difficult to set a reference point where it'
 _Number of artisanal fishermen_ might be dwindling over time, and we might want to preserve the number of fishermen in a region. So we set the reference point to be the highest number of fishermen in a region within the past 5 years. 
 _Number of people below poverty line_ often is a government set standard to achieve, so is _the number of ports_. 
 
- 
+<!--- new info --->
 
+**Example 5 - Pressures & Resilience**
+
+As mentioned above, at this stage of your assessment, it's important to start thinking about pressures and resilience - factors that contribute to long-term outcomes, or the future state, of each goal or sub-goal. Think broadly. Here are a few examples: 
+
+- What pressures make it harder for small fishermen to get access to the stocks? For example, high gas price, poor fisheries stock health, few ports where fishermen could access the sea, etc. 
+- What regulations are there to directly increase access and counter the pressure? For example, loan programs for fishermen, stock improvement measures, etc. 
+- What regional or national policies that might indirectly improve the status of this goal? For example, policies to move people out of poverty could decrease the need of artisanal fishing, and clean water laws that improve water quality. 
+- How the status of other goals affect this goal? For example, severe water pollution could affect the fisheries. 
+
+## Chapter Recap
+
+Now we have walked through how to utilize this planner to orient your team around the goals, from thinking about variables and models, to gathering data sources within spatial boundaries, and to brain storming pressures and resilience factors. The planner serves as a platform to record and share notes, and collaborate with your colleagues during the iterative process of an OHI assessment. 
+
+You might find that the data of one goal is ready to be processed and calculated with the OHI Toolbox, while your team still tries to explore options for another goal. It is quite alright to move ahead with some goals before others. Or you might find yourself needing to eliminate some data and add others after you further explored the data you found earlier. We hope this Planner could provide a home base for your data gathering and exploration. You can come back to this sheet, and modify it to your own needs anytime during the assessment. 
 
