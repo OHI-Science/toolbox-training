@@ -12,7 +12,7 @@ We'll start by exploring the columns in the spread sheet and what they are for, 
 
 The OHI Data Planner is a document you can download online. It is housed in a Google Drive folder <!---[link to it once it has a permanent location] ---> that is shared with OHI participants before an OHI Technical Training workshop. Make sure you have access to the folder as there are other files in the folder to aid the process of the workshop. 
 
-However, if you are using this document as a stand-alone document, you can download it [here]() directly.
+However, if you are using this document as a stand-alone document, you can download it [here](https://docs.google.com/a/conservation.org/spreadsheets/d/1597DGext2lK4Z4HvEDLrcccbbM5NLsXv213RgaXxLuA/edit?usp=sharing) directly.
 
 Click open the Planner, and let's walk through it together. 
 

@@ -1,0 +1,95 @@
+# Planning and Gathering Data  {#gathering-data}
+
+**in development**
+
+This chapter will help you think about what data to include in your assessment. You should use previous assessments as guidance, but not be constrained 
+
+you should look for and how you can organize it as you look. We have developed a OHI Planner to guide you through this important, yet sometimes daunting, process of data selection and model exploration. 
+
+<!---
+## OHI Framework
+
+<!---lifted from http://ohi-science.org/manual/#incorporate-core-values-and-characteristics-into-the-ohi-assessment-framework-before-gathering-information --->
+
+<!---
+Begin your assessment by identifying local socio-cultural-economic characteristics and priorities related to ocean health, and how they would ideally be captured with the existing or modified OHI framework. This means understanding the rationale behind the components of the OHI framework and identifying what must be added or removed or redefined to ensure that it best represents the local context. Are all goals relevant to your study area? What should be added, removed, or redefined? In this process it is important to identify not only characteristics that could be included in goal models, but also the important stressors (pressures) and resilience elements within the study area. What are the key issues that should be included for your assessment to be credible, useful, and meaningful? How do people typically relate to the ocean in your area in terms of social and cultural patterns? These are the kinds of questions you should consider prior to assembling the available information.
+
+The OHI framework should guide your assessment, but you should not be constrained by it. If a goal is not relevant, it should be removed. If there are elements important to your study area that are not present within the existing framework, how could they be included? Having a clear picture of how the framework should be restructured and what the assessment should include is very important before moving on to assemble information, because otherwise the assessment could be biased by what information is available instead of what is important to include. When specific information is limited there are ways to capture them with indirect measures.
+
+--->
+
+## Goals: modeling status and trend
+
+See http://ohi-science.org/goals for details about what each goal represents, as well as examples from how goals were modeled in previous assessments. 
+
+<!---## Pressures --->
+
+## Resilience
+
+In the OHI, we think about resilience as **the social, institutional, and ecological factors that positively affect the ability of a goal to be delivered to people.**
+
+To think about resilience, you will need to spend time exploring governance actions that have occurred within your assessment area (or at an even larger spatial scale, ex: nationally) that directly affected ocean policy and/or specific ocean pressures in your assessment area. The majority of the work will be looking up what legislation exists, how well it addresses specific ocean pressures, when it was introduced, and detailing the changes. This may also include gathering reports that document enforcement and compliance with key regulations or effectiveness metrics through time and space. Oftentimes, reports may be qualitative, which means there are no data. This means you may need to translate written reports into quantitative metrics, which you can do with your team and through discussions with local experts.
+
+### Types of Resilience
+
+Similar to pressures, resilience will ultimately be included in an OHI assessment through the OHI Toolbox by having a data layer for each resilience measure, with information for each region within the study area.
+
+Ideally, each pressure measured in the OHI should have a corresponding resilience measure, which is meant to ‘balance’ the pressures that negatively affect ocean health. The Ocean Health Index considers resilience in three categories: 
+
+1. ecological integrity
+1. pressure-specific regulations aimed at addressing ecological pressures 
+1. social integrity
+
+The first two measures address ecological resilience while the third addresses social resilience. Ideally, for any resilience measure, you would have three tiers of information:
+
+- **Existence of regulations**: Are regulations in place to appropriately address the ecological pressure?
+- **Implementation and enforcement**: Have these regulations been appropriately implemented and are there enforcement mechanisms in place?
+- **Effectiveness and compliance**: How effective have the regulations been at mitigating these pressures and is there compliance with these regulations?
+
+
+#### Ecological integrity 
+
+Ecological integrity is about general resilience within the ecosystem. You will be looking for the qualities that make an ecosystem strong to anything that could happen to it. If your ecosystem was affected by something, how easily could it bounce back to anything?
+
+#### Pressure-specific regulations 
+
+Pressure-specific regulations are intended to address ecological pressures, and are measured as laws, regulations.
+
+#### Social integrity 
+
+Social integrity is about general resilience within the society You will be looking for the qualities that make a society strong to anything that could happen to it. So any metric of how stable a society is goes here. If your society got hit with something, how easily could it bounce back to anything?
+
+
+### How to begin 
+
+When you begin thinking about potential resilience metrics, you also need to think about whether data may be available. A good place to start is to see what data were used for other assessments, and see if you have better data in your region. For example, for social integrity the OHI Global assessment uses the World Bank's [World Governanace Indicators](https://data.worldbank.org/data-catalog/worldwide-governance-indicators), do you have something better within your assessment area? In the US West Coast Assessment Like USWC did (and in BC Canada well-being). 
+
+<!---
+- from Court's word doc
+- full table (screenshots, with also link to Googledoc would be better) - useful outside ohi as governance; systematic way to think about governance, how it should function
+- How does Ning's Planner fit in (https://docs.google.com/spreadsheets/d/1597DGext2lK4Z4HvEDLrcccbbM5NLsXv213RgaXxLuA/edit#gid=1802082146)
+--->
+
+When beginning a search for resilience metrics to counteract pressures to your system, there are three levels of questions you can ask yourself to begin to get to the heart of if regulations exist that address these pressures and how effective the implementation, enforcement, and compliance with these regulations is:
+
+1.	Does a regulation exist that appropriately addresses a specific pressure? 
+2.	Is the regulation being appropriately complied with? 
+3.	Are there mechanisms in place supporting enforcement of the regulation?
+
+[Here](https://docs.google.com/spreadsheets/d/17nR-8vgD9JqWGCaQNjz4B36iOmMKUWYuNiPKKb_ht0M/edit?usp=sharing) are some specific questions you can begin to ask yourself when thinking about how to counter specific pressures (Pressure-specific regulations). In this spreadsheet we organize these questions around the pressures used in Global assessments, but these questions can be tailored to any number of pressures or groups of pressures depending on what is included in your own regional assessment. 
+
+<!---
+## Examples 
+
+Examples of how the US West Coast OHI assessment produced Resilience scores using the best available data: 
+
+US West Coast Clean Water Enforcement and Regulation-
+Where used: Resilience measure to address water pollution pressure
+Description: The Clean Water Enforcement and Regulation resilience measure is a composite measure of 3 different enforcement and compliance metrics utilized by the US EPA National Pollutant Discharge Elimination System (NPDES) permit program, which acts to control water pollution by regulating point sources that discharge pollutants into US waters. Yearly metrics measuring the percentage of inspector coverage at NPDES major facilities, the ratio of actual to expected discharge monitoring report submissions, and the percentage of discharge facilities with compliance violations were obtained from the US EPA Enforcement & Compliance History Online (ECHO) database (https://echo.epa.gov/ ) for California, Oregon and Washington. These values are reported on a 0-100% scale. We used the EPA established ‘National Goals’ for each metric as our reference resilience score. The national goal was 50% for inspector coverage, 95% for monitoring report submission, and 0% for compliance violations. For each of these three metrics we divided the observed value by its reference score (so that when it equals the reference it receives a perfect score of 1) and averaged them to come up with a resilience score for each state. 
+
+--->
+<!---
+
+- from Court's word doc
+- maybe example of Court's timeline (upcoming)
+--->

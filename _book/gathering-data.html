@@ -32,8 +32,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   
   
-<link rel="prev" href="toolbox-ecosystem.html">
-<link rel="next" href="calcs-basic.html">
+<link rel="prev" href="intro.html">
+<link rel="next" href="planner-guide.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -248,147 +248,90 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="prep-data" class="section level1">
-<h1><span class="header-section-number">Chapter 7</span> Preparing data: Basic</h1>
-<p>The purpose of Chapter <a href="prep-data.html#prep-data">7</a> is to introduce you to the basic workflow for preparing data for OHI. This is a a 2-hour hands-on training: you will be following along on your own computer and working with a copy of the demonstration repository (<em>toolbox-demo</em>) that is used throughout the this chapter.</p>
-<div id="overview-2" class="section level2">
-<h2><span class="header-section-number">7.1</span> Overview</h2>
-<p>Preparing data takes the biggest chunk of time when you’re using the OHI Toolbox, even more than the final scores calculation itself. That’s when you explore raw data, see whether it fits with your ideal spatial boundaries and whether it makes sense to include it in your final calculations. If it does, you can format it further and save it as data layers, or Toolbox inputs for scores calculations.</p>
-<p>The <em>Starter Repo</em> <a href="toolbox-ecosystem.html#toolbox-ecosystem">6</a> aims to help you wade through these important first steps of the assessment. Treat the preparatory, or “prep”, files as your notebook, calculator, and presentation of your work. Here, the process of data exploration is recorded and can be easily shared with anyone.</p>
-<!-- MOVE THESE TO ECOSYSTEM SECTIONS? **Why prepare data in the Toolbox?** This is for transparency, reproducibility, and credibility. If someone wants to understand what data you're using, how you have processed it, and your rationale for including it or excluding other options, they can find the answers here. With this reproducible record, you will be able to repeat these methods with additional years of data using the same code you have already written. It also makes your technical team more stable. If there are personale changes, your team memory is preserved. It's easier for new members to pick up where it was left when your data preparation has been documented clearly and kept in one place.  -->
-<!-- **Why R Markdown?** R Markdown produces a report with your comments, `R` code, and figures/tables embedded in it. It can be rendered as a nice HTML webpage that is easy to update and share with other people. We highly recommend it to anyone who is interested in open science, especially OHI+ users. -->
-<p>In this chapter, we will go through the basic requirements and steps of preparing a data layer:</p>
-<ul>
-<li>understand the formatting requirements</li>
-<li>try a hands-on tutorial in which you can use sample data to format and save</li>
-<li>register a data layer</li>
-</ul>
-<p><em><strong>Prerequisites</strong></em></p>
-<p>Before the training starts, please make sure you have done the following:</p>
+<div id="gathering-data" class="section level1">
+<h1><span class="header-section-number">Chapter 3</span> Planning and Gathering Data</h1>
+<p><strong>in development</strong></p>
+<p>This chapter will help you think about what data to include in your assessment. You should use previous assessments as guidance, but not be constrained</p>
+<p>you should look for and how you can organize it as you look. We have developed a OHI Planner to guide you through this important, yet sometimes daunting, process of data selection and model exploration.</p>
+<!---
+## OHI Framework
+
+<!---lifted from http://ohi-science.org/manual/#incorporate-core-values-and-characteristics-into-the-ohi-assessment-framework-before-gathering-information --->
+<!---
+Begin your assessment by identifying local socio-cultural-economic characteristics and priorities related to ocean health, and how they would ideally be captured with the existing or modified OHI framework. This means understanding the rationale behind the components of the OHI framework and identifying what must be added or removed or redefined to ensure that it best represents the local context. Are all goals relevant to your study area? What should be added, removed, or redefined? In this process it is important to identify not only characteristics that could be included in goal models, but also the important stressors (pressures) and resilience elements within the study area. What are the key issues that should be included for your assessment to be credible, useful, and meaningful? How do people typically relate to the ocean in your area in terms of social and cultural patterns? These are the kinds of questions you should consider prior to assembling the available information.
+
+The OHI framework should guide your assessment, but you should not be constrained by it. If a goal is not relevant, it should be removed. If there are elements important to your study area that are not present within the existing framework, how could they be included? Having a clear picture of how the framework should be restructured and what the assessment should include is very important before moving on to assemble information, because otherwise the assessment could be biased by what information is available instead of what is important to include. When specific information is limited there are ways to capture them with indirect measures.
+
+--->
+<div id="goals-modeling-status-and-trend" class="section level2">
+<h2><span class="header-section-number">3.1</span> Goals: modeling status and trend</h2>
+<p>See <a href="http://ohi-science.org/goals" class="uri">http://ohi-science.org/goals</a> for details about what each goal represents, as well as examples from how goals were modeled in previous assessments.</p>
+<!---## Pressures --->
+</div>
+<div id="resilience" class="section level2">
+<h2><span class="header-section-number">3.2</span> Resilience</h2>
+<p>In the OHI, we think about resilience as <strong>the social, institutional, and ecological factors that positively affect the ability of a goal to be delivered to people.</strong></p>
+<p>To think about resilience, you will need to spend time exploring governance actions that have occurred within your assessment area (or at an even larger spatial scale, ex: nationally) that directly affected ocean policy and/or specific ocean pressures in your assessment area. The majority of the work will be looking up what legislation exists, how well it addresses specific ocean pressures, when it was introduced, and detailing the changes. This may also include gathering reports that document enforcement and compliance with key regulations or effectiveness metrics through time and space. Oftentimes, reports may be qualitative, which means there are no data. This means you may need to translate written reports into quantitative metrics, which you can do with your team and through discussions with local experts.</p>
+<div id="types-of-resilience" class="section level3">
+<h3><span class="header-section-number">3.2.1</span> Types of Resilience</h3>
+<p>Similar to pressures, resilience will ultimately be included in an OHI assessment through the OHI Toolbox by having a data layer for each resilience measure, with information for each region within the study area.</p>
+<p>Ideally, each pressure measured in the OHI should have a corresponding resilience measure, which is meant to ‘balance’ the pressures that negatively affect ocean health. The Ocean Health Index considers resilience in three categories:</p>
 <ol style="list-style-type: decimal">
-<li>Have up-to-date versions of <code>R</code> and RStudio and have RStudio configured with Git/GitHub
-<ul>
-<li><a href="https://cloud.r-project.org" class="uri">https://cloud.r-project.org</a></li>
-<li><a href="http://www.rstudio.com/download" class="uri">http://www.rstudio.com/download</a></li>
-<li><a href="http://happygitwithr.com/rstudio-git-github.html" class="uri">http://happygitwithr.com/rstudio-git-github.html</a></li>
-</ul></li>
-<li><p>Fork the <strong>toolbox-demo</strong> repository into your own GitHub account by going to <a href="https://github.com/OHI-Science/toolbox-demo" class="uri">https://github.com/OHI-Science/toolbox-demo</a>, clicking “Fork” in the upper right corner, and selecting your account.</p></li>
-<li><p>Clone the <strong>toolbox-demo</strong> repo from your GitHub account into RStudio into a folder called “github” in your home directory (filepath “~/github”). <strong>Note</strong>: If you’ve already forked and cloned the demo, you can instead pull from your computer to make sure you have the most recent versions of all the files.</p></li>
-<li><p>Get comfortable: be set up with two screens if possible. You will be following along in RStudio on your own computer while also watching an instructor’s screen or following this tutorial.</p></li>
+<li>ecological integrity</li>
+<li>pressure-specific regulations aimed at addressing ecological pressures</li>
+<li>social integrity</li>
 </ol>
-<p>After your <code>toolbox-demo</code> repository is set up, open the <code>prep</code> folder. It should look like this:</p>
-<div class="figure">
-<img src="https://docs.google.com/drawings/d/1JOeYc-4Izf3h9FHPKQhkTou2uZgOB8dh0melYhV5s44/pub?w=450" />
-
-</div>
-<p>Each goal and sub-goal has its own sub-folder, so you can store raw and intermediate data as you work in R Markdown (or <code>R</code>). It is highly recommended that data preparation occurs in the <code>prep</code> folder as much as possible, as it will also be archived by GitHub for future reference.</p>
-<p>But before we start preparing a data layer, let’s first go over the data formatting requirements.</p>
-</div>
-<div id="data-formatting-requirements" class="section level2">
-<h2><span class="header-section-number">7.2</span> Data Formatting requirements</h2>
-<p>A data layer is a data file used to calculate scores. The global analysis included over 100 data layer files, and there will probably be as many in your own assessments. Each data layer (data input) <strong>has its own <em>.csv</em> file</strong>. These data layers are combined to calculate goal scores, meaning that they are inputs for status, trend, pressures, and resilience.</p>
-<p>The OHI Toolbox expects each <em>.csv</em> file to have:</p>
+<p>The first two measures address ecological resilience while the third addresses social resilience. Ideally, for any resilience measure, you would have three tiers of information:</p>
 <ul>
-<li>data for every region within the study area</li>
-<li>a unique region identifier (<em>rgn_id</em>) associated with a single score or value.</li>
-<li>data organized in ‘long’ format - as few columns as possible. (<em>You can read more about long formatting <a href="http://ohi-science.org/manual/#long-formatting">here</a></em>)</li>
+<li><strong>Existence of regulations</strong>: Are regulations in place to appropriately address the ecological pressure?</li>
+<li><strong>Implementation and enforcement</strong>: Have these regulations been appropriately implemented and are there enforcement mechanisms in place?</li>
+<li><strong>Effectiveness and compliance</strong>: How effective have the regulations been at mitigating these pressures and is there compliance with these regulations?</li>
 </ul>
-<p><strong>OHI goal scores are calculated at the scale of the reporting unit</strong>, which is called a ‘<strong>region</strong>’ and then combined to produce the score for the overall area assessed, called a ‘<strong>study area</strong>’. For example, the <em>U.S.</em> is a <em>study area</em>, and each <em>coastal state</em> is a <em>region</em>.</p>
-<p>In addition, to calculate trend, input data should be available as a time series for <strong>at least 5 recent years</strong> - and the longer the better, as this can be used in setting temporal reference points.</p>
-<blockquote>
-<p>Finalized data layers have at least two columns: the <code>rgn_id</code> column and a column with data identified by its units (eg. <em>km2</em> or <em>score</em>). There often may be a <code>year</code> column or a <code>category</code> column (for natural product categories or habitat types).</p>
-</blockquote>
-<p>Below are examples of two different data layer files: tourism count (<code>tr_total.csv</code>) and natural products harvested (<code>np_harvest_tonnes.csv</code>). They show information for a study area with 4 regions. Each region has multiple years of data. And the second data layer has an additional ‘categories’ column for the different types of natural products that were harvested.</p>
-<div class="figure">
-<img src="https://docs.google.com/drawings/d/1Hydt117b7mFAcq4wkmdGKfPWq2Kn_1EVpfyL-zkzx-o/pub?w=500" />
-
+<div id="ecological-integrity" class="section level4">
+<h4><span class="header-section-number">3.2.1.1</span> Ecological integrity</h4>
+<p>Ecological integrity is about general resilience within the ecosystem. You will be looking for the qualities that make an ecosystem strong to anything that could happen to it. If your ecosystem was affected by something, how easily could it bounce back to anything?</p>
 </div>
-<p>In this example, the two data layers are appropriate for <em>status calculations</em> with the Toolbox because:</p>
+<div id="pressure-specific-regulations" class="section level4">
+<h4><span class="header-section-number">3.2.1.2</span> Pressure-specific regulations</h4>
+<p>Pressure-specific regulations are intended to address ecological pressures, and are measured as laws, regulations.</p>
+</div>
+<div id="social-integrity" class="section level4">
+<h4><span class="header-section-number">3.2.1.3</span> Social integrity</h4>
+<p>Social integrity is about general resilience within the society You will be looking for the qualities that make a society strong to anything that could happen to it. So any metric of how stable a society is goes here. If your society got hit with something, how easily could it bounce back to anything?</p>
+</div>
+</div>
+<div id="how-to-begin" class="section level3">
+<h3><span class="header-section-number">3.2.2</span> How to begin</h3>
+<p>When you begin thinking about potential resilience metrics, you also need to think about whether data may be available. A good place to start is to see what data were used for other assessments, and see if you have better data in your region. For example, for social integrity the OHI Global assessment uses the World Bank’s <a href="https://data.worldbank.org/data-catalog/worldwide-governance-indicators">World Governanace Indicators</a>, do you have something better within your assessment area? In the US West Coast Assessment Like USWC did (and in BC Canada well-being).</p>
+<!---
+- from Court's word doc
+- full table (screenshots, with also link to Googledoc would be better) - useful outside ohi as governance; systematic way to think about governance, how it should function
+- How does Ning's Planner fit in (https://docs.google.com/spreadsheets/d/1597DGext2lK4Z4HvEDLrcccbbM5NLsXv213RgaXxLuA/edit#gid=1802082146)
+--->
+<p>When beginning a search for resilience metrics to counteract pressures to your system, there are three levels of questions you can ask yourself to begin to get to the heart of if regulations exist that address these pressures and how effective the implementation, enforcement, and compliance with these regulations is:</p>
 <ol style="list-style-type: decimal">
-<li>At least five years of data are available</li>
-<li>There are no data gaps</li>
-<li>Data are presented in ‘long’ or ‘narrow’ format</li>
+<li>Does a regulation exist that appropriately addresses a specific pressure?</li>
+<li>Is the regulation being appropriately complied with?</li>
+<li>Are there mechanisms in place supporting enforcement of the regulation?</li>
 </ol>
-<p><em>When data gaps, temporal or spatial, are inevitable, various gap-filling techniques can be used. We won’t go through the details here. For more information and examples, visit <a href="http://ohi-science.org/manual/#gapfilling">OHI Manual</a></em></p>
-</div>
-<div id="data-wrangling" class="section level2">
-<h2><span class="header-section-number">7.3</span> Data Wrangling</h2>
-<p>So how do we get from raw data to a data layer that looks like the ones shown above? When we first access a data set, we often don’t know whether it is suitable for our purpose, or if it provides adequate information. Raw data can be in a different format than the desired long format and have extra or incomplete information. The main task of data preparation is to comb through the raw data, combine different sources, and sometimes fill in the information gap. We call this process “data wrangling.”</p>
-<p>For reproducibility and transparency, it is also good practice to record and share the decision-making process - trials and errors, why you decide to include, or more importantly, exclude a certain data source. Fortunately, we can take notes on the data exploration process and code in one place!</p>
-<p>Here is an <a href="https://github.com/OHI-Science/bhi/blob/draft/baltic2015/prep/CW/eutrophication/eutrophication_prep.md">example</a> of a data prep document. Let’s give it a try to make one just like this.</p>
-<p>Now let’s switch to the <code>demo</code> repo. Today we will use the <em>Clean Water (CW)</em> goal as an hands-on example. We will get sample secchi depth data, as an indicator of water clarity.</p>
-<p>Click on the <code>CW</code> folder and open <code>CW_data_prep.Rmd</code>. We will follow the tutorial from there.</p>
-</div>
-<div id="save-and-register-data-layers" class="section level2">
-<h2><span class="header-section-number">7.4</span> Save and register data layers</h2>
-<blockquote>
-<p>Note: if you are preparing data from your Starter/Prep repository, you won’t have the layers folder and <code>layers.csv</code>. You won’t be able to do the following steps until you have the Full repository.</p>
-</blockquote>
-<p>After you have successfully processed a data layer, and it can be used by the Toolbox for calculations, it needs to be saved and registered here:</p>
-<div class="figure">
-<img src="https://docs.google.com/drawings/d/1IwHf8pMBlpzOIYKL0hoEF5rETGA765Qtwkz7es7B3Rg/pub?h=500" />
+<p><a href="https://docs.google.com/spreadsheets/d/17nR-8vgD9JqWGCaQNjz4B36iOmMKUWYuNiPKKb_ht0M/edit?usp=sharing">Here</a> are some specific questions you can begin to ask yourself when thinking about how to counter specific pressures (Pressure-specific regulations). In this spreadsheet we organize these questions around the pressures used in Global assessments, but these questions can be tailored to any number of pressures or groups of pressures depending on what is included in your own regional assessment.</p>
+<!---
+## Examples 
+
+Examples of how the US West Coast OHI assessment produced Resilience scores using the best available data: 
+
+US West Coast Clean Water Enforcement and Regulation-
+Where used: Resilience measure to address water pollution pressure
+Description: The Clean Water Enforcement and Regulation resilience measure is a composite measure of 3 different enforcement and compliance metrics utilized by the US EPA National Pollutant Discharge Elimination System (NPDES) permit program, which acts to control water pollution by regulating point sources that discharge pollutants into US waters. Yearly metrics measuring the percentage of inspector coverage at NPDES major facilities, the ratio of actual to expected discharge monitoring report submissions, and the percentage of discharge facilities with compliance violations were obtained from the US EPA Enforcement & Compliance History Online (ECHO) database (https://echo.epa.gov/ ) for California, Oregon and Washington. These values are reported on a 0-100% scale. We used the EPA established ‘National Goals’ for each metric as our reference resilience score. The national goal was 50% for inspector coverage, 95% for monitoring report submission, and 0% for compliance violations. For each of these three metrics we divided the observed value by its reference score (so that when it equals the reference it receives a perfect score of 1) and averaged them to come up with a resilience score for each state. 
+
+--->
+<!---
+
+- from Court's word doc
+- maybe example of Court's timeline (upcoming)
+--->
 
 </div>
-<p><code>layers</code> folder is where all data layers live, and where the Toolbox pulls a layer out when needed.</p>
-<p><code>layers.csv</code> is a giant spreadsheet that contains information about each layer - which goal it is used for, filename, column names, etc., and it will direct ohicore to appropriate data layers during calculations.</p>
-<p>Let’s first save the layer. You can do that in the prep script. Let’s switch back to the Demo repository, and follow the last section.</p>
-</div>
-<div id="register-data-layers-in-layers.csv" class="section level2">
-<h2><span class="header-section-number">7.5</span> Register data layers in <code>layers.csv</code></h2>
-<p>After we have saved a data layer in <code>layers</code> folder, we will catalogue the layer in <code>layers.csv</code>. `</p>
-<div class="figure">
-<img src="https://docs.google.com/drawings/d/1juueRiA0gevOoHH_8owzLNanyQ-H1mAOEl7L_l5YSJ0/pub?h=600" />
-
-</div>
-<p>If a layer simply has a new filename, only the <em>filename</em> column needs to be updated:</p>
-<p>However, <strong>if a new layer has been added (for example when a new goal model is developed)</strong>, you will open <code>layers.csv</code> in a spreadsheet software (i.e. Microsoft Excel), add a new row in the registry for the new data layer and fill in the first eight columns (columns A-H):</p>
-<ul>
-<li><strong>targets:</strong> Add the goal/dimension that the new data layer relates to. Goals are indicated with two-letter codes and sub-goals are indicated with three-letter codes, with pressures, resilience, and spatial layers indicated separately.</li>
-<li><strong>layer:</strong> Add an identifying name for the new data layer, which will be referenced in R scripts like <code>functions.R</code> and <em>.csv</em> files like <code>pressures_matrix.csv</code> and <code>resilience_matrix.csv</code>.</li>
-<li><strong>name:</strong> Add a longer title for the data layer.</li>
-<li><strong>description:</strong> Add a longer description of the new data layer.</li>
-<li><strong>fld_value:</strong> Add the appropriate units for the new data layer. It is <em>the same as the column name in the data file</em>, which will be referenced in R scripts in subsequent calculations. (example: area_km2)</li>
-<li><strong>units:</strong> Add a description about the <em>units</em> chosen in the <em>fld_value</em> column above. Think about what units you would like to be displayed online when filling out “units.” (example: km^2)</li>
-<li><strong>filename:</strong> Add a filename for the new data layer that matches the name of the <em>.csv</em> file that was created previously in the <code>layers</code> folder.</li>
-<li><strong>fld_id_num:</strong> Area designation that applies to the newly created data layer, such as: <em>rgn_id</em> and <em>fao_id</em>.</li>
-</ul>
-<p>It is important to check that you have filled you the fields correctly, for instance, if “fld_value” does not match the header of the source data layer, you will see an error message when you try to calculate scores. Other columns are generated later by the Toolbox as it confirms data formatting and content.</p>
-<p>Let’s open your layers.csv from your Finder, and we will fill it out together from there:</p>
-<div class="figure">
-<img src="https://docs.google.com/drawings/d/1AYmvy3ZVSW_4jFvuV6FcFCmefEvLDd4XHg9rAuExtD0/pub?w=960&amp;h=720" />
-
-</div>
-<p>This is what the new line should look like:</p>
-<div class="figure">
-<img src="https://docs.google.com/drawings/d/1qjraupQuobcxVolubwqtIzOoqv_ovqO6NYi4O_sT3IE/pub?w=900" />
-
-</div>
-</div>
-<div id="organizing-metadata" class="section level2">
-<h2><span class="header-section-number">7.6</span> Organizing metadata</h2>
-<p>Keeping track of metadata is important as you create these layers. Metadata is information about the data, most importantly, its source. It’s best to provide not only a reference like Feely et al. 2009, but also a url link to where other people could access the data. Other information that can be really useful is the years of data you use, and which goal models the data are used in.</p>
-<p>You can keep track of metadata in whatever way makes most sense to you. Since <code>layers.csv</code> is a file that you will keep updated with every data layer, it can make sense to add information there. You can add as many columns to layers.csv as you’d like. However, this will create a really huge spreadsheet, so maybe you want to keep this information in another place.</p>
-<p>If you’ve been using the Data Planner from Chapter <a href="planner-guide.html#planner-guide">4</a>, that can be a good place to continue keeping track of all the metadata. Or, you could start another spreadsheet.</p>
-<p>It doesn’t matter where or how you keep this information, but be sure that you keep it somewhere, and keep it organized and consistent. You’ll need information for every single layer you include, and it’s easier to do as you go along than all at the end. We recommend copying the structure of <code>layers.csv</code> (if you’re not using <code>layers.csv</code> for metadata) and having at a minimum columns that are for the data name, Toolbox data layer name, description, reference, and url.</p>
-<p>Later on in your assessment, we’ll be able to take information from the columns of your csv and use them for reporting and on your website. An example of this is from the Global assessment: see <a href="http://ohi-science.org/ohi-global/layers" class="uri">http://ohi-science.org/ohi-global/layers</a>.</p>
-</div>
-<div id="data-prep-vs.functions.r" class="section level2">
-<h2><span class="header-section-number">7.7</span> Data prep vs. functions.r</h2>
-<p>Where does one end and the other begin?</p>
-</div>
-<div id="chapter-recap" class="section level2">
-<h2><span class="header-section-number">7.8</span> Chapter Recap:</h2>
-<p>Hooray! You have just learned: how to process data, save, and register a data layer for the OHI Toolbox!</p>
-<ul>
-<li>OHI data layer formatting requirements</li>
-<li>data for each region</li>
-<li>long format</li>
-<li>best to have at least five years of continuous data</li>
-<li>how to process a messy and large raw data layer (secchi depth data for CW goal)</li>
-<li>how to saved and register the prepared data layer</li>
-</ul>
-<p>Now the layer is ready to be used by the toolbox to calculate status and trend scores. We’ll see you at Chapter 6 <a href="calcs-basic.html#calcs-basic">8</a> to learn that!</p>
-
 </div>
 </div>
             </section>
@@ -396,8 +339,8 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
           </div>
         </div>
       </div>
-<a href="toolbox-ecosystem.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="calcs-basic.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="intro.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="planner-guide.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

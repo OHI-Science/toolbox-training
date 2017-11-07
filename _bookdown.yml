@@ -4,13 +4,14 @@ language:
     chapter_name: "Chapter "
 rmd_files: [
   "index.Rmd", 
-  "introduction.Rmd", 
+  "introduction.Rmd",
+  "gathering_data.Rmd",
   "planner_guide.Rmd",
   "data_science_workflow.Rmd", 
   "toolbox_ecosystem.Rmd", 
   "preparing_data.Rmd", 
   "calculations_basic_workflow.Rmd",
-  # calculations_pressures_resilience.Rmd ## make this
+  # calculations_pressures_resilience.Rmd ## make this, link to gathering_data
   "calculations_advanced_workflow.Rmd", 
   #"troubleshooting.Rmd",
   "reporting.Rmd", # write this, maybe broader comm/reporting/figs?

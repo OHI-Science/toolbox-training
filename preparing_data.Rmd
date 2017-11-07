@@ -137,6 +137,9 @@ It doesn't matter where or how you keep this information, but be sure that you k
 
 Later on in your assessment, we'll be able to take information from the columns of your csv and use them for reporting and on your website. An example of this is from the Global assessment: see http://ohi-science.org/ohi-global/layers. 
 
+## Data prep vs. functions.r
+Where does one end and the other begin?
+
 ## Chapter Recap: 
 
 Hooray! You have just learned: how to process data, save, and register a data layer for the OHI Toolbox! 
