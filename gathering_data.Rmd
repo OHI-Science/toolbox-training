@@ -2,11 +2,42 @@
 
 **in development**
 
-This chapter will help you think about what data to include in your assessment. You should use previous assessments as guidance, but not be constrained 
+This chapter will help you think about what to include in your assessment, and what data to look for. You should use previous assessments as guidance, but not be constrained by them. You'll need to think about the priorities and characteristics for your assessment, and how to represent them within the OHI framework.  
 
-you should look for and how you can organize it as you look. We have developed a OHI Planner to guide you through this important, yet sometimes daunting, process of data selection and model exploration. 
+## Overview and Resources
+
+There is a lot of planning and decision-making involved in an OHI assessment. To help you along, we try to provide as much guidance, code, and as many examples as possible. Here are some places to look for help as you go: 
+
+**publications:**
+
+- [Best practices for assessing ocean health in multiple contexts using tailorable frameworks](https://peerj.com/articles/1503/)
+- [Sea sick? Setting targets to assess ocean health and ecosystem services](http://onlinelibrary.wiley.com/doi/10.1890/ES11-00366.1/abstract)
+
+**ohi-science.org blogs:**
+
+- [How to get help when conducting an OHI+ assessment](http://ohi-science.org/news/how-to-use-ohi-resources)
+- [New goals page compares different modeling approaches](http://ohi-science.org/news/new-goals-guide-page)
+
+This cartoon represents the four key points in the Best Practices publication ([Lowndes et al. 2015](https://peerj.com/articles/1503/)). Right now you'll be focusing on this first one, which is closely related to the second. 
+
+![](https://docs.google.com/drawings/d/1dUFAOVa2JfbKHyaq98yDYdtcDuEPyr10uNB_auz_Pdc/pub?h=500)
+
+## Where to start
+
+We recommend starting with goals: how will you model status and trend? Status alone accounts for most of a goal's score. 
+
+![](https://docs.google.com/drawings/d/1O08iEoo3qxOZRoK6Ohv-jdouTBsN_kafJjIhEEqb-yg/pub?w=960&h=720)
+
+You will need to plan conceptually, but ground your planning in what data are really available to use in your assessment. When you're ready, you will prepare data and goal status and trend models as the "tailored" portion of your assessment, and use our `ohicore` R package for the final calculations. 
+
+![](https://docs.google.com/drawings/d/e/2PACX-1vSsV1sJgpZKCQTnNrPKofXHhYAGah49iD_Muh360Z0wFDcJnY8X7XcBJkeyz7zjRX16SweUO4h87rJG/pub?w=624&h=480)
 
 <!---
+
+ADD PIE CHART
+
+BRIDGING CONCEPTUAL TO DATA
+
 ## OHI Framework
 
 <!---lifted from http://ohi-science.org/manual/#incorporate-core-values-and-characteristics-into-the-ohi-assessment-framework-before-gathering-information --->
@@ -20,7 +51,11 @@ The OHI framework should guide your assessment, but you should not be constraine
 
 ## Goals: modeling status and trend
 
+Start with the ten goals in the global assessment; are they relevant? 
+
 See http://ohi-science.org/goals for details about what each goal represents, as well as examples from how goals were modeled in previous assessments. 
+
+Use the Planner Guide (Chapter \@ref(planner-guide)) to help you think through and organize your thoughts and data.
 
 <!---## Pressures --->
 
