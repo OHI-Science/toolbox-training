@@ -2,7 +2,7 @@
 
 **in development**
 
-This chapter will help you think about what to include in your assessment, and what data to look for. You should use previous assessments as guidance, but not be constrained by them. You'll need to think about the priorities and characteristics for your assessment, and how to represent them within the OHI framework.  
+This chapter will help you think about what to include in your assessment, and what data to look for. You should use previous assessments as guidance, but not be constrained by them. You'll need to think about the priorities and characteristics for your assessment, and how to represent them within the OHI framework. The following chapter ((Chapter \@ref(planner-guide))) will introduce you to the Planner Guide spreadsheet to help organize your ideas collaboratively with your team.
 
 ## Overview and Resources
 
@@ -18,7 +18,7 @@ There is a lot of planning and decision-making involved in an OHI assessment. To
 - [How to get help when conducting an OHI+ assessment](http://ohi-science.org/news/how-to-use-ohi-resources)
 - [New goals page compares different modeling approaches](http://ohi-science.org/news/new-goals-guide-page)
 
-This cartoon represents the four key points in the Best Practices publication ([Lowndes et al. 2015](https://peerj.com/articles/1503/)). Right now you'll be focusing on this first one, which is closely related to the second. 
+This cartoon represents the four key points in the Best Practices publication ([Lowndes et al. 2015](https://peerj.com/articles/1503/)). You'll start by **building the conceptual framework** for your assessment, and then **remaining true to that framework** as you gather data and develop goal status models that could represent ocean health for your assessment. You will also need to **define spatial boundaries** along the way, because you will need to gather data at that spatial scale. **Documenting and sharing the process** is also critical, so that you remember what you did and why you did, your team remembers what they did and why they did it, people outside your team understand what you did and why you did it, and when your assessment is repeated in the future to track changes in ocean health, others can repeat your assessment and build from it. The Toolbox will help you organize and communicate these details, and all the code you write can be rerun 
 
 ![](https://docs.google.com/drawings/d/1dUFAOVa2JfbKHyaq98yDYdtcDuEPyr10uNB_auz_Pdc/pub?h=500)
 
