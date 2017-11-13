@@ -19,7 +19,7 @@ In this chapter, we will go through the basic requirements and steps of preparin
 - try a hands-on tutorial in which you can use sample data to format and save
 - register a data layer
 
-_**Prerequisites**_
+### Prerequisites
 
 Before the training starts, please make sure you have done the following: 
 
@@ -28,7 +28,7 @@ Before the training starts, please make sure you have done the following:
     - http://www.rstudio.com/download 
     - http://happygitwithr.com/rstudio-git-github.html 
     
-1. Fork the **toolbox-demo** repository into your own GitHub account by going to https://github.com/OHI-Science/toolbox-demo, clicking "Fork" in the upper right corner, and selecting your account. 
+1. Fork the **toolbox-demo** repository into your own GitHub account by going to https://github.com/OHI-Science/toolbox-demo, clicking "Fork" in the upper right corner, and selecting your account. Note: if you already have an OHI+ repository of your own, you can use it instead. All of the file names and architecture is the same.
 
 1. Clone the **toolbox-demo** repo from your GitHub account into RStudio into a folder called "github" in your home directory (filepath "~/github"). **Note**: If you've already forked and cloned the demo, you can instead pull from your computer to make sure you have the most recent versions of all the files. 
 
