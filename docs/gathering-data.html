@@ -25,15 +25,15 @@
 <meta name="author" content="Ocean Health Index Team">
 
 
-<meta name="date" content="2017-12-12">
+<meta name="date" content="2017-12-13">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   
   
-<link rel="prev" href="calcs-basic.html">
-<link rel="next" href="reporting.html">
+<link rel="prev" href="intro.html">
+<link rel="next" href="planner-guide.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -149,7 +149,9 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="7" data-path="prep-data.html"><a href="prep-data.html"><i class="fa fa-check"></i><b>7</b> Preparing data: Basic</a><ul>
-<li class="chapter" data-level="7.1" data-path="prep-data.html"><a href="prep-data.html#overview-3"><i class="fa fa-check"></i><b>7.1</b> Overview</a></li>
+<li class="chapter" data-level="7.1" data-path="prep-data.html"><a href="prep-data.html#overview-3"><i class="fa fa-check"></i><b>7.1</b> Overview</a><ul>
+<li class="chapter" data-level="7.1.1" data-path="prep-data.html"><a href="prep-data.html#prerequisites-2"><i class="fa fa-check"></i><b>7.1.1</b> Prerequisites</a></li>
+</ul></li>
 <li class="chapter" data-level="7.2" data-path="prep-data.html"><a href="prep-data.html#data-formatting-requirements"><i class="fa fa-check"></i><b>7.2</b> Data Formatting requirements</a></li>
 <li class="chapter" data-level="7.3" data-path="prep-data.html"><a href="prep-data.html#data-wrangling"><i class="fa fa-check"></i><b>7.3</b> Data Wrangling</a></li>
 <li class="chapter" data-level="7.4" data-path="prep-data.html"><a href="prep-data.html#save-and-register-data-layers"><i class="fa fa-check"></i><b>7.4</b> Save and register data layers</a></li>
@@ -160,7 +162,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </ul></li>
 <li class="chapter" data-level="8" data-path="calcs-basic.html"><a href="calcs-basic.html"><i class="fa fa-check"></i><b>8</b> Calculations: basic workflow</a><ul>
 <li class="chapter" data-level="8.1" data-path="calcs-basic.html"><a href="calcs-basic.html#overview-4"><i class="fa fa-check"></i><b>8.1</b> Overview</a><ul>
-<li class="chapter" data-level="8.1.1" data-path="calcs-basic.html"><a href="calcs-basic.html#prerequisites-2"><i class="fa fa-check"></i><b>8.1.1</b> Prerequisites</a></li>
+<li class="chapter" data-level="8.1.1" data-path="calcs-basic.html"><a href="calcs-basic.html#prerequisites-3"><i class="fa fa-check"></i><b>8.1.1</b> Prerequisites</a></li>
 </ul></li>
 <li class="chapter" data-level="8.2" data-path="calcs-basic.html"><a href="calcs-basic.html#review-the-toolbox-file-ecosystem"><i class="fa fa-check"></i><b>8.2</b> Review the Toolbox file ecosystem</a><ul>
 <li class="chapter" data-level="8.2.1" data-path="calcs-basic.html"><a href="calcs-basic.html#run-install_ohicore.r"><i class="fa fa-check"></i><b>8.2.1</b> Run <code>install_ohicore.r</code></a></li>
@@ -213,7 +215,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </ul></li>
 <li class="chapter" data-level="9" data-path="calcs-advanced.html"><a href="calcs-advanced.html"><i class="fa fa-check"></i><b>9</b> Calculations: advanced workflow</a><ul>
 <li class="chapter" data-level="9.1" data-path="calcs-advanced.html"><a href="calcs-advanced.html#overview-5"><i class="fa fa-check"></i><b>9.1</b> Overview</a><ul>
-<li class="chapter" data-level="9.1.1" data-path="calcs-advanced.html"><a href="calcs-advanced.html#prerequisites-3"><i class="fa fa-check"></i><b>9.1.1</b> Prerequisites</a></li>
+<li class="chapter" data-level="9.1.1" data-path="calcs-advanced.html"><a href="calcs-advanced.html#prerequisites-4"><i class="fa fa-check"></i><b>9.1.1</b> Prerequisites</a></li>
 </ul></li>
 <li class="chapter" data-level="9.2" data-path="calcs-advanced.html"><a href="calcs-advanced.html#explore-goals.csv"><i class="fa fa-check"></i><b>9.2</b> Explore goals.csv</a></li>
 <li class="chapter" data-level="9.3" data-path="calcs-advanced.html"><a href="calcs-advanced.html#round-1-poke-at-it-to-see-how-it-works"><i class="fa fa-check"></i><b>9.3</b> Round 1: Poke at it to see how it works</a><ul>
@@ -256,142 +258,125 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="calcs-advanced" class="section level1">
-<h1><span class="header-section-number">Chapter 9</span> Calculations: advanced workflow</h1>
-<p><strong>In development.</strong></p>
-<p>The purpose of Chapter <a href="calcs-advanced.html#calcs-advanced">9</a> is to build off the basic workflow for calculating OHI scores and do a few more advanced things. This is a a 2-hour hands-on training: you will be following along on your own computer and working with a copy of the demonstration repository that is used throughout the this chapter.</p>
-<div id="overview-5" class="section level2">
-<h2><span class="header-section-number">9.1</span> Overview</h2>
-<p>TODO: Recurring theme here: what goals are included in my assessment?</p>
-<p>Worth noting too that we’ll be improving goals.csv operates because there are some inefficiencies/things that are a bit error prone…</p>
-<p>Good practice to run <code>calculate_scores.r</code> and use Git window to check your work.</p>
-<p>TODO: add commits, sync to this. we’ll also be reverting a lot as we test things.</p>
-<div id="prerequisites-3" class="section level3">
-<h3><span class="header-section-number">9.1.1</span> Prerequisites</h3>
-<p>Before the training, please make sure you have done the following:</p>
-<ol style="list-style-type: decimal">
-<li>Have up-to-date versions of <code>R</code> and RStudio and have RStudio configured with Git/GitHub <!--- TODO (Chapter \@ref(datascience))--->
+<div id="gathering-data" class="section level1">
+<h1><span class="header-section-number">Chapter 3</span> Planning and Gathering Data</h1>
+<p><strong>in development</strong></p>
+<p>This chapter will help you think about what to include in your assessment, and what data to look for. You should use previous assessments as guidance, but not be constrained by them. You’ll need to think about the priorities and characteristics for your assessment, and how to represent them within the OHI framework. The following chapter ((Chapter <a href="planner-guide.html#planner-guide">4</a>)) will introduce you to the Planner Guide spreadsheet to help organize your ideas collaboratively with your team.</p>
+<div id="overview-and-resources" class="section level2">
+<h2><span class="header-section-number">3.1</span> Overview and Resources</h2>
+<p>There is a lot of planning and decision-making involved in an OHI assessment. To help you along, we try to provide as much guidance, code, and as many examples as possible. Here are some places to look for help as you go:</p>
+<p><strong>publications:</strong></p>
 <ul>
-<li><a href="https://cloud.r-project.org" class="uri">https://cloud.r-project.org</a></li>
-<li><a href="http://www.rstudio.com/download" class="uri">http://www.rstudio.com/download</a></li>
-<li><a href="http://happygitwithr.com/rstudio-git-github.html" class="uri">http://happygitwithr.com/rstudio-git-github.html</a></li>
-</ul></li>
-<li>Fork the <strong>toolbox-demo</strong> repository into your own GitHub account by going to <a href="https://github.com/OHI-Science/toolbox-demo" class="uri">https://github.com/OHI-Science/toolbox-demo</a>, clicking “Fork” in the upper right corner, and selecting your account</li>
-<li>Clone the <strong>toolbox-demo</strong> repo from your GitHub account into RStudio into a folder called “github” in your home directory (filepath “~/github”)</li>
-<li>Get comfortable: be set up with two screens if possible. You will be following along in RStudio on your own computer while also watching an instructor’s screen or following this tutorial.</li>
-</ol>
-<p>Additionally, this chapter assumes you are familiar with content from Chapter <a href="calcs-basic.html#calcs-basic">8</a>, so review that first if needed.</p>
-<hr />
-</div>
-</div>
-<div id="explore-goals.csv" class="section level2">
-<h2><span class="header-section-number">9.2</span> Explore goals.csv</h2>
-<p>This is the registry for goals. <code>ohicore</code> will use this list and make sure there are functions with the same names in <code>functions.r</code>. This is one of the things that does on in <code>Conf()</code>…</p>
-<p>Let’s open and inspect it</p>
-<ul>
-<li>in excel</li>
-<li>focus on a few columns (see ecosystem for more)</li>
-<li>note “goal” and “parent”</li>
+<li><a href="https://peerj.com/articles/1503/">Best practices for assessing ocean health in multiple contexts using tailorable frameworks</a></li>
+<li><a href="http://onlinelibrary.wiley.com/doi/10.1890/ES11-00366.1/abstract">Sea sick? Setting targets to assess ocean health and ecosystem services</a></li>
 </ul>
-<p>This is where it happens:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">conf =<span class="st"> </span>ohicore<span class="op">::</span><span class="kw">Conf</span>(<span class="st">&#39;conf&#39;</span>)</code></pre></div>
-<!--- TODO ohicore: Conf() should check that all entries in goals.csv are present in functions.r, but it doesn't. 
+<p><strong>ohi-science.org blogs:</strong></p>
+<ul>
+<li><a href="http://ohi-science.org/news/how-to-use-ohi-resources">How to get help when conducting an OHI+ assessment</a></li>
+<li><a href="http://ohi-science.org/news/new-goals-guide-page">New goals page compares different modeling approaches</a></li>
+</ul>
+<p>This cartoon represents the four key points in the Best Practices publication (<a href="https://peerj.com/articles/1503/">Lowndes et al. 2015</a>). You’ll start by <strong>building the conceptual framework</strong> for your assessment, and then <strong>remaining true to that framework</strong> as you gather data and develop goal status models that could represent ocean health for your assessment. You will also need to <strong>define spatial boundaries</strong> along the way, because you will need to gather data at that spatial scale. <strong>Documenting and sharing the process</strong> is also critical, so that you remember what you did and why you did, your team remembers what they did and why they did it, people outside your team understand what you did and why you did it, and when your assessment is repeated in the future to track changes in ocean health, others can repeat your assessment and build from it. The Toolbox will help you organize and communicate these details, and all the code you write can be rerun</p>
+<div class="figure">
+<img src="https://docs.google.com/drawings/d/1dUFAOVa2JfbKHyaq98yDYdtcDuEPyr10uNB_auz_Pdc/pub?h=500" />
+
+</div>
+</div>
+<div id="where-to-start" class="section level2">
+<h2><span class="header-section-number">3.2</span> Where to start</h2>
+<p>We recommend starting with goals: how will you model status and trend? Status alone accounts for most of a goal’s score.</p>
+<div class="figure">
+<img src="https://docs.google.com/drawings/d/1O08iEoo3qxOZRoK6Ohv-jdouTBsN_kafJjIhEEqb-yg/pub?w=960&amp;h=720" />
+
+</div>
+<p>You will need to plan conceptually, but ground your planning in what data are really available to use in your assessment. When you’re ready, you will prepare data and goal status and trend models as the “tailored” portion of your assessment, and use our <code>ohicore</code> R package for the final calculations.</p>
+<div class="figure">
+<img src="https://docs.google.com/drawings/d/e/2PACX-1vSsV1sJgpZKCQTnNrPKofXHhYAGah49iD_Muh360Z0wFDcJnY8X7XcBJkeyz7zjRX16SweUO4h87rJG/pub?w=624&amp;h=480" />
+
+</div>
+<!---
+
+ADD PIE CHART
+
+BRIDGING CONCEPTUAL TO DATA
+
+## OHI Framework
+
+<!---lifted from http://ohi-science.org/manual/#incorporate-core-values-and-characteristics-into-the-ohi-assessment-framework-before-gathering-information --->
+<!---
+Begin your assessment by identifying local socio-cultural-economic characteristics and priorities related to ocean health, and how they would ideally be captured with the existing or modified OHI framework. This means understanding the rationale behind the components of the OHI framework and identifying what must be added or removed or redefined to ensure that it best represents the local context. Are all goals relevant to your study area? What should be added, removed, or redefined? In this process it is important to identify not only characteristics that could be included in goal models, but also the important stressors (pressures) and resilience elements within the study area. What are the key issues that should be included for your assessment to be credible, useful, and meaningful? How do people typically relate to the ocean in your area in terms of social and cultural patterns? These are the kinds of questions you should consider prior to assembling the available information.
+
+The OHI framework should guide your assessment, but you should not be constrained by it. If a goal is not relevant, it should be removed. If there are elements important to your study area that are not present within the existing framework, how could they be included? Having a clear picture of how the framework should be restructured and what the assessment should include is very important before moving on to assemble information, because otherwise the assessment could be biased by what information is available instead of what is important to include. When specific information is limited there are ways to capture them with indirect measures.
+
 --->
 </div>
-<div id="round-1-poke-at-it-to-see-how-it-works" class="section level2">
-<h2><span class="header-section-number">9.3</span> Round 1: Poke at it to see how it works</h2>
-<p>The Toolbox won’t always give errors when you start changing things (work in progress), so let’s just see what some of these things look like. This is when using the Git tab to help you keep track of how things work REALLY helps.</p>
-<p>We’ll try it from registry -&gt; functions.r and then from functions.r -&gt; registry (goals.csv)</p>
-<div id="delete-a-goal-cell-in-goals.csv" class="section level3">
-<h3><span class="header-section-number">9.3.1</span> Delete a goal cell in goals.csv</h3>
-<p>Eg delete “LSP”</p>
-<p>run <code>calculate_scores.r</code> what changed?</p>
-<div class="figure">
-<img src="https://docs.google.com/drawings/d/19e7TVvpjUql46afZ38fXfkeKQ5sIkxXSnRIbJjxBzkk/pub?w=960&amp;h=528" />
-
+<div id="goals-modeling-status-and-trend" class="section level2">
+<h2><span class="header-section-number">3.3</span> Goals: modeling status and trend</h2>
+<p>Start with the ten goals in the global assessment; are they relevant?</p>
+<p>See <a href="http://ohi-science.org/goals" class="uri">http://ohi-science.org/goals</a> for details about what each goal represents, as well as examples from how goals were modeled in previous assessments.</p>
+<p>Use the Planner Guide (Chapter <a href="planner-guide.html#planner-guide">4</a>) to help you think through and organize your thoughts and data.</p>
+<!---## Pressures --->
 </div>
-</div>
-<div id="remove-a-goal-whole-row-in-goals.csv" class="section level3">
-<h3><span class="header-section-number">9.3.2</span> Remove a goal (whole row) in goals.csv</h3>
-<p>Here we see “Index” scores change, “SP” scores change, and “LSP” scores get deleted.</p>
-<p>TODO: for both a goal and subgoal</p>
-</div>
-</div>
-<div id="round-2-break-it-to-see-how-it-works" class="section level2">
-<h2><span class="header-section-number">9.4</span> Round 2: Break it to see how it works</h2>
-<div id="change-preindex_function-goals.csv" class="section level3">
-<h3><span class="header-section-number">9.4.1</span> Change <code>preindex_function</code> goals.csv</h3>
-<p>it’s the preindex_function column that is critical for the functions. Let’s add a typo there.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Calculating Status and Trend for each region for HAB...</span>
-<span class="co"># Error in eval(expr, envir, enclos) : could not find function &quot;HA&quot;</span></code></pre></div>
-</div>
-<div id="add-a-new-goal-in-goals.csv" class="section level3">
-<h3><span class="header-section-number">9.4.2</span> Add a new goal in goals.csv</h3>
-<p>Just copy-paste.</p>
-<p>What do you think will happen? what’s the most important column? That’s right, <code>preindex_function</code>.</p>
-<div class="figure">
-<img src="https://docs.google.com/drawings/d/1yHSVfXvNu5hSTEa12uSD7mGQAUNDBSsgkaKYj01nEYc/pub?w=960&amp;h=192" />
-
-</div>
-<p>This will fail at the scores calculation.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">scores =<span class="st"> </span>ohicore<span class="op">::</span><span class="kw">CalculateAll</span>(conf, layers)
-<span class="co"># Running Setup()...</span>
-<span class="co"># Calculating Status and Trend for each region for FIS...</span>
-<span class="co"># ...</span>
-<span class="co"># ...</span>
-<span class="co"># Calculating Status and Trend for each region for SPP...</span>
-<span class="co"># Calculating Status and Trend for each region for EX...</span>
-<span class="co"># Error in eval(expr, envir, enclos) : could not find function &quot;EX&quot;</span>
-<span class="kw">write.csv</span>(scores, <span class="st">&#39;scores.csv&#39;</span>, <span class="dt">na=</span><span class="st">&#39;&#39;</span>, <span class="dt">row.names=</span>F)
-<span class="co"># Error in is.data.frame(x) : object &#39;scores&#39; not found</span></code></pre></div>
-</div>
-<div id="delete-a-goal-model-from-functions.r" class="section level3">
-<h3><span class="header-section-number">9.4.3</span> Delete a goal model from <code>functions.r</code></h3>
-<p>won’t fail at Conf, but will at scores calc.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Calculating Status and Trend for each region for AO...</span>
-<span class="co"># Error in eval(expr, envir, enclos) : could not find function &quot;AO&quot;</span>
-<span class="co"># ...</span>
-<span class="kw">write.csv</span>(scores, <span class="st">&#39;scores.csv&#39;</span>, <span class="dt">na=</span><span class="st">&#39;&#39;</span>, <span class="dt">row.names=</span>F)
-<span class="co"># Error in is.data.frame(x) : object &#39;scores&#39; not found</span></code></pre></div>
-</div>
-</div>
-<div id="adding-a-new-goal" class="section level2">
-<h2><span class="header-section-number">9.5</span> Adding a new goal</h2>
-<p>this is how to do it right. Need to add the row in goals.csv and the function in functions.r</p>
-</div>
-<div id="adding-subgoals" class="section level2">
-<h2><span class="header-section-number">9.6</span> Adding subgoals</h2>
-</div>
-<div id="modifying-subgoals" class="section level2">
-<h2><span class="header-section-number">9.7</span> Modifying subgoals</h2>
-<p>TODO: how is this different than above?</p>
-</div>
-<div id="chapter-recap-3" class="section level2">
-<h2><span class="header-section-number">9.8</span> Chapter recap</h2>
+<div id="resilience" class="section level2">
+<h2><span class="header-section-number">3.4</span> Resilience</h2>
+<p>In the OHI, we think about resilience as <strong>the social, institutional, and ecological factors that positively affect the ability of a goal to be delivered to people.</strong></p>
+<p>To think about resilience, you will need to spend time exploring governance actions that have occurred within your assessment area (or at an even larger spatial scale, ex: nationally) that directly affected ocean policy and/or specific ocean pressures in your assessment area. The majority of the work will be looking up what legislation exists, how well it addresses specific ocean pressures, when it was introduced, and detailing the changes. This may also include gathering reports that document enforcement and compliance with key regulations or effectiveness metrics through time and space. Oftentimes, reports may be qualitative, which means there are no data. This means you may need to translate written reports into quantitative metrics, which you can do with your team and through discussions with local experts.</p>
+<div id="types-of-resilience" class="section level3">
+<h3><span class="header-section-number">3.4.1</span> Types of Resilience</h3>
+<p>Similar to pressures, resilience will ultimately be included in an OHI assessment through the OHI Toolbox by having a data layer for each resilience measure, with information for each region within the study area.</p>
+<p>Ideally, each pressure measured in the OHI should have a corresponding resilience measure, which is meant to ‘balance’ the pressures that negatively affect ocean health. The Ocean Health Index considers resilience in three categories:</p>
+<ol style="list-style-type: decimal">
+<li>ecological integrity</li>
+<li>pressure-specific regulations aimed at addressing ecological pressures</li>
+<li>social integrity</li>
+</ol>
+<p>The first two measures address ecological resilience while the third addresses social resilience. Ideally, for any resilience measure, you would have three tiers of information:</p>
 <ul>
-<li>goals.csv, adding goals, removing, changing subgoals. trend years.</li>
+<li><strong>Existence of regulations</strong>: Are regulations in place to appropriately address the ecological pressure?</li>
+<li><strong>Implementation and enforcement</strong>: Have these regulations been appropriately implemented and are there enforcement mechanisms in place?</li>
+<li><strong>Effectiveness and compliance</strong>: How effective have the regulations been at mitigating these pressures and is there compliance with these regulations?</li>
 </ul>
+<div id="ecological-integrity" class="section level4">
+<h4><span class="header-section-number">3.4.1.1</span> Ecological integrity</h4>
+<p>Ecological integrity is about general resilience within the ecosystem. You will be looking for the qualities that make an ecosystem strong to anything that could happen to it. If your ecosystem was affected by something, how easily could it bounce back to anything?</p>
 </div>
-<div id="changing-subgoals" class="section level2">
-<h2><span class="header-section-number">9.9</span> Changing subgoals</h2>
-<div id="update-goal-call-in-goals.csv" class="section level3">
-<h3><span class="header-section-number">9.9.1</span> Update goal call in <code>goals.csv</code></h3>
-<!---TODISCUSS: maybe this detail should go somewhere else and then just referenced here? Because will also need this information referenced in the ## Removing Goals and ## Changing Subgoals sections --->
-<!--- NOTE: this is where we'll talk about adding/removing goals/subgoals, and goals.csv. First will talk to Mel about goals.csv's future: maybe having them just written in functions.r, and have ohicore pull from that to make a full list --->
+<div id="pressure-specific-regulations" class="section level4">
+<h4><span class="header-section-number">3.4.1.2</span> Pressure-specific regulations</h4>
+<p>Pressure-specific regulations are intended to address ecological pressures, and are measured as laws, regulations.</p>
+</div>
+<div id="social-integrity" class="section level4">
+<h4><span class="header-section-number">3.4.1.3</span> Social integrity</h4>
+<p>Social integrity is about general resilience within the society You will be looking for the qualities that make a society strong to anything that could happen to it. So any metric of how stable a society is goes here. If your society got hit with something, how easily could it bounce back to anything?</p>
+</div>
+</div>
+<div id="how-to-begin" class="section level3">
+<h3><span class="header-section-number">3.4.2</span> How to begin</h3>
+<p>When you begin thinking about potential resilience metrics, you also need to think about whether data may be available. A good place to start is to see what data were used for other assessments, and see if you have better data in your region. For example, for social integrity the OHI Global assessment uses the World Bank’s <a href="https://data.worldbank.org/data-catalog/worldwide-governance-indicators">World Governanace Indicators</a>, do you have something better within your assessment area? In the US West Coast Assessment Like USWC did (and in BC Canada well-being).</p>
 <!---
-`goals.csv` in the `conf` folder provides input information for `functions.r`, particularly about function calls. These are indicated by two columns: *preindex_function* (functions for all goals that do not have sub-goals, and functions for all sub-goals) and *postindex_function* (functions for goals with sub-goals).
+- from Court's word doc
+- full table (screenshots, with also link to Googledoc would be better) - useful outside ohi as governance; systematic way to think about governance, how it should function
+- How does Ning's Planner fit in (https://docs.google.com/spreadsheets/d/1597DGext2lK4Z4HvEDLrcccbbM5NLsXv213RgaXxLuA/edit#gid=1802082146)
+--->
+<p>When beginning a search for resilience metrics to counteract pressures to your system, there are three levels of questions you can ask yourself to begin to get to the heart of if regulations exist that address these pressures and how effective the implementation, enforcement, and compliance with these regulations is:</p>
+<ol style="list-style-type: decimal">
+<li>Does a regulation exist that appropriately addresses a specific pressure?</li>
+<li>Is the regulation being appropriately complied with?</li>
+<li>Are there mechanisms in place supporting enforcement of the regulation?</li>
+</ol>
+<p><a href="https://docs.google.com/spreadsheets/d/17nR-8vgD9JqWGCaQNjz4B36iOmMKUWYuNiPKKb_ht0M/edit?usp=sharing">Here</a> are some specific questions you can begin to ask yourself when thinking about how to counter specific pressures (Pressure-specific regulations). In this spreadsheet we organize these questions around the pressures used in Global assessments, but these questions can be tailored to any number of pressures or groups of pressures depending on what is included in your own regional assessment.</p>
+<!---
+## Examples 
 
-In the `preindex_fuction`, you could specify variables such as _status_year_ and _trend_year_, which you can call in your goal function. Note that it is not necessary to specify those variables. If you do not use them in your function as in the CS example, you could delete those variables in `preindex_function`.
+Examples of how the US West Coast OHI assessment produced Resilience scores using the best available data: 
 
+US West Coast Clean Water Enforcement and Regulation-
+Where used: Resilience measure to address water pollution pressure
+Description: The Clean Water Enforcement and Regulation resilience measure is a composite measure of 3 different enforcement and compliance metrics utilized by the US EPA National Pollutant Discharge Elimination System (NPDES) permit program, which acts to control water pollution by regulating point sources that discharge pollutants into US waters. Yearly metrics measuring the percentage of inspector coverage at NPDES major facilities, the ratio of actual to expected discharge monitoring report submissions, and the percentage of discharge facilities with compliance violations were obtained from the US EPA Enforcement & Compliance History Online (ECHO) database (https://echo.epa.gov/ ) for California, Oregon and Washington. These values are reported on a 0-100% scale. We used the EPA established ‘National Goals’ for each metric as our reference resilience score. The national goal was 50% for inspector coverage, 95% for monitoring report submission, and 0% for compliance violations. For each of these three metrics we divided the observed value by its reference score (so that when it equals the reference it receives a perfect score of 1) and averaged them to come up with a resilience score for each state. 
 
-_Changing goal weights will be done here by editing the value in the *weight* column. Weights do not need to be 0-1 or add up to 10; weights will be scaled as a proportion of the number of goals assessed. The ten goals are weighted equally by default._
+--->
+<!---
 
-
-![](https://docs.google.com/drawings/d/17BgYSw2sHbZvHNjUqBlTG-kCOAAn7o6a65O37s0S_es/pub?h=500)
-
-![](https://docs.google.com/drawings/d/1o2wtJ9KCPDyGPH9Y4unmALG6BlxX9lmJ_PakDDiQrLo/pub?h=500)
-
-
+- from Court's word doc
+- maybe example of Court's timeline (upcoming)
 --->
 
 </div>
@@ -402,8 +387,8 @@ _Changing goal weights will be done here by editing the value in the *weight* co
           </div>
         </div>
       </div>
-<a href="calcs-basic.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="reporting.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="intro.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="planner-guide.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

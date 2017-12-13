@@ -25,15 +25,15 @@
 <meta name="author" content="Ocean Health Index Team">
 
 
-<meta name="date" content="2017-12-12">
+<meta name="date" content="2017-12-13">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   
   
-<link rel="prev" href="planner-guide.html">
-<link rel="next" href="toolbox-ecosystem.html">
+<link rel="prev" href="index.html">
+<link rel="next" href="gathering-data.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -149,7 +149,9 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="7" data-path="prep-data.html"><a href="prep-data.html"><i class="fa fa-check"></i><b>7</b> Preparing data: Basic</a><ul>
-<li class="chapter" data-level="7.1" data-path="prep-data.html"><a href="prep-data.html#overview-3"><i class="fa fa-check"></i><b>7.1</b> Overview</a></li>
+<li class="chapter" data-level="7.1" data-path="prep-data.html"><a href="prep-data.html#overview-3"><i class="fa fa-check"></i><b>7.1</b> Overview</a><ul>
+<li class="chapter" data-level="7.1.1" data-path="prep-data.html"><a href="prep-data.html#prerequisites-2"><i class="fa fa-check"></i><b>7.1.1</b> Prerequisites</a></li>
+</ul></li>
 <li class="chapter" data-level="7.2" data-path="prep-data.html"><a href="prep-data.html#data-formatting-requirements"><i class="fa fa-check"></i><b>7.2</b> Data Formatting requirements</a></li>
 <li class="chapter" data-level="7.3" data-path="prep-data.html"><a href="prep-data.html#data-wrangling"><i class="fa fa-check"></i><b>7.3</b> Data Wrangling</a></li>
 <li class="chapter" data-level="7.4" data-path="prep-data.html"><a href="prep-data.html#save-and-register-data-layers"><i class="fa fa-check"></i><b>7.4</b> Save and register data layers</a></li>
@@ -160,7 +162,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </ul></li>
 <li class="chapter" data-level="8" data-path="calcs-basic.html"><a href="calcs-basic.html"><i class="fa fa-check"></i><b>8</b> Calculations: basic workflow</a><ul>
 <li class="chapter" data-level="8.1" data-path="calcs-basic.html"><a href="calcs-basic.html#overview-4"><i class="fa fa-check"></i><b>8.1</b> Overview</a><ul>
-<li class="chapter" data-level="8.1.1" data-path="calcs-basic.html"><a href="calcs-basic.html#prerequisites-2"><i class="fa fa-check"></i><b>8.1.1</b> Prerequisites</a></li>
+<li class="chapter" data-level="8.1.1" data-path="calcs-basic.html"><a href="calcs-basic.html#prerequisites-3"><i class="fa fa-check"></i><b>8.1.1</b> Prerequisites</a></li>
 </ul></li>
 <li class="chapter" data-level="8.2" data-path="calcs-basic.html"><a href="calcs-basic.html#review-the-toolbox-file-ecosystem"><i class="fa fa-check"></i><b>8.2</b> Review the Toolbox file ecosystem</a><ul>
 <li class="chapter" data-level="8.2.1" data-path="calcs-basic.html"><a href="calcs-basic.html#run-install_ohicore.r"><i class="fa fa-check"></i><b>8.2.1</b> Run <code>install_ohicore.r</code></a></li>
@@ -213,7 +215,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </ul></li>
 <li class="chapter" data-level="9" data-path="calcs-advanced.html"><a href="calcs-advanced.html"><i class="fa fa-check"></i><b>9</b> Calculations: advanced workflow</a><ul>
 <li class="chapter" data-level="9.1" data-path="calcs-advanced.html"><a href="calcs-advanced.html#overview-5"><i class="fa fa-check"></i><b>9.1</b> Overview</a><ul>
-<li class="chapter" data-level="9.1.1" data-path="calcs-advanced.html"><a href="calcs-advanced.html#prerequisites-3"><i class="fa fa-check"></i><b>9.1.1</b> Prerequisites</a></li>
+<li class="chapter" data-level="9.1.1" data-path="calcs-advanced.html"><a href="calcs-advanced.html#prerequisites-4"><i class="fa fa-check"></i><b>9.1.1</b> Prerequisites</a></li>
 </ul></li>
 <li class="chapter" data-level="9.2" data-path="calcs-advanced.html"><a href="calcs-advanced.html#explore-goals.csv"><i class="fa fa-check"></i><b>9.2</b> Explore goals.csv</a></li>
 <li class="chapter" data-level="9.3" data-path="calcs-advanced.html"><a href="calcs-advanced.html#round-1-poke-at-it-to-see-how-it-works"><i class="fa fa-check"></i><b>9.3</b> Round 1: Poke at it to see how it works</a><ul>
@@ -256,82 +258,93 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="data-science" class="section level1">
-<h1><span class="header-section-number">Chapter 5</span> Open data science</h1>
-<p><strong>This chapter is under development.</strong></p>
-<p><strong>OHI assessments use collaborative open software so that they are transparent and reproducible.</strong><br />
-Openness is an important part of how we work; we describe how and why in Lowndes <em>et al.</em> 2017, <em>Nature Ecology &amp; Evolution:</em> <a href="https://www.nature.com/articles/s41559-017-0160">Our path to better science in less time using open data science tools</a>, and at <a href="http://ohi-science.org/betterscienceinlesstime">ohi-science.org/betterscienceinlesstime</a>.</p>
-<p>The OHI Toolbox depends upon the ‘open data science tools’ R, RStudio, Git, and GitHub. They are free to download and use, they are cross-platform (meaning they work on OSX and Windows), and they can be used to help organize, create, reproduce, and communite collaborative analyses. And that’s what OHI is all about! But something important is that these skills are transferrable; they are not only relevant to OHI but will serve you well for your other projects in the future.</p>
-<div id="rstudio-github-workflow" class="section level2">
-<h2><span class="header-section-number">5.1</span> RStudio-GitHub workflow</h2>
-<p>The OHI Toolbox depends upon R, RStudio, Git, and GitHub and is important for reproduciblity, collaboration, and communication. This book and the <a href="http://ohi-science.org">ohi-science.org</a> website are created using these same tools.</p>
-<p>You’ll get your computer set up with these tools and you will get into a workflow working from RStudio and syncing your work online to GitHub; hence, we call this the RStudio-GitHub workflow.</p>
+<div id="intro" class="section level1">
+<h1><span class="header-section-number">Chapter 2</span> Introduction</h1>
+<div id="overview" class="section level2">
+<h2><span class="header-section-number">2.1</span> Overview</h2>
+<p>The single biggest motivation of the Ocean Health Index is to use science to inform marine management. And not just any science, the best available science, data, methods, and tools. OHI assessments are highly collaboratative, and include information and perspectives from different dicisplines and stakeholders. For OHI assessments to be most efficient and transparent, we emphasize reproducibility and <a href="http://ohi-science.org/news/ohi-and-open-data-science">collaborative open data science tools</a>.</p>
+<p>You are in the <a href="http://ohi-science.org/projects/ohi-process/">Conduct Phase</a> of an OHI assessment, what is involved?</p>
+<p>In the Conduct Phase, you will tailor the conceptual <strong>OHI framework</strong> for your assessment area, and then tailor the <strong>OHI Toolbox</strong> to calculate OHI scores for your assessment area (see figure below).</p>
+<p>The core OHI features for the Framework and the Toolbox to help guide you as you tailor your assessment. This means you’re not starting from scratch; you will build directly off of previous work by the OHI team’s <a href="http://ohi-science.org/ohi-global/">global assessments</a> and by the growing number of independently-led <a href="http://ohi-science.org/projects/ohi-assessments/">OHI+ assessments</a>.</p>
 <div class="figure">
-<img src="https://docs.google.com/drawings/d/1eEb8qlCWY5g0v19xMoW-Jc71cNr4GOacsxUK9FR8si4/pub?w=960&amp;h=480" />
+<img src="https://docs.google.com/drawings/d/e/2PACX-1vRpFXuXcNgxc7Dboxyjv57bEvUL4GaGz78WhAyj7RfcikudoQBiOW7m5XM27BQhKmDpeIoucRY3lexC/pub?w=624&amp;h=480" />
 
 </div>
 </div>
-<div id="how-to-learn" class="section level2">
-<h2><span class="header-section-number">5.2</span> How to learn</h2>
-<p>We are writing training materials for a 2-day intensive workshop to teach R, RStudio, Git, and GitHub so that you are best equipped to practice these skills and start working with the OHI Toolbox.</p>
-<p>Until these materials are finished, please use this 2-day self-paced workshop: <a href="http://jules32.github.io/2016-07-12-Oxford/overview/">Reproducible Science with RStudio and GitHub</a>, which were developed by our team for a Software Carpentry workshop in 2016.</p>
-<p>There are also many resources available online, which we list <a href="http://ohi-science.org/betterscienceinlesstime/resources_and_community.html">here</a>. We highly recommend Hadley Wickham &amp; Garret Grolemund’s <a href="http://r4ds.had.co.nz/">R for Data Science</a> and Jenny Bryan’s <a href="http://happygitwithr.com/">Happy Git with R</a>.</p>
-<!---
-http://happygitwithr.com/troubleshooting.html
-"Push/Pull buttons greyed out in RStudio"
-"I have no idea if my local repo and my remote repo are connected."
+<div id="what-to-expect" class="section level2">
+<h2><span class="header-section-number">2.2</span> What to expect</h2>
+<p>We have developed conceptual guidance and computer software and workflows to streamline your assessment as much as possible. This will let you focus on tailoring the OHI for your assessment.</p>
+<p>We strongly advocate transparency and repeatability throughout your assessment, which is why we emphasize collaborative documentation about all decisions made, and coding using open data science tools.</p>
+<div id="tailor-the-conceptual-framework" class="section level3">
+<h3><span class="header-section-number">2.2.1</span> Tailor the Conceptual Framework</h3>
+<p>You’ll focus first on developing goal status models and gathering appropriate data. This will take ~1/3 of the total time for your assessment, and will involve the whole team. There are a lot of decisions to make about what data to use and how to set reference points. Documenting these decisions are critical.</p>
+<p><strong>Here’s what you will do:</strong></p>
+<ol style="list-style-type: decimal">
+<li>Understand how goal status models work, and what has been done in the past
+<ul>
+<li><a href="http://ohi-science.org/goals/">ohi-science.org/goals</a></li>
+</ul></li>
+<li>Tailor the OHI Framework to your assessment area. This means gathering data and thinking about reference points as you develop goal status models.
+<ul>
+<li>Gather data with the Data Planner: Chapters <a href="gathering-data.html#gathering-data">3</a> and <a href="planner-guide.html#planner-guide">4</a></li>
+</ul></li>
+</ol>
+</div>
+<div id="tailor-the-ohi-toolbox" class="section level3">
+<h3><span class="header-section-number">2.2.2</span> Tailor the OHI Toolbox</h3>
+<p>Next, you’ll use the OHI Toolbox, which means your technical team will be coding in R, RStudio, Git, and GitHub. <strong>It’s important that you have already tailored the conceptual framework and have gathered the data you need before you begin using the Toolbox.</strong></p>
+<div id="learn-the-ohi-workflow" class="section level4">
+<h4><span class="header-section-number">2.2.2.1</span> Learn the OHI workflow</h4>
+<p>To learn the open data science workflow we use and describe in <a href="https://www.nature.com/articles/s41559-017-0160">Lowndes et al. 2017, <em>Nature Ecology &amp; Evolution</em></a>, use our OHI <a href="http://ohi-science.org/data-science-training/">data science training</a>.</p>
+</div>
+<div id="prepare-your-data-layers" class="section level4">
+<h4><span class="header-section-number">2.2.2.2</span> Prepare your data layers</h4>
+<p>This will take another ~1/3 of the total time for your assessment.</p>
+<ol style="list-style-type: decimal">
+<li><a href="http://ohi-science.org/manual/#requesting-your-repositories">Request your starter repo</a></li>
+<li>Prepare Data: Chapter <a href="prep-data.html#prep-data">7</a></li>
+</ol>
+</div>
+<div id="understand-how-the-ohi-toolbox-works" class="section level4">
+<h4><span class="header-section-number">2.2.2.3</span> Understand how the OHI Toolbox works</h4>
+<ol style="list-style-type: decimal">
+<li><a href="http://ohi-science.org/manual/#requesting-your-repositories">Request your full repo</a></li>
+<li><a href="http://ohi-science.org/manual/#full-repository">Learn about the full repo</a></li>
+<li>Learn how the Toolbox works (hands-on): Chapters <a href="toolbox-ecosystem.html#toolbox-ecosystem">6</a>, <a href="calcs-basic.html#calcs-basic">8</a>, <a href="calcs-advanced.html#calcs-advanced">9</a></li>
+</ol>
+</div>
+<div id="tailor-the-ohi-toolboxs-goal-status-models-for-your-assessment." class="section level4">
+<h4><span class="header-section-number">2.2.2.4</span> Tailor the OHI Toolbox’s goal status models for your assessment.</h4>
+<p>This will take the final ~1/3 of the total time for your assessment. The <code>ohicore</code> R package will calculate OHI scores using the information you tailor (status models, and your data for status, trend, pressures, and resilience) and calculate the final scores.</p>
+<ol style="list-style-type: decimal">
+<li><a href="http://ohi-science.org/manual/#modifying-goal-models">Modify goal models</a></li>
+<li><a href="http://ohi-science.org/manual/#modifying-pressures-and-resilience">Modify pressures/resilience</a></li>
+</ol>
+</div>
+</div>
+</div>
+<div id="tools-and-resources" class="section level2">
+<h2><span class="header-section-number">2.3</span> Tools and Resources</h2>
+<p>During your OHI assessment you will mainly use:</p>
+<ul>
+<li><strong>Google Drive folder</strong> to collaborate with your whole team, and document thoughts and decisions about data and status goal models and reference points, etc</li>
+<li><strong>The OHI Toolbox</strong> to organize and prepare data, and tailor goal status models</li>
+</ul>
+<div id="google-drive-folder" class="section level3">
+<h3><span class="header-section-number">2.3.1</span> Google Drive folder</h3>
+<p>In preparation of the Conduct phase of your project or your technical workshop, each OHI+ project is first provided a <a href="link%20to%20folder">Google Drive folder</a>. It contains presentations, workshop agenda, notes, and a OHI+ Planner. All materials are intended to be used during an OHI+ workshop and beyond.</p>
+<p><em>Why Google Drive?</em> OHI is a long-term, highly collaborative process. To make working together with multiple team members effecient, you will use many open-science tools, including Google Drive, Rstudio, and Github. Lets start with collaborating in Google Drive, where all participants can view and edit the same materials, and take notes. The advantage of using a shared Google Drive folder is that all your decision-making and insights are collected here in one place, rahter than in disparate emails or notes, or lost without even being recorded.</p>
+<p>Let’s take a look inside and see how you can best use it.</p>
+<p><em>Presentations and workshop agenda</em> are fairly self-explanatory. They will help you navigate the workshop.</p>
+<p><em>Notes</em> will be used throughout the workshop. Rather than having individual participants taking their own notes and stitching them together later, your could assign a few master notetakers who collaboratively and simultaneously record questions and discussions in this one shared document, while others can focus on the discussion itself. Participants can refer back to these notes at any time online.</p>
+<p><em>OHI+ Data Planner</em> will be used most often during the workshop and after. It is a spreadsheet that organize and explore existing data to suit your Goals, Pressures, and Resilience, and to help you finalize spatial boundaries of your assessment. You’ll learn how to use the Data Planner in Chapter <a href="planner-guide.html#planner-guide">4</a>.</p>
+<p><em>After you have used the Planner to explore data availability and conceptually map out the assessment, you can start using the OHI Toolbox to further prepare the data for calculations. At the start of your conduct phase, you will first get your Starter Repository.</em></p>
+</div>
+<div id="ohi-toolbox" class="section level3">
+<h3><span class="header-section-number">2.3.2</span> OHI Toolbox</h3>
+<p>Read about the OHI Toolbox <a href="http://ohi-science.org/manual/#the-ohi-toolbox">here</a></p>
 
-## How you work
-
-- commit often (i.e. bundled as tasks you complete)
-- use the Git tab to help you check your work -- what files updated, does that make sense?
-
-## How this fits with the OHI workflow
-
-- High-level core v. tailorable (GitHub repo of data and code, you'll operate with an R package ohicore). See our [Best practices publication](https://peerj.com/articles/1503/) for more details (and add images here). 
-- prep and full repos
-
-## Developing these skills {#develop-skills}
-
-2-day self-paced workshop: [Reproducible Science with RStudio and GitHub](http://jules32.github.io/2016-07-12-Oxford/overview/). This is a [Software Carpentry](https://software-carpentry.org/) workshop by our team to help you develop skills with the RStudio/GitHub workflow. Also best done with 2 screens so you can more easily follow along on your own computer. 
-
-## Practice by updating your website
-
-To get more comfortable with the RStudio-GitHub workflow, we'll update your website before diving deeper and learning R. This should already be set-up for you.  
-
-Here is an [2-hour tutorial to get you started making free websites with RStudio’s R Markdown](https://jules32.github.io/rmarkdown-website-tutorial/first_observations.html) made by our team. This will let you practice with a non-OHI website. 
-
-TODO julie: modify for OHI websites
-
-When you're ready to update your own website:  
-
-1. Go to github.com/OHI-Science/your-repo-key and double-check you have the `gh-pages` branch (like the one [here](https://jules32.github.io/rmarkdown-website-tutorial/first_observations.html#the-websites-repo)). You don't need to do any 'forking' like you did in the tutorial. Note: we're not going to talk about github 'forking' or 'branches' just yet, because you don't need to know, but see the end of the chapter for more info. 
-1. Clone your repository to your local computer. 
-1. Do a one-time-only thing to make sure that you have the `gh-pages` branch locally on your computer: Instructions are [here](https://github.com/OHI-Science/ohi-science.github.io/issues/21). You can also navigate here from the [Forum](http://ohi-science.org/resources/forum/).
-1. Change things and see what happens! Try some different things in Markdown, save an image, etc. Also, look exactly at what other OHI+ project websites have done to get inspired and also borrow/modify their code!
-
-- http://ohi-science.org/bhi/ <-> https://github.com/OHI-Science/bhi  
-- http://ohi-science.org/mhi/ <-> https://github.com/OHI-Science/mhi  
-- http://ohi-science.org/ohi-global/ <-> https://github.com/OHI-Science/ohi-global  
-
-
-### Background on branches: master and gh-pages
-
-#### What you need to know 
-
-super powerful; parallel universe workspace. we'll just be taking advantage of the gh-pages, special branch.
-
-#### Setting up
-
-#### Switching branches
-
-- make sure you've committed and pushed before switching (I compulsively pull each time again, just to be sure)
-- if you have scripts open, it may say that they don't exist anymore and would you like to delete them. Say yes. They do exist, just in a different branch
-
-#### Updating content
-
---->
-
+</div>
 </div>
 </div>
             </section>
@@ -339,8 +352,8 @@ super powerful; parallel universe workspace. we'll just be taking advantage of t
           </div>
         </div>
       </div>
-<a href="planner-guide.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="toolbox-ecosystem.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="gathering-data.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
