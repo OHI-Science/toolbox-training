@@ -14,19 +14,16 @@ description: "This is the official Ocean Health Index Toolbox training."
 
 # Welcome {#welcome}
 
+**Welcome. This training program is under active development and testing.**
 
- 
-**OHI assessments use collaborative open software so that they are transparent and reproducible; we call this software the OHI Toolbox.**   
+The single biggest motivation of the Ocean Health Index is to use science to inform marine management. And not just any science, the best available science, data, methods, and tools.
+OHI assessments use collaborative open software so that they are transparent and reproducible; we call this software the OHI Toolbox.
   
 Openness is an important part of how we work; we describe how and why in Lowndes *et al.* 2017, *Nature Ecology & Evolution:* [Our path to better science in less time using open data science tools](https://www.nature.com/articles/s41559-017-0160). 
 
 This book will train you to prepare for and use the OHI Toolbox. It can be used to teach workshops or for self-paced learning.
 
 <br>
-
-***This book is under active development and testing***
-
-
 
 
 <!---
