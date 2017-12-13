@@ -14,6 +14,8 @@ description: "This is the official Ocean Health Index Toolbox training."
 
 # Welcome {#welcome}
 
+TEST
+
 **Welcome. This training program is under active development and testing.**
 
 The single biggest motivation of the Ocean Health Index is to use science to inform marine management. And not just any science, the best available science, data, methods, and tools.

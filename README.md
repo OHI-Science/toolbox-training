@@ -11,7 +11,7 @@ Many thanks to the creators of `bookdown`:
 - Yihui Xie (2016). bookdown: Authoring Books and Technical Documents with R Markdown. R package version 0.3.9.
 - Yihui Xie (2016). bookdown: Authoring Books and Technical Documents with R Markdown. Chapman and Hall/CRC. ISBN 978-1138700109
 
-## Publishing with the `docs` folder
+## Publishing with the `/docs` folder
 
 Here is how to publish this book using the docs/ folder instead of the current [_deploy.r](https://github.com/OHI-Science/toolbox-training/blob/f4f017ff8d2099aa9f0dda03223b945477a778bd/_deploy.r).  
 
@@ -39,6 +39,6 @@ Here is how to publish this book using the docs/ folder instead of the current [
 
 1. Go to your repo > Settings
 1. Scroll down to GitHub Pages
-1. Change "Source" to 
+1. Change "Source" to "master branch /docs folder", click "save"
 
 
