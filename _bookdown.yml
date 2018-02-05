@@ -7,7 +7,7 @@ rmd_files: [
   "introduction.Rmd",
   "gathering_data.Rmd",
   "planner_guide.Rmd",
-  "data_science_workflow.Rmd",
+  "toolbox.Rmd",
   "toolbox_ecosystem.Rmd",
   "preparing_data.Rmd",
   "calculations_basic_workflow.Rmd",

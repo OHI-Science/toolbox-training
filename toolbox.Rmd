@@ -1,10 +1,6 @@
-# Open data science {#data-science}
+# OHI Toolbox {#toolbox}
 
-**This chapter is under development.** 
-
-
-**OHI assessments use collaborative open software so that they are transparent and reproducible.**  
-Openness is an important part of how we work; we describe how and why in Lowndes *et al.* 2017, *Nature Ecology & Evolution:* [Our path to better science in less time using open data science tools](https://www.nature.com/articles/s41559-017-0160), and at [ohi-science.org/betterscienceinlesstime](http://ohi-science.org/betterscienceinlesstime).
+**OHI assessments use our OHI Toolbox software, which helps our work be transparent and reproducible.**  
 
 The OHI Toolbox depends upon the 'open data science tools' R, RStudio, Git, and GitHub. They are free to download and use, they are cross-platform (meaning they work on OSX and Windows), and they can be used to help organize, create, reproduce, and communite collaborative analyses. And that's what OHI is all about! But something important is that these skills are transferrable; they are not only relevant to OHI but will serve you well for your other projects in the future.
  
@@ -20,11 +16,7 @@ You'll get your computer set up with these tools and you will get into a workflo
 
 ## How to learn
 
-We are writing training materials for a 2-day intensive workshop to teach R, RStudio, Git, and GitHub so that you are best equipped to practice these skills and start working with the OHI Toolbox.
-
-Until these materials are finished, please use this 2-day self-paced workshop: [Reproducible Science with RStudio and GitHub](http://jules32.github.io/2016-07-12-Oxford/overview/), which were developed by our team for a Software Carpentry workshop in 2016. 
-
-There are also many resources available online, which we list [here](http://ohi-science.org/betterscienceinlesstime/resources_and_community.html). We highly recommend Hadley Wickham & Garret Grolemund's [R for Data Science](http://r4ds.had.co.nz/) and Jenny Bryan's [Happy Git with R](http://happygitwithr.com/).
+Learning the open data science tools (R, RStudio, Git, and GitHub) required for the Toolbox takes time. We have an [Introduction to open data science](http://ohi-science.org/data-science-training/) training book to teach you the skills you'll need to use the OHI Toolbox. 
 
 <!---
 http://happygitwithr.com/troubleshooting.html

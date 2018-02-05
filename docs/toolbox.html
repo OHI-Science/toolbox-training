@@ -32,8 +32,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   
   
-<link rel="prev" href="calcs-advanced.html">
-<link rel="next" href="updating-your-website.html">
+<link rel="prev" href="planner-guide.html">
+<link rel="next" href="toolbox-ecosystem.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -258,15 +258,76 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="reporting" class="section level1">
-<h1><span class="header-section-number">Chapter 10</span> Reporting</h1>
-<p><strong>This chapter is under development.</strong></p>
-<div id="flower-plots" class="section level2">
-<h2><span class="header-section-number">10.1</span> Flower plots</h2>
-<p>Flower plots draw information from conf/goals.csv.</p>
-<p>Goal labeling for flower plots is set in goals.csv in the <code>name_flower</code> column. Add a carriage return <code>\n</code> between words in goal names to have them display on separate lines in the flower plots.</p>
-<!---TODO: 
-Include stuff about create_layers_rmds etc.
+<div id="toolbox" class="section level1">
+<h1><span class="header-section-number">Chapter 5</span> OHI Toolbox</h1>
+<p><strong>OHI assessments use our OHI Toolbox software, which helps our work be transparent and reproducible.</strong></p>
+<p>The OHI Toolbox depends upon the ‘open data science tools’ R, RStudio, Git, and GitHub. They are free to download and use, they are cross-platform (meaning they work on OSX and Windows), and they can be used to help organize, create, reproduce, and communite collaborative analyses. And that’s what OHI is all about! But something important is that these skills are transferrable; they are not only relevant to OHI but will serve you well for your other projects in the future.</p>
+<div id="rstudio-github-workflow" class="section level2">
+<h2><span class="header-section-number">5.1</span> RStudio-GitHub workflow</h2>
+<p>The OHI Toolbox depends upon R, RStudio, Git, and GitHub and is important for reproduciblity, collaboration, and communication. This book and the <a href="http://ohi-science.org">ohi-science.org</a> website are created using these same tools.</p>
+<p>You’ll get your computer set up with these tools and you will get into a workflow working from RStudio and syncing your work online to GitHub; hence, we call this the RStudio-GitHub workflow.</p>
+<div class="figure">
+<img src="https://docs.google.com/drawings/d/1eEb8qlCWY5g0v19xMoW-Jc71cNr4GOacsxUK9FR8si4/pub?w=960&amp;h=480" />
+
+</div>
+</div>
+<div id="how-to-learn" class="section level2">
+<h2><span class="header-section-number">5.2</span> How to learn</h2>
+<p>Learning the open data science tools (R, RStudio, Git, and GitHub) required for the Toolbox takes time. We have an <a href="http://ohi-science.org/data-science-training/">Introduction to open data science</a> training book to teach you the skills you’ll need to use the OHI Toolbox.</p>
+<!---
+http://happygitwithr.com/troubleshooting.html
+"Push/Pull buttons greyed out in RStudio"
+"I have no idea if my local repo and my remote repo are connected."
+
+## How you work
+
+- commit often (i.e. bundled as tasks you complete)
+- use the Git tab to help you check your work -- what files updated, does that make sense?
+
+## How this fits with the OHI workflow
+
+- High-level core v. tailorable (GitHub repo of data and code, you'll operate with an R package ohicore). See our [Best practices publication](https://peerj.com/articles/1503/) for more details (and add images here). 
+- prep and full repos
+
+## Developing these skills {#develop-skills}
+
+2-day self-paced workshop: [Reproducible Science with RStudio and GitHub](http://jules32.github.io/2016-07-12-Oxford/overview/). This is a [Software Carpentry](https://software-carpentry.org/) workshop by our team to help you develop skills with the RStudio/GitHub workflow. Also best done with 2 screens so you can more easily follow along on your own computer. 
+
+## Practice by updating your website
+
+To get more comfortable with the RStudio-GitHub workflow, we'll update your website before diving deeper and learning R. This should already be set-up for you.  
+
+Here is an [2-hour tutorial to get you started making free websites with RStudio’s R Markdown](https://jules32.github.io/rmarkdown-website-tutorial/first_observations.html) made by our team. This will let you practice with a non-OHI website. 
+
+TODO julie: modify for OHI websites
+
+When you're ready to update your own website:  
+
+1. Go to github.com/OHI-Science/your-repo-key and double-check you have the `gh-pages` branch (like the one [here](https://jules32.github.io/rmarkdown-website-tutorial/first_observations.html#the-websites-repo)). You don't need to do any 'forking' like you did in the tutorial. Note: we're not going to talk about github 'forking' or 'branches' just yet, because you don't need to know, but see the end of the chapter for more info. 
+1. Clone your repository to your local computer. 
+1. Do a one-time-only thing to make sure that you have the `gh-pages` branch locally on your computer: Instructions are [here](https://github.com/OHI-Science/ohi-science.github.io/issues/21). You can also navigate here from the [Forum](http://ohi-science.org/resources/forum/).
+1. Change things and see what happens! Try some different things in Markdown, save an image, etc. Also, look exactly at what other OHI+ project websites have done to get inspired and also borrow/modify their code!
+
+- http://ohi-science.org/bhi/ <-> https://github.com/OHI-Science/bhi  
+- http://ohi-science.org/mhi/ <-> https://github.com/OHI-Science/mhi  
+- http://ohi-science.org/ohi-global/ <-> https://github.com/OHI-Science/ohi-global  
+
+
+### Background on branches: master and gh-pages
+
+#### What you need to know 
+
+super powerful; parallel universe workspace. we'll just be taking advantage of the gh-pages, special branch.
+
+#### Setting up
+
+#### Switching branches
+
+- make sure you've committed and pushed before switching (I compulsively pull each time again, just to be sure)
+- if you have scripts open, it may say that they don't exist anymore and would you like to delete them. Say yes. They do exist, just in a different branch
+
+#### Updating content
+
 --->
 
 </div>
@@ -276,8 +337,8 @@ Include stuff about create_layers_rmds etc.
           </div>
         </div>
       </div>
-<a href="calcs-advanced.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="updating-your-website.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="planner-guide.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="toolbox-ecosystem.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
