@@ -8,7 +8,7 @@ The OHI Toolbox is software to calculate OHI scores. You will be able to incorpo
 
 The OHI Toolbox depends upon the 'open data science tools' R, RStudio, Git, and GitHub. They are free to download and use, they are cross-platform (meaning they work on OSX and Windows), and they can be used to help organize, create, reproduce, and communite collaborative analyses. And that's what OHI is all about! But something important is that these skills are transferrable; they are not only relevant to OHI but will serve you well for your other projects in the future.
  
-Learning the open data science tools (R, RStudio, Git, and GitHub) required for the Toolbox takes time. We have an [Introduction to open data science](http://ohi-science.org/data-science-training/) training book to teach you the skills you'll need to use the OHI Toolbox. 
+Learning the open data science tools (R, RStudio, Git, and GitHub) required for the Toolbox takes time. We have an [introduction to open data science training book](http://ohi-science.org/data-science-training/) to teach you the skills you'll need to use the OHI Toolbox. 
 
 ## Requesting OHI repositories
 
