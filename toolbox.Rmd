@@ -2,23 +2,22 @@
 
 **OHI assessments use our OHI Toolbox software, which helps our work be transparent and reproducible.**  
 
+The OHI Toolbox is software to calculate OHI scores. You will be able to incorporate your data and models to represent your regions by using the Toolbox.
+
+## The OHI Toolbox and open data science
+
 The OHI Toolbox depends upon the 'open data science tools' R, RStudio, Git, and GitHub. They are free to download and use, they are cross-platform (meaning they work on OSX and Windows), and they can be used to help organize, create, reproduce, and communite collaborative analyses. And that's what OHI is all about! But something important is that these skills are transferrable; they are not only relevant to OHI but will serve you well for your other projects in the future.
  
-
-## RStudio-GitHub workflow
-
-The OHI Toolbox depends upon R, RStudio, Git, and GitHub and is important for reproduciblity, collaboration, and communication. This book and the [ohi-science.org](http://ohi-science.org) website are created using these same tools. 
-
-You'll get your computer set up with these tools and you will get into a workflow working from RStudio and syncing your work online to GitHub; hence, we call this the RStudio-GitHub workflow. 
-
-
-![](https://docs.google.com/drawings/d/1eEb8qlCWY5g0v19xMoW-Jc71cNr4GOacsxUK9FR8si4/pub?w=960&h=480)
-
-## How to learn
-
 Learning the open data science tools (R, RStudio, Git, and GitHub) required for the Toolbox takes time. We have an [Introduction to open data science](http://ohi-science.org/data-science-training/) training book to teach you the skills you'll need to use the OHI Toolbox. 
 
+## Requesting OHI repositories
+
+As your team gathers data and is ready to prepare it for the Toolbox, you can [request OHI repositories](http://ohi-science.org/manual/#requesting-your-repositories). The next chapter will help you get familiar with the OHI Toolbox ecosystem. 
+
+
 <!---
+![](https://docs.google.com/drawings/d/1eEb8qlCWY5g0v19xMoW-Jc71cNr4GOacsxUK9FR8si4/pub?w=960&h=480)
+
 http://happygitwithr.com/troubleshooting.html
 "Push/Pull buttons greyed out in RStudio"
 "I have no idea if my local repo and my remote repo are connected."
