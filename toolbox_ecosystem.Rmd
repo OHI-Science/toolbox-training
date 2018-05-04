@@ -81,7 +81,7 @@ The `layers` folder contains individual data layers as .csv files for each goal 
 
 ### conf folder
 
-The `conf` folder includes important configuration files required to calculate OHI scores, as shown here. 
+The `conf` folder includes important configuration files required to calculate OHI scores, as shown here. You can think of these as the model parameters that the Toolbox will need along with your data in order to calculate scores. 
 
 ![](https://docs.google.com/drawings/d/e/2PACX-1vTuZY4xoL1urgQSYtv093jxpneudRZmebIhW9C8JAuWOpS940Q2yP9kzVeaBwj_ajD2GTsBylLnkzD1/pub?w=960&h=720)
 
@@ -158,6 +158,18 @@ This is a table that indicates which individual resilience measures affect which
 - postindex_function: indicate what parameters are called to calculate scores for supra-goals in functions.r
 
 _We have just gone over the files in the `conf` folder. To recap, the `conf` folder contains important configuration files required to calculate OHI scores, including functions.R, pressures and resilience files, etc. Now let's take a step back to the `region2016` folder, and check out what else is there._
+
+#### scenario_data_years.csv
+
+This file organizes year information for each layer. OHI assessments use the most recent data available, but which year is most recent will vary from data set to data set. `scenario_data_years.csv` acts like a registry to help keep track of all these years. This file also makes it possible for the Toolbox to calculate repeated assessments. 
+
+This file has 3 columns: the `layer_name`, the year your assessment represents, called the `scenario_year`, and the most recent year of data, called `data_year`.
+
+Let's have a look: 
+
+![](images/scenario_data_years_eg.png)
+
+You can see that for each layer, the `data_year` is associated with a `scenario_year`. For the `ao_access` layer, these data have never been updated so we use the same data year for each scenario year, and they are repeated in the `data_year` column. But for `ao_need`, there are different years of data available every year, but there is a lag time for which year of data corresponds to which scenario year. 
 
 ### configure_toolbox.r
 

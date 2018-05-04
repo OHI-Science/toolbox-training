@@ -7,7 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Ocean Health Index Toolbox Training</title>
   <meta name="description" content="This is the official Ocean Health Index Toolbox training.">
-  <meta name="generator" content="bookdown 0.5 and GitBook 2.6.7">
+  <meta name="generator" content="bookdown 0.7 and GitBook 2.6.7">
 
   <meta property="og:title" content="Ocean Health Index Toolbox Training" />
   <meta property="og:type" content="book" />
@@ -25,7 +25,7 @@
 <meta name="author" content="Ocean Health Index Team">
 
 
-<meta name="date" content="2018-02-05">
+<meta name="date" content="2018-05-04">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -339,7 +339,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </div>
 <div id="conf-folder" class="section level3">
 <h3><span class="header-section-number">6.4.2</span> conf folder</h3>
-<p>The <code>conf</code> folder includes important configuration files required to calculate OHI scores, as shown here.</p>
+<p>The <code>conf</code> folder includes important configuration files required to calculate OHI scores, as shown here. You can think of these as the model parameters that the Toolbox will need along with your data in order to calculate scores.</p>
 <div class="figure">
 <img src="https://docs.google.com/drawings/d/e/2PACX-1vTuZY4xoL1urgQSYtv093jxpneudRZmebIhW9C8JAuWOpS940Q2yP9kzVeaBwj_ajD2GTsBylLnkzD1/pub?w=960&amp;h=720" />
 
@@ -408,6 +408,17 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </ul>
 <p><em>We have just gone over the files in the <code>conf</code> folder. To recap, the <code>conf</code> folder contains important configuration files required to calculate OHI scores, including functions.R, pressures and resilience files, etc. Now let’s take a step back to the <code>region2016</code> folder, and check out what else is there.</em></p>
 </div>
+<div id="scenario_data_years.csv" class="section level4">
+<h4><span class="header-section-number">6.4.2.4</span> scenario_data_years.csv</h4>
+<p>This file organizes year information for each layer. OHI assessments use the most recent data available, but which year is most recent will vary from data set to data set. <code>scenario_data_years.csv</code> acts like a registry to help keep track of all these years. This file also makes it possible for the Toolbox to calculate repeated assessments.</p>
+<p>This file has 3 columns: the <code>layer_name</code>, the year your assessment represents, called the <code>scenario_year</code>, and the most recent year of data, called <code>data_year</code>.</p>
+<p>Let’s have a look:</p>
+<div class="figure">
+<img src="images/scenario_data_years_eg.png" />
+
+</div>
+<p>You can see that for each layer, the <code>data_year</code> is associated with a <code>scenario_year</code>. For the <code>ao_access</code> layer, these data have never been updated so we use the same data year for each scenario year, and they are repeated in the <code>data_year</code> column. But for <code>ao_need</code>, there are different years of data available every year, but there is a lag time for which year of data corresponds to which scenario year.</p>
+</div>
 </div>
 <div id="configure_toolbox.r" class="section level3">
 <h3><span class="header-section-number">6.4.3</span> configure_toolbox.r</h3>
@@ -465,10 +476,11 @@ gitbook.start({
 "facebook": true,
 "twitter": true,
 "google": false,
+"linkedin": false,
 "weibo": false,
 "instapper": false,
 "vk": false,
-"all": ["facebook", "google", "twitter", "weibo", "instapaper"]
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
 },
 "fontsettings": {
 "theme": "white",
@@ -492,9 +504,11 @@ gitbook.start({
   (function () {
     var script = document.createElement("script");
     script.type = "text/javascript";
-    script.src  = "https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML";
-    if (location.protocol !== "file:" && /^https?:/.test(script.src))
-      script.src  = script.src.replace(/^https?:/, '');
+    var src = "";
+    if (src === "" || src === "true") src = "https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:" && /^https?:/.test(src))
+      src = src.replace(/^https?:/, '');
+    script.src = src;
     document.getElementsByTagName("head")[0].appendChild(script);
   })();
 </script>

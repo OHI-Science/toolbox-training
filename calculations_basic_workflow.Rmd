@@ -54,9 +54,9 @@ This figure highlights the files we will focus on in this tutorial (others are g
 
 In our **toolbox-demo** repo, here are a few additional things to mention: 
 
-- our scenario folder is called `region2016`
+- our scenario folder is called `region2017`
 - goal models are `R` functions in `conf/functions.r`
-- regions are listed in `spatial/regions_list.csv`. We have 17 here.
+- regions are listed in `spatial/regions_list.csv`. We have 8 here.
 
 
 ### Run `install_ohicore.r`
@@ -80,7 +80,7 @@ The first time we go through the basic workflow will be with 'out-of-the-box' da
 
 `calculate_scores.r` will load the libraries you need and `ohicore` will check your book-keeping and configuration, and calculate OHI scores. **Ultimately, it will save the scores for each goal and dimension in `scores.csv`.** The 'dimensions' of OHI goal scores are Status, Trend, Pressures, Resilience, Likely Future State, and overall goal Score. Dimensions are calculated for each goal in a specific order, as we will see below. `calculate_scores.r` will combine information from your tailored repository and calculate scores with OHI core functions from `ohicore`. 
 
-Open `region2016/calculate_scores.r` and let's have a look at its operations. We will run it line-by-line.
+Open `region2017/calculate_scores.r` and let's have a look at its operations. We will run it line-by-line.
 
 ### Source `configure_toolbox.R`
 
@@ -92,7 +92,7 @@ There is output printed to the console that lists all of the layers registered, 
 
 ```{r configure_toolbox, eval=FALSE}
 ## run the configure_toolbox.r script to check configuration
-source('~/github/toolbox-demo/region2016/configure_toolbox.r')
+source('~/github/toolbox-demo/region2017/configure_toolbox.r')
 
 #   cc_acid
 #   cc_slr
@@ -202,7 +202,7 @@ We can inspect it and see that it is a long-formatted file with four columns for
 
 We have 17 regions in the **toolbox-demo** repo. An additional region 0 is the area-weighted combination of all regions.
 
-> Note: each region in your assessment will have a numeric region identifer, called a `region_id` or `rgn_id` for short. You can see a list of all regions and corresponding identifiers in [toolbox-demo/region2016/spatial/regions_list.csv](https://github.com/OHI-Science/toolbox-demo/blob/master/region2016/spatial/regions_list.csv)
+> Note: each region in your assessment will have a numeric region identifer, called a `region_id` or `rgn_id` for short. You can see a list of all regions and corresponding identifiers in [toolbox-demo/region2017/spatial/regions_list.csv](https://github.com/OHI-Science/toolbox-demo/blob/master/region2017/spatial/regions_list.csv)
 
 
 ### A note about error messages
@@ -245,7 +245,7 @@ Now that we have prepared and saved our data layer, we'll register it in `layers
 
 Since we have tailored an existing data layer that is already registered, we just need to have it point to our new data layer under the "filename" column. 
 
-Open `region2016/layers.csv` in a spreadsheet software (i.e. Microsoft Excel or Open Office). Next, find `ao_access` in the "layer" column. The current filename it is associated with is "ao_access_gl2016.csv". Update that to say "ao_access_demo2017.csv" — the new data layer you just saved. Close Excel. 
+Open `region2017/layers.csv` in a spreadsheet software (i.e. Microsoft Excel or Open Office). Next, find `ao_access` in the "layer" column. The current filename it is associated with is "ao_access_gl2016.csv". Update that to say "ao_access_demo2017.csv" — the new data layer you just saved. Close Excel. 
 
 > IMPORTANT! Be sure to close Excel after you have made these edits. On a PC, having `layers.csv` open in Excel will prohibit it from being accessed from R, and the Toolbox needs access to calculate scores!
 
@@ -286,7 +286,7 @@ So now let's take a closer look at `configure_toolbox.r`, the first script calle
 
 ### Load libraries and set working directory
 
-The first two things that `configure_toolbox.r` does is to set up your working environment. First, it loads `ohicore` and any `R` packages that will be needed as you work with `functions.r`: `tidyverse` (which includes `dplyr` and `tidyr`) and `stringr`. As you need other packages you can add them here to load. Second, it sets your working directory to your assessment's scenario: "region2016". 
+The first two things that `configure_toolbox.r` does is to set up your working environment. First, it loads `ohicore` and any `R` packages that will be needed as you work with `functions.r`: `tidyverse` (which includes `dplyr` and `tidyr`) and `stringr`. As you need other packages you can add them here to load. Second, it sets your working directory to your assessment's scenario: "region2017". 
 
 ```{r load ohicore and libraries, eval=FALSE}
 ## load ohicore and tidyverse
@@ -297,7 +297,7 @@ if (!"ohicore" %in% (.packages())) {
 }
 
 ## set working directory to the scenario that contains conf and layers directories
-setwd('~/github/toolbox-demo/region2016')
+setwd('~/github/toolbox-demo/region2017')
 ```
 
 ### `ohicore::Conf()`
@@ -575,7 +575,7 @@ Open `toolbox-demo/prep/AO/poverty_prep.R` and source the file after reading it 
 
 Now that we have prepared and saved our data layer, we'll register it in `layers.csv`. This time, since we have added an additional data layer that has not been previously registered, we need to add a new row. 
 
-Open `region2016/layers.csv` in a spreadsheet software (i.e. Microsoft Excel or Open Office). Add a new row for "ao_poverty", and fill in the following information. We've added the row near the other AO data layers.
+Open `region2017/layers.csv` in a spreadsheet software (i.e. Microsoft Excel or Open Office). Add a new row for "ao_poverty", and fill in the following information. We've added the row near the other AO data layers.
 
 ![](https://docs.google.com/drawings/d/1n9qMQuyOxfkZzTGgj2vGaGY7YwS_A3PMtDAjaKfc3Co/pub?w=960&h=192)
 

@@ -7,7 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Ocean Health Index Toolbox Training</title>
   <meta name="description" content="This is the official Ocean Health Index Toolbox training.">
-  <meta name="generator" content="bookdown 0.5 and GitBook 2.6.7">
+  <meta name="generator" content="bookdown 0.7 and GitBook 2.6.7">
 
   <meta property="og:title" content="Ocean Health Index Toolbox Training" />
   <meta property="og:type" content="book" />
@@ -25,7 +25,7 @@
 <meta name="author" content="Ocean Health Index Team">
 
 
-<meta name="date" content="2018-02-05">
+<meta name="date" content="2018-05-04">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -309,9 +309,9 @@ TODO @jules32: once toolbox_ecosystem.rmd is done, move this Review section into
 </div>
 <p>In our <strong>toolbox-demo</strong> repo, here are a few additional things to mention:</p>
 <ul>
-<li>our scenario folder is called <code>region2016</code></li>
+<li>our scenario folder is called <code>region2017</code></li>
 <li>goal models are <code>R</code> functions in <code>conf/functions.r</code></li>
-<li>regions are listed in <code>spatial/regions_list.csv</code>. We have 17 here.</li>
+<li>regions are listed in <code>spatial/regions_list.csv</code>. We have 8 here.</li>
 </ul>
 <div id="run-install_ohicore.r" class="section level3">
 <h3><span class="header-section-number">8.2.1</span> Run <code>install_ohicore.r</code></h3>
@@ -331,7 +331,7 @@ where would a section on ohicore go? Maybe need to make a vingette for it and li
 
 </div>
 <p><code>calculate_scores.r</code> will load the libraries you need and <code>ohicore</code> will check your book-keeping and configuration, and calculate OHI scores. <strong>Ultimately, it will save the scores for each goal and dimension in <code>scores.csv</code>.</strong> The ‘dimensions’ of OHI goal scores are Status, Trend, Pressures, Resilience, Likely Future State, and overall goal Score. Dimensions are calculated for each goal in a specific order, as we will see below. <code>calculate_scores.r</code> will combine information from your tailored repository and calculate scores with OHI core functions from <code>ohicore</code>.</p>
-<p>Open <code>region2016/calculate_scores.r</code> and let’s have a look at its operations. We will run it line-by-line.</p>
+<p>Open <code>region2017/calculate_scores.r</code> and let’s have a look at its operations. We will run it line-by-line.</p>
 <div id="source-configure_toolbox.r" class="section level3">
 <h3><span class="header-section-number">8.3.1</span> Source <code>configure_toolbox.R</code></h3>
 <p>We will start by <strong>sourcing <code>configure_toolbox.r</code></strong> from within <code>calculate_scores.r</code>.</p>
@@ -341,7 +341,7 @@ where would a section on ohicore go? Maybe need to make a vingette for it and li
 </div>
 <p>There is output printed to the console that lists all of the layers registered, and ends with any warning messages about the layers themselves. We will explore what is happening in <code>configure_toolbox.r</code> and how to interpret these warning messages further on; for now, let’s move on since we have not encountered an error.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">## run the configure_toolbox.r script to check configuration
-<span class="kw">source</span>(<span class="st">&#39;~/github/toolbox-demo/region2016/configure_toolbox.r&#39;</span>)
+<span class="kw">source</span>(<span class="st">&#39;~/github/toolbox-demo/region2017/configure_toolbox.r&#39;</span>)
 
 <span class="co">#   cc_acid</span>
 <span class="co">#   cc_slr</span>
@@ -479,7 +479,7 @@ scores =<span class="st"> </span>ohicore<span class="op">::</span><span class="k
 </table>
 <p>We have 17 regions in the <strong>toolbox-demo</strong> repo. An additional region 0 is the area-weighted combination of all regions.</p>
 <blockquote>
-<p>Note: each region in your assessment will have a numeric region identifer, called a <code>region_id</code> or <code>rgn_id</code> for short. You can see a list of all regions and corresponding identifiers in <a href="https://github.com/OHI-Science/toolbox-demo/blob/master/region2016/spatial/regions_list.csv">toolbox-demo/region2016/spatial/regions_list.csv</a></p>
+<p>Note: each region in your assessment will have a numeric region identifer, called a <code>region_id</code> or <code>rgn_id</code> for short. You can see a list of all regions and corresponding identifiers in <a href="https://github.com/OHI-Science/toolbox-demo/blob/master/region2017/spatial/regions_list.csv">toolbox-demo/region2017/spatial/regions_list.csv</a></p>
 </blockquote>
 </div>
 <div id="a-note-about-error-messages" class="section level3">
@@ -522,7 +522,7 @@ scores =<span class="st"> </span>ohicore<span class="op">::</span><span class="k
 <h3><span class="header-section-number">8.4.2</span> Register our data layer</h3>
 <p>Now that we have prepared and saved our data layer, we’ll register it in <code>layers.csv</code>. <code>layers.csv</code>is a registry that will direct <code>ohicore</code> to appropriate data layers, and has information about each data layer — which goal it is used for, filename, column names, etc. For further detail see Chapter <a href="prep-data.html#prep-data">7</a>.</p>
 <p>Since we have tailored an existing data layer that is already registered, we just need to have it point to our new data layer under the “filename” column.</p>
-<p>Open <code>region2016/layers.csv</code> in a spreadsheet software (i.e. Microsoft Excel or Open Office). Next, find <code>ao_access</code> in the “layer” column. The current filename it is associated with is “ao_access_gl2016.csv”. Update that to say “ao_access_demo2017.csv” — the new data layer you just saved. Close Excel.</p>
+<p>Open <code>region2017/layers.csv</code> in a spreadsheet software (i.e. Microsoft Excel or Open Office). Next, find <code>ao_access</code> in the “layer” column. The current filename it is associated with is “ao_access_gl2016.csv”. Update that to say “ao_access_demo2017.csv” — the new data layer you just saved. Close Excel.</p>
 <blockquote>
 <p>IMPORTANT! Be sure to close Excel after you have made these edits. On a PC, having <code>layers.csv</code> open in Excel will prohibit it from being accessed from R, and the Toolbox needs access to calculate scores!</p>
 </blockquote>
@@ -565,7 +565,7 @@ scores =<span class="st"> </span>ohicore<span class="op">::</span><span class="k
 </div>
 <div id="load-libraries-and-set-working-directory" class="section level3">
 <h3><span class="header-section-number">8.5.1</span> Load libraries and set working directory</h3>
-<p>The first two things that <code>configure_toolbox.r</code> does is to set up your working environment. First, it loads <code>ohicore</code> and any <code>R</code> packages that will be needed as you work with <code>functions.r</code>: <code>tidyverse</code> (which includes <code>dplyr</code> and <code>tidyr</code>) and <code>stringr</code>. As you need other packages you can add them here to load. Second, it sets your working directory to your assessment’s scenario: “region2016”.</p>
+<p>The first two things that <code>configure_toolbox.r</code> does is to set up your working environment. First, it loads <code>ohicore</code> and any <code>R</code> packages that will be needed as you work with <code>functions.r</code>: <code>tidyverse</code> (which includes <code>dplyr</code> and <code>tidyr</code>) and <code>stringr</code>. As you need other packages you can add them here to load. Second, it sets your working directory to your assessment’s scenario: “region2017”.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">## load ohicore and tidyverse
 <span class="cf">if</span> (<span class="op">!</span><span class="st">&quot;ohicore&quot;</span> <span class="op">%in%</span><span class="st"> </span>(<span class="kw">.packages</span>())) {
   <span class="kw">suppressWarnings</span>(<span class="kw">require</span>(ohicore))
@@ -574,7 +574,7 @@ scores =<span class="st"> </span>ohicore<span class="op">::</span><span class="k
 }
 
 ## set working directory to the scenario that contains conf and layers directories
-<span class="kw">setwd</span>(<span class="st">&#39;~/github/toolbox-demo/region2016&#39;</span>)</code></pre></div>
+<span class="kw">setwd</span>(<span class="st">&#39;~/github/toolbox-demo/region2017&#39;</span>)</code></pre></div>
 </div>
 <div id="ohicoreconf" class="section level3">
 <h3><span class="header-section-number">8.5.2</span> <code>ohicore::Conf()</code></h3>
@@ -807,7 +807,7 @@ status = (1 - D_{U}) * sustainability
 <div id="register-our-new-data-layer" class="section level3">
 <h3><span class="header-section-number">8.8.2</span> Register our new data layer</h3>
 <p>Now that we have prepared and saved our data layer, we’ll register it in <code>layers.csv</code>. This time, since we have added an additional data layer that has not been previously registered, we need to add a new row.</p>
-<p>Open <code>region2016/layers.csv</code> in a spreadsheet software (i.e. Microsoft Excel or Open Office). Add a new row for “ao_poverty”, and fill in the following information. We’ve added the row near the other AO data layers.</p>
+<p>Open <code>region2017/layers.csv</code> in a spreadsheet software (i.e. Microsoft Excel or Open Office). Add a new row for “ao_poverty”, and fill in the following information. We’ve added the row near the other AO data layers.</p>
 <div class="figure">
 <img src="https://docs.google.com/drawings/d/1n9qMQuyOxfkZzTGgj2vGaGY7YwS_A3PMtDAjaKfc3Co/pub?w=960&amp;h=192" />
 
@@ -926,10 +926,11 @@ gitbook.start({
 "facebook": true,
 "twitter": true,
 "google": false,
+"linkedin": false,
 "weibo": false,
 "instapper": false,
 "vk": false,
-"all": ["facebook", "google", "twitter", "weibo", "instapaper"]
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
 },
 "fontsettings": {
 "theme": "white",
@@ -953,9 +954,11 @@ gitbook.start({
   (function () {
     var script = document.createElement("script");
     script.type = "text/javascript";
-    script.src  = "https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML";
-    if (location.protocol !== "file:" && /^https?:/.test(script.src))
-      script.src  = script.src.replace(/^https?:/, '');
+    var src = "";
+    if (src === "" || src === "true") src = "https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:" && /^https?:/.test(src))
+      src = src.replace(/^https?:/, '');
+    script.src = src;
     document.getElementsByTagName("head")[0].appendChild(script);
   })();
 </script>
