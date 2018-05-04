@@ -161,7 +161,9 @@ _We have just gone over the files in the `conf` folder. To recap, the `conf` fol
 
 #### scenario_data_years.csv
 
-This file organizes year information for each layer. OHI assessments use the most recent data available, but which year is most recent will vary from data set to data set. `scenario_data_years.csv` acts like a registry to help keep track of all these years. This file also makes it possible for the Toolbox to calculate repeated assessments. 
+This file organizes year information for each layer. OHI assessments use the most recent data available, but which year is most recent will vary from data set to data set. `scenario_data_years.csv` acts like a registry to help keep track of all these years. When you calculate OHI scores, you are always working with scenario year.
+
+This file also makes it possible for the Toolbox to calculate repeated assessments. 
 
 This file has 3 columns: the `layer_name`, the year your assessment represents, called the `scenario_year`, and the most recent year of data, called `data_year`.
 
