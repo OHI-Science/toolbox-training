@@ -25,7 +25,7 @@
 <meta name="author" content="Ocean Health Index Team">
 
 
-<meta name="date" content="2018-05-04">
+<meta name="date" content="2018-07-16">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -139,13 +139,13 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="6" data-path="toolbox-ecosystem.html"><a href="toolbox-ecosystem.html"><i class="fa fa-check"></i><b>6</b> Toolbox Ecosystem</a><ul>
 <li class="chapter" data-level="6.1" data-path="toolbox-ecosystem.html"><a href="toolbox-ecosystem.html#overview-2"><i class="fa fa-check"></i><b>6.1</b> Overview</a></li>
 <li class="chapter" data-level="6.2" data-path="toolbox-ecosystem.html"><a href="toolbox-ecosystem.html#prerequisites-1"><i class="fa fa-check"></i><b>6.2</b> Prerequisites</a></li>
-<li class="chapter" data-level="6.3" data-path="toolbox-ecosystem.html"><a href="toolbox-ecosystem.html#main-repository-folder"><i class="fa fa-check"></i><b>6.3</b> main repository folder</a></li>
-<li class="chapter" data-level="6.4" data-path="toolbox-ecosystem.html"><a href="toolbox-ecosystem.html#prep-folder"><i class="fa fa-check"></i><b>6.4</b> Prep folder</a><ul>
-<li class="chapter" data-level="6.4.1" data-path="toolbox-ecosystem.html"><a href="toolbox-ecosystem.html#region2016-folder"><i class="fa fa-check"></i><b>6.4.1</b> region2016 folder</a></li>
-<li class="chapter" data-level="6.4.2" data-path="toolbox-ecosystem.html"><a href="toolbox-ecosystem.html#conf-folder"><i class="fa fa-check"></i><b>6.4.2</b> conf folder</a></li>
-<li class="chapter" data-level="6.4.3" data-path="toolbox-ecosystem.html"><a href="toolbox-ecosystem.html#configure_toolbox.r"><i class="fa fa-check"></i><b>6.4.3</b> configure_toolbox.r</a></li>
-<li class="chapter" data-level="6.4.4" data-path="toolbox-ecosystem.html"><a href="toolbox-ecosystem.html#calculate_scores.r"><i class="fa fa-check"></i><b>6.4.4</b> calculate_scores.R</a></li>
-<li class="chapter" data-level="6.4.5" data-path="toolbox-ecosystem.html"><a href="toolbox-ecosystem.html#recap"><i class="fa fa-check"></i><b>6.4.5</b> Recap</a></li>
+<li class="chapter" data-level="6.3" data-path="toolbox-ecosystem.html"><a href="toolbox-ecosystem.html#repository-home-folder-ex-toolbox-demo-or-gye"><i class="fa fa-check"></i><b>6.3</b> Repository home folder (ex: <code>toolbox-demo</code> or <code>gye</code>)</a><ul>
+<li class="chapter" data-level="6.3.1" data-path="toolbox-ecosystem.html"><a href="toolbox-ecosystem.html#prep-folder"><i class="fa fa-check"></i><b>6.3.1</b> Prep folder</a></li>
+<li class="chapter" data-level="6.3.2" data-path="toolbox-ecosystem.html"><a href="toolbox-ecosystem.html#scenario-folder-ex-region2016"><i class="fa fa-check"></i><b>6.3.2</b> Scenario folder (ex: <code>region2016</code>)</a></li>
+<li class="chapter" data-level="6.3.3" data-path="toolbox-ecosystem.html"><a href="toolbox-ecosystem.html#conf-folder"><i class="fa fa-check"></i><b>6.3.3</b> conf folder</a></li>
+<li class="chapter" data-level="6.3.4" data-path="toolbox-ecosystem.html"><a href="toolbox-ecosystem.html#configure_toolbox.r"><i class="fa fa-check"></i><b>6.3.4</b> configure_toolbox.r</a></li>
+<li class="chapter" data-level="6.3.5" data-path="toolbox-ecosystem.html"><a href="toolbox-ecosystem.html#calculate_scores.r"><i class="fa fa-check"></i><b>6.3.5</b> calculate_scores.R</a></li>
+<li class="chapter" data-level="6.3.6" data-path="toolbox-ecosystem.html"><a href="toolbox-ecosystem.html#recap"><i class="fa fa-check"></i><b>6.3.6</b> Recap</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="7" data-path="prep-data.html"><a href="prep-data.html"><i class="fa fa-check"></i><b>7</b> Preparing data: Basic</a><ul>
@@ -282,9 +282,9 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </ol>
 <p>Now you have set up your computer, let’s open the <code>toolbox-demo</code> repository on your computer, and go from there.</p>
 </div>
-<div id="main-repository-folder" class="section level2">
-<h2><span class="header-section-number">6.3</span> main repository folder</h2>
-<p>When you first open the repository, you’ll encounter the following files and folders. <em>Note</em>: if you have a starter repository, you’ll have a <code>prep</code> folder but not a <code>scenario</code> folder.</p>
+<div id="repository-home-folder-ex-toolbox-demo-or-gye" class="section level2">
+<h2><span class="header-section-number">6.3</span> Repository home folder (ex: <code>toolbox-demo</code> or <code>gye</code>)</h2>
+<p>When you first open the repository, you’ll encounter the following files and folders. <em>Note</em>: if you have a starter repository, you’ll have a <code>prep</code> folder but not a <code>scenario</code> folder (which is <code>region2016</code> in the screenshot below.</p>
 <div class="figure">
 <img src="https://docs.google.com/drawings/d/e/2PACX-1vTWGVIHdpK5UirBr2prb1rjly7t0QQNygRCL8MnvBG4Sxw_eEZJyfCu423LFzNLQ316q27YToAMJGRA/pub?w=960&amp;h=720" />
 
@@ -302,9 +302,8 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li><p><code>README.md</code> file accompanys most folders or files, as you will discover. It’s a place to take notes for yourself, your team, and anyone interested in the future.</p></li>
 </ul>
 <p>Let’s take a closer look at the <code>prep</code> and <code>region2016</code> folders.</p>
-</div>
-<div id="prep-folder" class="section level2">
-<h2><span class="header-section-number">6.4</span> Prep folder</h2>
+<div id="prep-folder" class="section level3">
+<h3><span class="header-section-number">6.3.1</span> Prep folder</h3>
 <p>Click on <code>prep</code> and let’s see what’s inside:</p>
 <div class="figure">
 <img src="https://docs.google.com/drawings/d/e/2PACX-1vRC6jKA-cwwnCDck_pGDgYjN4uA13E9a2PyFqrE-HJbQa9EIclOLLARFmYNYMyaHfdkOcaIlCXgTCSh/pub?w=960&amp;h=720" />
@@ -315,15 +314,16 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p>The <code>CW_data_prep.Rmd</code> document is a script where you will explore your raw data, format the data, try different models, make graphs and maps, as well as document decision making. We will come back to this script in Chapter <a href="prep-data.html#prep-data">7</a> to learn how to prepare data for calculations.</p>
 <p>We use RMarkdown (.Rmd) files because they can be rendered as webpages (for example, <code>CW_data_prep.html</code> in the same CW folder) and can help explain the data processing steps and motivation behind them in written language. Click ‘Knit’ from the RStudio editor or click on the <code>.html</code> file from the file pane and select ’View in web browser`, and you will see a clean, human-readable webpage that can be shared online and viewed by anyone.</p>
 <p><em>Now we’ve walked through the prep folder, let’s take a look at the scenario folder. Click back to the main <code>toolbox-demo</code> folder, and open the <code>region2016</code> folder.</em></p>
-<div id="region2016-folder" class="section level3">
-<h3><span class="header-section-number">6.4.1</span> region2016 folder</h3>
+</div>
+<div id="scenario-folder-ex-region2016" class="section level3">
+<h3><span class="header-section-number">6.3.2</span> Scenario folder (ex: <code>region2016</code>)</h3>
 <div class="figure">
 <img src="https://docs.google.com/drawings/d/e/2PACX-1vT9zIRR6AsCOHwSyuDtQBBurQ2YRo4TpRlkrO6j193ldSZN9FuAkm70mqYPJrVSzeLUokCn4CcOmpkm/pub?w=960&amp;h=720" />
 
 </div>
 <p>Again, this scenario folder contains all the data layers and scripts for you to calculate OHI scores. Let’s look into the sub-folders and see what they do.</p>
 <div id="layers-folder-layers.csv" class="section level4">
-<h4><span class="header-section-number">6.4.1.1</span> layers folder &amp; layers.csv</h4>
+<h4><span class="header-section-number">6.3.2.1</span> layers folder &amp; layers.csv</h4>
 <p>After you prepared your data layers in the <code>prep</code> folder, you will save them in the <code>layers</code> folder, and register them in <code>layers.csv</code>. (You will learn how to do so in Chapter <a href="prep-data.html#prep-data">7</a>).</p>
 <p>The <code>layers</code> folder contains individual data layers as .csv files for each goal and subgoal, named in a specific manner for easy organization and recognition, as shown here.</p>
 <div class="figure">
@@ -338,25 +338,37 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </div>
 </div>
 <div id="conf-folder" class="section level3">
-<h3><span class="header-section-number">6.4.2</span> conf folder</h3>
+<h3><span class="header-section-number">6.3.3</span> conf folder</h3>
 <p>The <code>conf</code> folder includes important configuration files required to calculate OHI scores, as shown here. You can think of these as the model parameters that the Toolbox will need along with your data in order to calculate scores.</p>
 <div class="figure">
 <img src="https://docs.google.com/drawings/d/e/2PACX-1vTuZY4xoL1urgQSYtv093jxpneudRZmebIhW9C8JAuWOpS940Q2yP9kzVeaBwj_ajD2GTsBylLnkzD1/pub?w=960&amp;h=720" />
 
 </div>
-<p>Most of the maneuvering in the Conduct phase of the assessment is done within this folder. There are both .R scripts and .csv files. Let’s see what they are.</p>
-<div id="functions.r" class="section level5">
-<h5><span class="header-section-number">6.4.2.0.1</span> functions.R</h5>
+<p>Most of the maneuvering in the Conduct phase of the assessment is done within this folder. There are both .R scripts and .csv files. We will investigate them in the order you will interact with them.</p>
+<div id="functions.r" class="section level4">
+<h4><span class="header-section-number">6.3.3.1</span> functions.R</h4>
 <div class="figure">
 <img src="https://docs.google.com/drawings/d/e/2PACX-1vS2ePP1saxdgCYsy7bC1UxlwiJCyHgzIj-zDdKLrRWKzecp7NI8aRoZOsPddCwTb6RADiZ9xji-RzQx/pub?w=960&amp;h=720" />
 
 </div>
-<p>This R script contains the equations for each goal and sub-goal model. Much of your time will be spent here modifying goal models with the data you prepared in <code>prep</code> folder.</p>
-<p>Each goal and sub-goal equation is stored as a separate function within the script. These functions calculate the status and trend using prepared layers saved in the ‘layers’ folder and registered in layers.csv.</p>
+<p><strong><code>functions.R</code> contains models to calculate goal status and trend for all goal and sub-goals</strong>. Much of your time will be spent here developing goal models to calculate status and trend with the data layers you prepared.</p>
+<p>Each goal and sub-goal equation is stored as a separate function within the script, identified by a 2- or 3- letter code. These functions calculate the status and trend using prepared layers saved in the <code>layers</code> folder and registered in layers.csv.</p>
 <!--- info about the rest of the conf files are modified from the manual --->
 </div>
+<div id="scenario_data_years.csv" class="section level4">
+<h4><span class="header-section-number">6.3.3.2</span> scenario_data_years.csv</h4>
+<p>This file organizes year information for each layer. OHI assessments use the most recent data available, but which year is most recent will vary from data set to data set. <code>scenario_data_years.csv</code> acts like a registry to help keep track of all these years. When you calculate OHI scores, you are always working with scenario year.</p>
+<p>This file also makes it possible for the Toolbox to calculate repeated assessments.</p>
+<p>This file has 3 columns: the <code>layer_name</code>, the year your assessment represents, called the <code>scenario_year</code>, and the most recent year of data, called <code>data_year</code>.</p>
+<p>Let’s have a look:</p>
+<div class="figure">
+<img src="images/scenario_data_years_eg.png" />
+
+</div>
+<p>You can see that for each layer, the <code>data_year</code> is associated with a <code>scenario_year</code>. In the example above, the data from the <code>ao_access</code> layer have never been updated so we use the same data year for each scenario year, which is therefore repeated in the <code>data_year</code> column. But for the <code>ao_need</code> layer, many years of data are available, but there is a lag time for which year of data corresponds to which scenario year.</p>
+</div>
 <div id="pressures-resilience" class="section level4">
-<h4><span class="header-section-number">6.4.2.1</span> pressures &amp; resilience</h4>
+<h4><span class="header-section-number">6.3.3.3</span> pressures &amp; resilience</h4>
 <p>There are four .csv files relating to pressures and resilience.</p>
 <ul>
 <li>pressures_categories.csv</li>
@@ -369,60 +381,48 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <img src="https://docs.google.com/drawings/d/e/2PACX-1vQDM2iViRuigEadiGHhoG1CV_5DAvowpDZI4qTR7jZbg7-0QXfHxDJHjgxN2Z4g4bBTCQNknMkG_qiT/pub?w=960&amp;h=720" />
 
 </div>
-<p>Pressures and Resilience are two of the four dimensions used to evaluate each goal or sub-goal, along with Status and Trend that you calculate in <code>functions.R</code>. We will go through how to modify these tables in Chapter @ref(pressures resilience) later.</p>
-<p>Now, we won’t dwell on these files much except to show you where they are, but you can refer back to this section for the detailed information listed below when you get to Chapter @ref(pressures resilience) <!--- too muchh info?? it takes up a lot of room for information that's above the introductory level. people are pretty far from using these files. but i think we should have this info here for future reference. ---></p>
+<p>Pressures and Resilience are two of the four dimensions used to evaluate each goal or sub-goal, along with goal status and trend that you calculate in <code>functions.R</code>. More details on how to operate with these files are explained in future chapters.</p>
 <p><strong>pressures_categories.csv</strong></p>
-<p>This is a table to record the name of each pressures data layer, its category, and sub-category. Each data layer name is the same name that’s saved in the layers folder and is registered in layers.csv. Each layer falls under one of two categories - ecological or social pressures, and one of several sub-categories to further represent the origin of the pressure (e.g. climate change, fishing, etc), which is also indicated by a prefix of each data layer name (for example: po_ for the pollution sub-category).</p>
+<p>This is a table to record the name of each pressures data layer, its category, and sub-category. Each data layer name is the same name that is saved in the layers folder and is registered in layers.csv. Each layer falls under one of two categories - ecological or social pressures, and one of several sub-categories to further represent the origin of the pressure (e.g. climate change, fishing, etc), which is also indicated by a prefix of each data layer name (for example: po_ for the pollution sub-category).</p>
 <p><strong>pressures_matrix.csv</strong></p>
-<p>This is a table that indicates which individual pressures (stressors) affect which goal, sub-goals, or components, and weights them from 1-3 (a weight of 0 is shown as a blank). A higher weight indicates more negative impacts on that goal or component of the goal. These weights are relative to each row of the matrix (goal, sub-goal, or component). These weights are used in global assessments based on scientific literature and expert opinion, and you can modify the weightings if necessary for your assessment. The pressures matrix is the same as Table S25 in the Supplementary Information for Halpern et al. 2012.</p>
+<p>This is a table that indicates which individual pressures (stressors) affect which goal, sub-goals, or components, and weights them from 1-3. A weight of 0 is shown as a blank. A higher weight indicates more negative impacts on that goal or component of the goal. These weights are relative to each row of the matrix (goal, sub-goal, or component). These weights are used in global assessments based on scientific literature and expert opinion, and you can modify the weightings if necessary for your assessment. The pressures matrix is the same as Table S25 in Halpern et al. 2012, with current and detailed information in the online <a href="https://rawgit.com/OHI-Science/ohi-global/draft/global_supplement/Supplement.html#432_pressure">OHI-Global supplemental information</a> document.</p>
 <p>Each pressure (column) of the pressures matrix is the layer name of the pressures layer file that is saved in the layers folder and is registered in layers.csv, matching what’s recorded in the pressures_categories.csv.</p>
 <p><strong>resilience_categories.csv</strong></p>
 <p>Similar to pressures_categories.csv, this file contains information on each resilience data layer, including its name, category, and sub-category. Each resilience layer’s name is the same as the data layer to be saved in the layers folder and is registered in layers.csv. In addition, it also includes information on category type - ecosystem, regulatory, or social, indicating the origin of the resilience layer.</p>
 <p>Each resilience layer is also assigned a weight of 0-1, representing the level of resilience against pressures. Different from the values used in pressures matrix, the resilience weights depend on the level of information available.</p>
 <p><strong>resilience_matrix.csv</strong></p>
-<p>This is a table that indicates which individual resilience measures affect which goal, sub-goals, or components. The resilience matrix is the same as Table S26 in the Supplementary Information for Halpern et al. 2012.</p>
-</div>
-<div id="config.r" class="section level4">
-<h4><span class="header-section-number">6.4.2.2</span> config.R</h4>
-<div class="figure">
-<img src="https://docs.google.com/drawings/d/e/2PACX-1vSmsay5W22clkc4XXknNILZxE5j88wjMuVNIovcyhX2RqiPqDTehKZr-oUkviozWawJF3ybCc81YS9t/pub?w=960&amp;h=720" />
-
-</div>
-<p><code>config.R</code> configures labeling and constants appropriately. You will only need to modify this file when working with goals that have categories (example: habitat types or economy sectors) that are affected differently by pressures and resilience measures.</p>
+<p>This is a table that indicates which individual resilience measures affect which goal, sub-goals, or components. The resilience matrix is the same as Table S26 from Halpern et al. 2012, with current and detailed information in the online <a href="https://rawgit.com/OHI-Science/ohi-global/draft/global_supplement/Supplement.html#433_resilience">OHI-Global supplemental information</a> document.</p>
 </div>
 <div id="goals.csv" class="section level4">
-<h4><span class="header-section-number">6.4.2.3</span> goals.csv</h4>
+<h4><span class="header-section-number">6.3.3.4</span> goals.csv</h4>
 <p><code>goals.csv</code> is another spreadsheet file that’s best opened in Excel.</p>
 <div class="figure">
 <img src="https://docs.google.com/drawings/d/e/2PACX-1vRa9TITgRU9zHHMnbUtMqkIQM-RDCarFa9th-v3_zq_W1kResrS75JEgn39fN3C8EMpqe7OaZD7M7sZ/pub?w=960&amp;h=720" />
 
 </div>
-<p><code>goals.csv</code> has information about goals and sub-goals, and controls which goals are calculated, and how they are represented in figures. If a goal exists in this list, it will be calculated, and needs an accompanying function in <code>functions.r</code>. Here are the columns within <code>goals.csv</code>:</p>
+<p><code>goals.csv</code> has information about goals and sub-goals, and controls which goals are calculated, and how they are represented in figures. If a goal exists in this list, it will be calculated, and needs an accompanying function in <code>functions.r</code>. <strong>You will likely only modify this file if you are removing or adding goals or sub-goals, or changing the weighting for how goals are combined</strong>.</p>
+<p>Here are the columns within <code>goals.csv</code>:</p>
 <ul>
 <li>order_color &amp; order_hierarchy: the order to display in flower plots</li>
-<li>order_calculate: the order in which the goals and sub-goals are calculated for the overall index scores</li>
+<li>order_calculate: the order in which the goals and sub-goals are calculated for the overall Index scores</li>
 <li>goal &amp; parent: indicates the relationship between sub-goals and supra-goals (i.e. goals - with sub-goals)</li>
-<li>weight: how each goal is weighted to calculate the final Index scores</li>
-<li>preindex_function: indicate what parameters are called to calculate scores for goals and - sub-goals in functions.r</li>
-<li>postindex_function: indicate what parameters are called to calculate scores for supra-goals in functions.r</li>
+<li>weight: the relative weight of each goal to calculate overall Index scores</li>
+<li>preindex_function: indicate what parameters are called to calculate scores for goals and - sub-goals in functions.R</li>
+<li>postindex_function: indicate what parameters are called to calculate scores for supra-goals in functions.R</li>
 </ul>
-<p><em>We have just gone over the files in the <code>conf</code> folder. To recap, the <code>conf</code> folder contains important configuration files required to calculate OHI scores, including functions.R, pressures and resilience files, etc. Now let’s take a step back to the <code>region2016</code> folder, and check out what else is there.</em></p>
 </div>
-<div id="scenario_data_years.csv" class="section level4">
-<h4><span class="header-section-number">6.4.2.4</span> scenario_data_years.csv</h4>
-<p>This file organizes year information for each layer. OHI assessments use the most recent data available, but which year is most recent will vary from data set to data set. <code>scenario_data_years.csv</code> acts like a registry to help keep track of all these years. When you calculate OHI scores, you are always working with scenario year.</p>
-<p>This file also makes it possible for the Toolbox to calculate repeated assessments.</p>
-<p>This file has 3 columns: the <code>layer_name</code>, the year your assessment represents, called the <code>scenario_year</code>, and the most recent year of data, called <code>data_year</code>.</p>
-<p>Let’s have a look:</p>
+<div id="config.r" class="section level4">
+<h4><span class="header-section-number">6.3.3.5</span> config.R</h4>
 <div class="figure">
-<img src="images/scenario_data_years_eg.png" />
+<img src="https://docs.google.com/drawings/d/e/2PACX-1vSmsay5W22clkc4XXknNILZxE5j88wjMuVNIovcyhX2RqiPqDTehKZr-oUkviozWawJF3ybCc81YS9t/pub?w=960&amp;h=720" />
 
 </div>
-<p>You can see that for each layer, the <code>data_year</code> is associated with a <code>scenario_year</code>. For the <code>ao_access</code> layer, these data have never been updated so we use the same data year for each scenario year, and they are repeated in the <code>data_year</code> column. But for <code>ao_need</code>, there are different years of data available every year, but there is a lag time for which year of data corresponds to which scenario year.</p>
+<p><code>config.R</code> configures labeling and constants appropriately. You will only need to modify this file when working with goals that have categories (example: habitat types or economy sectors) that are affected differently by pressures and resilience measures.</p>
+<p><em>We have just explored the files in the <code>conf</code> folder. To recap, the <code>conf</code> folder contains important configuration files required to calculate OHI scores, including functions.R, scenario_data_years.csv, and pressures and resilience files. Now let’s take a step back to the <code>region2016</code> folder, and check out what else is there.</em></p>
 </div>
 </div>
 <div id="configure_toolbox.r" class="section level3">
-<h3><span class="header-section-number">6.4.3</span> configure_toolbox.r</h3>
+<h3><span class="header-section-number">6.3.4</span> configure_toolbox.r</h3>
 <div class="figure">
 <img src="https://docs.google.com/drawings/d/e/2PACX-1vSfm3eOmTbowpx1e2zUYIz08a_aWW16fhVhnH47AUz4GZZEsJMtTR4Flplx-5Wwex0TG31PoGy4E5nA/pub?w=960&amp;h=720" />
 
@@ -430,7 +430,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p>This script does the pre-checks before running goal models and calculate scores. It loads <code>ohicore</code>, calls all goal functions and data layers in the “conf” folder, and check that all data layers are registered properly. You are encouraged to use this script when you’re working on individual goal models. After you register data layers for a goal, or make any changes to the data layers, source this script before running model-specific functions in functions.R.</p>
 </div>
 <div id="calculate_scores.r" class="section level3">
-<h3><span class="header-section-number">6.4.4</span> calculate_scores.R</h3>
+<h3><span class="header-section-number">6.3.5</span> calculate_scores.R</h3>
 <div class="figure">
 <img src="https://docs.google.com/drawings/d/e/2PACX-1vTeKKHmsK8hy6kICeJ-tAZsvBy_QqAeYdn7JcthxM4AbCeJDcpZ8UhHnGMXdy1DcJBfF0IJrpFFSKke/pub?w=960&amp;h=720" />
 
@@ -439,7 +439,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p>This script runs everything required to calculate OHI scores using the prepared layers the layers folder that are registered in layers.csv. Scores will be saved in scores.csv.</p>
 </div>
 <div id="recap" class="section level3">
-<h3><span class="header-section-number">6.4.5</span> Recap</h3>
+<h3><span class="header-section-number">6.3.6</span> Recap</h3>
 <p>The OHI Toolbox is a ecosystem of data layers and scripts, contained in folders and their sub-folders.</p>
 <p>The information in your Toolbox repository will interact with an <code>R</code> package called <code>ohicore</code>, which does the core operations to calculate OHI scores. You will need to install this package at the beginning of your assessment, and then call it as a library after that.</p>
 <p>As you begin your assessment, you will spend most of your time in <code>prep</code> folder, where you upload, explore, and format your data layers to be saved in the scenario folder <code>region2016</code> for the next step of calculations.</p>

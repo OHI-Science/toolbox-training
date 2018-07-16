@@ -22,9 +22,9 @@ Before the training, please make sure you have done the following:
 
 Now you have set up your computer, let's open the `toolbox-demo` repository on your computer, and go from there.
 
-## main repository folder
+## Repository home folder (ex: `toolbox-demo` or `gye`)
 
-When you first open the repository, you'll encounter the following files and folders. *Note*: if you have a starter repository, you'll have a `prep` folder but not a `scenario` folder. 
+When you first open the repository, you'll encounter the following files and folders. *Note*: if you have a starter repository, you'll have a `prep` folder but not a `scenario` folder (which is `region2016` in the screenshot below. 
 
 ![](https://docs.google.com/drawings/d/e/2PACX-1vTWGVIHdpK5UirBr2prb1rjly7t0QQNygRCL8MnvBG4Sxw_eEZJyfCu423LFzNLQ316q27YToAMJGRA/pub?w=960&h=720)
 
@@ -45,7 +45,7 @@ Among all the files on your screen, the most important files are:
 
 Let's take a closer look at the `prep` and `region2016` folders. 
 
-## Prep folder 
+### Prep folder 
 
 Click on `prep` and let's see what's inside: 
 
@@ -61,7 +61,7 @@ We use RMarkdown (.Rmd) files because they can be rendered as webpages (for exam
 
 _Now we've walked through the prep folder, let's take a look at the scenario folder. Click back to the main `toolbox-demo` folder, and open the `region2016` folder._
 
-### region2016 folder
+### Scenario folder (ex: `region2016`)
 
 ![](https://docs.google.com/drawings/d/e/2PACX-1vT9zIRR6AsCOHwSyuDtQBBurQ2YRo4TpRlkrO6j193ldSZN9FuAkm70mqYPJrVSzeLUokCn4CcOmpkm/pub?w=960&h=720)
 
@@ -86,17 +86,32 @@ The `conf` folder includes important configuration files required to calculate O
 ![](https://docs.google.com/drawings/d/e/2PACX-1vTuZY4xoL1urgQSYtv093jxpneudRZmebIhW9C8JAuWOpS940Q2yP9kzVeaBwj_ajD2GTsBylLnkzD1/pub?w=960&h=720)
 
 Most of the maneuvering in the Conduct phase of the assessment is done within this folder. 
-There are both .R scripts and .csv files. Let's see what they are. 
+There are both .R scripts and .csv files. We will investigate them in the order you will interact with them.
 
-##### functions.R
+#### functions.R
 
 ![](https://docs.google.com/drawings/d/e/2PACX-1vS2ePP1saxdgCYsy7bC1UxlwiJCyHgzIj-zDdKLrRWKzecp7NI8aRoZOsPddCwTb6RADiZ9xji-RzQx/pub?w=960&h=720)
 
-This R script contains the equations for each goal and sub-goal model. Much of your time will be spent here modifying goal models with the data you prepared in `prep` folder. 
+**`functions.R` contains models to calculate goal status and trend for all goal and sub-goals**. Much of your time will be spent here developing goal models to calculate status and trend with the data layers you prepared. 
 
-Each goal and sub-goal equation is stored as a separate function within the script. These functions calculate the status and trend using prepared layers saved in the ‘layers’ folder and registered in layers.csv. 
+Each goal and sub-goal equation is stored as a separate function within the script, identified by a 2- or 3- letter code. These functions calculate the status and trend using prepared layers saved in the `layers` folder and registered in layers.csv. 
 
 <!--- info about the rest of the conf files are modified from the manual --->
+
+#### scenario_data_years.csv
+
+This file organizes year information for each layer. OHI assessments use the most recent data available, but which year is most recent will vary from data set to data set. `scenario_data_years.csv` acts like a registry to help keep track of all these years. When you calculate OHI scores, you are always working with scenario year.
+
+This file also makes it possible for the Toolbox to calculate repeated assessments. 
+
+This file has 3 columns: the `layer_name`, the year your assessment represents, called the `scenario_year`, and the most recent year of data, called `data_year`.
+
+Let's have a look: 
+
+![](images/scenario_data_years_eg.png)
+
+You can see that for each layer, the `data_year` is associated with a `scenario_year`. In the example above, the data from the `ao_access` layer have never been updated so we use the same data year for each scenario year, which is therefore repeated in the `data_year` column. But for the `ao_need` layer, many years of data are available, but there is a lag time for which year of data corresponds to which scenario year. 
+
 
 #### pressures & resilience
 
@@ -111,17 +126,15 @@ They are spreadsheets that are best opened with Excel.
 
 ![](https://docs.google.com/drawings/d/e/2PACX-1vQDM2iViRuigEadiGHhoG1CV_5DAvowpDZI4qTR7jZbg7-0QXfHxDJHjgxN2Z4g4bBTCQNknMkG_qiT/pub?w=960&h=720)
 
-Pressures and Resilience are two of the four dimensions used to evaluate each goal or sub-goal, along with Status and Trend that you calculate in `functions.R`. We will go through how to modify these tables in Chapter \@ref(pressures resilience) later. 
-
-Now, we won't dwell on these files much except to show you where they are, but you can refer back to this section for the detailed information listed below when you get to Chapter \@ref(pressures resilience) <!--- too muchh info?? it takes up a lot of room for information that's above the introductory level. people are pretty far from using these files. but i think we should have this info here for future reference. --->
+Pressures and Resilience are two of the four dimensions used to evaluate each goal or sub-goal, along with goal status and trend that you calculate in `functions.R`. More details on how to operate with these files are explained in future chapters.
 
 **pressures_categories.csv**
 
-This is a table to record the name of each pressures data layer, its category, and sub-category. Each data layer name is the same name that’s saved in the layers folder and is registered in layers.csv. Each layer falls under one of two categories - ecological or social pressures, and one of several sub-categories to further represent the origin of the pressure (e.g. climate change, fishing, etc), which is also indicated by a prefix of each data layer name (for example: po_ for the pollution sub-category). 
+This is a table to record the name of each pressures data layer, its category, and sub-category. Each data layer name is the same name that is saved in the layers folder and is registered in layers.csv. Each layer falls under one of two categories - ecological or social pressures, and one of several sub-categories to further represent the origin of the pressure (e.g. climate change, fishing, etc), which is also indicated by a prefix of each data layer name (for example: po_ for the pollution sub-category). 
 
 **pressures_matrix.csv**
 
-This is a table that indicates which individual pressures (stressors) affect which goal, sub-goals, or components, and weights them from 1-3 (a weight of 0 is shown as a blank). A higher weight indicates more negative impacts on that goal or component of the goal. These weights are relative to each row of the matrix (goal, sub-goal, or component). These weights are used in global assessments based on scientific literature and expert opinion, and you can modify the weightings if necessary for your assessment. The pressures matrix is the same as Table S25 in the Supplementary Information for Halpern et al. 2012.
+This is a table that indicates which individual pressures (stressors) affect which goal, sub-goals, or components, and weights them from 1-3. A weight of 0 is shown as a blank. A higher weight indicates more negative impacts on that goal or component of the goal. These weights are relative to each row of the matrix (goal, sub-goal, or component). These weights are used in global assessments based on scientific literature and expert opinion, and you can modify the weightings if necessary for your assessment. The pressures matrix is the same as Table S25 in Halpern et al. 2012, with current and detailed information in the online [OHI-Global supplemental information](https://rawgit.com/OHI-Science/ohi-global/draft/global_supplement/Supplement.html#432_pressure) document. 
 
 Each pressure (column) of the pressures matrix is the layer name of the pressures layer file that is saved in the layers folder and is registered in layers.csv, matching what’s recorded in the pressures_categories.csv. 
 
@@ -133,14 +146,7 @@ Each resilience layer is also assigned a weight of 0-1, representing the level o
 
 **resilience_matrix.csv**
 
-This is a table that indicates which individual resilience measures affect which goal, sub-goals, or components. The resilience matrix is the same as Table S26 in the Supplementary Information for Halpern et al. 2012. 
-
-
-#### config.R 
-
-![](https://docs.google.com/drawings/d/e/2PACX-1vSmsay5W22clkc4XXknNILZxE5j88wjMuVNIovcyhX2RqiPqDTehKZr-oUkviozWawJF3ybCc81YS9t/pub?w=960&h=720)
-
-`config.R` configures labeling and constants appropriately. You will only need to modify this file when working with goals that have categories (example: habitat types or economy sectors) that are affected differently by pressures and resilience measures.
+This is a table that indicates which individual resilience measures affect which goal, sub-goals, or components. The resilience matrix is the same as Table S26 from Halpern et al. 2012, with current and detailed information in the online [OHI-Global supplemental information](https://rawgit.com/OHI-Science/ohi-global/draft/global_supplement/Supplement.html#433_resilience) document. 
 
 #### goals.csv
 
@@ -148,30 +154,26 @@ This is a table that indicates which individual resilience measures affect which
 
 ![](https://docs.google.com/drawings/d/e/2PACX-1vRa9TITgRU9zHHMnbUtMqkIQM-RDCarFa9th-v3_zq_W1kResrS75JEgn39fN3C8EMpqe7OaZD7M7sZ/pub?w=960&h=720)
 
-`goals.csv` has information about goals and sub-goals, and controls which goals are calculated, and how they are represented in figures. If a goal exists in this list, it will be calculated, and needs an accompanying function in `functions.r`. Here are the columns within `goals.csv`:
+`goals.csv` has information about goals and sub-goals, and controls which goals are calculated, and how they are represented in figures. If a goal exists in this list, it will be calculated, and needs an accompanying function in `functions.r`. **You will likely only modify this file if you are removing or adding goals or sub-goals, or changing the weighting for how goals are combined**.
+
+Here are the columns within `goals.csv`:
 
 - order_color & order_hierarchy: the order to display in flower plots
-- order_calculate: the order in which the goals and sub-goals are calculated for the overall index scores
+- order_calculate: the order in which the goals and sub-goals are calculated for the overall Index scores
 - goal & parent: indicates the relationship between sub-goals and supra-goals (i.e. goals - with sub-goals)
-- weight: how each goal is weighted to calculate the final Index scores
-- preindex_function: indicate what parameters are called to calculate scores for goals and - sub-goals in functions.r
-- postindex_function: indicate what parameters are called to calculate scores for supra-goals in functions.r
+- weight: the relative weight of each goal to calculate overall Index scores
+- preindex_function: indicate what parameters are called to calculate scores for goals and - sub-goals in functions.R
+- postindex_function: indicate what parameters are called to calculate scores for supra-goals in functions.R
 
-_We have just gone over the files in the `conf` folder. To recap, the `conf` folder contains important configuration files required to calculate OHI scores, including functions.R, pressures and resilience files, etc. Now let's take a step back to the `region2016` folder, and check out what else is there._
+#### config.R 
 
-#### scenario_data_years.csv
+![](https://docs.google.com/drawings/d/e/2PACX-1vSmsay5W22clkc4XXknNILZxE5j88wjMuVNIovcyhX2RqiPqDTehKZr-oUkviozWawJF3ybCc81YS9t/pub?w=960&h=720)
 
-This file organizes year information for each layer. OHI assessments use the most recent data available, but which year is most recent will vary from data set to data set. `scenario_data_years.csv` acts like a registry to help keep track of all these years. When you calculate OHI scores, you are always working with scenario year.
+`config.R` configures labeling and constants appropriately. You will only need to modify this file when working with goals that have categories (example: habitat types or economy sectors) that are affected differently by pressures and resilience measures.
 
-This file also makes it possible for the Toolbox to calculate repeated assessments. 
 
-This file has 3 columns: the `layer_name`, the year your assessment represents, called the `scenario_year`, and the most recent year of data, called `data_year`.
+*We have just explored the files in the `conf` folder. To recap, the `conf` folder contains important configuration files required to calculate OHI scores, including functions.R, scenario_data_years.csv, and pressures and resilience files. Now let's take a step back to the `region2016` folder, and check out what else is there.*
 
-Let's have a look: 
-
-![](images/scenario_data_years_eg.png)
-
-You can see that for each layer, the `data_year` is associated with a `scenario_year`. For the `ao_access` layer, these data have never been updated so we use the same data year for each scenario year, and they are repeated in the `data_year` column. But for `ao_need`, there are different years of data available every year, but there is a lag time for which year of data corresponds to which scenario year. 
 
 ### configure_toolbox.r
 
