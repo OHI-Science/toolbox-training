@@ -2,15 +2,17 @@
 
 ## Overview
 
-Welcome to the OHI Toolbox, the engine behind all OHI assessments. The Toolbox is an ecosystem of R scripts and data files, organized in folders and sub-folders. In this chapter, we will learn how the Toolbox is structured - where you would store data, modify models, make calculations, as well as record decision-makings. This tutorial will take roughly 30 minutes. 
+Welcome to the OHI Toolbox, the engine behind all OHI assessments. The Toolbox is an ecosystem of R scripts and data files, organized in folders and sub-folders. The information in your repository will interact with an `R` package called `ohicore`, which does the core operations to calculate OHI scores.
 
-The Toolbox ecosystem introduced here is the same in any assessment. So, if you want to explore the goal model for the [Gulf of Guayaquil assessment](http://github.com/OHI-Science/gye) for example, you could navigate to their models in the same way. 
+In this chapter, we will learn how the Toolbox is structured - where you would store data, modify models, make calculations, as well as record decision-makings. The Toolbox ecosystem introduced here is the same in any assessment. So, if you would like to explore your own repository or an existing repository such as the [Gulf of Guayaquil assessment](http://github.com/OHI-Science/gye) you can navigate through those repositories in the same way. 
+
+This tutorial will take roughly 30 minutes. 
 
 Let's get started! 
 
 ## Prerequisites
 
-Before the training, please make sure you have done the following: 
+We will explore these files together on your own computer, but we will not be calculating scores in this chapter. If you will be using the Toolbox, please clone the repository to your computer with the following steps. You can clone either the toolbox-demo or your assessment's repository. If you will not be calculating scores, you do not need to clone anything; please follow along online at GitHub <https://github.com/OHI-Science/toolbox-demo> or with your assessment's repository.
 
 1. Have up-to-date versions of `R` and RStudio and have RStudio configured with Git/GitHub
     - https://cloud.r-project.org
@@ -22,9 +24,9 @@ Before the training, please make sure you have done the following:
 
 Now you have set up your computer, let's open the `toolbox-demo` repository on your computer, and go from there.
 
-## Repository home folder (ex: `toolbox-demo` or `gye`)
+## Repository home folder (ex: `toolbox-demo`)
 
-When you first open the repository, you'll encounter the following files and folders. *Note*: if you have a starter repository, you'll have a `prep` folder but not a `scenario` folder (which is `region2016` in the screenshot below. 
+When you first open the repository, you'll encounter the following files and folders. *Note*: if you have a starter repository, you'll have a `prep` folder but not a `scenario` folder (which is `region2016` in the screenshot below). 
 
 ![](https://docs.google.com/drawings/d/e/2PACX-1vTWGVIHdpK5UirBr2prb1rjly7t0QQNygRCL8MnvBG4Sxw_eEZJyfCu423LFzNLQ316q27YToAMJGRA/pub?w=960&h=720)
 
@@ -35,39 +37,37 @@ Overall, all the main files you will see are either of the two file types:
 
 Among all the files on your screen, the most important files are: 
 
-- `install_ohicore.r`. `ohicore` is the backbone software package of the Toolbox. It is a `R` package of functions that contain all the core operations for the data and models that you provide for your assessment, and it will calculate OHI scores. You don't need to interact with or see the inside of `ohicore` yourself during the assessment, but you do need to install this software package once at the start of your assessment by running this script. 
+- `prep` is a data preparation folder. This is where you will store raw and/or intermediate data, and the R scripts you create to explore and format those data, and make trial runs of different models. You will spend roughly the first half of your time during your assessment here.
 
-- `prep` is a data preparation folder. As the name suggests, this is where you will store raw and/or intermediate data, explore and format those data, and make trial runs of different models. You will spend roughly the first half of your time during an assessment here.
+- `region2016` is the scenario folder. The scenario folder has the architecture of the OHI Toolbox that is needed to calculate scores. It contains all of the inputs needed to calculate OHI scores, and you will modify these inputs when conducting your assessment. By default it is named regionYEAR (e.g. cnc2016 for New Caledonia 2016) to indicate that the assessment is conducted at the region scale (province, state, district, etc.), based on input layers and goal models used in the most recent global assessment (e.g. 2016). 
 
-- `region2016` is the scenario folder. The scenario folder is probably the most important folder within the repository. It contains all of the inputs needed to calculate OHI scores, and you will modify these inputs when conducting your assessment. By default it is named regionYEAR (e.g. cnc2016 for New Caledonia 2016) to indicate that the assessment is conducted at the region scale (province, state, district, etc.), based on input layers and goal models used in the most recent global assessment (e.g. 2016). 
-
-- `README.md` file accompanys most folders or files, as you will discover. It's a place to take notes for yourself, your team, and anyone interested in the future.  
+- `README.md` file accompanys most folders or files, as you will discover. It is a place to take notes for yourself, your team, and thinking ahead to anyone interested in the future.  
 
 Let's take a closer look at the `prep` and `region2016` folders. 
 
-### Prep folder 
+## Prep folder 
 
-Click on `prep` and let's see what's inside: 
+Click on `prep` and let's see what is inside: 
 
 ![](https://docs.google.com/drawings/d/e/2PACX-1vRC6jKA-cwwnCDck_pGDgYjN4uA13E9a2PyFqrE-HJbQa9EIclOLLARFmYNYMyaHfdkOcaIlCXgTCSh/pub?w=960&h=720)
 
-Within `prep`, there is a sub-folder for each goal and subgoal, as well as pressures and resilience. These folders are meant to help you be organized, but if you have another way you're welcome to go ahead with your own way. Note that some goals depend on the same data and thus data can be prepared into layers from one place instead of for each goal. This is the case for goals dependent on habitat data: CP, CS, HAB, and goals dependent on species data: SPP, ICO. 
+Within `prep`, there is a sub-folder for each goal and subgoal, as well as pressures and resilience. These folders are meant to help you be organized and promote scripting for data preparation ([this is important for reproducibility and repeatability](https://www.nature.com/articles/s41559-017-0160)). Note that some goals depend on the same data and thus data can be prepared into layers from one place instead of for each goal. This is the case for goals dependent on habitat data: CP, CS, HAB, and goals dependent on species data: SPP, ICO. 
 
 Click on the 'CW' folder. Within each goal folder, there are typically a _.Rmd_ script and a sub-folder to contain data. 
 
 The `CW_data_prep.Rmd` document is a script where you will explore your raw data, format the data, try different models, make graphs and maps, as well as document decision making. We will come back to this script in Chapter \@ref(prep-data) to learn how to prepare data for calculations. 
 
-We use RMarkdown (.Rmd) files because they can be rendered as webpages (for example, `CW_data_prep.html` in the same CW folder) and can help explain the data processing steps and motivation behind them in written language. Click 'Knit' from the RStudio editor or click on the `.html` file from the file pane and select 'View in web browser`, and you will see a clean, human-readable webpage that can be shared online and viewed by anyone.  
+We use RMarkdown (.Rmd) files because they can be rendered as webpages (for example, `CW_data_prep.html` in the same CW folder) and can help explain the data processing steps and motivation behind them in written language. Click 'Knit' from the RStudio editor or click on the `.html` file from the file pane and select 'View in web browser', and you will see a clean, human-readable webpage that can be shared online and viewed by anyone.  
 
 _Now we've walked through the prep folder, let's take a look at the scenario folder. Click back to the main `toolbox-demo` folder, and open the `region2016` folder._
 
-### Scenario folder (ex: `region2016`)
+## Scenario folder (ex: `region2016`)
 
 ![](https://docs.google.com/drawings/d/e/2PACX-1vT9zIRR6AsCOHwSyuDtQBBurQ2YRo4TpRlkrO6j193ldSZN9FuAkm70mqYPJrVSzeLUokCn4CcOmpkm/pub?w=960&h=720)
 
 Again, this scenario folder contains all the data layers and scripts for you to calculate OHI scores. Let's look into the sub-folders and see what they do. 
 
-#### layers folder & layers.csv
+### layers folder & layers.csv
 
 After you prepared your data layers in the `prep` folder, you will save them in the `layers` folder, and register them in `layers.csv`. (You will learn how to do so in Chapter \@ref(prep-data)). 
 
@@ -75,20 +75,20 @@ The `layers` folder contains individual data layers as .csv files for each goal 
 
 ![](https://docs.google.com/drawings/d/e/2PACX-1vTVEC9P0g1mBsK3lFPKsl9P-RwrG0ivJdEKEa5dblQMieiVVOg5ujDG1h9_90MRnWzY4ESDAuwGzbqh/pub?w=960&h=720)
 
-`layers.csv` is a data registry for all the data layers in the layers folder. It's also a directory for `ohicore` to find the exact data layers for calculations. The file itself is spreadsheet that's best to be opened in a spreadsheet editor such as Microsoft Excel. 
+`layers.csv` is a data registry for all the data layers in the layers folder. It is also a directory for `ohicore` to find the exact data layers for calculations. The file itself is spreadsheet that is best to be opened in a spreadsheet editor such as Microsoft Excel. 
 
 ![](https://docs.google.com/drawings/d/e/2PACX-1vTtkW28E2W125z8302VIvKen-bp6sIOFHS6Kbp8CcaItEjVhlqf3GCGviJKtgLVaNu6Z2m2tvD4U8ka/pub?w=960&h=720)
 
-### conf folder
+## conf folder
 
-The `conf` folder includes important configuration files required to calculate OHI scores, as shown here. You can think of these as the model parameters that the Toolbox will need along with your data in order to calculate scores. 
+The `conf` folder includes important configuration files required to calculate OHI scores, as shown here. These are the model parameters that the Toolbox needs to calculate scores, along with your prepared data layers. 
 
 ![](https://docs.google.com/drawings/d/e/2PACX-1vTuZY4xoL1urgQSYtv093jxpneudRZmebIhW9C8JAuWOpS940Q2yP9kzVeaBwj_ajD2GTsBylLnkzD1/pub?w=960&h=720)
 
 Most of the maneuvering in the Conduct phase of the assessment is done within this folder. 
 There are both .R scripts and .csv files. We will investigate them in the order you will interact with them.
 
-#### functions.R
+### functions.R
 
 ![](https://docs.google.com/drawings/d/e/2PACX-1vS2ePP1saxdgCYsy7bC1UxlwiJCyHgzIj-zDdKLrRWKzecp7NI8aRoZOsPddCwTb6RADiZ9xji-RzQx/pub?w=960&h=720)
 
@@ -98,9 +98,9 @@ Each goal and sub-goal equation is stored as a separate function within the scri
 
 <!--- info about the rest of the conf files are modified from the manual --->
 
-#### scenario_data_years.csv
+### scenario_data_years.csv
 
-This file organizes year information for each layer. OHI assessments use the most recent data available, but which year is most recent will vary from data set to data set. `scenario_data_years.csv` acts like a registry to help keep track of all these years. When you calculate OHI scores, you are always working with scenario year.
+This file organizes year information for each layer. OHI assessments use the most recent data available, but which year is most recent will vary from data set to data set. `scenario_data_years.csv` acts like a registry to help keep track of all these years. When you calculate OHI scores, you will be explicit about the year  your completed assessment will represent, and we call this the "scenario year".
 
 This file also makes it possible for the Toolbox to calculate repeated assessments. 
 
@@ -108,12 +108,11 @@ This file has 3 columns: the `layer_name`, the year your assessment represents, 
 
 Let's have a look: 
 
-![](images/scenario_data_years_eg.png)
+![](https://docs.google.com/drawings/d/e/2PACX-1vRKNI4Xi6gxgCPGiW0P22KYYcedAg7CDA_3pM44tR9-oKq-PF7AoVPGX7SnqPZquA2C58zAqPQxVPmO/pub?w=960&h=480)
 
 You can see that for each layer, the `data_year` is associated with a `scenario_year`. In the example above, the data from the `ao_access` layer have never been updated so we use the same data year for each scenario year, which is therefore repeated in the `data_year` column. But for the `ao_need` layer, many years of data are available, but there is a lag time for which year of data corresponds to which scenario year. 
 
-
-#### pressures & resilience
+### pressures & resilience
 
 There are four .csv files relating to pressures and resilience. 
 
@@ -148,9 +147,9 @@ Each resilience layer is also assigned a weight of 0-1, representing the level o
 
 This is a table that indicates which individual resilience measures affect which goal, sub-goals, or components. The resilience matrix is the same as Table S26 from Halpern et al. 2012, with current and detailed information in the online [OHI-Global supplemental information](https://rawgit.com/OHI-Science/ohi-global/draft/global_supplement/Supplement.html#433_resilience) document. 
 
-#### goals.csv
+### goals.csv
 
-`goals.csv` is another spreadsheet file that's best opened in Excel. 
+`goals.csv` is another spreadsheet file that is best opened in Excel. 
 
 ![](https://docs.google.com/drawings/d/e/2PACX-1vRa9TITgRU9zHHMnbUtMqkIQM-RDCarFa9th-v3_zq_W1kResrS75JEgn39fN3C8EMpqe7OaZD7M7sZ/pub?w=960&h=720)
 
@@ -165,35 +164,54 @@ Here are the columns within `goals.csv`:
 - preindex_function: indicate what parameters are called to calculate scores for goals and - sub-goals in functions.R
 - postindex_function: indicate what parameters are called to calculate scores for supra-goals in functions.R
 
-#### config.R 
+### config.R 
 
 ![](https://docs.google.com/drawings/d/e/2PACX-1vSmsay5W22clkc4XXknNILZxE5j88wjMuVNIovcyhX2RqiPqDTehKZr-oUkviozWawJF3ybCc81YS9t/pub?w=960&h=720)
 
 `config.R` configures labeling and constants appropriately. You will only need to modify this file when working with goals that have categories (example: habitat types or economy sectors) that are affected differently by pressures and resilience measures.
 
 
-*We have just explored the files in the `conf` folder. To recap, the `conf` folder contains important configuration files required to calculate OHI scores, including functions.R, scenario_data_years.csv, and pressures and resilience files. Now let's take a step back to the `region2016` folder, and check out what else is there.*
+### conf folder recap
 
+We have just explored the files in the `conf` folder. To recap, the `conf` folder contains important configuration files required to calculate OHI scores, including functions.R, scenario_data_years.csv, and pressures and resilience files. Now let's take a step back to the `region2016` folder, and check out what else is there.
 
-### configure_toolbox.r
+## calculate_scores.Rmd
 
-![](https://docs.google.com/drawings/d/e/2PACX-1vSfm3eOmTbowpx1e2zUYIz08a_aWW16fhVhnH47AUz4GZZEsJMtTR4Flplx-5Wwex0TG31PoGy4E5nA/pub?w=960&h=720)
+*Note: `calculate_scores.Rmd` replaces three files that existed in previous versions of the Toolbox: `calculate_scores.R`, `configure_toolbox.R`, and `install_ohicore.R`. We collapsed those three files into one .Rmd file to simplify the workflow, although they still function correctly as individuals if your repository has them as three separate files. You can find information about these three files below.*
 
-This script does the pre-checks before running goal models and calculate scores. It loads `ohicore`, calls all goal functions and data layers in the “conf” folder, and check that all data layers are registered properly. You are encouraged to use this script when you’re working on individual goal models. After you register data layers for a goal, or make any changes to the data layers, source this script before running model-specific functions in functions.R.
+![](https://docs.google.com/drawings/d/e/2PACX-1vTeKKHmsK8hy6kICeJ-tAZsvBy_QqAeYdn7JcthxM4AbCeJDcpZ8UhHnGMXdy1DcJBfF0IJrpFFSKke/pub?w=960&h=720)
+
+`calculate_scores.Rmd` is the code and workflow to calculate OHI scores. It enables the information in your repository to interact with an `R` package called `ohicore`, which does the core operations to calculate OHI scores. This Rmd will install the `ohicore` package at the beginning of your assessment, and then call it as a library after that. 
+
+Whenever you change any data in `layers`, modify models in `functions.R`, and make changes to pressures and resilience, you could run code from this file and see how the OHI scores change. Scores will be saved in scores.csv.
 
 ### calculate_scores.R
 
-![](https://docs.google.com/drawings/d/e/2PACX-1vTeKKHmsK8hy6kICeJ-tAZsvBy_QqAeYdn7JcthxM4AbCeJDcpZ8UhHnGMXdy1DcJBfF0IJrpFFSKke/pub?w=960&h=720)
+*Note: depreciated, see calculate_scores.Rmd section above. This script used to be inside the repository's scenario folder.*
 
 `calculate_scores.R` is a script you'll come to use often. As the name tells us, it is a script to calculate OHI scores. Whenever you change any data in`layers`, modify models in `functions.R`, and make changes to pressures and resilience, you could run this script and see how the OHI scores change. 
 
 This script runs everything required to calculate OHI scores using the prepared layers the layers folder that are registered in layers.csv. Scores will be saved in scores.csv.
 
+### configure_toolbox.R
+
+*Note: depreciated, see calculate_scores.Rmd section above. This script used to be inside the repository's scenario folder.*
+
+![](https://docs.google.com/drawings/d/e/2PACX-1vSfm3eOmTbowpx1e2zUYIz08a_aWW16fhVhnH47AUz4GZZEsJMtTR4Flplx-5Wwex0TG31PoGy4E5nA/pub?w=960&h=720)
+
+This script does the pre-checks before running goal models and calculate scores. It loads `ohicore`, calls all goal functions and data layers in the “conf” folder, and check that all data layers are registered properly. You are encouraged to use this script when you’re working on individual goal models. After you register data layers for a goal, or make any changes to the data layers, source this script before running model-specific functions in functions.R.
+
+### install_ohicore.R
+
+*Note: depreciated, see calculate_scores.Rmd section above. This script used to be inside the repository's home folder.*
+
+`ohicore` is the backbone software package of the Toolbox. It is a `R` package of functions that contain all the core operations for the data and models that you provide for your assessment, and it will calculate OHI scores. You don't need to interact with or see the inside of `ohicore` yourself during the assessment, but you do need to install this software package once at the start of your assessment by running this script. 
+
 ### Recap 
 
 The OHI Toolbox is a ecosystem of data layers and scripts, contained in folders and their sub-folders. 
 
-The information in your Toolbox repository will interact with an `R` package called `ohicore`, which does the core operations to calculate OHI scores. You will need to install this package at the beginning of your assessment, and then call it as a library after that. 
+The information in your repository will interact with an `R` package called `ohicore`, which does the core operations to calculate OHI scores. You will need to install this package at the beginning of your assessment, and then call it as a library after that. 
 
 As you begin your assessment, you will spend most of your time in `prep` folder, where you upload, explore, and format your data layers to be saved in the scenario folder `region2016` for the next step of calculations. 
 
