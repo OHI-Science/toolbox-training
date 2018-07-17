@@ -2,8 +2,9 @@
 
 **In development.** 
 
+Until this chapter is written for OHI websites, please see [Making free websites with RStudio’s R Markdown](https://jules32.github.io/rmarkdown-website-tutorial/)
+
+<!---
 ## Overview
 
-make maps, flower plot
-
-TODO: add from NCEAS roundtable training
+make maps, flower plot --->
