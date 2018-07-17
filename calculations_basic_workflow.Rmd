@@ -6,22 +6,19 @@ The purpose of Chapter \@ref(calcs-basic) is to introduce you to the basic workf
 
 Calculating scores with the OHI Toolbox requires a tailored repository operating with the OHI `R` package `ohicore`. The tailored repo has information specific to your assessment — most importantly the data and goal models — and `ohicore` will combine these with core operations to calculate OHI scores. You will always start with a tailored repository that has data and models extracted from the most recent Global OHI assessment.
 
-![](https://docs.google.com/drawings/d/118-eWWsxxgz8kC0ub7racMuzjFABwjVkO2bKjQ-2qrU/pub?w=624&h=480)
-
-<br>
-
 This training will introduce the basic workflow for calculating scores. There are many ways to build from the 'out-of-the-box' tailored repo you have instead of starting an assessment from scratch. For example, you may want to just change underlying data sources within the models, or competely change the models which also requires new data layers and data sources. 
 
 **We will repeat the basic workflow four times, each time adding complexity. We will calculate scores with:**
 
-1. 'out of the box' data and models extracted from the Global 2016 assessment
+1. 'out of the box' data and models extracted from a recent global assessment
 1. tailored data (with 'out of the box' models)
 1. tailored models (with 'out of the box' data layers)
 1. tailored data and models (adding a new data layer / model variable)
 
 <br>
 
-The workflow depends on the `calculate_scores.r` script found the scenario folder of any tailored repo. We'll also dive deeper into the code itself, focusing particularly on required configuration in `configure_toolbox.r` and developing goal models in `functions.r`. 
+The workflow depends on the `calculate_scores.Rmd` file found the scenario folder of any tailored repo. We'll also dive deeper into the code itself, focusing particularly on developing goal models in `functions.R`. 
+**Note:** *earlier Toolbox versions have `calculate_scores.R` which calls `configure_toolbox.R`. Now, `calculate_scores.Rmd` has a section named "Configure Toolbox", which has the equivalent code so it is possible to follow along with this tutorial even if your repository does not have the `.Rmd`.* 
 
 This is a lot to cover in a 2-hour training, and the purpose is to give you big take home messages and experience for what you need to begin calculating scores. But the Toolbox has a lot of moving parts, and we cannot cover all of it here. There are a lot of details and other operations that we won't get into here and that will be coming in future tutorials (including tailoring pressures & resilience, and how to change subgoals). 
 
@@ -42,57 +39,97 @@ Before the training, please make sure you have done the following:
 
 ## Review the Toolbox file ecosystem
 
-<!--- TODO `@ningningj`: toolbox_ecosystem.rmd
-TODO @jules32: once toolbox_ecosystem.rmd is done, move this Review section into the Prerequesites section--->
-
-Let's quickly review some of the files you have in the **toolbox-demo** repo. Remember that the ecosystem structure of any tailored repo is the same, so as you learn to navigate through and calculate scores in this repo you are also learning how to navigate through and calculate scores in any other OHI assessment repository — yours or anyone else's.
+Let's quickly review some of the files you have in the **toolbox-demo** repo that we saw in Chapter \@ref(toolbox-ecosystem). Remember that the ecosystem structure of any tailored repo is the same, so as you learn to navigate through and calculate scores in this repo you are also learning how to navigate through and calculate scores in any other OHI assessment repository — yours or anyone else's.
 
 This figure highlights the files we will focus on in this tutorial (others are grayed out). 
-<!--- TODO (for full details see Chapter \@ref(toolbox))--->
 
-![](https://docs.google.com/drawings/d/11QcBxrUNQnzuvJBLcJLMp0C7jFvZ-mz4vIj3OkvlxZ8/pub?h=500)
+![](https://docs.google.com/drawings/d/e/2PACX-1vRDZg3ubeNFMEJ2eBtoLb0YJKgUHTOhZEbE8DMHivSLputNULN2guzL0p_LWSDC2O8wiQLpIX589e6Z/pub?w=960&h=600)
 
 In our **toolbox-demo** repo, here are a few additional things to mention: 
 
 - our scenario folder is called `region2017`
-- goal models are `R` functions in `conf/functions.r`
-- regions are listed in `spatial/regions_list.csv`. We have 8 here.
-
-
-### Run `install_ohicore.r`
-
-If you don't already have `ohicore` installed, let's do that now. `ohicore` is an R package developed by the OHI team that has all the essential core functions and supporting packages you will use to develop your assessment and calculate scores. You will install `ohicore` one time and then load its library from the `toolbox-training` repository whenever you work on your assessment to gain access to all those functions and packages. 
-
-Let's open and source `install_ohicore.r`.  
-
-<!---TODO:: Learn more about `ohicore` in Chapter X.
-
-where would a section on ohicore go? Maybe need to make a vingette for it and link to it but not have a section here.---> 
+- goal models are `R` functions all stored in `conf/functions.R`
+- regions are listed (with area) in `spatial/regions_list.csv`. We have 8 here.
+- <!---TODO:: Learn more about the `ohicore` package: [ohi-science.org/ohicore](http://ohi-science.org/ohicore)---> 
 
 
 ## Calculate with 'out-of-the-box' data and models
 
-The first time we go through the basic workflow will be with 'out-of-the-box' data and models from the 2016 Global assessment. 
+The first time we go through the basic workflow will be with 'out-of-the-box' data and models from the global assessment. 
 
-`calculate_scores.r` is a script that you'll run a lot — both as a whole and piece-by-piece. It takes inputs (data and models) from the Toolbox and computes OHI scores, as the file name suggests. It has several components which we will explore in turn in the rest of  the tutorial. 
+`calculate_scores.Rmd` is the file that you'll use a lot — mostly to run piece-by-piece as you develop your models. It takes inputs (data and models) from your repository and uses the OHI R package `ohicore` to compute OHI scores. It has several components which we will explore in turn in the rest of  the tutorial. 
 
 ![](https://docs.google.com/drawings/d/1OhA7p5-dmrk6dGeP_gWEXFD2pI1ik8KhUYNUSLUVgd4/pub?w=960&h=720)
 
-`calculate_scores.r` will load the libraries you need and `ohicore` will check your book-keeping and configuration, and calculate OHI scores. **Ultimately, it will save the scores for each goal and dimension in `scores.csv`.** The 'dimensions' of OHI goal scores are Status, Trend, Pressures, Resilience, Likely Future State, and overall goal Score. Dimensions are calculated for each goal in a specific order, as we will see below. `calculate_scores.r` will combine information from your tailored repository and calculate scores with OHI core functions from `ohicore`. 
+<br>
 
-Open `region2017/calculate_scores.r` and let's have a look at its operations. We will run it line-by-line.
+`calculate_scores.Rmd` will load the libraries you need and `ohicore` will check your book-keeping and configuration, and calculate OHI scores. **Ultimately, it will save the scores for each goal and dimension in `scores.csv`.** The 'dimensions' of OHI goal scores are Status, Trend, Pressures, Resilience, Likely Future State, and overall goal Score. Dimensions are calculated for each goal in a specific order, as we will see below. `calculate_scores.Rmd` will combine information from your tailored repository and calculate scores with OHI core functions from `ohicore`. 
 
-### Source `configure_toolbox.R`
+Open `region2017/calculate_scores.Rmd` and let's have a look at its operations. We will then run it line-by-line.
 
-We will start by **sourcing `configure_toolbox.r`** from within `calculate_scores.r`.
+`calculate_scores.Rmd` is an [RMarkdown](https://rmarkdown.rstudio.com/) file, which combines simply formatted text and R code and is really amazing for communication, including our OHI websites (see a 1-minute video [here](https://vimeo.com/178485416)). For now, we will focus on the .Rmd file within the RStudio pane, and see that written text appears with a white background and R code appears with a grey background as a "code chunk". You can run R code line-by-line, or as a whole chunk by clicking the green triangle at the top-right corner of the code chunk's grey box. 
 
-![](https://docs.google.com/drawings/d/1VRIZQFkbsDXNRtDQYBVyQIJvVkzP1POjKp8g8G3Ogg8/pub?h=450)
+![](https://docs.google.com/drawings/d/e/2PACX-1vQ3JLCA6A1iXLMsPBMLTJJSsUGfD6mEKOEROUALlcSH6f-VMLOgPL0Kwe4S4YHackdHPXvSFPIQcBL7/pub?w=960&h=720)
 
-There is output printed to the console that lists all of the layers registered, and ends with any warning messages about the layers themselves. We will explore what is happening in `configure_toolbox.r` and how to interpret these warning messages further on; for now, let's move on since we have not encountered an error. 
+<br>
+
+Each of the following steps is its own section and code chunk within `calculate_scores.Rmd`.
+
+## Install packages, including `ohicore`
+
+**Note**: *Previous versions of the Toolbox had `install_ohicore.r` as a separate file, but the effect is the same.*
+
+OHI requires packages created by others in the R community as well as one we developed ourselves. This is something that only needs to be done one time. I think of it as wiring a building for electricity: once it's done, it's done. Let's run these line-by-line if you don't have them installed already.
+
+`ohicore` is an R package developed by the OHI team that has all the essential core functions and supporting packages you will use to develop your assessment and calculate scores.
+
+```{r install packages, eval=FALSE}
+## install packages from R community
+install.packages("tidyverse")
+install.packages("zoo")
+install.packages("here")
+install.packages("devtools")
+
+## install the ohicore package from OHI team
+devtools::install_github('ohi-science/ohicore@dev')
+```
+
+## Load R packages
+
+Next, you will load each R package as a library from the `toolbox-training` repository whenever you work on your assessment to gain access to all those functions and packages. That is like turning on the lights when you need to use them; you need to do this every time you open your assessment repository. 
+
+We will also set the working directory, because the `ohicore` package expects you to be inside your scenario folder (this will be improved further another time). We will use the new `here` package, which will identify the full filepath on your computer and will make collaborating easier between us.
+
+```{r setup, eval=FALSE}
+## load package libraries
+library(tidyverse)
+library(stringr)
+library(zoo)
+library(here)
+library(ohicore)
+
+## set the working directory to a filepath we all have
+setwd(here::here('region2017'))
+```
+
+## Configure the Toolbox
+
+Next, we will configure the toolbox from within `calculate_scores.Rmd`. Let's run the whole code chunk by clicking the green arrow at the top-right. 
+
+There is output printed to the console that lists all of the layers registered, and ends with any warning messages about the layers themselves. We will explore what is happening here and how to interpret these warning messages further on; for now, let's move on since we have not encountered an error. 
 
 ```{r configure_toolbox, eval=FALSE}
-## run the configure_toolbox.r script to check configuration
-source('~/github/toolbox-demo/region2017/configure_toolbox.r')
+conf <- ohicore::Conf('conf')
+
+## check that scenario layers files in the \layers folder match layers.csv registration. Layers files are not modified.
+ohicore::CheckLayers('layers.csv', 'layers', flds_id=conf$config$layers_id_fields)
+
+## load scenario layers for ohicore to access. Layers files are not modified.
+layers <- ohicore::Layers('layers.csv', 'layers')
+
+## select corresponding data year to use for pressures and resilience
+scenario_years <- 2016
+layers$data$scenario_year <- scenario_years
 
 #   cc_acid
 #   cc_slr
@@ -108,19 +145,18 @@ source('~/github/toolbox-demo/region2017/configure_toolbox.r')
 
 ```
 
-### Run `CalculateAll()`
+## Run `CalculateAll()`
 
-Now let's continue with the next operation in `calculate_scores.r`, which is to **run `CalculateAll()`**. Notice too that we are saving the output to a variable called `scores`.
-
-![](https://docs.google.com/drawings/d/1mgmRwngXwVpoqBIlrQcRqKmKgSbGwAN79BD6p1zBwS4/pub?h=450)
+Now let's continue with the next code chunk in `calculate_scores.Rmd`, which first **runs `CalculateAll()`**. Notice too that we are saving the output to a variable called `scores`. Instead of running the whole code chunk here, let's just run this single line.
 
 > Note: the prefix `ohicore::` is a way to be explicit that the `CalculateAll()` is part of the `ohicore` package.
 
 ```{r CalculateAll, eval=FALSE}
 ## calculate scenario scores
-scores = ohicore::CalculateAll(conf, layers)
+scores <-  ohicore::CalculateAll(conf, layers)
 ```
 
+### Output: Status and Trend 
 `CalculateAll()` first calculates the Status and Trend for every goal and subgoal. These models are in your tailored repository's `functions.r` (we will explore `functions.r` below). You can choose to add messages to print during calculation like is shown below for Mariculture (MAR).
 
 ```{r CalculateAll_output_status, eval=FALSE}
@@ -130,6 +166,8 @@ scores = ohicore::CalculateAll(conf, layers)
 # 95th percentile for MAR ref pt is: 0.0758396517531756
 # ... 
 ```
+
+### Output: Pressures and Resilience 
 
 Next, we see output as `CalculateAll()` calculates Pressures and Resilience based on the pressures and resilience matrix tables in your tailored repository. For each, `ohicore` lists the subcategories that will be calculated, and identifies any mis-matches between data layers identified but not used or missing. We will learn more about the pressures and resilience matrices in a different Chapter. <!---TODO: need to develop the pressures/resilience chapter and link---> 
 
@@ -150,6 +188,8 @@ Next, we see output as `CalculateAll()` calculates Pressures and Resilience base
 # CP-coral, CP-saltmarsh, CS-saltmarsh, HAB-coral, HAB-saltmarsh, HAB-seagrass, CP-mangrove, CS-mangrove, HAB-mangrove, HAB-seaice_edge, CP-seaice_shoreline
 ```
 
+### Output: Combine Dimensions
+
 Finally, we see output as `CalculateAll()` combines the dimensions above in several ways. It calculates the Goal Scores and Likely Future State for each goal and subgoal. Then, it calculates 'supragoals', which are goals that have subgoals, for example Food Provision (FP), which has the subgoals FIS (Wild-caught Fisheries) and Mariculture (MAR). Finally, it calculates the overall Index score for the entire Assessment Area using an area-weighted average. 
 
 ```{r CalculateAll_output_etc, eval=FALSE}
@@ -165,6 +205,8 @@ Finally, we see output as `CalculateAll()` combines the dimensions above in seve
 # Calculating FinalizeScores function...
 ```
 
+### Output: Warning Messages
+
 Following all the calculations are the warning messages, which are due to operations within `functions.r`, which you will be able to fix as you tailor your goal models. These warning messages are due to using goal models from the global assessment with just a subset of data from the global assessment we have extracted here for the **toolbox-demo** repository.
 
 ```{r CalculateAll_output_warnings, eval=FALSE}
@@ -176,15 +218,13 @@ Following all the calculations are the warning messages, which are due to operat
 #   no non-missing arguments to max; returning -Inf
 ```
 
-### Save scores variable as `scores.csv`
+## Save scores variable as `scores.csv`
 
-Finally, we will save the output from `CalculateAll()`, a variable called `scores`, as a comma-separated-value file called `scores.csv`. 
-
-![](https://docs.google.com/drawings/d/1A0FP2KnlHEJ5jCT5RwFJ9YtF5DhjTArHTGzn_JoJjXs/pub?h=450)
+Finally, we will save the output from `CalculateAll()`, a variable called `scores`, as a comma-separated-value file called `scores.csv`. We will do this by running the second line of code in this code chunk.
 
 ```{r write_scores, eval=FALSE}
 ## save scores as scores.csv
-write.csv(scores, 'scores.csv', na='', row.names=F)
+readr::write_csv(scores, 'scores.csv', na='')
 ```
 
 We can inspect it and see that it is a long-formatted file with four columns for the goal, dimension, numeric region identifier, and score. 
@@ -195,28 +235,27 @@ We can inspect it and see that it is a long-formatted file with four columns for
 |AO   |future    |         1| 92.85|
 |AO   |future    |         2| 92.85|
 |...  |...       |       ...|  ... |
-|AO   |future    |        17| 92.85|
 |AO   |pressures |         1| 37.75|
 |AO   |pressures |         2| 37.75|
 |...  |...       |       ...|  ... |
 
-We have 17 regions in the **toolbox-demo** repo. An additional region 0 is the area-weighted combination of all regions.
+We have 8 regions in the **toolbox-demo** repo. An additional region 0 is the area-weighted combination of all regions.
 
 > Note: each region in your assessment will have a numeric region identifer, called a `region_id` or `rgn_id` for short. You can see a list of all regions and corresponding identifiers in [toolbox-demo/region2017/spatial/regions_list.csv](https://github.com/OHI-Science/toolbox-demo/blob/master/region2017/spatial/regions_list.csv)
 
 
 ### A note about error messages
 
-Hopefully this first time through `calculate_scores.r` you did not encounter error messages, but you definitely will as you move ahead. Error messages are often due to typos or miscommunications between what you tell `R` versus what it expects. You will encounter error messages due to `R` itself, and due to `ohicore`. Error messages often have human-friendly messages to alert you to what went wrong, and we are continually improving error messages you'll encounter when you use `ohicore` so you can try to solve them more easily. Some commonly occurring errors and how to fix them can be found in the Troubleshooting section of the manual. Copy-pasting error messages into Google is also one of the best places to start. 
+Hopefully this first time through `calculate_scores.Rmd` you did not encounter error messages, but you definitely will as you move ahead. Error messages are often due to typos or miscommunications between what you tell `R` versus what it expects. You will encounter error messages due to `R` itself, and due to `ohicore`. Error messages often have human-friendly messages to alert you to what went wrong, and we are continually improving error messages you'll encounter when you use `ohicore` so you can try to solve them more easily. Some commonly occurring errors and how to fix them can be found in the Troubleshooting section of the manual. Copy-pasting error messages into Google is also one of the best places to start. 
 
 
-### Recap of first `calculate_scores.r` run
+### Recap of first `calculate_scores.Rmd` run
 
-We have just successfully run through the basic workflow to calculate OHI scores. It first runs `configure_toolbox.r` to load necessary data, functions, and packages, then it calculates all the components of OHI scores (status, trend, pressures, resilience, overall scores), and finally it saves the new OHI `scores` in a .csv file.
+We have just successfully run through the basic workflow to calculate OHI scores. It first loads necessary packages, configures data and models, and then it calculates all the components of OHI scores (status, trend, pressures, resilience, overall scores), and finally it saves the new OHI `scores` object in a .csv file.
 
 We will build on this basic workflow, by exploring the operations above in more detail, and by updating the data, models, and configurations within the **toolbox-demo** repository. 
 
-![](https://docs.google.com/drawings/d/1CnZ2qwQQzTjJuZ3P53FuQ4qhkBdq1xl6UuZnQmt2v80/pub?h=450)
+![](https://docs.google.com/drawings/d/1OhA7p5-dmrk6dGeP_gWEXFD2pI1ik8KhUYNUSLUVgd4/pub?w=960&h=720)
 
 
 ## Calculate with tailored data
@@ -249,9 +288,9 @@ Open `region2017/layers.csv` in a spreadsheet software (i.e. Microsoft Excel or 
 
 > IMPORTANT! Be sure to close Excel after you have made these edits. On a PC, having `layers.csv` open in Excel will prohibit it from being accessed from R, and the Toolbox needs access to calculate scores!
 
-### Rerun `calculate_scores.r` 
+### Rerun `calculate_scores.Rmd` 
 
-Now, let's rerun `calculate_scores.r`. `ohicore` will now use your tailored data when it creates the "ao_access" layer because you've registered it in `layers.csv` and the file is available in the layers folder. 
+Now, let's rerun `calculate_scores.Rmd`. `ohicore` will now use your tailored data when it creates the "ao_access" layer because you've registered it in `layers.csv` and the file is available in the layers folder. 
 
 ### Checking our work and syncing
 
@@ -259,20 +298,20 @@ Whenever there are changes made to your files (additions, deletions, and modific
 
 So here, you added a new data layer and after calculating scores you expect to see changes to AO scores in `score.csv`. `layers.csv` will also change because `ohicore` will update fields in this file as it runs through its checks. But we don't expect any other files to change at this point, so let's make sure that's true. 
 
-Now is a good time to commit this work and sync to GitHub. That way, the work we've done is committed together and we will have a clean slate (from a Git sense) moving forward. I'll use the commit message "toolbox-training: tailor data layer and rerun calculate_scores.r"
+Now is a good time to commit this work and sync to GitHub. That way, the work we've done is committed together and we will have a clean slate (from a Git sense) moving forward. I'll use the commit message "toolbox-training: tailor data layer and rerun calculate_scores.Rmd"
 
 ![](https://docs.google.com/drawings/d/1jwYB9w-O0Doae0KnoQjca_n4eY7D0E1NcW-VilIN_24/pub?w=960&h=384)
 
-### Recap of second `calculate_scores.r` run
+### Recap of second `calculate_scores.Rmd` run
 
 One way to tailor your toolbox is to modify an existing data layer. We have just run through the basic workflow a second time. This time we successfully 
 
 - substituted the Global OHI data layer `ao_access` with new data, which includes saving it in `layers` folder registering it in layers.csv, and 
-- reran `calculate_scores.r` without modifying the goal model itself
+- reran `calculate_scores.Rmd` without modifying the goal model itself
 
 ## Explore `configure_toolbox.r`
 
-So now let's take a closer look at `configure_toolbox.r`, the first script called from `calculate_scores.r`. 
+So now let's take a closer look at `configure_toolbox.r`, the first script called from `calculate_scores.Rmd`. 
 
 ![](https://docs.google.com/drawings/d/1oHMdrXNSeJ6l17aMUXihThYfb-HqvGviFrBYwJ2xldY/pub?h=450)
 
@@ -365,7 +404,7 @@ We have explored each component of `configure_toolbox.r`, which sets up for calc
 
 ## Explore a goal model in `functions.r`
 
-Remember from `calculate_scores.r` that after `configure_toolbox.r` runs, the next thing that happens is that `CalculateAll()` runs through the goal models and calculates Status and Trend. Status and Trend calculations are within `R` functions for each goal model in `functions.r`. `functions.r` is in the `conf` folder of your tailored repo. We can find it in our **toolbox-demo** repo.
+Remember from `calculate_scores.Rmd` that after `configure_toolbox.r` runs, the next thing that happens is that `CalculateAll()` runs through the goal models and calculates Status and Trend. Status and Trend calculations are within `R` functions for each goal model in `functions.r`. `functions.r` is in the `conf` folder of your tailored repo. We can find it in our **toolbox-demo** repo.
 
 ![](https://docs.google.com/drawings/d/1VRckHItA151selmkBVtROk6OnLnI_ODIu2gIjSnFgmo/pub?h=450)
 
@@ -507,7 +546,7 @@ Now let's run through the basic workflow a third time, this time modifying a goa
 
 ### Source `configure_toolbox.r` 
  
-First let's restart `R` and source `configure_toolbox.r`. We can do this from either `calculate_scores.r` or from `configure_toolbox.r` itself.
+First let's restart `R` and source `configure_toolbox.r`. We can do this from either `calculate_scores.Rmd` or from `configure_toolbox.r` itself.
 
 ### Tailor AO goal model
 
@@ -523,7 +562,7 @@ We can run the rest of the AO function line-by-line and inspect the scores varia
 
 ### Calculate scores, check, and sync
 
-Now let's run the rest of `calculate_scores.r` and save `scores.csv`. 
+Now let's run the rest of `calculate_scores.Rmd` and save `scores.csv`. 
 
 We can use Git's differencing feature to see how our scores have changed. This is a great way to double-check and error-check that things are working the way you expected. 
 
@@ -531,14 +570,14 @@ Let's commit and sync. My commit message here will be "toolbox-training: tailor 
 
 Let's restart `R` before proceeding.
 
-### Recap of third `calculate_scores.r` run
+### Recap of third `calculate_scores.Rmd` run
 
 In this third time through the basic workflow, we updated the goal model without changing any of the data layers that it depends upon. Next up, we will add a new data layer for it to work with.
 
 
 ### Troubleshooting
 
-If you've tailored a goal model function, you need to make sure that its output is still a data frame, and one that is not grouped. Otherwise, when you run `calculate_scores.r`, you may get a cryptic error. Examples of some of the ones we've seen are: 
+If you've tailored a goal model function, you need to make sure that its output is still a data frame, and one that is not grouped. Otherwise, when you run `calculate_scores.Rmd`, you may get a cryptic error. Examples of some of the ones we've seen are: 
 
 ```{r, eval=FALSE}
 # Error in left_join_impl(x, y, by$x, by$y, suffix$x, suffix$y, check_na_matches(na_matches)) : 
@@ -632,23 +671,23 @@ ao_model <- ao_data %>%
 
 Everything is looking good in `functions.r` and in the Git tab that we're looking at as we go along. 
 
-Now let's restart `R` and rerun `calculate_scores.r`. We'll see that `scores.csv` will also update, and we can check that only AO dimensions (except pressures and resilience since we haven't changed them) and Index scores are affected. 
+Now let's restart `R` and rerun `calculate_scores.Rmd`. We'll see that `scores.csv` will also update, and we can check that only AO dimensions (except pressures and resilience since we haven't changed them) and Index scores are affected. 
 
 Let's commit and sync. My commit message will be "toolbox-training: tailor AO goal model with a new data layer".
 
-### Recap of fourth `calculate_scores.r` run
+### Recap of fourth `calculate_scores.Rmd` run
 
 In this run we combined what we have practiced in the previous two runs, and we successfully: 
 
 - created a new data layer, which includes preparing layer in the prep file, saving it in `layers`, and registering it in `layers.csv`
 - added this new model parameter (ie. new layer) in AO model in `functions.r`
-- reran `calculate_scores.r` and saw the changes reflected in Git
+- reran `calculate_scores.Rmd` and saw the changes reflected in Git
 
 ## Chapter Recap
 
 We have completed Chapter \@ref(calcs-basic) and successfully run through the basic workflow to calculate OHI scores with several variations using our **toolbox-demo** repository. 
 
-Each variation involves the same basic workflow of bookkeeping and running `calculate_scores.r`, and will enable you to begin tailoring the Toolbox for your assessment.
+Each variation involves the same basic workflow of bookkeeping and running `calculate_scores.Rmd`, and will enable you to begin tailoring the Toolbox for your assessment.
 
 1. 'out of the box' data and models extracted from the Global 2016 assessment
 1. tailored data and 'out of the box' models
