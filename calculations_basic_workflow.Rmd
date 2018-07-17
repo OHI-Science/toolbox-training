@@ -75,7 +75,7 @@ Open `region2017/calculate_scores.Rmd` and let's have a look at its operations. 
 
 Each of the following steps is its own section and code chunk within `calculate_scores.Rmd`.
 
-## Install packages, including `ohicore`
+### Install packages, including `ohicore`
 
 **Note**: *Previous versions of the Toolbox had `install_ohicore.r` as a separate file, but the effect is the same.*
 
@@ -94,7 +94,7 @@ install.packages("devtools")
 devtools::install_github('ohi-science/ohicore@dev')
 ```
 
-## Load R packages
+### Load R packages
 
 Next, you will load each R package as a library from the `toolbox-training` repository whenever you work on your assessment to gain access to all those functions and packages. That is like turning on the lights when you need to use them; you need to do this every time you open your assessment repository. 
 
@@ -112,7 +112,7 @@ library(ohicore)
 setwd(here::here('region2017'))
 ```
 
-## Configure the Toolbox
+### Configure the Toolbox
 
 Next, we will configure the toolbox from within `calculate_scores.Rmd`. Let's run the whole code chunk by clicking the green arrow at the top-right. 
 
@@ -145,7 +145,7 @@ layers$data$scenario_year <- scenario_years
 
 ```
 
-## Run `CalculateAll()`
+### Calculate Scores
 
 Now let's continue with the next code chunk in `calculate_scores.Rmd`, which first **runs `CalculateAll()`**. Notice too that we are saving the output to a variable called `scores`. Instead of running the whole code chunk here, let's just run this single line.
 
@@ -156,7 +156,8 @@ Now let's continue with the next code chunk in `calculate_scores.Rmd`, which fir
 scores <-  ohicore::CalculateAll(conf, layers)
 ```
 
-### Output: Status and Trend 
+#### Output: Status and Trend 
+
 `CalculateAll()` first calculates the Status and Trend for every goal and subgoal. These models are in your tailored repository's `functions.r` (we will explore `functions.r` below). You can choose to add messages to print during calculation like is shown below for Mariculture (MAR).
 
 ```{r CalculateAll_output_status, eval=FALSE}
@@ -167,7 +168,7 @@ scores <-  ohicore::CalculateAll(conf, layers)
 # ... 
 ```
 
-### Output: Pressures and Resilience 
+#### Output: Pressures and Resilience 
 
 Next, we see output as `CalculateAll()` calculates Pressures and Resilience based on the pressures and resilience matrix tables in your tailored repository. For each, `ohicore` lists the subcategories that will be calculated, and identifies any mis-matches between data layers identified but not used or missing. We will learn more about the pressures and resilience matrices in a different Chapter. <!---TODO: need to develop the pressures/resilience chapter and link---> 
 
@@ -188,7 +189,7 @@ Next, we see output as `CalculateAll()` calculates Pressures and Resilience base
 # CP-coral, CP-saltmarsh, CS-saltmarsh, HAB-coral, HAB-saltmarsh, HAB-seagrass, CP-mangrove, CS-mangrove, HAB-mangrove, HAB-seaice_edge, CP-seaice_shoreline
 ```
 
-### Output: Combine Dimensions
+#### Output: Combine Dimensions
 
 Finally, we see output as `CalculateAll()` combines the dimensions above in several ways. It calculates the Goal Scores and Likely Future State for each goal and subgoal. Then, it calculates 'supragoals', which are goals that have subgoals, for example Food Provision (FP), which has the subgoals FIS (Wild-caught Fisheries) and Mariculture (MAR). Finally, it calculates the overall Index score for the entire Assessment Area using an area-weighted average. 
 
@@ -205,7 +206,7 @@ Finally, we see output as `CalculateAll()` combines the dimensions above in seve
 # Calculating FinalizeScores function...
 ```
 
-### Output: Warning Messages
+#### Output: Warning Messages
 
 Following all the calculations are the warning messages, which are due to operations within `functions.r`, which you will be able to fix as you tailor your goal models. These warning messages are due to using goal models from the global assessment with just a subset of data from the global assessment we have extracted here for the **toolbox-demo** repository.
 
@@ -218,7 +219,7 @@ Following all the calculations are the warning messages, which are due to operat
 #   no non-missing arguments to max; returning -Inf
 ```
 
-## Save scores variable as `scores.csv`
+### Save scores variable as `scores.csv`
 
 Finally, we will save the output from `CalculateAll()`, a variable called `scores`, as a comma-separated-value file called `scores.csv`. We will do this by running the second line of code in this code chunk.
 
@@ -244,7 +245,7 @@ We have 8 regions in the **toolbox-demo** repo. An additional region 0 is the ar
 > Note: each region in your assessment will have a numeric region identifer, called a `region_id` or `rgn_id` for short. You can see a list of all regions and corresponding identifiers in [toolbox-demo/region2017/spatial/regions_list.csv](https://github.com/OHI-Science/toolbox-demo/blob/master/region2017/spatial/regions_list.csv)
 
 
-### A note about error messages
+### Error messages
 
 Hopefully this first time through `calculate_scores.Rmd` you did not encounter error messages, but you definitely will as you move ahead. Error messages are often due to typos or miscommunications between what you tell `R` versus what it expects. You will encounter error messages due to `R` itself, and due to `ohicore`. Error messages often have human-friendly messages to alert you to what went wrong, and we are continually improving error messages you'll encounter when you use `ohicore` so you can try to solve them more easily. Some commonly occurring errors and how to fix them can be found in the Troubleshooting section of the manual. Copy-pasting error messages into Google is also one of the best places to start. 
 
