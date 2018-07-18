@@ -6,7 +6,7 @@ The purpose of Chapter \@ref(calcs-basic) is to introduce you to the basic workf
 
 Calculating scores with the OHI Toolbox requires a tailored repository operating with the OHI `R` package `ohicore`. The tailored repo has information specific to your assessment — most importantly the data and goal models — and `ohicore` will combine these with core operations to calculate OHI scores. You will always start with a tailored repository that has data and models extracted from the most recent Global OHI assessment.
 
-This training will introduce the basic workflow for calculating scores. There are many ways to build from the 'out-of-the-box' tailored repo you have instead of starting an assessment from scratch. For example, you may want to just change underlying data sources within the models, or competely change the models which also requires new data layers and data sources. 
+This training will introduce the basic workflow for calculating scores. There are many ways to build from the 'out-of-the-box' tailored repo you have instead of starting an assessment from scratch. For example, you may want to just change underlying data sources within the models, or completely change the models which also requires new data layers and data sources. 
 
 **We will repeat the basic workflow four times, each time adding complexity. We will calculate scores with:**
 
@@ -172,7 +172,7 @@ scores <-  ohicore::CalculateAll(conf, layers)
 
 #### Output: Pressures and Resilience 
 
-Next, we see output as `CalculateAll()` calculates Pressures and Resilience based on the pressures and resilience matrix tables in your tailored repository. For each, `ohicore` lists the subcategories that will be calculated, and identifies any mis-matches between data layers identified but not used or missing. We will learn more about the pressures and resilience matrices in a different Chapter. <!---TODO: need to develop the pressures/resilience chapter and link---> 
+Next, we see output as `CalculateAll()` calculates Pressures and Resilience based on the pressures and resilience matrix tables in your tailored repository. For each, `ohicore` lists the subcategories that will be calculated, and identifies any mismatches between data layers identified but not used or missing. We will learn more about the pressures and resilience matrices in a different Chapter. <!---TODO: need to develop the pressures/resilience chapter and link---> 
 
 ```{r CalculateAll_output_pressures, eval=FALSE}
 # Calculating Pressures for each region...
@@ -251,6 +251,19 @@ We have 8 regions in the **toolbox-demo** repo. An additional region 0 is the ar
 
 Hopefully this first time through `calculate_scores.Rmd` you did not encounter error messages, but you definitely will as you move ahead. Error messages are often due to typos or miscommunications between what you tell `R` versus what it expects. You will encounter error messages due to `R` itself, and due to `ohicore`. Error messages often have human-friendly messages to alert you to what went wrong, and we are continually improving error messages you'll encounter when you use `ohicore` so you can try to solve them more easily. Some commonly occurring errors and how to fix them can be found in the Troubleshooting section of the manual. Copy-pasting error messages into Google is also one of the best places to start. 
 
+### Create figures
+
+Two common plots to represent scores are flower plots and maps. We will walk through an example of the flower plot code here. **Note**: you'll see that we are sourcing code from another OHI repository, where this code was developed. After we finish testing it, we will add it as a function to `ohicore` and then you will not need to source it anymore. 
+
+```{r plot, eval=FALSE}
+## source script (to be incorporated into ohicore)
+source('https://raw.githubusercontent.com/OHI-Science/arc/master/circle2016/plot_flower_local.R')
+
+PlotFlower(assessment_name = "Toolbox Demo",
+           dir_fig_save    = "reports/figures")
+```
+
+The default arguments is to create a flowerplot for every region and region 0, although you can modify this. When we run this code now you will see that the figures were in fact recreated (the timestamps for the figures in the File pane of RStudio have updated) but are not different from the previous ones so they do not show up in the Git window.
 
 ### Recap of first `calculate_scores.Rmd` run
 
@@ -293,7 +306,7 @@ Open `region2017/layers.csv` in a spreadsheet software (i.e. Microsoft Excel or 
 
 ### Register in `scenario_data_years.csv`
 
-Next let's go to `region2017/conf/scenario_data_years.csv`. We can open this in RStudio: when you click on its hame in the Files pane, select "View File". 
+Next let's go to `region2017/conf/scenario_data_years.csv`. We can open this in RStudio: when you click on its name in the Files pane, select "View File". 
 
 
 `scenario_data_years.csv` is a registry to organize year information for each layer, and helps set you up from the very beginning to be able to calculate repeated assessments. When you calculate OHI scores, you will be explicit about the year your completed assessment represents, and we call this the `scenario_year`. `data_year` is the most recent years available for that data layer.
@@ -308,15 +321,22 @@ Depending on your local data, registering in `scenario_data_years.csv` may be mo
 
 Now, let's rerun `calculate_scores.Rmd`. `ohicore` will now use your tailored data when it creates the "ao_access" layer because you've registered it in `layers.csv` and `scenario_data_years.csv` and the file is available in the layers folder. 
 
-### Check our work and sync
+### Check our work, plot, and sync
 
 Whenever there are changes made to your files (additions, deletions, and modifications), you will be notified in the Git window, since Git is tracking the files in this repo. This is a good place to confirm you have did the things you set out to do, and you can also see if you errantly did anything you didn't mean to.
 
 So here, you added a new data layer and after calculating scores you expect to see changes to AO scores in `score.csv`. `layers.csv` will also change because `ohicore` will update fields in this file as it runs through its checks. But we don't expect any other files to change at this point, so let's make sure that's true. 
 
+Now let's recreate the flower plots with our updated goal model. You'll see those .png's show up in the Git tab as well. Although we can't inspect the differences between the figures through RStudio here, we will be able to see them on GitHub.com. 
+
 Now is a good time to commit this work and sync to GitHub. That way, the work we've done is committed together and we will have a clean slate (from a Git sense) moving forward. I'll use the commit message "toolbox-training: tailor ao_access layer and rerun calculate_scores.Rmd"
 
 ![](https://docs.google.com/drawings/d/1jwYB9w-O0Doae0KnoQjca_n4eY7D0E1NcW-VilIN_24/pub?w=960&h=384)
+
+Now, we can inspect on GitHub.com: 
+
+![](https://docs.google.com/drawings/d/e/2PACX-1vR_YSbMT4oizo7C4k9eKlV1fIGoaOG_ORpywd7ma8a36-0C-DiRl0qsGPY_qr8F8HlWgYCKQXsnu5Ru/pub?w=960&h=240)
+
 
 ### Recap of second `calculate_scores.Rmd` run
 
@@ -477,11 +497,13 @@ Run the first few lines of code and the `ao_access` and `ao_need` layers will be
 
   r <- AlignDataYears(layer_nm = "ao_access", layers_obj = layers) %>%
     rename(region_id = rgn_id, access = value) %>%
+    select(-layer_name) %>%
     na.omit()
 
   ry <-
     AlignDataYears(layer_nm = "ao_need", layers_obj = layers) %>%
     rename(region_id = rgn_id, need = value) %>%
+    select(-layer_name) %>%
     left_join(r, by = c("region_id", "scenario_year"))
 ```
 
@@ -518,7 +540,7 @@ And this is how it looks in `R`:
 
 ### Calculate Status 
 
-The status operation in this model is largely filering out just the recent year of all the years you have calculated in the model above. 
+The status operation in this model is largely filtering out just the recent year of all the years you have calculated in the model above. 
 
 ```{r, eval=FALSE}
 # status
@@ -588,35 +610,36 @@ The scores variable is something that you'll see at the end of every goal model.
 
 ## Calculate with tailored models
 
-Now let's run through the basic workflow a third time, this time modifying a goal model but keeping all data layers the same. We will do this without making any changes to the data layers at the moment. Modifying a goal model involves editing the operations within that goal's model in `functions.R`. 
+Now let's run through the basic workflow a third time, this time modifying a goal model but keeping all data layers the same. We will do this without making any changes to the data layers at the moment. Tailoring a goal model involves editing the operations within that goal's model in `functions.R`. 
 
 ![](https://docs.google.com/drawings/d/1VRckHItA151selmkBVtROk6OnLnI_ODIu2gIjSnFgmo/pub?h=450)
 
-### Source `configure_toolbox.r` 
+### Restart R, Libraries, Configure Toolbox 
  
-First let's restart `R` and source `configure_toolbox.r`. We can do this from either `calculate_scores.Rmd` or from `configure_toolbox.r` itself.
+First let's restart `R` and rerun the Load Libraries and Configure Toolbox sections in `calculate_scores.Rmd`. Now, we are all set to dive into the models in `functions.R`.
 
 ### Tailor AO goal model
 
-Now, let's go to `functions.R` and go back to the AO model. Let's do something pretty simple to tailor the goal model. Let's say we just wanted to divide the variable `Du` by 2 in the equation. 
+Now, let's go to `functions.R`, to the AO model. As an example, we will do something pretty simple to tailor the goal model. Let's say we just wanted to divide the variable `Du` by 2 in the equation. 
 
 ```{r tailor AO goal model, eval=FALSE}
- ao_model <- ao_data %>%
+  # model
+  ry <- ry %>%
     mutate(Du = (1 - need) * (1 - access)) %>%
-    mutate(status = (1 - Du/2) * sustainability)
+    mutate(status = (1 - Du/2) * Sustainability)
 ```
 
 We can run the rest of the AO function line-by-line and inspect the scores variable at the end to see if everything looks OK. 
 
-### Calculate scores, check, and sync
+### Calculate scores, check, plot, and sync
 
-Now let's run the rest of `calculate_scores.Rmd` and save `scores.csv`. 
+Now let's run the Calculate Scores chunk and save `scores.csv`. 
 
 We can use Git's differencing feature to see how our scores have changed. This is a great way to double-check and error-check that things are working the way you expected. 
 
-Let's commit and sync. My commit message here will be "toolbox-training: tailor AO goal model with original data layer". 
+We can also recreate the flower plots with our updated goal model. Then let's commit and sync so we can see the differences on GitHub.com. 
 
-Let's restart `R` before proceeding.
+My commit message here will be "toolbox-training: tailor AO goal model with original data layer". 
 
 ### Recap of third `calculate_scores.Rmd` run
 
@@ -640,9 +663,11 @@ You can do this in a few ways. The way we commonly do this is by adding `ungroup
  
 The fourth and final example we will do in this chapter is to tailor a goal model by adding a new variable. This will mean that we will prepare, save, and register a *new* data layer and update the goal model in `functions.R`. It will be a combination of what we've done previously in this chapter. 
 
-![](https://docs.google.com/drawings/d/1h3QLjIJCtVgNYtzYY5lQkFWxDhYC8MrNDjzdTMY_qVY/pub?h=450)
+Let's restart `R` before proceeding.
 
-Let's say we want to tailor the AO goal model by adding a new variable for *poverty* into the equation.
+![](https://docs.google.com/drawings/d/e/2PACX-1vQ7Ws3tiltTDeBhaoQy2naem8slDq297boGkgTaSC2n8SoJOKyDtXl5Hy-0obnRuRfY8-xB24PskRq3/pub?w=960&h=720)
+
+Let's say, as an example, that we want to tailor the AO goal model by adding a new variable for *poverty* into the equation.
 
 $$
 D_{U} = (1 - (need + poverty) / 2) * (1 - access)
@@ -658,7 +683,7 @@ We will create the new data layer for poverty by running a script in the prep fo
 
 Open `toolbox-demo/prep/AO/poverty_prep.R` and source the file after reading it through. The result will be a new data layer saved to the "layers" folder, and you should see that there is a new file saved in your Git window. 
 
-### Register our new data layer 
+### Register in `layers.csv` 
 
 Now that we have prepared and saved our data layer, we'll register it in `layers.csv`. This time, since we have added an additional data layer that has not been previously registered, we need to add a new row. 
 
@@ -666,39 +691,49 @@ Open `region2017/layers.csv` in a spreadsheet software (i.e. Microsoft Excel or 
 
 ![](https://docs.google.com/drawings/d/1n9qMQuyOxfkZzTGgj2vGaGY7YwS_A3PMtDAjaKfc3Co/pub?w=960&h=192)
 
-> Note: you could also script updating layers.csv from your prep file (not illustrated).
 
-<!---TODO: script this from the prep file --->
+### Register in `scenario_data_years.csv` 
 
-### Source `configure_toolbox.r`
 
-To use this layer as we develop our goal model, we need to source `configure_toolbox.r`.
 
+
+### Configure Toolbox
+
+To use this layer as we develop our goal model, we need to rerun the Configure Toolbox section. Before that, let's restart R, and reload the libraries. It's good to restart R often so that you don't introduce errors later (that could be because your work is dependent on something that shouldn't be there, like in our layer preparation). 
 
 ### Update the AO goal model
 
 We will need to do two things to update the goal model in `functions.R`.
 
-First, we'll have to load our data layer with `SelectLayersData()`. You can copy-paste the following into your `functions.R` AO goal model and then run it after running `status_year=2015; sustainability=1.0` to make sure everything is working properly:
+First, we'll have to load our data layer with `AlignDataYears()`. You can copy-paste the following into your `functions.R` to make sure everything is working properly:
 
 ```{r SelectLayersData pov, eval=FALSE}
- ## read in individual data layers
-  d1 <- SelectLayersData(layers, layers = 'ao_access', narrow=TRUE) %>%
-    select(region_id = id_num, access = val_num)
+  Sustainability <- 1.0
 
-  d2 <- SelectLayersData(layers, layers = 'ao_need', narrow=TRUE) %>%
-    select(region_id = id_num, year, need = val_num)
+  scen_year <- layers$data$scenario_year
 
-  ## add new poverty data layer
-  d3 <- SelectLayersData(layers, layers = 'ao_poverty', narrow=TRUE) %>%
-    select(region_id = id_num, year, poverty = val_num)
+  r <- AlignDataYears(layer_nm = "ao_access", layers_obj = layers) %>%
+    rename(region_id = rgn_id, access = value) %>%
+    select(-layer_name) %>%
+    na.omit()
+  
+  rp <- AlignDataYears(layer_nm = "ao_poverty", layers_obj = layers) %>%
+    rename(region_id = rgn_id, poverty = value) %>%
+    select(-layer_name) %>%
+    left_join(r, by = c("region_id", "scenario_year")) 
 
-  ## join data layers into single data frame, including the new poverty data layer
-  ao_data <- left_join(d1, d2, by="region_id") %>%
-    left_join(d3, by=c("region_id", "year"))
+  ry <-
+    AlignDataYears(layer_nm = "ao_need", layers_obj = layers) %>%
+    rename(region_id = rgn_id, need = value) %>%
+    select(-layer_name) %>%
+    left_join(rp, by = c("region_id", "scenario_year")) 
 ```
 
-Next, we'll tailor the goal model itself. Here is how the goal model looks as an equation and in `R`: you can copy-paste this model into `functions.R`, replacing the existing model.
+Let's run this and inspect the variables. 
+
+*Note*: if you forgot to add `ao_poverty` as a new layer to `scenario_data_years.csv` in the section above, you wouldn't get an error, but when your `rp` variable wouldn't read any any data, it would be a dataframe with 0 rows! That is why it's important to inspect all these variables so you can trace back where the problem is as early as possible. 
+
+Alright. Next, we'll tailor the goal model itself. Here is how the goal model looks as an equation and in `R`: you can copy-paste this model into `functions.R`, replacing the existing model.
 
 $$
 D_{U} = (1 - (need + poverty) / 2) * (1 - access)
@@ -710,16 +745,16 @@ $$
 
 ```{r tailored ao goal model, eval=FALSE}
 ## tailored goal model with poverty
-ao_model <- ao_data %>%
+ry <- ry %>%
     mutate(Du = (1 - (need + poverty) / 2 ) * (1 - access)) %>%
-    mutate(status = (1 - Du) * sustainability)
+    mutate(status = (1 - Du) * Sustainability)
 ```
 
 ### Calculate scores, check, and sync
 
 Everything is looking good in `functions.R` and in the Git tab that we're looking at as we go along. 
 
-Now let's restart `R` and rerun `calculate_scores.Rmd`. We'll see that `scores.csv` will also update, and we can check that only AO dimensions (except pressures and resilience since we haven't changed them) and Index scores are affected. 
+Now let's restart `R` and recalculate scores  in `calculate_scores.Rmd`. We'll see that `scores.csv` will also update, and we can check that only AO dimensions (except pressures and resilience since we haven't changed them) and Index scores are affected. 
 
 Let's commit and sync. My commit message will be "toolbox-training: tailor AO goal model with a new data layer".
 
@@ -727,8 +762,8 @@ Let's commit and sync. My commit message will be "toolbox-training: tailor AO go
 
 In this run we combined what we have practiced in the previous two runs, and we successfully: 
 
-- created a new data layer, which includes preparing layer in the prep file, saving it in `layers`, and registering it in `layers.csv`
-- added this new model parameter (ie. new layer) in AO model in `functions.R`
+- created a new data layer, which includes preparing layer in the prep file, saving it in `layers`, and registering it in `layers.csv` and `scenario_data_years.csv`
+- added this new model variable (ie. new layer) in AO model in `functions.R`
 - reran `calculate_scores.Rmd` and saw the changes reflected in Git
 
 ## Chapter Recap
@@ -742,15 +777,15 @@ Each variation involves the same basic workflow of bookkeeping and running `calc
 1. tailored data and models
 1. tailored (new) data and models
 
-![](https://docs.google.com/drawings/d/1OhA7p5-dmrk6dGeP_gWEXFD2pI1ik8KhUYNUSLUVgd4/pub?w=960&h=720)
+![](https://docs.google.com/drawings/d/e/2PACX-1vQ7Ws3tiltTDeBhaoQy2naem8slDq297boGkgTaSC2n8SoJOKyDtXl5Hy-0obnRuRfY8-xB24PskRq3/pub?w=960&h=720)
 
 Also, a few **best practices** we have used throughout this training that are good to remember: 
 
 - Compulsively restart R
 - Always check Git window after each change for expected changes
 - Commit, then Pull before Push
-- Rerun configure_toolbox.R after any data layer or model changes
-- Save functions.R before the changes are reflected in Git window 
+- Rerun the Configure Toolbox code chunk after any data layer or model changes
+- Save `functions.R` before the changes are reflected in Git window 
 - Close Excel before returning to `R` (this is less important on a Mac but will cause errors on a PC)
 
 
