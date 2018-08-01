@@ -15,5 +15,5 @@ rmd_files: [
   "calculations_advanced_workflow.Rmd",
   #"troubleshooting.Rmd",
   "reporting.Rmd", # write this, maybe broader comm/reporting/figs?
-  "updating_your_website.Rmd"]
+  "websites.Rmd"]
 output_dir: "docs"

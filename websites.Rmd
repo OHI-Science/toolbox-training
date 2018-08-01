@@ -1,0 +1,106 @@
+# Communication: OHI+ websites {#websites}
+
+**In development.** 
+
+The purpose of Chapter \@ref(websites) is for you to communicate the technical work you do to wider audiences. This is a a 1-hour hands-on training: you will be following along on your own computer and working with a copy of the demonstration repository that is used throughout the this chapter.
+
+## Overview
+
+Your GitHub repository has a free accompanying website that you can use to communicate your work to the audiences you need to reach. **You can modify and use this website from the very beginning** to identify team members, share workshop agendas, and increasingly, to share the technical decisions underlying your OHI+ assessment, the data, the scores, and what it means. 
+
+This chapter will teach you how to modify your OHI+ website. These websites are created using [RStudio's R Markdown](http://rmarkdown.rstudio.com/) and hosted on [Github](http://github.com). This is a really powerful way to communicate science using the same reproducible workflow you already use for your analyses and collaborations, in this case with OHI. Importantly, ***creating websites with R Markdown can be done without knowing R or any web-design languages (HTML, CSS, etc),*** and that's where we'll start. However, R Markdown integrates with these tools so the more you know the more complex and beautiful your website can be. 
+
+This tutorial borrows heavily from [Making free websites with RStudio’s R Markdown](https://jules32.github.io/rmarkdown-website-tutorial/), but has been augmented to include OHI-specific information. 
+
+### Prerequisites
+
+Before the training, please make sure you have done the following: 
+
+1. Have up-to-date versions of `R` and RStudio and have RStudio configured with Git/GitHub
+    - https://cloud.r-project.org
+    - http://www.rstudio.com/download 
+    - http://happygitwithr.com/rstudio-git-github.html 
+1. Fork the **toolbox-demo** repository into your own GitHub account by going to https://github.com/OHI-Science/toolbox-demo, clicking "Fork" in the upper right corner, and selecting your account
+1. Clone the **toolbox-demo** repo from your GitHub account into RStudio into a folder called "github" in your home directory (filepath "~/github")
+1. Get comfortable: be set up with two screens if possible. You will be following along in RStudio on your own computer while also watching an instructor's screen or following this tutorial.
+
+Additionally, this chapter assumes you are familiar with content from Chapter \@ref(calcs-basic), so review that first if needed. 
+
+## First Observations
+
+We will start with a working example website that we will explore together to understand the website architecture. We'll learn a few rules and look for patterns to get an understanding of what things do. 
+
+Then we'll get it onto to our local computers. Locally, we will explore further by going back and forth between the R Markdown editor and built webpages, and make modifications. Pushing to Github will make our modifications live!    
+
+### Exploring Online
+
+Let's start by looking at the toolbox-demo website, which lives at [ohi-science.org/toolbox-demo](http://ohi-science.org/toolbox-demo/).
+
+![](https://docs.google.com/drawings/d/e/2PACX-1vTA2jBtzv_9AEHH0DmEQcoCKFUDQdSTsZRBv3zIeIvvUgtiDfBTumQHLkr7-xm1aV_LxIPbi5uNhoDA/pub?w=960&h=624)
+
+
+#### The website itself
+
+This website has 4 pages: 
+
+- Home
+- About
+- Frequently Asked Questions
+- Who We Are
+  
+This website is actually a GitHub website, based from the `ohi-science` organization. Its url is really `ohi-science.github.io/toolbox-demo`, but we have redirected `ohi-science.github.io` to the `ohi-science.org` domain. What this means is that there is a Github repo behind this website, and you can navigate to it because we know the username and repo name:
+
+**<http://ohi-science.github.io/toolbox-demo>** <=> **<https://github.com/ohi-science/toolbox-demo>** 
+
+<br>
+
+### The website's `gh-pages` branch
+
+Let's go to **<https://github.com/ohi-science/toolbox-demo>**. 
+
+This looks familiar to you, these are the files in your tailored repository. But that is because we are looking at the *master* branch. Master is the default branch name, and we haven't paid attention to branches until now. Click on the master branch, and this will let you select an existing branch, or create a new one. We want to select the existing **gh-pages** branch, which was created along with your tailored repository.
+  
+![](https://docs.google.com/drawings/d/e/2PACX-1vQVLZzFgK8KNBaTKvHt_8VfCv5eWT17ghAh_bXNCNS3yLcFh9R94JsGjzI20C2gAMiWTrTbAQH9vMXj/pub?w=960&h=480)
+  
+  
+**The `gh-pages` branch** - this is critical for building free webpages. You can usually create and name branches whatever you want, but the `gh-pages` name is special: it means it can be built as a website. (We won't focus on what branches beyond this in this training, but they are really powerful for collaborative analysis with teams. I think of them like parallel universes).
+
+<br>
+
+**Now let's look at the filenames**. When we switch to the gh_pages branch, we get a whole new set of files. We can recognize the names of the webpages we've seen, and there is also a `_site.yml` file, which is the website's configuration file. The simplest website possible would have 2 files only: `_site.yml` and `index.Rmd`
+
+![](https://docs.google.com/drawings/d/e/2PACX-1vTXosvRyqKcBO520fUJbsnKntPJnkNg1Y042A5fLtdpL0JY3bV__yHCaawHzDkTtZM3KRr0z23w7D8K/pub?w=960&h=720)
+
+You'll notice that there are some pages like "scores" and "goals" that exist here but do not show up on the website. We will talk about this more later, but you do not have to include all your pages in the navigation bar. This is nice when pages are under development. 
+
+<br>
+
+
+### Get the website's branch on your computer
+
+You likely already have forked and cloned the `toolbox-demo` to your own computer. (If you haven't done so, follow the prerequesites at the beginning of the chapter). 
+
+In RStudio, go to the Git Tab. You can click on "master" on the top-right. This will show the local branches that are available to you (only "master") and also the branches that are available remotely on github.com ("master" and "gh-pages").
+
+![](https://docs.google.com/drawings/d/e/2PACX-1vTV6B3l3YJzh19fUV0-gGdk7QMJydYgp7PnjRgqDzOzFDU8PTzRF2TQaXAyiRn2TVDvM-jtkthu2D6-/pub?w=960&h=288)
+
+To be able to switch between branches nicely like we were able to from GitHub.com, we need to bring the remote gh-pages branch locally. We need to do a one-time setup, and we will do this from the command line, also called the Terminal. Luckily, the newest versions of RStudio have a terminal available from within RStudio, so let's take advantage of this. 
+
+First, click on terminal. Second, type `git checkout gh-pages`. Third, see that you are now on the gh-pages branch, with the ability to switch between them by clicking. You will need to save, commit, and push your work before switching. 
+
+![](https://docs.google.com/drawings/d/e/2PACX-1vQlaez04FSkDkqGQbp4E6bgmr9n7plbVUdEAhxHv5--Vxc38wU9quK3Lp7flLLxhg7E1a3upQi-ng7w/pub?w=960&h=288)
+
+You'll also see that the file pane now has all of the gh-pages files!
+
+**Note**: if you had a file from the master branch open in your RStudio editor, you may get a message saying that this file has been deleted, should you close it? This can be alarming, but remember that file does not exist in this gh-pages branch. We are in a different space (a different parallel universe) and that file is not here. It's OK to close it, it still exists in the master branch (you can go to github.com and check out the master branch to confrim!)
+
+Now, we can start exploring and editing our website!
+
+## Basic Workflow
+
+Until this is developed, please see [the basic workflow chapter](https://jules32.github.io/rmarkdown-website-tutorial/basic_workflow.html) from the "Making free websites with RStudio’s R Markdown" tutorial. 
+
+And practice committing, pushing, and switching branches back to master! RStudio will remind you to pull when you switch branches if need be. 
+
+
+
