@@ -25,7 +25,7 @@
 <meta name="author" content="Ocean Health Index Team">
 
 
-<meta name="date" content="2018-08-01">
+<meta name="date" content="2018-08-08">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -134,7 +134,8 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </ul></li>
 <li class="chapter" data-level="5" data-path="toolbox.html"><a href="toolbox.html"><i class="fa fa-check"></i><b>5</b> OHI Toolbox</a><ul>
 <li class="chapter" data-level="5.1" data-path="toolbox.html"><a href="toolbox.html#the-ohi-toolbox-and-open-data-science"><i class="fa fa-check"></i><b>5.1</b> The OHI Toolbox and open data science</a></li>
-<li class="chapter" data-level="5.2" data-path="toolbox.html"><a href="toolbox.html#requesting-ohi-repositories"><i class="fa fa-check"></i><b>5.2</b> Requesting OHI repositories</a></li>
+<li class="chapter" data-level="5.2" data-path="toolbox.html"><a href="toolbox.html#how-you-will-work"><i class="fa fa-check"></i><b>5.2</b> How you will work</a></li>
+<li class="chapter" data-level="5.3" data-path="toolbox.html"><a href="toolbox.html#requesting-ohi-repositories"><i class="fa fa-check"></i><b>5.3</b> Requesting OHI repositories</a></li>
 </ul></li>
 <li class="chapter" data-level="6" data-path="toolbox-ecosystem.html"><a href="toolbox-ecosystem.html"><i class="fa fa-check"></i><b>6</b> Toolbox Ecosystem</a><ul>
 <li class="chapter" data-level="6.1" data-path="toolbox-ecosystem.html"><a href="toolbox-ecosystem.html#overview-2"><i class="fa fa-check"></i><b>6.1</b> Overview</a></li>
@@ -233,8 +234,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </ul></li>
 <li class="chapter" data-level="9.2" data-path="calcs-advanced.html"><a href="calcs-advanced.html#explore-goals.csv"><i class="fa fa-check"></i><b>9.2</b> Explore goals.csv</a></li>
 <li class="chapter" data-level="9.3" data-path="calcs-advanced.html"><a href="calcs-advanced.html#round-1-poke-at-it-to-see-how-it-works"><i class="fa fa-check"></i><b>9.3</b> Round 1: Poke at it to see how it works</a><ul>
-<li class="chapter" data-level="9.3.1" data-path="calcs-advanced.html"><a href="calcs-advanced.html#delete-a-goal-cell-in-goals.csv"><i class="fa fa-check"></i><b>9.3.1</b> Delete a goal cell in goals.csv</a></li>
-<li class="chapter" data-level="9.3.2" data-path="calcs-advanced.html"><a href="calcs-advanced.html#remove-a-goal-whole-row-in-goals.csv"><i class="fa fa-check"></i><b>9.3.2</b> Remove a goal (whole row) in goals.csv</a></li>
+<li class="chapter" data-level="9.3.1" data-path="calcs-advanced.html"><a href="calcs-advanced.html#remove-a-goal-whole-row-in-goals.csv"><i class="fa fa-check"></i><b>9.3.1</b> Remove a goal (whole row) in goals.csv</a></li>
 </ul></li>
 <li class="chapter" data-level="9.4" data-path="calcs-advanced.html"><a href="calcs-advanced.html#round-2-break-it-to-see-how-it-works"><i class="fa fa-check"></i><b>9.4</b> Round 2: Break it to see how it works</a><ul>
 <li class="chapter" data-level="9.4.1" data-path="calcs-advanced.html"><a href="calcs-advanced.html#change-preindex_function-goals.csv"><i class="fa fa-check"></i><b>9.4.1</b> Change <code>preindex_function</code> goals.csv</a></li>
@@ -286,10 +286,9 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p>The purpose of Chapter <a href="calcs-advanced.html#calcs-advanced">9</a> is to build off the basic workflow for calculating OHI scores and do a few more advanced things. This is a a 2-hour hands-on training: you will be following along on your own computer and working with a copy of the demonstration repository that is used throughout the this chapter.</p>
 <div id="overview-5" class="section level2">
 <h2><span class="header-section-number">9.1</span> Overview</h2>
-<p>TODO: Recurring theme here: what goals are included in my assessment?</p>
-<p>Worth noting too that we’ll be improving goals.csv operates because there are some inefficiencies/things that are a bit error prone…</p>
-<p>Good practice to run <code>calculate_scores.r</code> and use Git window to check your work.</p>
-<p>TODO: add commits, sync to this. we’ll also be reverting a lot as we test things.</p>
+<p>This chapter will show you how to add and remove goals from your assessment. You will be able to use these same principles to turn a subgoal into a goal, or rename goals altogether. The toolbox will calculate goal scores for each goal listed in <code>conf/goals.csv</code>, so investigating and modifying this file will be a big focus of this chapter.</p>
+<p>As in Chapter <a href="calcs-advanced.html#calcs-advanced">9</a>, it is good practice to rerun <code>calculate_scores.Rmd</code> after modifying these files and and use Git tab in RStudio to check your work.</p>
+<!---TODO: add commits, sync to this. we'll also be reverting a lot as we test things. --->
 <div id="prerequisites-4" class="section level3">
 <h3><span class="header-section-number">9.1.1</span> Prerequisites</h3>
 <p>Before the training, please make sure you have done the following:</p>
@@ -310,35 +309,42 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </div>
 <div id="explore-goals.csv" class="section level2">
 <h2><span class="header-section-number">9.2</span> Explore goals.csv</h2>
-<p>This is the registry for goals. <code>ohicore</code> will use this list and make sure there are functions with the same names in <code>functions.r</code>. This is one of the things that does on in <code>Conf()</code>…</p>
-<p>Let’s open and inspect it</p>
+<p><code>goals.csv</code> is the registry for the goals that will be included in OHI calculations. <code>ohicore</code> will use this list and make sure there are functions with the same names in <code>functions.R</code>. This is one of the things that the Toolbox does with the <code>Conf()</code> command, as we will see.</p>
+<p><code>goals.csv</code> is inside the <code>conf</code> folder. It is a .csv file has a lot of columns, so it is easier to open and inspect it in Excel or other spreadsheet software. Let’s discuss a few of the columns here (see Chapter <a href="toolbox-ecosystem.html#toolbox-ecosystem">6</a> for descriptions of all of them):</p>
+<div class="figure">
+<img src="https://docs.google.com/drawings/d/e/2PACX-1vRtfUuMpuS49gBTIKRYDsdMmG_0S8V9vxsaaUNQjX-EFn0HnO8xvPygmCDIBRY4JsMluzNBiTYZUv9B/pub?w=960&amp;h=336" />
+
+</div>
+<p><code>goals.csv</code> has information for how goal scores are calculated, and how information will be visualized and communicated. Let’s focus on this now:</p>
 <ul>
-<li>in excel</li>
-<li>focus on a few columns (see ecosystem for more)</li>
-<li>note “goal” and “parent”</li>
+<li>Each goal or subgoal has its own row. the “goal” column lists them all</li>
+<li>If the “goal” column is really a subgoal, then the “parent” column lists the parent or supragoal of that sub-goal</li>
 </ul>
-<p>This is where it happens:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">conf =<span class="st"> </span>ohicore<span class="op">::</span><span class="kw">Conf</span>(<span class="st">&#39;conf&#39;</span>)</code></pre></div>
-<!--- TODO ohicore: Conf() should check that all entries in goals.csv are present in functions.r, but it doesn't. 
+<!--- 
+This is where it happens:
+
+```r
+conf = ohicore::Conf('conf')
+```
+
+TODO ohicore: Conf() should check that all entries in goals.csv are present in functions.r, but it doesn't. 
 --->
 </div>
 <div id="round-1-poke-at-it-to-see-how-it-works" class="section level2">
 <h2><span class="header-section-number">9.3</span> Round 1: Poke at it to see how it works</h2>
-<p>The Toolbox won’t always give errors when you start changing things (work in progress), so let’s just see what some of these things look like. This is when using the Git tab to help you keep track of how things work REALLY helps.</p>
-<p>We’ll try it from registry -&gt; functions.r and then from functions.r -&gt; registry (goals.csv)</p>
-<div id="delete-a-goal-cell-in-goals.csv" class="section level3">
-<h3><span class="header-section-number">9.3.1</span> Delete a goal cell in goals.csv</h3>
-<p>Eg delete “LSP”</p>
-<p>run <code>calculate_scores.r</code> what changed?</p>
+<p>The Toolbox won’t always give errors when you start changing things (although we are improving that), so let’s just see what some of these things look like. This is when using the Git tab to help you keep track of how things work REALLY helps.</p>
+<p>We will make modifications in <code>goals.csv</code> and see how that affects the basic calculations workflow from Chapter <a href="calcs-advanced.html#calcs-advanced">9</a>, and then we will do the same with <code>functions.R</code>.</p>
+<div id="remove-a-goal-whole-row-in-goals.csv" class="section level3">
+<h3><span class="header-section-number">9.3.1</span> Remove a goal (whole row) in goals.csv</h3>
+<p>For example, delete the entire “LSP” row in the .csv file, and save it. You should see the <code>goals.csv</code> show up in your Git tab in RStudio because the file has been modified.</p>
+<p>Now, recalculate scores from <code>calculate_scores.Rmd</code> (remember to run Configure Toolbox first to rerun the <code>Conf()</code> function!)</p>
+<p>What changed?</p>
 <div class="figure">
 <img src="https://docs.google.com/drawings/d/19e7TVvpjUql46afZ38fXfkeKQ5sIkxXSnRIbJjxBzkk/pub?w=960&amp;h=528" />
 
 </div>
-</div>
-<div id="remove-a-goal-whole-row-in-goals.csv" class="section level3">
-<h3><span class="header-section-number">9.3.2</span> Remove a goal (whole row) in goals.csv</h3>
-<p>Here we see “Index” scores change, “SP” scores change, and “LSP” scores get deleted.</p>
-<p>TODO: for both a goal and subgoal</p>
+<p>As we see from the Git tab, removing this goal affected scores for three things: “Index” and “SP” scores changed, and “LSP” scores were completely deleted.</p>
+<!---TODO: for both a goal and subgoal --->
 </div>
 </div>
 <div id="round-2-break-it-to-see-how-it-works" class="section level2">

@@ -10,6 +10,12 @@ The OHI Toolbox depends upon the 'open data science tools' R, RStudio, Git, and 
  
 Learning the open data science tools (R, RStudio, Git, and GitHub) required for the Toolbox takes time. We have an [introduction to open data science training book](http://ohi-science.org/data-science-training/) to teach you the skills you'll need to use the OHI Toolbox. 
 
+## How you will work
+
+Using RStudio and GitHub for analysis also means with can use this collaborative workflow for asking questions and troubleshooting too. 
+
+Troubleshooting and asking for help
+
 ## Requesting OHI repositories
 
 As your team gathers data and is ready to prepare it for the Toolbox, you can [request OHI repositories](http://ohi-science.org/manual/#requesting-your-repositories). The next chapter will help you get familiar with the OHI Toolbox ecosystem. 
