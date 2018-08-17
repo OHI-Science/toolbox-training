@@ -184,6 +184,3 @@ To create a figure:
 
 --->
 
-![](https://docs.google.com/drawings/d/e/2PACX-1vQSotrxrujHlO4iG_WCBifRjOvbzJgoWnKRAB0_Z7dr7GK6PLhYxOVRukQy0l7IuUtQgIxvGR1rBKIp/pub?w=960&h=720)
-
-
