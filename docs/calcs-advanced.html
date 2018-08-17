@@ -25,7 +25,7 @@
 <meta name="author" content="Ocean Health Index Team">
 
 
-<meta name="date" content="2018-08-08">
+<meta name="date" content="2018-08-17">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -282,6 +282,11 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
             <section class="normal" id="section-">
 <div id="calcs-advanced" class="section level1">
 <h1><span class="header-section-number">Chapter 9</span> Calculations: advanced workflow</h1>
+<!--- For reference: 
+
+- http://ohi-science.org/manual/#removing-goals-and-sub-goals 
+- Manual md (easier to search): https://github.com/OHI-Science/ohimanual/blob/gh-pages/3_conduct_manual/ohi-manual.md
+--->
 <p><strong>In development.</strong></p>
 <p>The purpose of Chapter <a href="calcs-advanced.html#calcs-advanced">9</a> is to build off the basic workflow for calculating OHI scores and do a few more advanced things. This is a a 2-hour hands-on training: you will be following along on your own computer and working with a copy of the demonstration repository that is used throughout the this chapter.</p>
 <div id="overview-5" class="section level2">
@@ -422,7 +427,33 @@ _Changing goal weights will be done here by editing the value in the *weight* co
 ![](https://docs.google.com/drawings/d/1o2wtJ9KCPDyGPH9Y4unmALG6BlxX9lmJ_PakDDiQrLo/pub?h=500)
 
 
+Add sections or new chapter about 
+Pressures/Resil:
+
+- ohicore will calculate pressures and resilience for you. 
+- it does so by taking the data layers listed in the matrix (they are data layers similar to those for status: they need values for each region) and calculating scores that will then affect the goals indicated in the matrix.
+- what the matrix means, it's a 3D matrix
+- that you still need to data for each indicator in the matrix. 
+- to substitute data behind an existing data layer, proceed as in calcs_basic
+- to add a new layer, you'll need to prepare data, save in layers, register in layers.csv and scenario_data_years.csv, but then also: in the matrix, identify which goals are affected. For global, this was based on many references (see S28 in original Halpern et al. 2012 SOM): you can use this as well, or references of your own. Finally, you'll need to weight them. 
+- **(leverge description from http://ohi-science.org/manual/#modifying-pressures-and-resilience)**
+
+
+
+
+Testing a figure
+To create a figure: 
+- [drawings folder](https://drive.google.com/drive/u/1/folders/0B9RHfIEZlRcaS1FXWW9EZVBDMHc?ogsrc=32), new drawing
+- mac shortcut for screenshot to the clipboard!
+- then Edit > Publish to the Web...
+- Click publish, then OK 
+- paste that link into ![]()
+
 --->
+<div class="figure">
+<img src="https://docs.google.com/drawings/d/e/2PACX-1vQSotrxrujHlO4iG_WCBifRjOvbzJgoWnKRAB0_Z7dr7GK6PLhYxOVRukQy0l7IuUtQgIxvGR1rBKIp/pub?w=960&amp;h=720" />
+
+</div>
 
 </div>
 </div>

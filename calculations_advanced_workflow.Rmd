@@ -1,5 +1,11 @@
 # Calculations: advanced workflow {#calcs-advanced}
 
+<!--- For reference: 
+
+- http://ohi-science.org/manual/#removing-goals-and-sub-goals 
+- Manual md (easier to search): https://github.com/OHI-Science/ohimanual/blob/gh-pages/3_conduct_manual/ohi-manual.md
+--->
+
 **In development.** 
 
 The purpose of Chapter \@ref(calcs-advanced) is to build off the basic workflow for calculating OHI scores and do a few more advanced things. This is a a 2-hour hands-on training: you will be following along on your own computer and working with a copy of the demonstration repository that is used throughout the this chapter.
@@ -168,6 +174,16 @@ Pressures/Resil:
 
 
 
+Testing a figure
+To create a figure: 
+- [drawings folder](https://drive.google.com/drive/u/1/folders/0B9RHfIEZlRcaS1FXWW9EZVBDMHc?ogsrc=32), new drawing
+- mac shortcut for screenshot to the clipboard!
+- then Edit > Publish to the Web...
+- Click publish, then OK 
+- paste that link into ![]()
 
 --->
+
+![](https://docs.google.com/drawings/d/e/2PACX-1vQSotrxrujHlO4iG_WCBifRjOvbzJgoWnKRAB0_Z7dr7GK6PLhYxOVRukQy0l7IuUtQgIxvGR1rBKIp/pub?w=960&h=720)
+
 
