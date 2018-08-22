@@ -2,7 +2,7 @@
 
 **In development**
 
-The purpose of Chapter \@ref(press_resil-basic) is to introduce you to updating pressures and resilience information for calculating OHI scores. This is a 2-hour hands-on training: you will be following along on your own computer and working with a copy of the demonstration repository that is used throughout this chapter.
+The purpose of this chapter is to introduce you to updating pressures and resilience information for calculating OHI scores. This is a 2-hour hands-on training: you will be following along on your own computer and working with a copy of the demonstration repository that is used throughout this chapter.
 
 ## Overview
 
@@ -28,13 +28,14 @@ Before the training, please make sure you have done the following:
 1. Get comfortable: be set up with two screens if possible. You will be following along in RStudio on your own computer while also watching an instructor's screen or following this tutorial.
 --->
 
-- **(leverge description from http://ohi-science.org/manual/#modifying-pressures-and-resilience)**
 
 ## Identifying indicators
 
-Ideally, every pressure with an identified strong impact should have a corresponding resilience measure. The rationale is that as resiliences in the study area increase (for instance, by improving environmental regulations), they would balance out and eventually neutralize the pressures. In time, this would lead to an increase in a goal’s status, and therefore the overall goal or sub-goal score. By including regulatory responses in your assessment, you ensure that the actions taken in your country are relevant to ocean health.
+Ideally, every pressure with an identified strong impact should have a corresponding resilience measure. The rationale is that as resilience in the study area increase (for instance, by improving environmental regulations), they would balance out and eventually neutralize the pressures. In time, this would lead to an increase in a goal’s status, and therefore the overall goal or sub-goal score. By including regulatory responses in your assessment, you ensure that the actions taken in your country are relevant to ocean health.
 
 In practice, however, the pressures and resilience measures you include in your assessment will be highly determined by data availability. It is best to first consider what pressures are acting in your study area and then determine if data are available to measure them. You should also decide if the pressures data included in the global assessment are relevant for your assessment and determine if local data better capture pressures for all the regions in your study area. When considering resilience measures, look for regulations or indicators that could be encompassed in one of the pressures categories.
+
+See Chapter \@ref(gathering-data) for more details. 
 
 ## Pressures
 
