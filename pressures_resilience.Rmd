@@ -1,0 +1,59 @@
+# Pressures and Resilience {#press_resil} 
+
+**In development**
+
+The purpose of Chapter \@ref(press_resil-basic) is to introduce you to updating pressures and resilience information for calculating OHI scores. This is a 2-hour hands-on training: you will be following along on your own computer and working with a copy of the demonstration repository that is used throughout this chapter.
+
+## Overview
+
+Pressures and Resilience are two of the four dimensions used to evaluate each goal or sub-goal, along with Status and Trend.
+
+The OHI R package `ohicore` will calculate pressures and resilience scores for you using information from pressures and resilience data layers and matrices. `ohicore` takes the data layers listed in the matrix (they are data layers similar to those for status: they need values for every region in your assessment) and calculates pressures and resilience scores. These scores will then affect the goals indicated in the matrix with a 1, 2, or 3 weighting.
+
+This means that you are responsible for updating the data within pressures and resilience layers so they best represent your assessment. Additionally, you can add and remove layers from the matrix, and change which goals they affect. 
+
+
+<!---
+
+### Prerequisites
+
+Before the training, please make sure you have done the following: 
+
+1. Have up-to-date versions of `R` and RStudio and have RStudio configured with Git/GitHub 
+    - https://cloud.r-project.org
+    - http://www.rstudio.com/download 
+    - http://happygitwithr.com/rstudio-git-github.html 
+1. Fork the **toolbox-demo** repository into your own GitHub account by going to https://github.com/OHI-Science/toolbox-demo, clicking "Fork" in the upper right corner, and selecting your account
+1. Clone the **toolbox-demo** repo from your GitHub account into RStudio into a folder called "github" in your home directory (filepath "~/github")
+1. Get comfortable: be set up with two screens if possible. You will be following along in RStudio on your own computer while also watching an instructor's screen or following this tutorial.
+--->
+
+- **(leverge description from http://ohi-science.org/manual/#modifying-pressures-and-resilience)**
+
+## Identifying indicators
+
+Ideally, every pressure with an identified strong impact should have a corresponding resilience measure. The rationale is that as resiliences in the study area increase (for instance, by improving environmental regulations), they would balance out and eventually neutralize the pressures. In time, this would lead to an increase in a goal’s status, and therefore the overall goal or sub-goal score. By including regulatory responses in your assessment, you ensure that the actions taken in your country are relevant to ocean health.
+
+In practice, however, the pressures and resilience measures you include in your assessment will be highly determined by data availability. It is best to first consider what pressures are acting in your study area and then determine if data are available to measure them. You should also decide if the pressures data included in the global assessment are relevant for your assessment and determine if local data better capture pressures for all the regions in your study area. When considering resilience measures, look for regulations or indicators that could be encompassed in one of the pressures categories.
+
+## Pressures
+
+Please refer to the [pressures section the OHI Manual](http://ohi-science.org/manual/#pressures) while this chapter is under development. 
+
+<!---
+- what the matrix means, it's a 3D matrix
+- that you still need to data for each indicator in the matrix. 
+- to substitute data behind an existing data layer, proceed as in calcs_basic
+- to add a new layer, you'll need to prepare data, save in layers, register in layers.csv and scenario_data_years.csv, but then also: in the matrix, identify which goals are affected. For global, this was based on many references (see S28 in original Halpern et al. 2012 SOM): you can use this as well, or references of your own. Finally, you'll need to weight them. 
+--->
+
+## Resilience
+
+Please refer to the [resilience section the OHI Manual](http://ohi-science.org/manual/#resilience) while this chapter is under development.
+
+Additionally, these resources are available: 
+
+- [ResilienceSlides.pptx](https://github.com/OHI-Science/toolbox-training/blob/master/downloads/ResilienceSlides.pptx)
+- [ResilienceMeasures_BritishColumbia.pdf](https://github.com/OHI-Science/toolbox-training/blob/master/downloads/ResilienceMeasures_BritishColumbia.pdf)
+
+

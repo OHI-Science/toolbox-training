@@ -163,14 +163,6 @@ _Changing goal weights will be done here by editing the value in the *weight* co
 Add sections or new chapter about 
 Pressures/Resil:
 
-- ohicore will calculate pressures and resilience for you. 
-- it does so by taking the data layers listed in the matrix (they are data layers similar to those for status: they need values for each region) and calculating scores that will then affect the goals indicated in the matrix.
-- what the matrix means, it's a 3D matrix
-- that you still need to data for each indicator in the matrix. 
-- to substitute data behind an existing data layer, proceed as in calcs_basic
-- to add a new layer, you'll need to prepare data, save in layers, register in layers.csv and scenario_data_years.csv, but then also: in the matrix, identify which goals are affected. For global, this was based on many references (see S28 in original Halpern et al. 2012 SOM): you can use this as well, or references of your own. Finally, you'll need to weight them. 
-- **(leverge description from http://ohi-science.org/manual/#modifying-pressures-and-resilience)**
-
 
 
 

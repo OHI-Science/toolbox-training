@@ -32,8 +32,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   
   
-<link rel="prev" href="intro.html">
-<link rel="next" href="planner-guide.html">
+<link rel="prev" href="calcs-basic.html">
+<link rel="next" href="calcs-advanced.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -286,128 +286,57 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="gathering-data" class="section level1">
-<h1><span class="header-section-number">Chapter 3</span> Planning and Gathering Data</h1>
-<p><strong>in development</strong></p>
-<p>This chapter will help you think about what to include in your assessment, and what data to look for. You should use previous assessments as guidance, but not be constrained by them. You’ll need to think about the priorities and characteristics for your assessment, and how to represent them within the OHI framework. The following chapter ((Chapter <a href="planner-guide.html#planner-guide">4</a>)) will introduce you to the Planner Guide spreadsheet to help organize your ideas collaboratively with your team.</p>
-<div id="overview-and-resources" class="section level2">
-<h2><span class="header-section-number">3.1</span> Overview and Resources</h2>
-<p>There is a lot of planning and decision-making involved in an OHI assessment. To help you along, we try to provide as much guidance, code, and as many examples as possible. Here are some places to look for help as you go:</p>
-<p><strong>publications:</strong></p>
+<div id="press_resil" class="section level1">
+<h1><span class="header-section-number">Chapter 9</span> Pressures and Resilience</h1>
+<p><strong>In development</strong></p>
+<p>The purpose of Chapter @ref(press_resil-basic) is to introduce you to updating pressures and resilience information for calculating OHI scores. This is a 2-hour hands-on training: you will be following along on your own computer and working with a copy of the demonstration repository that is used throughout this chapter.</p>
+<div id="overview-5" class="section level2">
+<h2><span class="header-section-number">9.1</span> Overview</h2>
+<p>Pressures and Resilience are two of the four dimensions used to evaluate each goal or sub-goal, along with Status and Trend.</p>
+<p>The OHI R package <code>ohicore</code> will calculate pressures and resilience scores for you using information from pressures and resilience data layers and matrices. <code>ohicore</code> takes the data layers listed in the matrix (they are data layers similar to those for status: they need values for every region in your assessment) and calculates pressures and resilience scores. These scores will then affect the goals indicated in the matrix with a 1, 2, or 3 weighting.</p>
+<p>This means that you are responsible for updating the data within pressures and resilience layers so they best represent your assessment. Additionally, you can add and remove layers from the matrix, and change which goals they affect.</p>
+<!---
+
+### Prerequisites
+
+Before the training, please make sure you have done the following: 
+
+1. Have up-to-date versions of `R` and RStudio and have RStudio configured with Git/GitHub 
+    - https://cloud.r-project.org
+    - http://www.rstudio.com/download 
+    - http://happygitwithr.com/rstudio-git-github.html 
+1. Fork the **toolbox-demo** repository into your own GitHub account by going to https://github.com/OHI-Science/toolbox-demo, clicking "Fork" in the upper right corner, and selecting your account
+1. Clone the **toolbox-demo** repo from your GitHub account into RStudio into a folder called "github" in your home directory (filepath "~/github")
+1. Get comfortable: be set up with two screens if possible. You will be following along in RStudio on your own computer while also watching an instructor's screen or following this tutorial.
+--->
 <ul>
-<li><a href="https://peerj.com/articles/1503/">Best practices for assessing ocean health in multiple contexts using tailorable frameworks</a></li>
-<li><a href="http://onlinelibrary.wiley.com/doi/10.1890/ES11-00366.1/abstract">Sea sick? Setting targets to assess ocean health and ecosystem services</a></li>
+<li>**(leverge description from <a href="http://ohi-science.org/manual/#modifying-pressures-and-resilience)**" class="uri">http://ohi-science.org/manual/#modifying-pressures-and-resilience)**</a></li>
 </ul>
-<p><strong>ohi-science.org blogs:</strong></p>
+</div>
+<div id="identifying-indicators" class="section level2">
+<h2><span class="header-section-number">9.2</span> Identifying indicators</h2>
+<p>Ideally, every pressure with an identified strong impact should have a corresponding resilience measure. The rationale is that as resiliences in the study area increase (for instance, by improving environmental regulations), they would balance out and eventually neutralize the pressures. In time, this would lead to an increase in a goal’s status, and therefore the overall goal or sub-goal score. By including regulatory responses in your assessment, you ensure that the actions taken in your country are relevant to ocean health.</p>
+<p>In practice, however, the pressures and resilience measures you include in your assessment will be highly determined by data availability. It is best to first consider what pressures are acting in your study area and then determine if data are available to measure them. You should also decide if the pressures data included in the global assessment are relevant for your assessment and determine if local data better capture pressures for all the regions in your study area. When considering resilience measures, look for regulations or indicators that could be encompassed in one of the pressures categories.</p>
+</div>
+<div id="pressures" class="section level2">
+<h2><span class="header-section-number">9.3</span> Pressures</h2>
+<p>Please refer to the <a href="http://ohi-science.org/manual/#pressures">pressures section the OHI Manual</a> while this chapter is under development.</p>
+<!---
+- what the matrix means, it's a 3D matrix
+- that you still need to data for each indicator in the matrix. 
+- to substitute data behind an existing data layer, proceed as in calcs_basic
+- to add a new layer, you'll need to prepare data, save in layers, register in layers.csv and scenario_data_years.csv, but then also: in the matrix, identify which goals are affected. For global, this was based on many references (see S28 in original Halpern et al. 2012 SOM): you can use this as well, or references of your own. Finally, you'll need to weight them. 
+--->
+</div>
+<div id="resilience-1" class="section level2">
+<h2><span class="header-section-number">9.4</span> Resilience</h2>
+<p>Please refer to the <a href="http://ohi-science.org/manual/#resilience">resilience section the OHI Manual</a> while this chapter is under development.</p>
+<p>Additionally, these resources are available:</p>
 <ul>
-<li><a href="http://ohi-science.org/news/how-to-use-ohi-resources">How to get help when conducting an OHI+ assessment</a></li>
-<li><a href="http://ohi-science.org/news/new-goals-guide-page">New goals page compares different modeling approaches</a></li>
+<li><a href="https://github.com/OHI-Science/toolbox-training/blob/master/downloads/ResilienceSlides.pptx">ResilienceSlides.pptx</a></li>
+<li><a href="https://github.com/OHI-Science/toolbox-training/blob/master/downloads/ResilienceMeasures_BritishColumbia.pdf">ResilienceMeasures_BritishColumbia.pdf</a></li>
 </ul>
-<p>This cartoon represents the four key points in the Best Practices publication (<a href="https://peerj.com/articles/1503/">Lowndes et al. 2015</a>). You’ll start by <strong>building the conceptual framework</strong> for your assessment, and then <strong>remaining true to that framework</strong> as you gather data and develop goal status models that could represent ocean health for your assessment. You will also need to <strong>define spatial boundaries</strong> along the way, because you will need to gather data at that spatial scale. <strong>Documenting and sharing the process</strong> is also critical, so that you remember what you did and why you did, your team remembers what they did and why they did it, people outside your team understand what you did and why you did it, and when your assessment is repeated in the future to track changes in ocean health, others can repeat your assessment and build from it. The Toolbox will help you organize and communicate these details, and all the code you write can be rerun</p>
-<div class="figure">
-<img src="https://docs.google.com/drawings/d/1dUFAOVa2JfbKHyaq98yDYdtcDuEPyr10uNB_auz_Pdc/pub?h=500" />
 
-</div>
-</div>
-<div id="where-to-start" class="section level2">
-<h2><span class="header-section-number">3.2</span> Where to start</h2>
-<p>We recommend starting with goals: how will you model status and trend? Status alone accounts for most of a goal’s score.</p>
-<div class="figure">
-<img src="https://docs.google.com/drawings/d/1O08iEoo3qxOZRoK6Ohv-jdouTBsN_kafJjIhEEqb-yg/pub?w=960&amp;h=720" />
-
-</div>
-<p>You will need to plan conceptually, but ground your planning in what data are really available to use in your assessment. When you’re ready, you will prepare data and goal status and trend models as the “tailored” portion of your assessment, and use our <code>ohicore</code> R package for the final calculations.</p>
-<div class="figure">
-<img src="https://docs.google.com/drawings/d/e/2PACX-1vSsV1sJgpZKCQTnNrPKofXHhYAGah49iD_Muh360Z0wFDcJnY8X7XcBJkeyz7zjRX16SweUO4h87rJG/pub?w=624&amp;h=480" />
-
-</div>
-<!---
-
-ADD PIE CHART
-
-BRIDGING CONCEPTUAL TO DATA
-
-## OHI Framework
-
-<!---lifted from http://ohi-science.org/manual/#incorporate-core-values-and-characteristics-into-the-ohi-assessment-framework-before-gathering-information --->
-<!---
-Begin your assessment by identifying local socio-cultural-economic characteristics and priorities related to ocean health, and how they would ideally be captured with the existing or modified OHI framework. This means understanding the rationale behind the components of the OHI framework and identifying what must be added or removed or redefined to ensure that it best represents the local context. Are all goals relevant to your study area? What should be added, removed, or redefined? In this process it is important to identify not only characteristics that could be included in goal models, but also the important stressors (pressures) and resilience elements within the study area. What are the key issues that should be included for your assessment to be credible, useful, and meaningful? How do people typically relate to the ocean in your area in terms of social and cultural patterns? These are the kinds of questions you should consider prior to assembling the available information.
-
-The OHI framework should guide your assessment, but you should not be constrained by it. If a goal is not relevant, it should be removed. If there are elements important to your study area that are not present within the existing framework, how could they be included? Having a clear picture of how the framework should be restructured and what the assessment should include is very important before moving on to assemble information, because otherwise the assessment could be biased by what information is available instead of what is important to include. When specific information is limited there are ways to capture them with indirect measures.
-
---->
-</div>
-<div id="goals-modeling-status-and-trend" class="section level2">
-<h2><span class="header-section-number">3.3</span> Goals: modeling status and trend</h2>
-<p>Start with the ten goals in the global assessment; are they relevant?</p>
-<p>See <a href="http://ohi-science.org/goals" class="uri">http://ohi-science.org/goals</a> for details about what each goal represents, as well as examples from how goals were modeled in previous assessments.</p>
-<p>Use the Planner Guide (Chapter <a href="planner-guide.html#planner-guide">4</a>) to help you think through and organize your thoughts and data.</p>
-<!---## Pressures --->
-</div>
-<div id="resilience" class="section level2">
-<h2><span class="header-section-number">3.4</span> Resilience</h2>
-<p>In the OHI, we think about resilience as <strong>the social, institutional, and ecological factors that positively affect the ability of a goal to be delivered to people.</strong></p>
-<p>To think about resilience, you will need to spend time exploring governance actions that have occurred within your assessment area (or at an even larger spatial scale, ex: nationally) that directly affected ocean policy and/or specific ocean pressures in your assessment area. The majority of the work will be looking up what legislation exists, how well it addresses specific ocean pressures, when it was introduced, and detailing the changes. This may also include gathering reports that document enforcement and compliance with key regulations or effectiveness metrics through time and space. Oftentimes, reports may be qualitative, which means there are no data. This means you may need to translate written reports into quantitative metrics, which you can do with your team and through discussions with local experts.</p>
-<div id="types-of-resilience" class="section level3">
-<h3><span class="header-section-number">3.4.1</span> Types of Resilience</h3>
-<p>Similar to pressures, resilience will ultimately be included in an OHI assessment through the OHI Toolbox by having a data layer for each resilience measure, with information for each region within the study area.</p>
-<p>Ideally, each pressure measured in the OHI should have a corresponding resilience measure, which is meant to ‘balance’ the pressures that negatively affect ocean health. The Ocean Health Index considers resilience in three categories:</p>
-<ol style="list-style-type: decimal">
-<li>ecological integrity</li>
-<li>pressure-specific regulations aimed at addressing ecological pressures</li>
-<li>social integrity</li>
-</ol>
-<p>The first two measures address ecological resilience while the third addresses social resilience. Ideally, for any resilience measure, you would have three tiers of information:</p>
-<ul>
-<li><strong>Existence of regulations</strong>: Are regulations in place to appropriately address the ecological pressure?</li>
-<li><strong>Implementation and enforcement</strong>: Have these regulations been appropriately implemented and are there enforcement mechanisms in place?</li>
-<li><strong>Effectiveness and compliance</strong>: How effective have the regulations been at mitigating these pressures and is there compliance with these regulations?</li>
-</ul>
-<div id="ecological-integrity" class="section level4">
-<h4><span class="header-section-number">3.4.1.1</span> Ecological integrity</h4>
-<p>Ecological integrity is about general resilience within the ecosystem. You will be looking for the qualities that make an ecosystem strong to anything that could happen to it. If your ecosystem was affected by something, how easily could it bounce back to anything?</p>
-</div>
-<div id="pressure-specific-regulations" class="section level4">
-<h4><span class="header-section-number">3.4.1.2</span> Pressure-specific regulations</h4>
-<p>Pressure-specific regulations are intended to address ecological pressures, and are measured as laws, regulations.</p>
-</div>
-<div id="social-integrity" class="section level4">
-<h4><span class="header-section-number">3.4.1.3</span> Social integrity</h4>
-<p>Social integrity is about general resilience within the society You will be looking for the qualities that make a society strong to anything that could happen to it. So any metric of how stable a society is goes here. If your society got hit with something, how easily could it bounce back to anything?</p>
-</div>
-</div>
-<div id="how-to-begin" class="section level3">
-<h3><span class="header-section-number">3.4.2</span> How to begin</h3>
-<p>When you begin thinking about potential resilience metrics, you also need to think about whether data may be available. A good place to start is to see what data were used for other assessments, and see if you have better data in your region. For example, for social integrity the OHI Global assessment uses the World Bank’s <a href="https://data.worldbank.org/data-catalog/worldwide-governance-indicators">World Governanace Indicators</a>, do you have something better within your assessment area? In the US West Coast Assessment Like USWC did (and in BC Canada well-being).</p>
-<!---
-- from Court's word doc
-- full table (screenshots, with also link to Googledoc would be better) - useful outside ohi as governance; systematic way to think about governance, how it should function
-- How does Ning's Planner fit in (https://docs.google.com/spreadsheets/d/1597DGext2lK4Z4HvEDLrcccbbM5NLsXv213RgaXxLuA/edit#gid=1802082146)
---->
-<p>When beginning a search for resilience metrics to counteract pressures to your system, there are three levels of questions you can ask yourself to begin to get to the heart of if regulations exist that address these pressures and how effective the implementation, enforcement, and compliance with these regulations is:</p>
-<ol style="list-style-type: decimal">
-<li>Does a regulation exist that appropriately addresses a specific pressure?</li>
-<li>Is the regulation being appropriately complied with?</li>
-<li>Are there mechanisms in place supporting enforcement of the regulation?</li>
-</ol>
-<p><a href="https://docs.google.com/spreadsheets/d/17nR-8vgD9JqWGCaQNjz4B36iOmMKUWYuNiPKKb_ht0M/edit?usp=sharing">Here</a> are some specific questions you can begin to ask yourself when thinking about how to counter specific pressures (Pressure-specific regulations). In this spreadsheet we organize these questions around the pressures used in Global assessments, but these questions can be tailored to any number of pressures or groups of pressures depending on what is included in your own regional assessment.</p>
-<!---
-## Examples 
-
-Examples of how the US West Coast OHI assessment produced Resilience scores using the best available data: 
-
-US West Coast Clean Water Enforcement and Regulation-
-Where used: Resilience measure to address water pollution pressure
-Description: The Clean Water Enforcement and Regulation resilience measure is a composite measure of 3 different enforcement and compliance metrics utilized by the US EPA National Pollutant Discharge Elimination System (NPDES) permit program, which acts to control water pollution by regulating point sources that discharge pollutants into US waters. Yearly metrics measuring the percentage of inspector coverage at NPDES major facilities, the ratio of actual to expected discharge monitoring report submissions, and the percentage of discharge facilities with compliance violations were obtained from the US EPA Enforcement & Compliance History Online (ECHO) database (https://echo.epa.gov/ ) for California, Oregon and Washington. These values are reported on a 0-100% scale. We used the EPA established ‘National Goals’ for each metric as our reference resilience score. The national goal was 50% for inspector coverage, 95% for monitoring report submission, and 0% for compliance violations. For each of these three metrics we divided the observed value by its reference score (so that when it equals the reference it receives a perfect score of 1) and averaged them to come up with a resilience score for each state. 
-
---->
-<!---
-
-- from Court's word doc
-- maybe example of Court's timeline (upcoming)
---->
-
-</div>
 </div>
 </div>
             </section>
@@ -415,8 +344,8 @@ Description: The Clean Water Enforcement and Regulation resilience measure is a 
           </div>
         </div>
       </div>
-<a href="intro.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="planner-guide.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="calcs-basic.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="calcs-advanced.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
