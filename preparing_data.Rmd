@@ -76,7 +76,7 @@ So how do we get from raw data to a data layer that looks like the ones shown ab
 
 For reproducibility and transparency, it is also good practice to record and share the decision-making process - trials and errors, why you decide to include, or more importantly, exclude a certain data source. Fortunately, we can take notes on the data exploration process and code in one place!
 
-Here is an [example](https://github.com/OHI-Science/bhi/blob/draft/baltic2015/prep/CW/eutrophication/eutrophication_prep.md) of a data prep document. Let's give it a try to make one just like this. 
+Here is an [example](https://github.com/OHI-Science/bhi-1.0-archive/blob/draft/baltic2015/prep/CW/eutrophication/eutrophication_prep.md) of a data prep document. Let's give it a try to make one just like this. 
 
 Now let's switch to the `demo` repo. Today we will use the _Clean Water (CW)_ goal as an hands-on example. We will get sample secchi depth data, as an indicator of water clarity. 
 

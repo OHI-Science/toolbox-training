@@ -519,7 +519,7 @@ At this point you have probably spent a lot of time preparing these data, but er
 
 ### Goal models
 
-The goal model that was developed for global assessments and described in Halpern et al. 2012 (see current Supplemental Information [here](https://rawgit.com/OHI-Science/ohi-global/draft/global_supplement/Supplement.html#51_artisanal_opportunities)) states that the status for this goal is represented by unmet demand (Du), which includes measures of opportunity for artisanal fishing, and the sustainability of the methods used. 
+The goal model that was developed for global assessments and described in Halpern et al. 2012 (see current Supplemental Information [here](http://htmlpreview.github.io/?https://github.com/OHI-Science/ohi-global/published/documents/methods/Supplement.html#61_artisanal_opportunities)) states that the status for this goal is represented by unmet demand (Du), which includes measures of opportunity for artisanal fishing, and the sustainability of the methods used. 
 
 $$
 D_{U} = (1 - need) * (1 - access)
