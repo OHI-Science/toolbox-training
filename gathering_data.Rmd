@@ -1,7 +1,5 @@
 # Planning and Gathering Data  {#gathering-data}
 
-**in development**
-
 This chapter will help you think about what to include in your assessment, and what data to look for. You should use previous assessments as guidance, but not be constrained by them. You'll need to think about the priorities and characteristics for your assessment, and how to represent them within the OHI framework. The following chapter ((Chapter \@ref(planner-guide))) will introduce you to the Planner Guide spreadsheet to help organize your ideas collaboratively with your team.
 
 ## Overview and Resources

@@ -14,7 +14,7 @@ description: "This is the official Ocean Health Index Toolbox training."
 
 # Welcome {#welcome}
 
-**Welcome. This training program is under active development and testing.**
+This book is the Toolbox Training for the Ocean Health Index. It improved iteratively and the most recent version always openly available online.
 
 The single biggest motivation of the Ocean Health Index is to use science to inform marine management. And not just any science, the best available science, data, methods, and tools.
 OHI assessments use collaborative open software so that they are transparent and reproducible; we call this software the OHI Toolbox.

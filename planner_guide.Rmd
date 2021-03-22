@@ -10,11 +10,9 @@ We'll start by exploring the columns in the spread sheet and what they are for, 
 
 ### Prerequisites
 
-The OHI Data Planner is a document you can download online. It is housed in a Google Drive folder <!---[link to it once it has a permanent location] ---> that is shared with OHI participants before an OHI Technical Training workshop. Make sure you have access to the folder as there are other files in the folder to aid the process of the workshop. 
+The [OHI Data Planner](https://docs.google.com/spreadsheets/d/1f-vwUrQHrMs7cjhChuK2YnlbkE_5kQ6AgGwyV2eJ1vA/edit?usp=sharing) is a document that can help you organize your thinking around the data available and how it could be used in your OHI+ assessment.
 
-However, if you are using this document as a stand-alone document, you can download it [here](https://docs.google.com/spreadsheets/d/1f-vwUrQHrMs7cjhChuK2YnlbkE_5kQ6AgGwyV2eJ1vA/edit?usp=sharing) directly.
-
-Click open the Planner, and let's walk through it together. 
+Here we will walk through the OHI Data Planner together. 
 
 ## Data Planner spreadsheet
 
@@ -81,20 +79,11 @@ When you find a data source (eg. national poverty level), you might need to be _
 _Pressures & Resilience_ are an important yet often overlooked component of the OHI. _Pressures_ are factors that negatively affect the status of each goal/subgoal, while _Resilience_ are factors that will improve the status or negate the impacts of the pressures. They will be used to predict the _Future State_. You will need to quantify each factor later on in the assessment. But at this stage, we suggest you brainstorm and jog down as many ideas as you could think of first. 
 
 
-<!---Ning: you'll also want to explain the green and orange columns here too. And say that if you can add more columns for regions (and remind them what regions are)
-
-
-Also, the pressures and resilience tabs too. 
-
-Julie, see above. Also I added another column "region ..." in the spread sheet itself.
-
---->
-
 ### Examples 
 
 Now we have run through the basic theories behind each column, let's walk through a few examples together. They are on the next tabs of the spreadsheets (Example 1 - 4). 
 
-**Example 1 - (Model &) Variables** <!--- Julie: maybe delete the model column, only have model variables, see earlier comments --->
+**Example 1 - (Model &) Variables** 
 
 ![](https://docs.google.com/drawings/d/e/2PACX-1vSY6WtpVw6VzNfSBu_Mafu5JyTuSnIWh2yVdMi5jrC7xT4GJb7b6OmatsZoWSPGFyvSDnqDODVFsF5-/pub?w=960&h=240)
 
@@ -115,11 +104,6 @@ As you might have noticed, to the right side of the sheet, there is a column for
 **Example 2 - Data**
 
 ![](https://docs.google.com/drawings/d/e/2PACX-1vTLmLMCMJMWzYW05Zhorwya3a1nB5uIZZ5vhHY0sjv6h-Cs4HSJCCm7tK_EBbv4o-Rygd3FRx21pIkS/pub?w=960&h=240)
-
-<!---Ning: same as above, I think you can flush this out a bit more. Walk through the rows you introduce above and say what you enter on the sheet. Maybe make some dummy data and take a screenshot if that makes sense, or just describe it.
-
-Julie, see below...
---->
 
 These few columns detail the data you find for each of the variables you decided suitable for your model. 
 
@@ -148,11 +132,6 @@ Sometimes there isn't data available, and sometimes data isn't relevant to a reg
 **Example 4 - Reference Point**
 
 ![](https://docs.google.com/drawings/d/e/2PACX-1vTR8bSMiV-QEovbuUOWOXBjeueRGXqIK1Z1kCa6DVprbWCo2HaPcl1ktjWP_mR8TWf-HHDvuZH64aJg/pub?w=960&h=240)
-
-<!---Ning: I think the fisherman example is too simplistic and a bit misleading, and in the screenshot it's temporal v. spatial...I think you want to explain the thinking behind temporal v. spatial here instead of the specific number examples. 
-
-Julie, see below: 
---->
 
 Reference points, or targets, are essential for rescaling and scoring. For example, if the target is to have 100 fishermen fishing, and the data shows only 50 fishermen are fishing, if the AO model depends only on fishermen, the AO score could be about 50 (there will also be pressures and resilience acting). 
 
