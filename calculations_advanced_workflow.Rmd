@@ -131,8 +131,6 @@ Please see the [OHI Manual](https://ohi-science.org/manual) to learn more about:
 - [Modifying pressures and resilience](https://ohi-science.org/manual/#modifying-pressures-and-resilience)
 - [Removing goals and sub-goals](https://ohi-science.org/manual/#removing-goals-and-sub-goals)
 
-this is how to do it right. Need to add the row in goals.csv and the function in functions.r
-
 <br>
 
 <!---TODISCUSS: maybe this detail should go somewhere else and then just referenced here? Because will also need this information referenced in the ## Removing Goals and ## Changing Subgoals sections --->
