@@ -21,7 +21,7 @@ ecological-integrity
 pressure-specific-regulations
 social-integrity
 how-to-begin
-planner-guide
+data-planner
 overview-1
 prerequisites
 data-planner-spreadsheet

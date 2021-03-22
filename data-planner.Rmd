@@ -1,4 +1,4 @@
-# OHI Data Planner  {#planner-guide}
+# OHI Data Planner  {#data-planner}
 
 The purpose of Chapter \@ref(planner-guide) is to help you think about data for your assessment in a structured way. This is a 1-hour hands-on training: you will be following along on your own computer and working with a copy of the demonstration repository that is used throughout this chapter.
 

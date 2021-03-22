@@ -6,7 +6,7 @@ rmd_files: [
   "index.Rmd",
   "introduction.Rmd",
   "gathering_data.Rmd",
-  "planner_guide.Rmd",
+  "data-planner.Rmd",
   "toolbox.Rmd",
   "toolbox_ecosystem.Rmd",
   "preparing_data.Rmd",

@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 10 Calculations: advanced workflow | Ocean Health Index Toolbox Training</title>
+  <title>Chapter 4 OHI Data Planner | Ocean Health Index Toolbox Training</title>
   <meta name="description" content="This is the official Ocean Health Index Toolbox training." />
   <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 10 Calculations: advanced workflow | Ocean Health Index Toolbox Training" />
+  <meta property="og:title" content="Chapter 4 OHI Data Planner | Ocean Health Index Toolbox Training" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="ohi-science/ohi-trainings" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 10 Calculations: advanced workflow | Ocean Health Index Toolbox Training" />
+  <meta name="twitter:title" content="Chapter 4 OHI Data Planner | Ocean Health Index Toolbox Training" />
   
   <meta name="twitter:description" content="This is the official Ocean Health Index Toolbox training." />
   
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="press-resil.html"/>
-<link rel="next" href="reporting.html"/>
+<link rel="prev" href="gathering-data.html"/>
+<link rel="next" href="toolbox.html"/>
 <script src="libs/header-attrs-2.7.2/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -358,148 +358,106 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="calcs-advanced" class="section level1" number="10">
-<h1><span class="header-section-number">Chapter 10</span> Calculations: advanced workflow</h1>
-<!--- For reference: 
-
-- http://ohi-science.org/manual/#removing-goals-and-sub-goals 
-- Manual md (easier to search): https://github.com/OHI-Science/ohimanual/blob/gh-pages/3_conduct_manual/ohi-manual.md
---->
-<p><strong>In development.</strong></p>
-<p>The purpose of Chapter <a href="calcs-advanced.html#calcs-advanced">10</a> is to build off the basic workflow for calculating OHI scores and do a few more advanced things. This is a a 2-hour hands-on training: you will be following along on your own computer and working with a copy of the demonstration repository that is used throughout the this chapter.</p>
-<div id="overview-6" class="section level2" number="10.1">
-<h2><span class="header-section-number">10.1</span> Overview</h2>
-<p>This chapter will show you how to add and remove goals from your assessment. You will be able to use these same principles to turn a subgoal into a goal, or rename goals altogether. The toolbox will calculate goal scores for each goal listed in <code>conf/goals.csv</code>, so investigating and modifying this file will be a big focus of this chapter.</p>
-<p>As in Chapter <a href="calcs-advanced.html#calcs-advanced">10</a>, it is good practice to rerun <code>calculate_scores.Rmd</code> after modifying these files and and use Git tab in RStudio to check your work.</p>
-<!---TODO: add commits, sync to this. we'll also be reverting a lot as we test things. --->
-<div id="prerequisites-4" class="section level3" number="10.1.1">
-<h3><span class="header-section-number">10.1.1</span> Prerequisites</h3>
-<p>Before the training, please make sure you have done the following:</p>
-<ol style="list-style-type: decimal">
-<li>Have up-to-date versions of <code>R</code> and RStudio and have RStudio configured with Git/GitHub <!--- TODO (Chapter \@ref(datascience))--->
-<ul>
-<li><a href="https://cloud.r-project.org" class="uri">https://cloud.r-project.org</a></li>
-<li><a href="http://www.rstudio.com/download" class="uri">http://www.rstudio.com/download</a></li>
-<li><a href="http://happygitwithr.com/rstudio-git-github.html" class="uri">http://happygitwithr.com/rstudio-git-github.html</a></li>
-</ul></li>
-<li>Fork the <strong>toolbox-demo</strong> repository into your own GitHub account by going to <a href="https://github.com/OHI-Science/toolbox-demo" class="uri">https://github.com/OHI-Science/toolbox-demo</a>, clicking “Fork” in the upper right corner, and selecting your account</li>
-<li>Clone the <strong>toolbox-demo</strong> repo from your GitHub account into RStudio into a folder called “github” in your home directory (filepath “~/github”)</li>
-<li>Get comfortable: be set up with two screens if possible. You will be following along in RStudio on your own computer while also watching an instructor’s screen or following this tutorial.</li>
-</ol>
-<p>Additionally, this chapter assumes you are familiar with content from Chapter <a href="calcs-basic.html#calcs-basic">8</a>, so review that first if needed.</p>
-<hr />
+<div id="data-planner" class="section level1" number="4">
+<h1><span class="header-section-number">Chapter 4</span> OHI Data Planner</h1>
+<p>The purpose of Chapter <a href="#planner-guide"><strong>??</strong></a> is to help you think about data for your assessment in a structured way. This is a 1-hour hands-on training: you will be following along on your own computer and working with a copy of the demonstration repository that is used throughout this chapter.</p>
+<div id="overview-1" class="section level2" number="4.1">
+<h2><span class="header-section-number">4.1</span> Overview</h2>
+<p>A successful OHI+ assessment depends on representative data and models. With so much (or sometimes so little) information out there, how do you select the optimal data to be included in your study? How do you develop models that best reflect the conditions of your ocean health? How do you keep track of ideas you have and decisions you make? How do you work with your team so that you can contribute to ideas? Here we have developed a OHI Planner to guide you through this important, yet sometimes daunting, process of data selection and model exploration.</p>
+<p>We’ll start by exploring the columns in the spread sheet and what they are for, and then walk through examples of how to fill them out.</p>
+<div id="prerequisites" class="section level3" number="4.1.1">
+<h3><span class="header-section-number">4.1.1</span> Prerequisites</h3>
+<p>The <a href="https://docs.google.com/spreadsheets/d/1f-vwUrQHrMs7cjhChuK2YnlbkE_5kQ6AgGwyV2eJ1vA/edit?usp=sharing">OHI Data Planner</a> is a document that can help you organize your thinking around the data available and how it could be used in your OHI+ assessment.</p>
+<p>Here we will walk through the OHI Data Planner together.</p>
 </div>
 </div>
-<div id="explore-goals.csv" class="section level2" number="10.2">
-<h2><span class="header-section-number">10.2</span> Explore goals.csv</h2>
-<p><code>goals.csv</code> is the registry for the goals that will be included in OHI calculations. <code>ohicore</code> will use this list and make sure there are functions with the same names in <code>functions.R</code>. This is one of the things that the Toolbox does with the <code>Conf()</code> command, as we will see.</p>
-<p><code>goals.csv</code> is inside the <code>conf</code> folder. It is a .csv file has a lot of columns, so it is easier to open and inspect it in Excel or other spreadsheet software. Let’s discuss a few of the columns here (see Chapter <a href="toolbox-ecosystem.html#toolbox-ecosystem">6</a> for descriptions of all of them):</p>
-<p><img src="https://docs.google.com/drawings/d/e/2PACX-1vRtfUuMpuS49gBTIKRYDsdMmG_0S8V9vxsaaUNQjX-EFn0HnO8xvPygmCDIBRY4JsMluzNBiTYZUv9B/pub?w=960&amp;h=336" /></p>
-<p><code>goals.csv</code> has information for how goal scores are calculated, and how information will be visualized and communicated. Let’s focus on this now:</p>
+<div id="data-planner-spreadsheet" class="section level2" number="4.2">
+<h2><span class="header-section-number">4.2</span> Data Planner spreadsheet</h2>
+<p>Information from the spreadsheet is not going to be used directly by the Toolbox. Rather, this Data Planner is built to start the collaborative OHI process and help you think about data. The Planner will help your whole team design your plan and contribute ideas. Then, the technical team will be able to translate this plan into calculations in the Toolbox.</p>
+<p>The Data Planner serves as a way to track ideas of data and see what they look like or if they are possible to use for your assessment. It seems daunting to have to write down what you want the models to be, but here you can record simply what you’re thinking, and what the ideal would be. It’s a starting point that you can then share with your colleagues to think about together, and start looking for data.</p>
+<p>The data searching process is not a definitive phase of an assessment. You might find your initial data ideas not adequate or feasible to use for calculations later, or they don’t fit into the spatial boundaries you wanted to use. That’s okay. OHI is an iterative process, and you can always come back to this spreadsheet and edit further. Having this spreadsheet thus serves as a collaborative note for your and your colleagues to record ideas for future references.</p>
+<p>There are three tabs to be filled out: Status Data, Pressures Data, and Resilience Data. Now let’s take a look at each one of them.</p>
+</div>
+<div id="status-data-tab" class="section level2" number="4.3">
+<h2><span class="header-section-number">4.3</span> Status Data tab</h2>
+<p>Open up the “Status Data” tab, you’ll see these headings, or columns to be evaluated for each goal:</p>
+<p><img src="https://docs.google.com/drawings/d/e/2PACX-1vQCvSiXZdlEiThyX6_DWryKDOZImQFj_0dtVL4Co6YvupBx-60mx3amZqJ023vxRPhILeHehPxn9MIf/pub?w=960&amp;h=96" /></p>
+<p>This sheet is colored to help structure your thinking as you consider data. Generally you would want to work through this Planner from left to right. But note that <em>the process of building models, finding data, and defining spatial boundaries is iterative</em>. You might work on those components simultaneously in order to strike a balance between an ideal approach and data limitations.</p>
+<p>Let’s walk through each header first.</p>
+<div id="goals-and-subgoals" class="section level3" number="4.3.1">
+<h3><span class="header-section-number">4.3.1</span> Goals and subgoals</h3>
+<p><img src="https://docs.google.com/drawings/d/e/2PACX-1vQF_jJF0FgtFoZiGf8oMEacVslyQZdO7uoYEvRi5_mEG2kCcR--t34mMj7GYrdBnv4M7RCNY-81Nvgw/pub?w=960&amp;h=144" /></p>
+<p>In the Global assessment, we identified ten “goals” - universally valued benefits provided by the ocean. However, they might not be as relevant in your region. You may remove the goals that are irrelevant on the spreadsheet.</p>
+<p>The Baltic Sea region doesn’t get big storms because of its geography. The Coastal Protection goal is therefore irrelevant here and removed from this study.</p>
+</div>
+<div id="model-data-spatial-boundaries" class="section level3" number="4.3.2">
+<h3><span class="header-section-number">4.3.2</span> Model + Data + Spatial Boundaries</h3>
+<p><img src="https://docs.google.com/drawings/d/e/2PACX-1vQwRzxEuSxD09EyNUY5igXS7RdQFnk5XrAr3RXYkdBGzDIEMk73xWfR78urrju4oYTAy1TzRBJzFWFd/pub?w=960&amp;h=144" /></p>
+<p>Goal Models and Spatial Boundaries need to be considered simultaneously, particularly in the initial data gathering stage. You may choose to set spatial boundaries based on political or geological boundaries (or some combination), and your choice will be either validated or need adjusted based on the data that are available for those boundaries. For example, let’s say you choose to assess 5 provinces separately. Then, as you gather available data, you learn that data for province 1 and 2 are reported together and are difficult to tease apart. In this case, you will need to consider combining region 1 and 2 into one region in your assessment, or looking for other data sources that are available to represent this goal. It is also important to look across other goals and the data available for those goals; do most data sets report province 1 and 2 together, or is this the only one? This will help you decide whether you would want to explore new spatial boundaries or new data sources.</p>
+<p>Let’s look at these individually:</p>
+<p><strong>Represent goals with models</strong></p>
+<p><img src="https://docs.google.com/drawings/d/e/2PACX-1vTFUwZQ6MKe-1ihCUMDWAv4yuX-D8oQnLYrGS4dEbMYIugvnj8j94sfquN9g09SMeHzg2GzKY4QyvPs/pub?w=960&amp;h=125" /></p>
+<p><em>Model approaches?</em> You don’t need to decide on the mathematical formula here. Together with the next “variables” column, this column mainly aims to get you start thinking of model approaches. Is the global OHI model adequate for your needs? What should the goal capture?</p>
+<p><em>What ideal variables best represent the goal?</em> Before even thinking about data, let’s think broadly, in your study area, what variables, or characteristics, of a goal best represent the philosophy of it, regardless if there is data available?</p>
+<p>Sometimes we tend to constrain our model development with the data we know we have. You can build a more representative model by thinking through what are <em>the most ideal variables</em> (eg. popularity of a region among tourists) to capture information, then find <em>data that best reflect those variables</em> (eg. hotel vacancy rates? international flights to this region? surf shop revenue? cruise ship revenue? etc).</p>
+<p>Different OHI+ projects have been creative at how they represent this goal as data permits. Check out the OHI-Science Goals page (<a href="http://ohi-science.org/goals/">ohi-science.org/goals</a>) page. It can help you understand the philosophy of a goal by illustrating what has been done in other locations. Let that catalyze your discussions. Are any of the past approaches suitable, or are there other obvious variables to better represent your goal in your country/region?</p>
+<p>Another important factor that determines OHI scores is <em>Reference Point</em>, ie. what status of this goal can be awarded a score of 100? Has the government set a target to achieve? Is there a model region that has become a standard other regions should aspire to? Is there a historical point the regions should return to?</p>
+<p><strong>Find data for your ideal or proxy model variables</strong></p>
+<p><img src="https://docs.google.com/drawings/d/e/2PACX-1vSoBJMg2MbiwD7xkQQEOD-v6YqOpajRpIbKeawYSfimytwxCPe1aSTyv0HmLfV6O5RCoqf9HqncZBtf/pub?w=960&amp;h=125" /></p>
+<p>Choice of model variables and reference points are often limited by data availability, time frame, and resolution. The data columns are a place to catalog a list of the data that could work: from your knowledge, when you ask your colleagues, digging through databases online, etc. Add as many rows as you need to to record your ideas. Having this master sheet of ideas will help you keep track of your thoughts and make collaboration with your colleagues easier.</p>
+<p><em>Years</em>: Typically having only one year of data is not enough to objectively reflect the status and trend of a goal. Five years of data are recommended. If that’s not available, using fewer years of data is possible.</p>
+<p><em>Spatial resolution</em>: Data needs to be presented to the <em>region</em> level. Regions are sub-units, or assessment units, of your study area. At the region level, each OHI goals/sub-goals will be analyzed and scored. For example, you study area may be an entire country, while you regions are each coastal province or state. You can add more regions as needed on the spreadsheet.</p>
+<p>When you find a data source (eg. national poverty level), you might need to be <em>disaggregate</em>, or separate the data from large-scale (eg. national) to small-scale (eg. provincial). You could contact the agency that publishes the data and see if they have gathered small-scale data. If that’s not possible, there are means (eg. GIS) to separate the large-scale data to local scales, although that could reduce the accuracy of the data.</p>
+<p><em>Pressures &amp; Resilience</em> are an important yet often overlooked component of the OHI. <em>Pressures</em> are factors that negatively affect the status of each goal/subgoal, while <em>Resilience</em> are factors that will improve the status or negate the impacts of the pressures. They will be used to predict the <em>Future State</em>. You will need to quantify each factor later on in the assessment. But at this stage, we suggest you brainstorm and jog down as many ideas as you could think of first.</p>
+</div>
+<div id="examples" class="section level3" number="4.3.3">
+<h3><span class="header-section-number">4.3.3</span> Examples</h3>
+<p>Now we have run through the basic theories behind each column, let’s walk through a few examples together. They are on the next tabs of the spreadsheets (Example 1 - 4).</p>
+<p><strong>Example 1 - (Model &amp;) Variables</strong></p>
+<p><img src="https://docs.google.com/drawings/d/e/2PACX-1vSY6WtpVw6VzNfSBu_Mafu5JyTuSnIWh2yVdMi5jrC7xT4GJb7b6OmatsZoWSPGFyvSDnqDODVFsF5-/pub?w=960&amp;h=240" /></p>
+<p>Models are relationships among variables. Before gathering any data, think about ideal variables that could represent the goal. How could each variable be relevant/representative of ocean health?</p>
+<p>In this example, <a href="http://ohi-science.org/goals/#artisanal-fishing-opportunities">artisanal fishing opportunities</a> measure whether people who need to fish on a small, local scale have the opportunity to do so. Thus the variables need to reflect the <em>need</em> for artisanal fishing, how easy or hard it is for fishermen to <em>access</em> ocean resources when they need them, and the <em>sustainability</em> of harvest of all fish stocks that fishermen use.</p>
+<p><em>The number of artisanal fishermen</em> and/or <em>the number of people below poverty line</em> could reflect the need for artisanal fishing.</p>
+<p><em>Fish stock health</em> can tell the sustainability of fishing in the region.</p>
+<p><em>Catch</em> might be unsuitable, because it reflects the amount fished in the past, not the sustainable capacity for artisanal fishing. The fish stocks might have been over- or under- fished in the past.</p>
+<p><em>Gas price</em> and <em>number of ports</em> could limit the fisherman’s ability to access ocean resources.</p>
+<p>As you might have noticed, to the right side of the sheet, there is a column for <strong>notes</strong>. In this case for Artisanal Fishing Opportunities (AO), Fish catch is deemed not suitable for the reasons stated above. <em>It’s just as important to document the rationales for excluding a data source as it is to record why you included one.</em></p>
+<p><strong>Example 2 - Data</strong></p>
+<p><img src="https://docs.google.com/drawings/d/e/2PACX-1vTLmLMCMJMWzYW05Zhorwya3a1nB5uIZZ5vhHY0sjv6h-Cs4HSJCCm7tK_EBbv4o-Rygd3FRx21pIkS/pub?w=960&amp;h=240" /></p>
+<p>These few columns detail the data you find for each of the variables you decided suitable for your model.</p>
+<p>Are data available? For fish stock health, there is no readily accessible data sets. So this variable can’t be used in your study. But other variables seem to have data.</p>
+<p>Are they from a credible source? The quality of your assessment depends on the quality of your data. Government agencies (eg. Energy Information Administration), or research institutes tend to be more credible.</p>
+<p>How many years does it cover? As OHI measures <em>trend</em> for each goal, the trend is derived from ocean health status over time, ideally 5 years. In this case, there is sufficient data (1950-2016).</p>
+<p>Also, what’s the spatial resolution of this source? Spatial resolution should be compatible with the geopolitical boundaries of the regions in your study area. If the source only provides a national average, but the assessment requires provincial-level data, you need to look further.</p>
+<p><strong>Example 3 - Spatial resolution</strong></p>
+<p><img src="https://docs.google.com/drawings/d/e/2PACX-1vTlPhVKT-a9rJUkWOof6o2OIGudmQ-IMjeYr16QcIhwmvheZTGwjlxUeO9OszaBXEREUQU2B970JKZd/pub?w=960&amp;h=240" /></p>
+<p>As mentioned above, data should be disaggregated to the regional level that you determine to be the optimal spatial boundaries of your study.</p>
+<p>In the data exploration process, however, you might find that the geopolitical boundaries you initially thought to be ideal are not supported by data. For example, if region 1 and 2 do not have independent data - that data can only be disaggregated from national level data, and region 1 and 2 may end up with non-distinguishable data, you might consider combining region 1 and 2 into the same region for your assessment.</p>
+<p><img src="https://docs.google.com/drawings/d/e/2PACX-1vQZjvRbXPAj_VKdJ4Nm5BfFSnivlr-d8K23qHY0HS9CBIcriifSVVIzll1GqpA3QD_lSMKINB_Drsg5/pub?w=960&amp;h=336" /></p>
+<p>Sometimes there isn’t data available, and sometimes data isn’t relevant to a region, e.g. if there are no mangroves growing in Region 4. So it’s important to have a system for distinguishing these two things. Here, we’ll use <em>NA</em> if it’s not relevant; that’s the syntax that <code>R</code> and the OHI Toolbox will use so we can be consistent. When data are not available but they should be, here we’ll mark it with an <em>N</em>.</p>
+<p><strong>Example 4 - Reference Point</strong></p>
+<p><img src="https://docs.google.com/drawings/d/e/2PACX-1vTR8bSMiV-QEovbuUOWOXBjeueRGXqIK1Z1kCa6DVprbWCo2HaPcl1ktjWP_mR8TWf-HHDvuZH64aJg/pub?w=960&amp;h=240" /></p>
+<p>Reference points, or targets, are essential for rescaling and scoring. For example, if the target is to have 100 fishermen fishing, and the data shows only 50 fishermen are fishing, if the AO model depends only on fishermen, the AO score could be about 50 (there will also be pressures and resilience acting).</p>
+<p>How should reference point(s) for the model variables be set? They could be set based on information from published policy targets (e.g. government-set targets to achieve), scientific studies (e.g. maximum sustainable yield for a fishery), etc. Sometimes there is no easy-to-find reference point from literature. In those cases, you’ll need to discuss with experts and your team to set a reference point that makes the most sense to your area.</p>
+<p>Often, reference points are temporal (eg. historical coverage of mangrove) or spatial (eg. the region that has the highest number of tourists). Let’s look at a few examples:</p>
+<p><em>Gas prices</em> fluctuates often. It’s difficult to set a reference point where it’s optimal. In this case, we set the reference point to be a spatial one. It is 110% of the lowest gas price across all regions in a given year.</p>
+<p><em>Number of artisanal fishermen</em> might be dwindling over time, and we might want to preserve the number of fishermen in a region. So we set the reference point to be the highest number of fishermen in a region within the past 5 years.
+<em>Number of people below poverty line</em> often is a government set standard to achieve, so is <em>the number of ports</em>.</p>
+<!--- new info --->
+<p><strong>Example 5 - Pressures &amp; Resilience</strong></p>
+<p>As mentioned above, at this stage of your assessment, it’s important to start thinking about pressures and resilience - factors that contribute to long-term outcomes, or the future state, of each goal or sub-goal. Think broadly. Here are a few examples:</p>
 <ul>
-<li>Each goal or subgoal has its own row. the “goal” column lists them all</li>
-<li>If the “goal” column is really a subgoal, then the “parent” column lists the parent or supragoal of that sub-goal</li>
+<li>What pressures make it harder for small fishermen to get access to the stocks? For example, high gas price, poor fisheries stock health, few ports where fishermen could access the sea, etc.</li>
+<li>What regulations are there to directly increase access and counter the pressure? For example, loan programs for fishermen, stock improvement measures, etc.</li>
+<li>What regional or national policies that might indirectly improve the status of this goal? For example, policies to move people out of poverty could decrease the need of artisanal fishing, and clean water laws that improve water quality.</li>
+<li>How the status of other goals affect this goal? For example, severe water pollution could affect the fisheries.</li>
 </ul>
-<!--- 
-This is where it happens:
-
-```r
-conf = ohicore::Conf('conf')
-```
-
-TODO ohicore: Conf() should check that all entries in goals.csv are present in functions.r, but it doesn't. 
---->
-</div>
-<div id="round-1-poke-at-it-to-see-how-it-works" class="section level2" number="10.3">
-<h2><span class="header-section-number">10.3</span> Round 1: Poke at it to see how it works</h2>
-<p>The Toolbox won’t always give errors when you start changing things (although we are improving that), so let’s just see what some of these things look like. This is when using the Git tab to help you keep track of how things work REALLY helps.</p>
-<p>We will make modifications in <code>goals.csv</code> and see how that affects the basic calculations workflow from Chapter <a href="calcs-advanced.html#calcs-advanced">10</a>, and then we will do the same with <code>functions.R</code>.</p>
-<div id="remove-a-goal-whole-row-in-goals.csv" class="section level3" number="10.3.1">
-<h3><span class="header-section-number">10.3.1</span> Remove a goal (whole row) in goals.csv</h3>
-<p>For example, delete the entire “LSP” row in the .csv file, and save it. You should see the <code>goals.csv</code> show up in your Git tab in RStudio because the file has been modified.</p>
-<p>Now, recalculate scores from <code>calculate_scores.Rmd</code> (remember to run Configure Toolbox first to rerun the <code>Conf()</code> function!)</p>
-<p>What changed?</p>
-<p><img src="https://docs.google.com/drawings/d/19e7TVvpjUql46afZ38fXfkeKQ5sIkxXSnRIbJjxBzkk/pub?w=960&amp;h=528" /></p>
-<p>As we see from the Git tab, removing this goal affected scores for three things: “Index” and “SP” scores changed, and “LSP” scores were completely deleted.</p>
-<!---TODO: for both a goal and subgoal --->
 </div>
 </div>
-<div id="round-2-break-it-to-see-how-it-works" class="section level2" number="10.4">
-<h2><span class="header-section-number">10.4</span> Round 2: Break it to see how it works</h2>
-<div id="change-preindex_function-goals.csv" class="section level3" number="10.4.1">
-<h3><span class="header-section-number">10.4.1</span> Change <code>preindex_function</code> goals.csv</h3>
-<p>it’s the preindex_function column that is critical for the functions.
-Let’s add a typo there.</p>
-<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="calcs-advanced.html#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculating Status and Trend for each region for HAB...</span></span>
-<span id="cb28-2"><a href="calcs-advanced.html#cb28-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Error in eval(expr, envir, enclos) : could not find function &quot;HA&quot;</span></span></code></pre></div>
-</div>
-<div id="add-a-new-goal-in-goals.csv" class="section level3" number="10.4.2">
-<h3><span class="header-section-number">10.4.2</span> Add a new goal in goals.csv</h3>
-<p>Just copy-paste.</p>
-<p>What do you think will happen? what’s the most important column? That’s right, <code>preindex_function</code>.</p>
-<p><img src="https://docs.google.com/drawings/d/1yHSVfXvNu5hSTEa12uSD7mGQAUNDBSsgkaKYj01nEYc/pub?w=960&amp;h=192" /></p>
-<p>This will fail at the scores calculation.</p>
-<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="calcs-advanced.html#cb29-1" aria-hidden="true" tabindex="-1"></a>scores <span class="ot">=</span> ohicore<span class="sc">::</span><span class="fu">CalculateAll</span>(conf, layers)</span>
-<span id="cb29-2"><a href="calcs-advanced.html#cb29-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Running Setup()...</span></span>
-<span id="cb29-3"><a href="calcs-advanced.html#cb29-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculating Status and Trend for each region for FIS...</span></span>
-<span id="cb29-4"><a href="calcs-advanced.html#cb29-4" aria-hidden="true" tabindex="-1"></a><span class="co"># ...</span></span>
-<span id="cb29-5"><a href="calcs-advanced.html#cb29-5" aria-hidden="true" tabindex="-1"></a><span class="co"># ...</span></span>
-<span id="cb29-6"><a href="calcs-advanced.html#cb29-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculating Status and Trend for each region for SPP...</span></span>
-<span id="cb29-7"><a href="calcs-advanced.html#cb29-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculating Status and Trend for each region for EX...</span></span>
-<span id="cb29-8"><a href="calcs-advanced.html#cb29-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Error in eval(expr, envir, enclos) : could not find function &quot;EX&quot;</span></span>
-<span id="cb29-9"><a href="calcs-advanced.html#cb29-9" aria-hidden="true" tabindex="-1"></a><span class="fu">write.csv</span>(scores, <span class="st">&#39;scores.csv&#39;</span>, <span class="at">na=</span><span class="st">&#39;&#39;</span>, <span class="at">row.names=</span>F)</span>
-<span id="cb29-10"><a href="calcs-advanced.html#cb29-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Error in is.data.frame(x) : object &#39;scores&#39; not found</span></span></code></pre></div>
-</div>
-<div id="delete-a-goal-model-from-functions.r" class="section level3" number="10.4.3">
-<h3><span class="header-section-number">10.4.3</span> Delete a goal model from <code>functions.r</code></h3>
-<p>won’t fail at Conf, but will at scores calc.</p>
-<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="calcs-advanced.html#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculating Status and Trend for each region for AO...</span></span>
-<span id="cb30-2"><a href="calcs-advanced.html#cb30-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Error in eval(expr, envir, enclos) : could not find function &quot;AO&quot;</span></span>
-<span id="cb30-3"><a href="calcs-advanced.html#cb30-3" aria-hidden="true" tabindex="-1"></a><span class="co"># ...</span></span>
-<span id="cb30-4"><a href="calcs-advanced.html#cb30-4" aria-hidden="true" tabindex="-1"></a><span class="fu">write.csv</span>(scores, <span class="st">&#39;scores.csv&#39;</span>, <span class="at">na=</span><span class="st">&#39;&#39;</span>, <span class="at">row.names=</span>F)</span>
-<span id="cb30-5"><a href="calcs-advanced.html#cb30-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Error in is.data.frame(x) : object &#39;scores&#39; not found</span></span></code></pre></div>
-</div>
-</div>
-<div id="further-operations" class="section level2" number="10.5">
-<h2><span class="header-section-number">10.5</span> Further operations</h2>
-<p>Please see the <a href="https://ohi-science.org/manual">OHI Manual</a> to learn more about:</p>
-<ul>
-<li><a href="https://ohi-science.org/manual/#modifying-goal-models">Modifying goal models</a></li>
-<li><a href="https://ohi-science.org/manual/#modifying-pressures-and-resilience">Modifying pressures and resilience</a></li>
-<li><a href="https://ohi-science.org/manual/#removing-goals-and-sub-goals">Removing goals and sub-goals</a></li>
-</ul>
-<p><br></p>
-<!---TODISCUSS: maybe this detail should go somewhere else and then just referenced here? Because will also need this information referenced in the ## Removing Goals and ## Changing Subgoals sections --->
-<!--- NOTE: this is where we'll talk about adding/removing goals/subgoals, and goals.csv. First will talk to Mel about goals.csv's future: maybe having them just written in functions.r, and have ohicore pull from that to make a full list --->
-<!---
-`goals.csv` in the `conf` folder provides input information for `functions.r`, particularly about function calls. These are indicated by two columns: *preindex_function* (functions for all goals that do not have sub-goals, and functions for all sub-goals) and *postindex_function* (functions for goals with sub-goals).
-
-In the `preindex_fuction`, you could specify variables such as _status_year_ and _trend_year_, which you can call in your goal function. Note that it is not necessary to specify those variables. If you do not use them in your function as in the CS example, you could delete those variables in `preindex_function`.
-
-
-_Changing goal weights will be done here by editing the value in the *weight* column. Weights do not need to be 0-1 or add up to 10; weights will be scaled as a proportion of the number of goals assessed. The ten goals are weighted equally by default._
-
-
-![](https://docs.google.com/drawings/d/17BgYSw2sHbZvHNjUqBlTG-kCOAAn7o6a65O37s0S_es/pub?h=500)
-
-![](https://docs.google.com/drawings/d/1o2wtJ9KCPDyGPH9Y4unmALG6BlxX9lmJ_PakDDiQrLo/pub?h=500)
-
-
-Add sections or new chapter about 
-Pressures/Resil:
-
-
-
-
-Testing a figure
-To create a figure: 
-- [drawings folder](https://drive.google.com/drive/u/1/folders/0B9RHfIEZlRcaS1FXWW9EZVBDMHc?ogsrc=32), new drawing
-- mac shortcut for screenshot to the clipboard!
-- then Edit > Publish to the Web...
-- Click publish, then OK 
-- paste that link into ![]()
-
---->
+<div id="chapter-recap" class="section level2" number="4.4">
+<h2><span class="header-section-number">4.4</span> Chapter Recap</h2>
+<p>Now we have walked through how to utilize this planner to orient your team around the goals, from thinking about variables and models, to gathering data sources within spatial boundaries, and to brain storming pressures and resilience factors. The planner serves as a platform to record and share notes, and collaborate with your colleagues during the iterative process of an OHI assessment.</p>
+<p>You might find that the data of one goal is ready to be processed and calculated with the OHI Toolbox, while your team still tries to explore options for another goal. It is quite alright to move ahead with some goals before others. Or you might find yourself needing to eliminate some data and add others after you further explored the data you found earlier. We hope this Planner could provide a home base for your data gathering and exploration. You can come back to this sheet, and modify it to your own needs anytime during the assessment.</p>
 
 </div>
 </div>
@@ -508,8 +466,8 @@ To create a figure:
           </div>
         </div>
       </div>
-<a href="press-resil.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="reporting.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="gathering-data.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="toolbox.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
