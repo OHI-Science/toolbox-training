@@ -28,7 +28,7 @@ First, you should focus on developing goal status models and gathering appropria
 
 1. Understand how goal status models work, and what has been done in the past 
     - [ohi-science.org/goals](http://ohi-science.org/goals/)
-    - [global assessments supplemental information](https://rawgit.com/OHI-Science/ohi-global/draft/global_supplement/Supplement.html)
+    - [global assessments supplemental information](http://htmlpreview.github.io/?https://github.com/OHI-Science/ohi-global/published/documents/methods/Supplement.html)
     
 2. Tailor the OHI Framework to your assessment area. This means exploring available data and defining the spatial boundaries of your assessment. You will gather data and think about reference points as you develop goal status models. 
     - Gather data with the Data Planner: Chapters \@ref(gathering-data) and \@ref(planner-guide)

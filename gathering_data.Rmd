@@ -70,8 +70,8 @@ Similar to pressures, resilience will ultimately be included in an OHI assessmen
 Ideally, each pressure measured in the OHI should have a corresponding resilience measure, which is meant to ‘balance’ the pressures that negatively affect ocean health. The Ocean Health Index considers resilience in three categories: 
 
 1. ecological integrity
-1. pressure-specific regulations aimed at addressing ecological pressures 
-1. social integrity
+2. pressure-specific regulations aimed at addressing ecological pressures 
+3. social integrity
 
 The first two measures address ecological resilience while the third addresses social resilience. Ideally, for any resilience measure, you would have three tiers of information:
 

@@ -78,7 +78,7 @@ You'll notice that there are some pages like "scores" and "goals" that exist her
 
 ### Get the website's branch on your computer
 
-You likely already have forked and cloned the `toolbox-demo` to your own computer. (If you haven't done so, follow the prerequesites at the beginning of the chapter). 
+You likely already have forked and cloned the `toolbox-demo` to your own computer. (If you haven't done so, follow the prerequisites at the beginning of the chapter). 
 
 In RStudio, go to the Git Tab. You can click on "master" on the top-right. This will show the local branches that are available to you (only "master") and also the branches that are available remotely on github.com ("master" and "gh-pages").
 
@@ -92,7 +92,7 @@ First, click on terminal. Second, type `git checkout gh-pages`. Third, see that 
 
 You'll also see that the file pane now has all of the gh-pages files!
 
-**Note**: if you had a file from the master branch open in your RStudio editor, you may get a message saying that this file has been deleted, should you close it? This can be alarming, but remember that file does not exist in this gh-pages branch. We are in a different space (a different parallel universe) and that file is not here. It's OK to close it, it still exists in the master branch (you can go to github.com and check out the master branch to confrim!)
+**Note**: if you had a file from the master branch open in your RStudio editor, you may get a message saying that this file has been deleted, should you close it? This can be alarming, but remember that file does not exist in this gh-pages branch. We are in a different space (a different parallel universe) and that file is not here. It's OK to close it, it still exists in the master branch (you can go to github.com and check out the master branch to confirm!)
 
 Now, we can start exploring and editing our website!
 
