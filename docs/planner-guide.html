@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 4 OHI Planner | Ocean Health Index Toolbox Training</title>
+  <meta name="description" content="This is the official Ocean Health Index Toolbox training." />
+  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 4 OHI Planner | Ocean Health Index Toolbox Training" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="This is the official Ocean Health Index Toolbox training." />
+  <meta name="github-repo" content="ohi-science/ohi-trainings" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 4 OHI Planner | Ocean Health Index Toolbox Training" />
+  
+  <meta name="twitter:description" content="This is the official Ocean Health Index Toolbox training." />
+  
+
+<meta name="author" content="Ocean Health Index Team" />
+
+
+<meta name="date" content="2021-03-22" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="gathering-data.html"/>
+<link rel="next" href="toolbox.html"/>
+<script src="libs/header-attrs-2.7.2/header-attrs.js"></script>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Welcome</a></li>
+<li class="chapter" data-level="2" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>2</b> Introduction</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="intro.html"><a href="intro.html#overview"><i class="fa fa-check"></i><b>2.1</b> Overview</a></li>
+<li class="chapter" data-level="2.2" data-path="intro.html"><a href="intro.html#what-to-expect"><i class="fa fa-check"></i><b>2.2</b> What to expect</a>
+<ul>
+<li class="chapter" data-level="2.2.1" data-path="intro.html"><a href="intro.html#tailor-the-conceptual-framework"><i class="fa fa-check"></i><b>2.2.1</b> Tailor the Conceptual Framework</a></li>
+<li class="chapter" data-level="2.2.2" data-path="intro.html"><a href="intro.html#tailor-the-ohi-toolbox"><i class="fa fa-check"></i><b>2.2.2</b> Tailor the OHI Toolbox</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="intro.html"><a href="intro.html#tools-and-resources"><i class="fa fa-check"></i><b>2.3</b> Tools and Resources</a>
+<ul>
+<li class="chapter" data-level="2.3.1" data-path="intro.html"><a href="intro.html#google-drive-folder"><i class="fa fa-check"></i><b>2.3.1</b> Google Drive folder</a></li>
+<li class="chapter" data-level="2.3.2" data-path="intro.html"><a href="intro.html#ohi-toolbox"><i class="fa fa-check"></i><b>2.3.2</b> OHI Toolbox</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="gathering-data.html"><a href="gathering-data.html"><i class="fa fa-check"></i><b>3</b> Planning and Gathering Data</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="gathering-data.html"><a href="gathering-data.html#overview-and-resources"><i class="fa fa-check"></i><b>3.1</b> Overview and Resources</a></li>
+<li class="chapter" data-level="3.2" data-path="gathering-data.html"><a href="gathering-data.html#where-to-start"><i class="fa fa-check"></i><b>3.2</b> Where to start</a></li>
+<li class="chapter" data-level="3.3" data-path="gathering-data.html"><a href="gathering-data.html#goals-modeling-status-and-trend"><i class="fa fa-check"></i><b>3.3</b> Goals: modeling status and trend</a></li>
+<li class="chapter" data-level="3.4" data-path="gathering-data.html"><a href="gathering-data.html#resilience"><i class="fa fa-check"></i><b>3.4</b> Resilience</a>
+<ul>
+<li class="chapter" data-level="3.4.1" data-path="gathering-data.html"><a href="gathering-data.html#types-of-resilience"><i class="fa fa-check"></i><b>3.4.1</b> Types of Resilience</a></li>
+<li class="chapter" data-level="3.4.2" data-path="gathering-data.html"><a href="gathering-data.html#how-to-begin"><i class="fa fa-check"></i><b>3.4.2</b> How to begin</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="planner-guide.html"><a href="planner-guide.html"><i class="fa fa-check"></i><b>4</b> OHI Planner</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="planner-guide.html"><a href="planner-guide.html#overview-1"><i class="fa fa-check"></i><b>4.1</b> Overview</a>
+<ul>
+<li class="chapter" data-level="4.1.1" data-path="planner-guide.html"><a href="planner-guide.html#prerequisites"><i class="fa fa-check"></i><b>4.1.1</b> Prerequisites</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="planner-guide.html"><a href="planner-guide.html#data-planner-spreadsheet"><i class="fa fa-check"></i><b>4.2</b> Data Planner spreadsheet</a></li>
+<li class="chapter" data-level="4.3" data-path="planner-guide.html"><a href="planner-guide.html#status-data-tab"><i class="fa fa-check"></i><b>4.3</b> Status Data tab</a>
+<ul>
+<li class="chapter" data-level="4.3.1" data-path="planner-guide.html"><a href="planner-guide.html#goals-and-subgoals"><i class="fa fa-check"></i><b>4.3.1</b> Goals and subgoals</a></li>
+<li class="chapter" data-level="4.3.2" data-path="planner-guide.html"><a href="planner-guide.html#model-data-spatial-boundaries"><i class="fa fa-check"></i><b>4.3.2</b> Model + Data + Spatial Boundaries</a></li>
+<li class="chapter" data-level="4.3.3" data-path="planner-guide.html"><a href="planner-guide.html#examples"><i class="fa fa-check"></i><b>4.3.3</b> Examples</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="planner-guide.html"><a href="planner-guide.html#chapter-recap"><i class="fa fa-check"></i><b>4.4</b> Chapter Recap</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="toolbox.html"><a href="toolbox.html"><i class="fa fa-check"></i><b>5</b> OHI Toolbox</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="toolbox.html"><a href="toolbox.html#the-ohi-toolbox-and-open-data-science"><i class="fa fa-check"></i><b>5.1</b> The OHI Toolbox and open data science</a></li>
+<li class="chapter" data-level="5.2" data-path="toolbox.html"><a href="toolbox.html#how-you-will-work"><i class="fa fa-check"></i><b>5.2</b> How you will work</a></li>
+<li class="chapter" data-level="5.3" data-path="toolbox.html"><a href="toolbox.html#requesting-ohi-repositories"><i class="fa fa-check"></i><b>5.3</b> Requesting OHI repositories</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="toolbox-ecosystem.html"><a href="toolbox-ecosystem.html"><i class="fa fa-check"></i><b>6</b> Toolbox Ecosystem</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="toolbox-ecosystem.html"><a href="toolbox-ecosystem.html#overview-2"><i class="fa fa-check"></i><b>6.1</b> Overview</a></li>
+<li class="chapter" data-level="6.2" data-path="toolbox-ecosystem.html"><a href="toolbox-ecosystem.html#prerequisites-1"><i class="fa fa-check"></i><b>6.2</b> Prerequisites</a></li>
+<li class="chapter" data-level="6.3" data-path="toolbox-ecosystem.html"><a href="toolbox-ecosystem.html#repository-home-folder-ex-toolbox-demo"><i class="fa fa-check"></i><b>6.3</b> Repository home folder (ex: <code>toolbox-demo</code>)</a></li>
+<li class="chapter" data-level="6.4" data-path="toolbox-ecosystem.html"><a href="toolbox-ecosystem.html#prep-folder"><i class="fa fa-check"></i><b>6.4</b> Prep folder</a></li>
+<li class="chapter" data-level="6.5" data-path="toolbox-ecosystem.html"><a href="toolbox-ecosystem.html#scenario-folder-ex-region2016"><i class="fa fa-check"></i><b>6.5</b> Scenario folder (ex: <code>region2016</code>)</a>
+<ul>
+<li class="chapter" data-level="6.5.1" data-path="toolbox-ecosystem.html"><a href="toolbox-ecosystem.html#layers-folder-layers.csv"><i class="fa fa-check"></i><b>6.5.1</b> layers folder &amp; layers.csv</a></li>
+</ul></li>
+<li class="chapter" data-level="6.6" data-path="toolbox-ecosystem.html"><a href="toolbox-ecosystem.html#conf-folder"><i class="fa fa-check"></i><b>6.6</b> conf folder</a>
+<ul>
+<li class="chapter" data-level="6.6.1" data-path="toolbox-ecosystem.html"><a href="toolbox-ecosystem.html#functions.r"><i class="fa fa-check"></i><b>6.6.1</b> functions.R</a></li>
+<li class="chapter" data-level="6.6.2" data-path="toolbox-ecosystem.html"><a href="toolbox-ecosystem.html#scenario_data_years.csv"><i class="fa fa-check"></i><b>6.6.2</b> scenario_data_years.csv</a></li>
+<li class="chapter" data-level="6.6.3" data-path="toolbox-ecosystem.html"><a href="toolbox-ecosystem.html#pressures-resilience"><i class="fa fa-check"></i><b>6.6.3</b> pressures &amp; resilience</a></li>
+<li class="chapter" data-level="6.6.4" data-path="toolbox-ecosystem.html"><a href="toolbox-ecosystem.html#goals.csv"><i class="fa fa-check"></i><b>6.6.4</b> goals.csv</a></li>
+<li class="chapter" data-level="6.6.5" data-path="toolbox-ecosystem.html"><a href="toolbox-ecosystem.html#config.r"><i class="fa fa-check"></i><b>6.6.5</b> config.R</a></li>
+<li class="chapter" data-level="6.6.6" data-path="toolbox-ecosystem.html"><a href="toolbox-ecosystem.html#conf-folder-recap"><i class="fa fa-check"></i><b>6.6.6</b> conf folder recap</a></li>
+</ul></li>
+<li class="chapter" data-level="6.7" data-path="toolbox-ecosystem.html"><a href="toolbox-ecosystem.html#calculate_scores.rmd"><i class="fa fa-check"></i><b>6.7</b> calculate_scores.Rmd</a>
+<ul>
+<li class="chapter" data-level="6.7.1" data-path="toolbox-ecosystem.html"><a href="toolbox-ecosystem.html#calculate_scores.r"><i class="fa fa-check"></i><b>6.7.1</b> calculate_scores.R</a></li>
+<li class="chapter" data-level="6.7.2" data-path="toolbox-ecosystem.html"><a href="toolbox-ecosystem.html#configure_toolbox.r"><i class="fa fa-check"></i><b>6.7.2</b> configure_toolbox.R</a></li>
+<li class="chapter" data-level="6.7.3" data-path="toolbox-ecosystem.html"><a href="toolbox-ecosystem.html#install_ohicore.r"><i class="fa fa-check"></i><b>6.7.3</b> install_ohicore.R</a></li>
+<li class="chapter" data-level="6.7.4" data-path="toolbox-ecosystem.html"><a href="toolbox-ecosystem.html#recap"><i class="fa fa-check"></i><b>6.7.4</b> Recap</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="prep-data.html"><a href="prep-data.html"><i class="fa fa-check"></i><b>7</b> Preparing data</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="prep-data.html"><a href="prep-data.html#overview-3"><i class="fa fa-check"></i><b>7.1</b> Overview</a>
+<ul>
+<li class="chapter" data-level="7.1.1" data-path="prep-data.html"><a href="prep-data.html#prerequisites-2"><i class="fa fa-check"></i><b>7.1.1</b> Prerequisites</a></li>
+</ul></li>
+<li class="chapter" data-level="7.2" data-path="prep-data.html"><a href="prep-data.html#data-formatting-requirements"><i class="fa fa-check"></i><b>7.2</b> Data Formatting requirements</a></li>
+<li class="chapter" data-level="7.3" data-path="prep-data.html"><a href="prep-data.html#data-wrangling"><i class="fa fa-check"></i><b>7.3</b> Data Wrangling</a></li>
+<li class="chapter" data-level="7.4" data-path="prep-data.html"><a href="prep-data.html#save-and-register-data-layers"><i class="fa fa-check"></i><b>7.4</b> Save and register data layers</a></li>
+<li class="chapter" data-level="7.5" data-path="prep-data.html"><a href="prep-data.html#register-data-layers-in-layers.csv"><i class="fa fa-check"></i><b>7.5</b> Register data layers in <code>layers.csv</code></a></li>
+<li class="chapter" data-level="7.6" data-path="prep-data.html"><a href="prep-data.html#organizing-metadata"><i class="fa fa-check"></i><b>7.6</b> Organizing metadata</a></li>
+<li class="chapter" data-level="7.7" data-path="prep-data.html"><a href="prep-data.html#data-prep-vs.-functions.r"><i class="fa fa-check"></i><b>7.7</b> Data prep vs. functions.r</a></li>
+<li class="chapter" data-level="7.8" data-path="prep-data.html"><a href="prep-data.html#chapter-recap-1"><i class="fa fa-check"></i><b>7.8</b> Chapter Recap:</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="calcs-basic.html"><a href="calcs-basic.html"><i class="fa fa-check"></i><b>8</b> Calculations: basic workflow</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="calcs-basic.html"><a href="calcs-basic.html#overview-4"><i class="fa fa-check"></i><b>8.1</b> Overview</a>
+<ul>
+<li class="chapter" data-level="8.1.1" data-path="calcs-basic.html"><a href="calcs-basic.html#prerequisites-3"><i class="fa fa-check"></i><b>8.1.1</b> Prerequisites</a></li>
+</ul></li>
+<li class="chapter" data-level="8.2" data-path="calcs-basic.html"><a href="calcs-basic.html#review-the-toolbox-file-ecosystem"><i class="fa fa-check"></i><b>8.2</b> Review the Toolbox file ecosystem</a></li>
+<li class="chapter" data-level="8.3" data-path="calcs-basic.html"><a href="calcs-basic.html#calculate-with-out-of-the-box-data-and-models"><i class="fa fa-check"></i><b>8.3</b> Calculate with ‘out-of-the-box’ data and models</a>
+<ul>
+<li class="chapter" data-level="8.3.1" data-path="calcs-basic.html"><a href="calcs-basic.html#install-packages-including-ohicore"><i class="fa fa-check"></i><b>8.3.1</b> Install packages, including <code>ohicore</code></a></li>
+<li class="chapter" data-level="8.3.2" data-path="calcs-basic.html"><a href="calcs-basic.html#load-r-packages"><i class="fa fa-check"></i><b>8.3.2</b> Load R packages</a></li>
+<li class="chapter" data-level="8.3.3" data-path="calcs-basic.html"><a href="calcs-basic.html#configure-the-toolbox"><i class="fa fa-check"></i><b>8.3.3</b> Configure the Toolbox</a></li>
+<li class="chapter" data-level="8.3.4" data-path="calcs-basic.html"><a href="calcs-basic.html#calculate-scores"><i class="fa fa-check"></i><b>8.3.4</b> Calculate Scores</a></li>
+<li class="chapter" data-level="8.3.5" data-path="calcs-basic.html"><a href="calcs-basic.html#save-scores-variable-as-scores.csv"><i class="fa fa-check"></i><b>8.3.5</b> Save scores variable as <code>scores.csv</code></a></li>
+<li class="chapter" data-level="8.3.6" data-path="calcs-basic.html"><a href="calcs-basic.html#error-messages"><i class="fa fa-check"></i><b>8.3.6</b> Error messages</a></li>
+<li class="chapter" data-level="8.3.7" data-path="calcs-basic.html"><a href="calcs-basic.html#create-figures"><i class="fa fa-check"></i><b>8.3.7</b> Create figures</a></li>
+<li class="chapter" data-level="8.3.8" data-path="calcs-basic.html"><a href="calcs-basic.html#recap-of-first-calculate_scores.rmd-run"><i class="fa fa-check"></i><b>8.3.8</b> Recap of first <code>calculate_scores.Rmd</code> run</a></li>
+</ul></li>
+<li class="chapter" data-level="8.4" data-path="calcs-basic.html"><a href="calcs-basic.html#calculate-with-tailored-data"><i class="fa fa-check"></i><b>8.4</b> Calculate with tailored data</a>
+<ul>
+<li class="chapter" data-level="8.4.1" data-path="calcs-basic.html"><a href="calcs-basic.html#prepare-and-save-our-data-layer"><i class="fa fa-check"></i><b>8.4.1</b> Prepare and save our data layer</a></li>
+<li class="chapter" data-level="8.4.2" data-path="calcs-basic.html"><a href="calcs-basic.html#register-in-layers.csv"><i class="fa fa-check"></i><b>8.4.2</b> Register in <code>layers.csv</code></a></li>
+<li class="chapter" data-level="8.4.3" data-path="calcs-basic.html"><a href="calcs-basic.html#register-in-scenario_data_years.csv"><i class="fa fa-check"></i><b>8.4.3</b> Register in <code>scenario_data_years.csv</code></a></li>
+<li class="chapter" data-level="8.4.4" data-path="calcs-basic.html"><a href="calcs-basic.html#rerun-calculate_scores.rmd"><i class="fa fa-check"></i><b>8.4.4</b> Rerun <code>calculate_scores.Rmd</code></a></li>
+<li class="chapter" data-level="8.4.5" data-path="calcs-basic.html"><a href="calcs-basic.html#check-our-work-plot-and-sync"><i class="fa fa-check"></i><b>8.4.5</b> Check our work, plot, and sync</a></li>
+<li class="chapter" data-level="8.4.6" data-path="calcs-basic.html"><a href="calcs-basic.html#recap-of-second-calculate_scores.rmd-run"><i class="fa fa-check"></i><b>8.4.6</b> Recap of second <code>calculate_scores.Rmd</code> run</a></li>
+</ul></li>
+<li class="chapter" data-level="8.5" data-path="calcs-basic.html"><a href="calcs-basic.html#explore-configure-toolbox"><i class="fa fa-check"></i><b>8.5</b> Explore Configure Toolbox</a>
+<ul>
+<li class="chapter" data-level="8.5.1" data-path="calcs-basic.html"><a href="calcs-basic.html#ohicoreconf"><i class="fa fa-check"></i><b>8.5.1</b> <code>ohicore::Conf()</code></a></li>
+<li class="chapter" data-level="8.5.2" data-path="calcs-basic.html"><a href="calcs-basic.html#ohicorechecklayers"><i class="fa fa-check"></i><b>8.5.2</b> <code>ohicore::CheckLayers()</code></a></li>
+<li class="chapter" data-level="8.5.3" data-path="calcs-basic.html"><a href="calcs-basic.html#ohicorelayers"><i class="fa fa-check"></i><b>8.5.3</b> <code>ohicore::Layers()</code></a></li>
+<li class="chapter" data-level="8.5.4" data-path="calcs-basic.html"><a href="calcs-basic.html#assign-scenario-years"><i class="fa fa-check"></i><b>8.5.4</b> Assign scenario years</a></li>
+<li class="chapter" data-level="8.5.5" data-path="calcs-basic.html"><a href="calcs-basic.html#recap-of-configure-toolbox"><i class="fa fa-check"></i><b>8.5.5</b> Recap of Configure Toolbox</a></li>
+</ul></li>
+<li class="chapter" data-level="8.6" data-path="calcs-basic.html"><a href="calcs-basic.html#explore-functions.r-goal-models"><i class="fa fa-check"></i><b>8.6</b> Explore <code>functions.R</code> goal models</a>
+<ul>
+<li class="chapter" data-level="8.6.1" data-path="calcs-basic.html"><a href="calcs-basic.html#load-specific-data-layers-with-aligndatayears"><i class="fa fa-check"></i><b>8.6.1</b> Load specific data layers with <code>AlignDataYears()</code></a></li>
+<li class="chapter" data-level="8.6.2" data-path="calcs-basic.html"><a href="calcs-basic.html#goal-models"><i class="fa fa-check"></i><b>8.6.2</b> Goal models</a></li>
+<li class="chapter" data-level="8.6.3" data-path="calcs-basic.html"><a href="calcs-basic.html#calculate-status"><i class="fa fa-check"></i><b>8.6.3</b> Calculate Status</a></li>
+<li class="chapter" data-level="8.6.4" data-path="calcs-basic.html"><a href="calcs-basic.html#calculate-trend"><i class="fa fa-check"></i><b>8.6.4</b> Calculate Trend</a></li>
+<li class="chapter" data-level="8.6.5" data-path="calcs-basic.html"><a href="calcs-basic.html#scores-variable-combining-status-and-trend"><i class="fa fa-check"></i><b>8.6.5</b> Scores variable: combining Status and Trend</a></li>
+<li class="chapter" data-level="8.6.6" data-path="calcs-basic.html"><a href="calcs-basic.html#recap-of-exploring-functions.r"><i class="fa fa-check"></i><b>8.6.6</b> Recap of exploring <code>functions.R</code></a></li>
+</ul></li>
+<li class="chapter" data-level="8.7" data-path="calcs-basic.html"><a href="calcs-basic.html#calculate-with-tailored-models"><i class="fa fa-check"></i><b>8.7</b> Calculate with tailored models</a>
+<ul>
+<li class="chapter" data-level="8.7.1" data-path="calcs-basic.html"><a href="calcs-basic.html#restart-r-libraries-configure-toolbox"><i class="fa fa-check"></i><b>8.7.1</b> Restart R, Libraries, Configure Toolbox</a></li>
+<li class="chapter" data-level="8.7.2" data-path="calcs-basic.html"><a href="calcs-basic.html#tailor-ao-goal-model"><i class="fa fa-check"></i><b>8.7.2</b> Tailor AO goal model</a></li>
+<li class="chapter" data-level="8.7.3" data-path="calcs-basic.html"><a href="calcs-basic.html#calculate-scores-check-plot-and-sync"><i class="fa fa-check"></i><b>8.7.3</b> Calculate scores, check, plot, and sync</a></li>
+<li class="chapter" data-level="8.7.4" data-path="calcs-basic.html"><a href="calcs-basic.html#recap-of-third-calculate_scores.rmd-run"><i class="fa fa-check"></i><b>8.7.4</b> Recap of third <code>calculate_scores.Rmd</code> run</a></li>
+<li class="chapter" data-level="8.7.5" data-path="calcs-basic.html"><a href="calcs-basic.html#troubleshooting"><i class="fa fa-check"></i><b>8.7.5</b> Troubleshooting</a></li>
+</ul></li>
+<li class="chapter" data-level="8.8" data-path="calcs-basic.html"><a href="calcs-basic.html#calculate-with-tailored-data-and-models"><i class="fa fa-check"></i><b>8.8</b> Calculate with tailored data and models</a>
+<ul>
+<li class="chapter" data-level="8.8.1" data-path="calcs-basic.html"><a href="calcs-basic.html#prepare-and-save-our-new-data-layer"><i class="fa fa-check"></i><b>8.8.1</b> Prepare and save our new data layer</a></li>
+<li class="chapter" data-level="8.8.2" data-path="calcs-basic.html"><a href="calcs-basic.html#register-in-layers.csv-1"><i class="fa fa-check"></i><b>8.8.2</b> Register in <code>layers.csv</code></a></li>
+<li class="chapter" data-level="8.8.3" data-path="calcs-basic.html"><a href="calcs-basic.html#register-in-scenario_data_years.csv-1"><i class="fa fa-check"></i><b>8.8.3</b> Register in <code>scenario_data_years.csv</code></a></li>
+<li class="chapter" data-level="8.8.4" data-path="calcs-basic.html"><a href="calcs-basic.html#configure-toolbox"><i class="fa fa-check"></i><b>8.8.4</b> Configure Toolbox</a></li>
+<li class="chapter" data-level="8.8.5" data-path="calcs-basic.html"><a href="calcs-basic.html#update-the-ao-goal-model"><i class="fa fa-check"></i><b>8.8.5</b> Update the AO goal model</a></li>
+<li class="chapter" data-level="8.8.6" data-path="calcs-basic.html"><a href="calcs-basic.html#calculate-scores-check-and-sync"><i class="fa fa-check"></i><b>8.8.6</b> Calculate scores, check, and sync</a></li>
+<li class="chapter" data-level="8.8.7" data-path="calcs-basic.html"><a href="calcs-basic.html#recap-of-fourth-calculate_scores.rmd-run"><i class="fa fa-check"></i><b>8.8.7</b> Recap of fourth <code>calculate_scores.Rmd</code> run</a></li>
+</ul></li>
+<li class="chapter" data-level="8.9" data-path="calcs-basic.html"><a href="calcs-basic.html#chapter-recap-2"><i class="fa fa-check"></i><b>8.9</b> Chapter Recap</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="press-resil.html"><a href="press-resil.html"><i class="fa fa-check"></i><b>9</b> Pressures and Resilience</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="press-resil.html"><a href="press-resil.html#overview-5"><i class="fa fa-check"></i><b>9.1</b> Overview</a></li>
+<li class="chapter" data-level="9.2" data-path="press-resil.html"><a href="press-resil.html#identifying-indicators"><i class="fa fa-check"></i><b>9.2</b> Identifying indicators</a></li>
+<li class="chapter" data-level="9.3" data-path="press-resil.html"><a href="press-resil.html#pressures"><i class="fa fa-check"></i><b>9.3</b> Pressures</a>
+<ul>
+<li class="chapter" data-level="9.3.1" data-path="press-resil.html"><a href="press-resil.html#pressures-data-layers"><i class="fa fa-check"></i><b>9.3.1</b> Pressures data layers</a></li>
+<li class="chapter" data-level="9.3.2" data-path="press-resil.html"><a href="press-resil.html#pressures-matrix"><i class="fa fa-check"></i><b>9.3.2</b> Pressures matrix</a></li>
+<li class="chapter" data-level="9.3.3" data-path="press-resil.html"><a href="press-resil.html#how-to-modify-pressures-matrix-and-categories-in-the-toolbox"><i class="fa fa-check"></i><b>9.3.3</b> How to modify Pressures Matrix and Categories in the Toolbox</a></li>
+<li class="chapter" data-level="9.3.4" data-path="press-resil.html"><a href="press-resil.html#create-the-new-pressure-layers-and-save-in-the-layers-folder"><i class="fa fa-check"></i><b>9.3.4</b> Create the new pressure layers and save in the layers folder</a></li>
+<li class="chapter" data-level="9.3.5" data-path="press-resil.html"><a href="press-resil.html#register-the-new-pressure-layers-in-layers.csv"><i class="fa fa-check"></i><b>9.3.5</b> Register the new pressure layers in layers.csv’</a></li>
+<li class="chapter" data-level="9.3.6" data-path="press-resil.html"><a href="press-resil.html#register-in-pressures_categories.csv"><i class="fa fa-check"></i><b>9.3.6</b> Register in pressures_categories.csv</a></li>
+<li class="chapter" data-level="9.3.7" data-path="press-resil.html"><a href="press-resil.html#register-in-pressures_matrix.csv"><i class="fa fa-check"></i><b>9.3.7</b> Register in pressures_matrix.csv</a></li>
+<li class="chapter" data-level="9.3.8" data-path="press-resil.html"><a href="press-resil.html#identify-the-goals-affected-and-set-the-weighting"><i class="fa fa-check"></i><b>9.3.8</b> Identify the goals affected and set the weighting</a></li>
+<li class="chapter" data-level="9.3.9" data-path="press-resil.html"><a href="press-resil.html#modify-config.r-for-goals-with-multiple-elements"><i class="fa fa-check"></i><b>9.3.9</b> Modify config.R for goals with multiple elements</a></li>
+</ul></li>
+<li class="chapter" data-level="9.4" data-path="press-resil.html"><a href="press-resil.html#resilience-1"><i class="fa fa-check"></i><b>9.4</b> Resilience</a>
+<ul>
+<li class="chapter" data-level="9.4.1" data-path="press-resil.html"><a href="press-resil.html#how-to-identify-and-quantify-resilience"><i class="fa fa-check"></i><b>9.4.1</b> How to identify and quantify resilience</a></li>
+<li class="chapter" data-level="9.4.2" data-path="press-resil.html"><a href="press-resil.html#how-to-modify-resilience-matrix-and-categories-in-the-toolbox"><i class="fa fa-check"></i><b>9.4.2</b> How to modify Resilience Matrix and Categories in the Toolbox</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="calcs-advanced.html"><a href="calcs-advanced.html"><i class="fa fa-check"></i><b>10</b> Calculations: advanced workflow</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="calcs-advanced.html"><a href="calcs-advanced.html#overview-6"><i class="fa fa-check"></i><b>10.1</b> Overview</a>
+<ul>
+<li class="chapter" data-level="10.1.1" data-path="calcs-advanced.html"><a href="calcs-advanced.html#prerequisites-4"><i class="fa fa-check"></i><b>10.1.1</b> Prerequisites</a></li>
+</ul></li>
+<li class="chapter" data-level="10.2" data-path="calcs-advanced.html"><a href="calcs-advanced.html#explore-goals.csv"><i class="fa fa-check"></i><b>10.2</b> Explore goals.csv</a></li>
+<li class="chapter" data-level="10.3" data-path="calcs-advanced.html"><a href="calcs-advanced.html#round-1-poke-at-it-to-see-how-it-works"><i class="fa fa-check"></i><b>10.3</b> Round 1: Poke at it to see how it works</a>
+<ul>
+<li class="chapter" data-level="10.3.1" data-path="calcs-advanced.html"><a href="calcs-advanced.html#remove-a-goal-whole-row-in-goals.csv"><i class="fa fa-check"></i><b>10.3.1</b> Remove a goal (whole row) in goals.csv</a></li>
+</ul></li>
+<li class="chapter" data-level="10.4" data-path="calcs-advanced.html"><a href="calcs-advanced.html#round-2-break-it-to-see-how-it-works"><i class="fa fa-check"></i><b>10.4</b> Round 2: Break it to see how it works</a>
+<ul>
+<li class="chapter" data-level="10.4.1" data-path="calcs-advanced.html"><a href="calcs-advanced.html#change-preindex_function-goals.csv"><i class="fa fa-check"></i><b>10.4.1</b> Change <code>preindex_function</code> goals.csv</a></li>
+<li class="chapter" data-level="10.4.2" data-path="calcs-advanced.html"><a href="calcs-advanced.html#add-a-new-goal-in-goals.csv"><i class="fa fa-check"></i><b>10.4.2</b> Add a new goal in goals.csv</a></li>
+<li class="chapter" data-level="10.4.3" data-path="calcs-advanced.html"><a href="calcs-advanced.html#delete-a-goal-model-from-functions.r"><i class="fa fa-check"></i><b>10.4.3</b> Delete a goal model from <code>functions.r</code></a></li>
+</ul></li>
+<li class="chapter" data-level="10.5" data-path="calcs-advanced.html"><a href="calcs-advanced.html#adding-a-new-goal"><i class="fa fa-check"></i><b>10.5</b> Adding a new goal</a></li>
+<li class="chapter" data-level="10.6" data-path="calcs-advanced.html"><a href="calcs-advanced.html#adding-subgoals"><i class="fa fa-check"></i><b>10.6</b> Adding subgoals</a></li>
+<li class="chapter" data-level="10.7" data-path="calcs-advanced.html"><a href="calcs-advanced.html#modifying-subgoals"><i class="fa fa-check"></i><b>10.7</b> Modifying subgoals</a></li>
+<li class="chapter" data-level="10.8" data-path="calcs-advanced.html"><a href="calcs-advanced.html#chapter-recap-3"><i class="fa fa-check"></i><b>10.8</b> Chapter recap</a></li>
+<li class="chapter" data-level="10.9" data-path="calcs-advanced.html"><a href="calcs-advanced.html#changing-subgoals"><i class="fa fa-check"></i><b>10.9</b> Changing subgoals</a>
+<ul>
+<li class="chapter" data-level="10.9.1" data-path="calcs-advanced.html"><a href="calcs-advanced.html#update-goal-call-in-goals.csv"><i class="fa fa-check"></i><b>10.9.1</b> Update goal call in <code>goals.csv</code></a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="reporting.html"><a href="reporting.html"><i class="fa fa-check"></i><b>11</b> Reporting</a>
+<ul>
+<li class="chapter" data-level="11.1" data-path="reporting.html"><a href="reporting.html#flower-plots"><i class="fa fa-check"></i><b>11.1</b> Flower plots</a></li>
+</ul></li>
+<li class="chapter" data-level="12" data-path="websites.html"><a href="websites.html"><i class="fa fa-check"></i><b>12</b> Communication: OHI+ websites</a>
+<ul>
+<li class="chapter" data-level="12.1" data-path="websites.html"><a href="websites.html#overview-7"><i class="fa fa-check"></i><b>12.1</b> Overview</a>
+<ul>
+<li class="chapter" data-level="12.1.1" data-path="websites.html"><a href="websites.html#prerequisites-5"><i class="fa fa-check"></i><b>12.1.1</b> Prerequisites</a></li>
+</ul></li>
+<li class="chapter" data-level="12.2" data-path="websites.html"><a href="websites.html#first-observations"><i class="fa fa-check"></i><b>12.2</b> First Observations</a>
+<ul>
+<li class="chapter" data-level="12.2.1" data-path="websites.html"><a href="websites.html#exploring-online"><i class="fa fa-check"></i><b>12.2.1</b> Exploring Online</a></li>
+<li class="chapter" data-level="12.2.2" data-path="websites.html"><a href="websites.html#the-websites-gh-pages-branch"><i class="fa fa-check"></i><b>12.2.2</b> The website’s <code>gh-pages</code> branch</a></li>
+<li class="chapter" data-level="12.2.3" data-path="websites.html"><a href="websites.html#get-the-websites-branch-on-your-computer"><i class="fa fa-check"></i><b>12.2.3</b> Get the website’s branch on your computer</a></li>
+</ul></li>
+<li class="chapter" data-level="12.3" data-path="websites.html"><a href="websites.html#basic-workflow"><i class="fa fa-check"></i><b>12.3</b> Basic Workflow</a></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Ocean Health Index Toolbox Training</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="planner-guide" class="section level1" number="4">
+<h1><span class="header-section-number">Chapter 4</span> OHI Planner</h1>
+<p>The purpose of Chapter <a href="planner-guide.html#planner-guide">4</a> is to help you think about data for your assessment in a structured way. This is a 1-hour hands-on training: you will be following along on your own computer and working with a copy of the demonstration repository that is used throughout this chapter.</p>
+<div id="overview-1" class="section level2" number="4.1">
+<h2><span class="header-section-number">4.1</span> Overview</h2>
+<p>A successful OHI+ assessment depends on representative data and models. With so much (or sometimes so little) information out there, how do you select the optimal data to be included in your study? How do you develop models that best reflect the conditions of your ocean health? How do you keep track of ideas you have and decisions you make? How do you work with your team so that you can contribute to ideas? Here we have developed a OHI Planner to guide you through this important, yet sometimes daunting, process of data selection and model exploration.</p>
+<p>We’ll start by exploring the columns in the spread sheet and what they are for, and then walk through examples of how to fill them out.</p>
+<div id="prerequisites" class="section level3" number="4.1.1">
+<h3><span class="header-section-number">4.1.1</span> Prerequisites</h3>
+<p>The <a href="https://docs.google.com/spreadsheets/d/1f-vwUrQHrMs7cjhChuK2YnlbkE_5kQ6AgGwyV2eJ1vA/edit?usp=sharing">OHI Data Planner</a> is a document that can help you organize your thinking around the data available and how it could be used in your OHI+ assessment.</p>
+<p>Here we will walk through the OHI Data Planner together.</p>
+</div>
+</div>
+<div id="data-planner-spreadsheet" class="section level2" number="4.2">
+<h2><span class="header-section-number">4.2</span> Data Planner spreadsheet</h2>
+<p>Information from the spreadsheet is not going to be used directly by the Toolbox. Rather, this Data Planner is built to start the collaborative OHI process and help you think about data. The Planner will help your whole team design your plan and contribute ideas. Then, the technical team will be able to translate this plan into calculations in the Toolbox.</p>
+<p>The Data Planner serves as a way to track ideas of data and see what they look like or if they are possible to use for your assessment. It seems daunting to have to write down what you want the models to be, but here you can record simply what you’re thinking, and what the ideal would be. It’s a starting point that you can then share with your colleagues to think about together, and start looking for data.</p>
+<p>The data searching process is not a definitive phase of an assessment. You might find your initial data ideas not adequate or feasible to use for calculations later, or they don’t fit into the spatial boundaries you wanted to use. That’s okay. OHI is an iterative process, and you can always come back to this spreadsheet and edit further. Having this spreadsheet thus serves as a collaborative note for your and your colleagues to record ideas for future references.</p>
+<p>There are three tabs to be filled out: Status Data, Pressures Data, and Resilience Data. Now let’s take a look at each one of them.</p>
+</div>
+<div id="status-data-tab" class="section level2" number="4.3">
+<h2><span class="header-section-number">4.3</span> Status Data tab</h2>
+<p>Open up the “Status Data” tab, you’ll see these headings, or columns to be evaluated for each goal:</p>
+<p><img src="https://docs.google.com/drawings/d/e/2PACX-1vQCvSiXZdlEiThyX6_DWryKDOZImQFj_0dtVL4Co6YvupBx-60mx3amZqJ023vxRPhILeHehPxn9MIf/pub?w=960&amp;h=96" /></p>
+<p>This sheet is colored to help structure your thinking as you consider data. Generally you would want to work through this Planner from left to right. But note that <em>the process of building models, finding data, and defining spatial boundaries is iterative</em>. You might work on those components simultaneously in order to strike a balance between an ideal approach and data limitations.</p>
+<p>Let’s walk through each header first.</p>
+<div id="goals-and-subgoals" class="section level3" number="4.3.1">
+<h3><span class="header-section-number">4.3.1</span> Goals and subgoals</h3>
+<p><img src="https://docs.google.com/drawings/d/e/2PACX-1vQF_jJF0FgtFoZiGf8oMEacVslyQZdO7uoYEvRi5_mEG2kCcR--t34mMj7GYrdBnv4M7RCNY-81Nvgw/pub?w=960&amp;h=144" /></p>
+<p>In the Global assessment, we identified ten “goals” - universally valued benefits provided by the ocean. However, they might not be as relevant in your region. You may remove the goals that are irrelevant on the spreadsheet.</p>
+<p>The Baltic Sea region doesn’t get big storms because of its geography. The Coastal Protection goal is therefore irrelevant here and removed from this study.</p>
+</div>
+<div id="model-data-spatial-boundaries" class="section level3" number="4.3.2">
+<h3><span class="header-section-number">4.3.2</span> Model + Data + Spatial Boundaries</h3>
+<p><img src="https://docs.google.com/drawings/d/e/2PACX-1vQwRzxEuSxD09EyNUY5igXS7RdQFnk5XrAr3RXYkdBGzDIEMk73xWfR78urrju4oYTAy1TzRBJzFWFd/pub?w=960&amp;h=144" /></p>
+<p>Goal Models and Spatial Boundaries need to be considered simultaneously, particularly in the initial data gathering stage. You may choose to set spatial boundaries based on political or geological boundaries (or some combination), and your choice will be either validated or need adjusted based on the data that are available for those boundaries. For example, let’s say you choose to assess 5 provinces separately. Then, as you gather available data, you learn that data for province 1 and 2 are reported together and are difficult to tease apart. In this case, you will need to consider combining region 1 and 2 into one region in your assessment, or looking for other data sources that are available to represent this goal. It is also important to look across other goals and the data available for those goals; do most data sets report province 1 and 2 together, or is this the only one? This will help you decide whether you would want to explore new spatial boundaries or new data sources.</p>
+<p>Let’s look at these individually:</p>
+<p><strong>Represent goals with models</strong></p>
+<p><img src="https://docs.google.com/drawings/d/e/2PACX-1vTFUwZQ6MKe-1ihCUMDWAv4yuX-D8oQnLYrGS4dEbMYIugvnj8j94sfquN9g09SMeHzg2GzKY4QyvPs/pub?w=960&amp;h=125" /></p>
+<p><em>Model approaches?</em> You don’t need to decide on the mathematical formula here. Together with the next “variables” column, this column mainly aims to get you start thinking of model approaches. Is the global OHI model adequate for your needs? What should the goal capture?</p>
+<p><em>What ideal variables best represent the goal?</em> Before even thinking about data, let’s think broadly, in your study area, what variables, or characteristics, of a goal best represent the philosophy of it, regardless if there is data available?</p>
+<p>Sometimes we tend to constrain our model development with the data we know we have. You can build a more representative model by thinking through what are <em>the most ideal variables</em> (eg. popularity of a region among tourists) to capture information, then find <em>data that best reflect those variables</em> (eg. hotel vacancy rates? international flights to this region? surf shop revenue? cruise ship revenue? etc).</p>
+<p>Different OHI+ projects have been creative at how they represent this goal as data permits. Check out the OHI-Science Goals page (<a href="http://ohi-science.org/goals/">ohi-science.org/goals</a>) page. It can help you understand the philosophy of a goal by illustrating what has been done in other locations. Let that catalyze your discussions. Are any of the past approaches suitable, or are there other obvious variables to better represent your goal in your country/region?</p>
+<p>Another important factor that determines OHI scores is <em>Reference Point</em>, ie. what status of this goal can be awarded a score of 100? Has the government set a target to achieve? Is there a model region that has become a standard other regions should aspire to? Is there a historical point the regions should return to?</p>
+<p><strong>Find data for your ideal or proxy model variables</strong></p>
+<p><img src="https://docs.google.com/drawings/d/e/2PACX-1vSoBJMg2MbiwD7xkQQEOD-v6YqOpajRpIbKeawYSfimytwxCPe1aSTyv0HmLfV6O5RCoqf9HqncZBtf/pub?w=960&amp;h=125" /></p>
+<p>Choice of model variables and reference points are often limited by data availability, time frame, and resolution. The data columns are a place to catalog a list of the data that could work: from your knowledge, when you ask your colleagues, digging through databases online, etc. Add as many rows as you need to to record your ideas. Having this master sheet of ideas will help you keep track of your thoughts and make collaboration with your colleagues easier.</p>
+<p><em>Years</em>: Typically having only one year of data is not enough to objectively reflect the status and trend of a goal. Five years of data are recommended. If that’s not available, using fewer years of data is possible.</p>
+<p><em>Spatial resolution</em>: Data needs to be presented to the <em>region</em> level. Regions are sub-units, or assessment units, of your study area. At the region level, each OHI goals/sub-goals will be analyzed and scored. For example, you study area may be an entire country, while you regions are each coastal province or state. You can add more regions as needed on the spreadsheet.</p>
+<p>When you find a data source (eg. national poverty level), you might need to be <em>disaggregate</em>, or separate the data from large-scale (eg. national) to small-scale (eg. provincial). You could contact the agency that publishes the data and see if they have gathered small-scale data. If that’s not possible, there are means (eg. GIS) to separate the large-scale data to local scales, although that could reduce the accuracy of the data.</p>
+<p><em>Pressures &amp; Resilience</em> are an important yet often overlooked component of the OHI. <em>Pressures</em> are factors that negatively affect the status of each goal/subgoal, while <em>Resilience</em> are factors that will improve the status or negate the impacts of the pressures. They will be used to predict the <em>Future State</em>. You will need to quantify each factor later on in the assessment. But at this stage, we suggest you brainstorm and jog down as many ideas as you could think of first.</p>
+</div>
+<div id="examples" class="section level3" number="4.3.3">
+<h3><span class="header-section-number">4.3.3</span> Examples</h3>
+<p>Now we have run through the basic theories behind each column, let’s walk through a few examples together. They are on the next tabs of the spreadsheets (Example 1 - 4).</p>
+<p><strong>Example 1 - (Model &amp;) Variables</strong></p>
+<p><img src="https://docs.google.com/drawings/d/e/2PACX-1vSY6WtpVw6VzNfSBu_Mafu5JyTuSnIWh2yVdMi5jrC7xT4GJb7b6OmatsZoWSPGFyvSDnqDODVFsF5-/pub?w=960&amp;h=240" /></p>
+<p>Models are relationships among variables. Before gathering any data, think about ideal variables that could represent the goal. How could each variable be relevant/representative of ocean health?</p>
+<p>In this example, <a href="http://ohi-science.org/goals/#artisanal-fishing-opportunities">artisanal fishing opportunities</a> measure whether people who need to fish on a small, local scale have the opportunity to do so. Thus the variables need to reflect the <em>need</em> for artisanal fishing, how easy or hard it is for fishermen to <em>access</em> ocean resources when they need them, and the <em>sustainability</em> of harvest of all fish stocks that fishermen use.</p>
+<p><em>The number of artisanal fishermen</em> and/or <em>the number of people below poverty line</em> could reflect the need for artisanal fishing.</p>
+<p><em>Fish stock health</em> can tell the sustainability of fishing in the region.</p>
+<p><em>Catch</em> might be unsuitable, because it reflects the amount fished in the past, not the sustainable capacity for artisanal fishing. The fish stocks might have been over- or under- fished in the past.</p>
+<p><em>Gas price</em> and <em>number of ports</em> could limit the fisherman’s ability to access ocean resources.</p>
+<p>As you might have noticed, to the right side of the sheet, there is a column for <strong>notes</strong>. In this case for Artisanal Fishing Opportunities (AO), Fish catch is deemed not suitable for the reasons stated above. <em>It’s just as important to document the rationales for excluding a data source as it is to record why you included one.</em></p>
+<p><strong>Example 2 - Data</strong></p>
+<p><img src="https://docs.google.com/drawings/d/e/2PACX-1vTLmLMCMJMWzYW05Zhorwya3a1nB5uIZZ5vhHY0sjv6h-Cs4HSJCCm7tK_EBbv4o-Rygd3FRx21pIkS/pub?w=960&amp;h=240" /></p>
+<p>These few columns detail the data you find for each of the variables you decided suitable for your model.</p>
+<p>Are data available? For fish stock health, there is no readily accessible data sets. So this variable can’t be used in your study. But other variables seem to have data.</p>
+<p>Are they from a credible source? The quality of your assessment depends on the quality of your data. Government agencies (eg. Energy Information Administration), or research institutes tend to be more credible.</p>
+<p>How many years does it cover? As OHI measures <em>trend</em> for each goal, the trend is derived from ocean health status over time, ideally 5 years. In this case, there is sufficient data (1950-2016).</p>
+<p>Also, what’s the spatial resolution of this source? Spatial resolution should be compatible with the geopolitical boundaries of the regions in your study area. If the source only provides a national average, but the assessment requires provincial-level data, you need to look further.</p>
+<p><strong>Example 3 - Spatial resolution</strong></p>
+<p><img src="https://docs.google.com/drawings/d/e/2PACX-1vTlPhVKT-a9rJUkWOof6o2OIGudmQ-IMjeYr16QcIhwmvheZTGwjlxUeO9OszaBXEREUQU2B970JKZd/pub?w=960&amp;h=240" /></p>
+<p>As mentioned above, data should be disaggregated to the regional level that you determine to be the optimal spatial boundaries of your study.</p>
+<p>In the data exploration process, however, you might find that the geopolitical boundaries you initially thought to be ideal are not supported by data. For example, if region 1 and 2 do not have independent data - that data can only be disaggregated from national level data, and region 1 and 2 may end up with non-distinguishable data, you might consider combining region 1 and 2 into the same region for your assessment.</p>
+<p><img src="https://docs.google.com/drawings/d/e/2PACX-1vQZjvRbXPAj_VKdJ4Nm5BfFSnivlr-d8K23qHY0HS9CBIcriifSVVIzll1GqpA3QD_lSMKINB_Drsg5/pub?w=960&amp;h=336" /></p>
+<p>Sometimes there isn’t data available, and sometimes data isn’t relevant to a region, e.g. if there are no mangroves growing in Region 4. So it’s important to have a system for distinguishing these two things. Here, we’ll use <em>NA</em> if it’s not relevant; that’s the syntax that <code>R</code> and the OHI Toolbox will use so we can be consistent. When data are not available but they should be, here we’ll mark it with an <em>N</em>.</p>
+<p><strong>Example 4 - Reference Point</strong></p>
+<p><img src="https://docs.google.com/drawings/d/e/2PACX-1vTR8bSMiV-QEovbuUOWOXBjeueRGXqIK1Z1kCa6DVprbWCo2HaPcl1ktjWP_mR8TWf-HHDvuZH64aJg/pub?w=960&amp;h=240" /></p>
+<p>Reference points, or targets, are essential for rescaling and scoring. For example, if the target is to have 100 fishermen fishing, and the data shows only 50 fishermen are fishing, if the AO model depends only on fishermen, the AO score could be about 50 (there will also be pressures and resilience acting).</p>
+<p>How should reference point(s) for the model variables be set? They could be set based on information from published policy targets (e.g. government-set targets to achieve), scientific studies (e.g. maximum sustainable yield for a fishery), etc. Sometimes there is no easy-to-find reference point from literature. In those cases, you’ll need to discuss with experts and your team to set a reference point that makes the most sense to your area.</p>
+<p>Often, reference points are temporal (eg. historical coverage of mangrove) or spatial (eg. the region that has the highest number of tourists). Let’s look at a few examples:</p>
+<p><em>Gas prices</em> fluctuates often. It’s difficult to set a reference point where it’s optimal. In this case, we set the reference point to be a spatial one. It is 110% of the lowest gas price across all regions in a given year.</p>
+<p><em>Number of artisanal fishermen</em> might be dwindling over time, and we might want to preserve the number of fishermen in a region. So we set the reference point to be the highest number of fishermen in a region within the past 5 years.
+<em>Number of people below poverty line</em> often is a government set standard to achieve, so is <em>the number of ports</em>.</p>
+<!--- new info --->
+<p><strong>Example 5 - Pressures &amp; Resilience</strong></p>
+<p>As mentioned above, at this stage of your assessment, it’s important to start thinking about pressures and resilience - factors that contribute to long-term outcomes, or the future state, of each goal or sub-goal. Think broadly. Here are a few examples:</p>
+<ul>
+<li>What pressures make it harder for small fishermen to get access to the stocks? For example, high gas price, poor fisheries stock health, few ports where fishermen could access the sea, etc.</li>
+<li>What regulations are there to directly increase access and counter the pressure? For example, loan programs for fishermen, stock improvement measures, etc.</li>
+<li>What regional or national policies that might indirectly improve the status of this goal? For example, policies to move people out of poverty could decrease the need of artisanal fishing, and clean water laws that improve water quality.</li>
+<li>How the status of other goals affect this goal? For example, severe water pollution could affect the fisheries.</li>
+</ul>
+</div>
+</div>
+<div id="chapter-recap" class="section level2" number="4.4">
+<h2><span class="header-section-number">4.4</span> Chapter Recap</h2>
+<p>Now we have walked through how to utilize this planner to orient your team around the goals, from thinking about variables and models, to gathering data sources within spatial boundaries, and to brain storming pressures and resilience factors. The planner serves as a platform to record and share notes, and collaborate with your colleagues during the iterative process of an OHI assessment.</p>
+<p>You might find that the data of one goal is ready to be processed and calculated with the OHI Toolbox, while your team still tries to explore options for another goal. It is quite alright to move ahead with some goals before others. Or you might find yourself needing to eliminate some data and add others after you further explored the data you found earlier. We hope this Planner could provide a home base for your data gathering and exploration. You can come back to this sheet, and modify it to your own needs anytime during the assessment.</p>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="gathering-data.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="toolbox.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
