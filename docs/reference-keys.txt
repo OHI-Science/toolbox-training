@@ -152,12 +152,7 @@ round-2-break-it-to-see-how-it-works
 change-preindex_function-goals.csv
 add-a-new-goal-in-goals.csv
 delete-a-goal-model-from-functions.r
-adding-a-new-goal
-adding-subgoals
-modifying-subgoals
-chapter-recap-3
-changing-subgoals
-update-goal-call-in-goals.csv
+further-operations
 reporting
 flower-plots
 websites
