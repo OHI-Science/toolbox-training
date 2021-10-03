@@ -33,7 +33,12 @@ chapter-recap
 toolbox
 the-ohi-toolbox-and-open-data-science
 how-you-will-work
-requesting-ohi-repositories
+create-your-ohi-toolbox-repository
+fork-the-template-repository
+rename-your-repository
+clone-your-repository
+regions-and-assessment-area
+ready-to-start
 toolbox-ecosystem
 overview-2
 prerequisites-1

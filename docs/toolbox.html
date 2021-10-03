@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 5 OHI Toolbox | Ocean Health Index Toolbox Training</title>
   <meta name="description" content="This is the official Ocean Health Index Toolbox training." />
-  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 5 OHI Toolbox | Ocean Health Index Toolbox Training" />
   <meta property="og:type" content="book" />
@@ -24,7 +24,7 @@
 <meta name="author" content="Ocean Health Index Team" />
 
 
-<meta name="date" content="2021-03-22" />
+<meta name="date" content="2021-10-03" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -33,8 +33,9 @@
   
 <link rel="prev" href="data-planner.html"/>
 <link rel="next" href="toolbox-ecosystem.html"/>
-<script src="libs/header-attrs-2.7.2/header-attrs.js"></script>
-<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<script src="libs/header-attrs-2.11.2/header-attrs.js"></script>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -50,7 +51,8 @@
 
 
 
-
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
 
 
 <style type="text/css">
@@ -118,6 +120,7 @@ code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
+
 </head>
 
 <body>
@@ -175,7 +178,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li class="chapter" data-level="5.1" data-path="toolbox.html"><a href="toolbox.html#the-ohi-toolbox-and-open-data-science"><i class="fa fa-check"></i><b>5.1</b> The OHI Toolbox and open data science</a></li>
 <li class="chapter" data-level="5.2" data-path="toolbox.html"><a href="toolbox.html#how-you-will-work"><i class="fa fa-check"></i><b>5.2</b> How you will work</a></li>
-<li class="chapter" data-level="5.3" data-path="toolbox.html"><a href="toolbox.html#requesting-ohi-repositories"><i class="fa fa-check"></i><b>5.3</b> Requesting OHI repositories</a></li>
+<li class="chapter" data-level="5.3" data-path="toolbox.html"><a href="toolbox.html#create-your-ohi-toolbox-repository"><i class="fa fa-check"></i><b>5.3</b> Create your OHI Toolbox Repository</a>
+<ul>
+<li class="chapter" data-level="5.3.1" data-path="toolbox.html"><a href="toolbox.html#fork-the-template-repository"><i class="fa fa-check"></i><b>5.3.1</b> Fork the template repository</a></li>
+<li class="chapter" data-level="5.3.2" data-path="toolbox.html"><a href="toolbox.html#rename-your-repository"><i class="fa fa-check"></i><b>5.3.2</b> Rename your repository</a></li>
+<li class="chapter" data-level="5.3.3" data-path="toolbox.html"><a href="toolbox.html#clone-your-repository"><i class="fa fa-check"></i><b>5.3.3</b> Clone your repository</a></li>
+<li class="chapter" data-level="5.3.4" data-path="toolbox.html"><a href="toolbox.html#regions-and-assessment-area"><i class="fa fa-check"></i><b>5.3.4</b> Regions and Assessment Area</a></li>
+<li class="chapter" data-level="5.3.5" data-path="toolbox.html"><a href="toolbox.html#ready-to-start"><i class="fa fa-check"></i><b>5.3.5</b> Ready to start</a></li>
+</ul></li>
 </ul></li>
 <li class="chapter" data-level="6" data-path="toolbox-ecosystem.html"><a href="toolbox-ecosystem.html"><i class="fa fa-check"></i><b>6</b> Toolbox Ecosystem</a>
 <ul>
@@ -282,26 +292,26 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="8.9" data-path="calcs-basic.html"><a href="calcs-basic.html#chapter-recap-2"><i class="fa fa-check"></i><b>8.9</b> Chapter Recap</a></li>
 </ul></li>
-<li class="chapter" data-level="9" data-path="press-resil.html"><a href="press-resil.html"><i class="fa fa-check"></i><b>9</b> Pressures and Resilience</a>
+<li class="chapter" data-level="9" data-path="press_resil.html"><a href="press_resil.html"><i class="fa fa-check"></i><b>9</b> Pressures and Resilience</a>
 <ul>
-<li class="chapter" data-level="9.1" data-path="press-resil.html"><a href="press-resil.html#overview-5"><i class="fa fa-check"></i><b>9.1</b> Overview</a></li>
-<li class="chapter" data-level="9.2" data-path="press-resil.html"><a href="press-resil.html#identifying-indicators"><i class="fa fa-check"></i><b>9.2</b> Identifying indicators</a></li>
-<li class="chapter" data-level="9.3" data-path="press-resil.html"><a href="press-resil.html#pressures"><i class="fa fa-check"></i><b>9.3</b> Pressures</a>
+<li class="chapter" data-level="9.1" data-path="press_resil.html"><a href="press_resil.html#overview-5"><i class="fa fa-check"></i><b>9.1</b> Overview</a></li>
+<li class="chapter" data-level="9.2" data-path="press_resil.html"><a href="press_resil.html#identifying-indicators"><i class="fa fa-check"></i><b>9.2</b> Identifying indicators</a></li>
+<li class="chapter" data-level="9.3" data-path="press_resil.html"><a href="press_resil.html#pressures"><i class="fa fa-check"></i><b>9.3</b> Pressures</a>
 <ul>
-<li class="chapter" data-level="9.3.1" data-path="press-resil.html"><a href="press-resil.html#pressures-data-layers"><i class="fa fa-check"></i><b>9.3.1</b> Pressures data layers</a></li>
-<li class="chapter" data-level="9.3.2" data-path="press-resil.html"><a href="press-resil.html#pressures-matrix"><i class="fa fa-check"></i><b>9.3.2</b> Pressures matrix</a></li>
-<li class="chapter" data-level="9.3.3" data-path="press-resil.html"><a href="press-resil.html#how-to-modify-pressures-matrix-and-categories-in-the-toolbox"><i class="fa fa-check"></i><b>9.3.3</b> How to modify Pressures Matrix and Categories in the Toolbox</a></li>
-<li class="chapter" data-level="9.3.4" data-path="press-resil.html"><a href="press-resil.html#create-the-new-pressure-layers-and-save-in-the-layers-folder"><i class="fa fa-check"></i><b>9.3.4</b> Create the new pressure layers and save in the layers folder</a></li>
-<li class="chapter" data-level="9.3.5" data-path="press-resil.html"><a href="press-resil.html#register-the-new-pressure-layers-in-layers.csv"><i class="fa fa-check"></i><b>9.3.5</b> Register the new pressure layers in layers.csv’</a></li>
-<li class="chapter" data-level="9.3.6" data-path="press-resil.html"><a href="press-resil.html#register-in-pressures_categories.csv"><i class="fa fa-check"></i><b>9.3.6</b> Register in pressures_categories.csv</a></li>
-<li class="chapter" data-level="9.3.7" data-path="press-resil.html"><a href="press-resil.html#register-in-pressures_matrix.csv"><i class="fa fa-check"></i><b>9.3.7</b> Register in pressures_matrix.csv</a></li>
-<li class="chapter" data-level="9.3.8" data-path="press-resil.html"><a href="press-resil.html#identify-the-goals-affected-and-set-the-weighting"><i class="fa fa-check"></i><b>9.3.8</b> Identify the goals affected and set the weighting</a></li>
-<li class="chapter" data-level="9.3.9" data-path="press-resil.html"><a href="press-resil.html#modify-config.r-for-goals-with-multiple-elements"><i class="fa fa-check"></i><b>9.3.9</b> Modify config.R for goals with multiple elements</a></li>
+<li class="chapter" data-level="9.3.1" data-path="press_resil.html"><a href="press_resil.html#pressures-data-layers"><i class="fa fa-check"></i><b>9.3.1</b> Pressures data layers</a></li>
+<li class="chapter" data-level="9.3.2" data-path="press_resil.html"><a href="press_resil.html#pressures-matrix"><i class="fa fa-check"></i><b>9.3.2</b> Pressures matrix</a></li>
+<li class="chapter" data-level="9.3.3" data-path="press_resil.html"><a href="press_resil.html#how-to-modify-pressures-matrix-and-categories-in-the-toolbox"><i class="fa fa-check"></i><b>9.3.3</b> How to modify Pressures Matrix and Categories in the Toolbox</a></li>
+<li class="chapter" data-level="9.3.4" data-path="press_resil.html"><a href="press_resil.html#create-the-new-pressure-layers-and-save-in-the-layers-folder"><i class="fa fa-check"></i><b>9.3.4</b> Create the new pressure layers and save in the layers folder</a></li>
+<li class="chapter" data-level="9.3.5" data-path="press_resil.html"><a href="press_resil.html#register-the-new-pressure-layers-in-layers.csv"><i class="fa fa-check"></i><b>9.3.5</b> Register the new pressure layers in layers.csv’</a></li>
+<li class="chapter" data-level="9.3.6" data-path="press_resil.html"><a href="press_resil.html#register-in-pressures_categories.csv"><i class="fa fa-check"></i><b>9.3.6</b> Register in pressures_categories.csv</a></li>
+<li class="chapter" data-level="9.3.7" data-path="press_resil.html"><a href="press_resil.html#register-in-pressures_matrix.csv"><i class="fa fa-check"></i><b>9.3.7</b> Register in pressures_matrix.csv</a></li>
+<li class="chapter" data-level="9.3.8" data-path="press_resil.html"><a href="press_resil.html#identify-the-goals-affected-and-set-the-weighting"><i class="fa fa-check"></i><b>9.3.8</b> Identify the goals affected and set the weighting</a></li>
+<li class="chapter" data-level="9.3.9" data-path="press_resil.html"><a href="press_resil.html#modify-config.r-for-goals-with-multiple-elements"><i class="fa fa-check"></i><b>9.3.9</b> Modify config.R for goals with multiple elements</a></li>
 </ul></li>
-<li class="chapter" data-level="9.4" data-path="press-resil.html"><a href="press-resil.html#resilience-1"><i class="fa fa-check"></i><b>9.4</b> Resilience</a>
+<li class="chapter" data-level="9.4" data-path="press_resil.html"><a href="press_resil.html#resilience-1"><i class="fa fa-check"></i><b>9.4</b> Resilience</a>
 <ul>
-<li class="chapter" data-level="9.4.1" data-path="press-resil.html"><a href="press-resil.html#how-to-identify-and-quantify-resilience"><i class="fa fa-check"></i><b>9.4.1</b> How to identify and quantify resilience</a></li>
-<li class="chapter" data-level="9.4.2" data-path="press-resil.html"><a href="press-resil.html#how-to-modify-resilience-matrix-and-categories-in-the-toolbox"><i class="fa fa-check"></i><b>9.4.2</b> How to modify Resilience Matrix and Categories in the Toolbox</a></li>
+<li class="chapter" data-level="9.4.1" data-path="press_resil.html"><a href="press_resil.html#how-to-identify-and-quantify-resilience"><i class="fa fa-check"></i><b>9.4.1</b> How to identify and quantify resilience</a></li>
+<li class="chapter" data-level="9.4.2" data-path="press_resil.html"><a href="press_resil.html#how-to-modify-resilience-matrix-and-categories-in-the-toolbox"><i class="fa fa-check"></i><b>9.4.2</b> How to modify Resilience Matrix and Categories in the Toolbox</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="10" data-path="calcs-advanced.html"><a href="calcs-advanced.html"><i class="fa fa-check"></i><b>10</b> Calculations: advanced workflow</a>
@@ -372,9 +382,47 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Using RStudio and GitHub for analysis also means with can use this collaborative workflow for asking questions and troubleshooting too.</p>
 <p>Troubleshooting and asking for help</p>
 </div>
-<div id="requesting-ohi-repositories" class="section level2" number="5.3">
-<h2><span class="header-section-number">5.3</span> Requesting OHI repositories</h2>
-<p>As your team gathers data and is ready to prepare it for the Toolbox, you can <a href="http://ohi-science.org/manual/#requesting-your-repositories">request OHI repositories</a>. The next chapter will help you get familiar with the OHI Toolbox ecosystem.</p>
+<div id="create-your-ohi-toolbox-repository" class="section level2" number="5.3">
+<h2><span class="header-section-number">5.3</span> Create your OHI Toolbox Repository</h2>
+<p>As your team gathers data and is ready to prepare it for the Toolbox, you will create your repository on GitHub with the following instructions.</p>
+<p>You will need a GitHub username to work in GitHub; create a free account at <a href="https://github.com" class="uri">https://github.com</a>.</p>
+<div id="fork-the-template-repository" class="section level3" number="5.3.1">
+<h3><span class="header-section-number">5.3.1</span> Fork the template repository</h3>
+<p>Navigate to <a href="https://github.com/OHI-Science/toolbox-repo-template" class="uri">https://github.com/OHI-Science/toolbox-repo-template</a> to find the OHI Toolbox repository template. This is a template repository for Ocean Health Index assessments using the OHI Toolbox. It contains all R code required and templated data for 1 region. (Note, the repo name has been updated and was previously named “ohi-plus-template”).</p>
+<p>Fork the repository from the OHI-Science GitHub account into your GitHub account by clicking on the “Fork” button in the top-right of your screen:</p>
+<p><img src="images/fork-repo.png" /></p>
+<p>After clicking “Fork”, the template repository will be copied into the GitHub account you selected, and changes you make will not affect the original repository in the OHI-Science GitHub account.</p>
+</div>
+<div id="rename-your-repository" class="section level3" number="5.3.2">
+<h3><span class="header-section-number">5.3.2</span> Rename your repository</h3>
+<p>You can now go to the Settings tab to rename the repository to reflect your assessment study area and add collaborators’ GitHub usernames so that they are also able to directly edit the repository.</p>
+<p><img src="images/github-settings.png" /></p>
+</div>
+<div id="clone-your-repository" class="section level3" number="5.3.3">
+<h3><span class="header-section-number">5.3.3</span> Clone your repository</h3>
+<p>You’ll now clone your repository to your local computer using RStudio, which is an integrated development environment where you will develop and run your R code and interface with GitHub. Detailed instructions of how to do this are available in <a href="http://ohi-science.org/data-science-training/" class="uri">http://ohi-science.org/data-science-training/</a>.</p>
+</div>
+<div id="regions-and-assessment-area" class="section level3" number="5.3.4">
+<h3><span class="header-section-number">5.3.4</span> Regions and Assessment Area</h3>
+<p>One thing to keep in mind as you develop your assessment is how many Regions you have in your Assessment Area. For each data layer that you include in your assessment, you will need to provide data for each Region, ultimately as a row in a .csv file.</p>
+<p>The number of Regions are reflected in each data layer; for example, <a href="https://github.com/OHI-Science/bhi/blob/0842c45fe95bf7bfea9da1c99fc58acf680be0e7/baltic/layers/ao_access_gl2018.csv">OHI+ Baltic has 42 regions</a> compared <a href="https://github.com/OHI-Science/toolbox-repo-template/blob/main/region/layers/ao_access_gl2018.csv">template repository that has 1 region</a>. This means that you need to provide data for each Region on its own row in the data layer .csv file, and if you update the data layer filename, you will need to register the new name in <code>layers.csv</code>.</p>
+<p>Explore a few previous assessments to see their setup:</p>
+<ul>
+<li><a href="https://github.com/OHI-Science/bhi"><strong>bhi</strong></a>: the Baltic Health Index assessment area has 42 regions</li>
+<li><a href="https://github.com/OHI-Science/gye"><strong>gye</strong></a>: the Gulf of Guayaquil assessment area has 3 regions</li>
+<li><a href="https://github.com/OHI-Northeast/ne-scores/"><strong>ohi-northeast</strong></a>: the US Northeast assessment area has 12 regions</li>
+</ul>
+<p>You’ll also need to update your <code>regions_list.csv</code> file (located in <a href="https://github.com/OHI-Science/toolbox-repo-template/blob/main/region/spatial/regions_list.csv"><code>region/spatial/regions_list.csv</code></a>). Preparing some spatial files will require spatial analysis, for example using ArcGIS or R (see the <a href="https://r-spatial.github.io/sf/">sf package</a> for spatial analysis in R).</p>
+</div>
+<div id="ready-to-start" class="section level3" number="5.3.5">
+<h3><span class="header-section-number">5.3.5</span> Ready to start</h3>
+<p>Now, you’re all set to begin exploring, tailoring, and using the Toolbox. The next chapter will help you get familiar with the OHI Toolbox ecosystem with the “toolbox-demo” repository; you can follow along with the toolbox-demo or with the template repository you have created.</p>
+<!---
+
+1. Also refer to the [OHI Manual](http://ohi-science.org/manual) and [OHI Forum](http://ohi-science.org/forum) as you have questions; they have likely been asked previously. 
+1. Please also read [Best practices for assessing ocean health in multiple contexts using tailorable frameworks](https://peerj.com/articles/1503/) for guidance for tailoring your OHI+ assessment.
+
+--->
 <!---
 ![](https://docs.google.com/drawings/d/1eEb8qlCWY5g0v19xMoW-Jc71cNr4GOacsxUK9FR8si4/pub?w=960&h=480)
 
@@ -435,6 +483,7 @@ super powerful; parallel universe workspace. we'll just be taking advantage of t
 
 </div>
 </div>
+</div>
             </section>
 
           </div>
@@ -445,7 +494,6 @@ super powerful; parallel universe workspace. we'll just be taking advantage of t
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
-<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
 <script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
@@ -464,6 +512,7 @@ gitbook.start({
 "weibo": false,
 "instapaper": false,
 "vk": false,
+"whatsapp": false,
 "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
 },
 "fontsettings": {
@@ -484,6 +533,10 @@ gitbook.start({
 "text": null
 },
 "download": null,
+"search": {
+"engine": "fuse",
+"options": null
+},
 "toc": {
 "collapse": "subsection"
 }

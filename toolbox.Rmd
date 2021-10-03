@@ -16,10 +16,58 @@ Using RStudio and GitHub for analysis also means with can use this collaborative
 
 Troubleshooting and asking for help
 
-## Requesting OHI repositories
+## Create your OHI Toolbox Repository
 
-As your team gathers data and is ready to prepare it for the Toolbox, you can [request OHI repositories](http://ohi-science.org/manual/#requesting-your-repositories). The next chapter will help you get familiar with the OHI Toolbox ecosystem. 
+As your team gathers data and is ready to prepare it for the Toolbox, you will create your repository on GitHub with the following instructions. 
 
+You will need a GitHub username to work in GitHub; create a free account at <https://github.com>. 
+
+### Fork the template repository
+
+Navigate to <https://github.com/OHI-Science/toolbox-repo-template> to find the OHI Toolbox repository template. This is a template repository for Ocean Health Index assessments using the OHI Toolbox. It contains all R code required and templated data for 1 region. (Note, the repo name has been updated and was previously named "ohi-plus-template").
+
+Fork the repository from the OHI-Science GitHub account into your GitHub account by clicking on the "Fork" button in the top-right of your screen:
+
+![](images/fork-repo.png)
+
+After clicking "Fork", the template repository will be copied into the GitHub account you selected, and changes you make will not affect the original repository in the OHI-Science GitHub account. 
+
+### Rename your repository
+
+You can now go to the Settings tab to rename the repository to reflect your assessment study area and add collaborators' GitHub usernames so that they are also able to directly edit the repository. 
+
+![](images/github-settings.png)
+
+### Clone your repository
+
+You'll now clone your repository to your local computer using RStudio, which is an integrated development environment where you will develop and run your R code and interface with GitHub. Detailed instructions of how to do this are available in <http://ohi-science.org/data-science-training/>. 
+
+### Regions and Assessment Area
+
+One thing to keep in mind as you develop your assessment is how many Regions you have in your Assessment Area. For each data layer that you include in your assessment, you will need to provide data for each Region, ultimately as a row in a .csv file. 
+
+The number of Regions are reflected in each data layer; for example, [OHI+ Baltic has 42 regions](https://github.com/OHI-Science/bhi/blob/0842c45fe95bf7bfea9da1c99fc58acf680be0e7/baltic/layers/ao_access_gl2018.csv) compared [template repository that has 1 region](https://github.com/OHI-Science/toolbox-repo-template/blob/main/region/layers/ao_access_gl2018.csv). This means that you need to provide data for each Region on its own row in the data layer .csv file, and if you update the data layer filename, you will need to register the new name in `layers.csv`. 
+
+Explore a few previous assessments to see their setup: 
+
+- [**bhi**](https://github.com/OHI-Science/bhi): the Baltic Health Index assessment area has 42 regions
+- [**gye**](https://github.com/OHI-Science/gye): the Gulf of Guayaquil assessment area has 3 regions
+- [**ohi-northeast**](https://github.com/OHI-Northeast/ne-scores/): the US Northeast assessment area has 12 regions
+
+You'll also need to update your `regions_list.csv` file (located in [`region/spatial/regions_list.csv`](https://github.com/OHI-Science/toolbox-repo-template/blob/main/region/spatial/regions_list.csv)). Preparing some spatial files will require spatial analysis, for example using ArcGIS or R (see the [sf package](https://r-spatial.github.io/sf/) for spatial analysis in R).
+
+### Ready to start
+
+Now, you're all set to begin exploring, tailoring, and using the Toolbox. The next chapter will help you get familiar with the OHI Toolbox ecosystem with the "toolbox-demo" repository; you can follow along with the toolbox-demo or with the template repository you have created. 
+
+
+
+<!---
+
+1. Also refer to the [OHI Manual](http://ohi-science.org/manual) and [OHI Forum](http://ohi-science.org/forum) as you have questions; they have likely been asked previously. 
+1. Please also read [Best practices for assessing ocean health in multiple contexts using tailorable frameworks](https://peerj.com/articles/1503/) for guidance for tailoring your OHI+ assessment.
+
+--->
 
 <!---
 ![](https://docs.google.com/drawings/d/1eEb8qlCWY5g0v19xMoW-Jc71cNr4GOacsxUK9FR8si4/pub?w=960&h=480)

@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 8 Calculations: basic workflow | Ocean Health Index Toolbox Training</title>
   <meta name="description" content="This is the official Ocean Health Index Toolbox training." />
-  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 8 Calculations: basic workflow | Ocean Health Index Toolbox Training" />
   <meta property="og:type" content="book" />
@@ -24,7 +24,7 @@
 <meta name="author" content="Ocean Health Index Team" />
 
 
-<meta name="date" content="2021-03-22" />
+<meta name="date" content="2021-10-03" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -32,9 +32,10 @@
   
   
 <link rel="prev" href="prep-data.html"/>
-<link rel="next" href="press-resil.html"/>
-<script src="libs/header-attrs-2.7.2/header-attrs.js"></script>
-<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link rel="next" href="press_resil.html"/>
+<script src="libs/header-attrs-2.11.2/header-attrs.js"></script>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -50,7 +51,8 @@
 
 
 
-
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
 
 
 <style type="text/css">
@@ -118,6 +120,7 @@ code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
+
 </head>
 
 <body>
@@ -175,7 +178,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li class="chapter" data-level="5.1" data-path="toolbox.html"><a href="toolbox.html#the-ohi-toolbox-and-open-data-science"><i class="fa fa-check"></i><b>5.1</b> The OHI Toolbox and open data science</a></li>
 <li class="chapter" data-level="5.2" data-path="toolbox.html"><a href="toolbox.html#how-you-will-work"><i class="fa fa-check"></i><b>5.2</b> How you will work</a></li>
-<li class="chapter" data-level="5.3" data-path="toolbox.html"><a href="toolbox.html#requesting-ohi-repositories"><i class="fa fa-check"></i><b>5.3</b> Requesting OHI repositories</a></li>
+<li class="chapter" data-level="5.3" data-path="toolbox.html"><a href="toolbox.html#create-your-ohi-toolbox-repository"><i class="fa fa-check"></i><b>5.3</b> Create your OHI Toolbox Repository</a>
+<ul>
+<li class="chapter" data-level="5.3.1" data-path="toolbox.html"><a href="toolbox.html#fork-the-template-repository"><i class="fa fa-check"></i><b>5.3.1</b> Fork the template repository</a></li>
+<li class="chapter" data-level="5.3.2" data-path="toolbox.html"><a href="toolbox.html#rename-your-repository"><i class="fa fa-check"></i><b>5.3.2</b> Rename your repository</a></li>
+<li class="chapter" data-level="5.3.3" data-path="toolbox.html"><a href="toolbox.html#clone-your-repository"><i class="fa fa-check"></i><b>5.3.3</b> Clone your repository</a></li>
+<li class="chapter" data-level="5.3.4" data-path="toolbox.html"><a href="toolbox.html#regions-and-assessment-area"><i class="fa fa-check"></i><b>5.3.4</b> Regions and Assessment Area</a></li>
+<li class="chapter" data-level="5.3.5" data-path="toolbox.html"><a href="toolbox.html#ready-to-start"><i class="fa fa-check"></i><b>5.3.5</b> Ready to start</a></li>
+</ul></li>
 </ul></li>
 <li class="chapter" data-level="6" data-path="toolbox-ecosystem.html"><a href="toolbox-ecosystem.html"><i class="fa fa-check"></i><b>6</b> Toolbox Ecosystem</a>
 <ul>
@@ -282,26 +292,26 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="8.9" data-path="calcs-basic.html"><a href="calcs-basic.html#chapter-recap-2"><i class="fa fa-check"></i><b>8.9</b> Chapter Recap</a></li>
 </ul></li>
-<li class="chapter" data-level="9" data-path="press-resil.html"><a href="press-resil.html"><i class="fa fa-check"></i><b>9</b> Pressures and Resilience</a>
+<li class="chapter" data-level="9" data-path="press_resil.html"><a href="press_resil.html"><i class="fa fa-check"></i><b>9</b> Pressures and Resilience</a>
 <ul>
-<li class="chapter" data-level="9.1" data-path="press-resil.html"><a href="press-resil.html#overview-5"><i class="fa fa-check"></i><b>9.1</b> Overview</a></li>
-<li class="chapter" data-level="9.2" data-path="press-resil.html"><a href="press-resil.html#identifying-indicators"><i class="fa fa-check"></i><b>9.2</b> Identifying indicators</a></li>
-<li class="chapter" data-level="9.3" data-path="press-resil.html"><a href="press-resil.html#pressures"><i class="fa fa-check"></i><b>9.3</b> Pressures</a>
+<li class="chapter" data-level="9.1" data-path="press_resil.html"><a href="press_resil.html#overview-5"><i class="fa fa-check"></i><b>9.1</b> Overview</a></li>
+<li class="chapter" data-level="9.2" data-path="press_resil.html"><a href="press_resil.html#identifying-indicators"><i class="fa fa-check"></i><b>9.2</b> Identifying indicators</a></li>
+<li class="chapter" data-level="9.3" data-path="press_resil.html"><a href="press_resil.html#pressures"><i class="fa fa-check"></i><b>9.3</b> Pressures</a>
 <ul>
-<li class="chapter" data-level="9.3.1" data-path="press-resil.html"><a href="press-resil.html#pressures-data-layers"><i class="fa fa-check"></i><b>9.3.1</b> Pressures data layers</a></li>
-<li class="chapter" data-level="9.3.2" data-path="press-resil.html"><a href="press-resil.html#pressures-matrix"><i class="fa fa-check"></i><b>9.3.2</b> Pressures matrix</a></li>
-<li class="chapter" data-level="9.3.3" data-path="press-resil.html"><a href="press-resil.html#how-to-modify-pressures-matrix-and-categories-in-the-toolbox"><i class="fa fa-check"></i><b>9.3.3</b> How to modify Pressures Matrix and Categories in the Toolbox</a></li>
-<li class="chapter" data-level="9.3.4" data-path="press-resil.html"><a href="press-resil.html#create-the-new-pressure-layers-and-save-in-the-layers-folder"><i class="fa fa-check"></i><b>9.3.4</b> Create the new pressure layers and save in the layers folder</a></li>
-<li class="chapter" data-level="9.3.5" data-path="press-resil.html"><a href="press-resil.html#register-the-new-pressure-layers-in-layers.csv"><i class="fa fa-check"></i><b>9.3.5</b> Register the new pressure layers in layers.csv’</a></li>
-<li class="chapter" data-level="9.3.6" data-path="press-resil.html"><a href="press-resil.html#register-in-pressures_categories.csv"><i class="fa fa-check"></i><b>9.3.6</b> Register in pressures_categories.csv</a></li>
-<li class="chapter" data-level="9.3.7" data-path="press-resil.html"><a href="press-resil.html#register-in-pressures_matrix.csv"><i class="fa fa-check"></i><b>9.3.7</b> Register in pressures_matrix.csv</a></li>
-<li class="chapter" data-level="9.3.8" data-path="press-resil.html"><a href="press-resil.html#identify-the-goals-affected-and-set-the-weighting"><i class="fa fa-check"></i><b>9.3.8</b> Identify the goals affected and set the weighting</a></li>
-<li class="chapter" data-level="9.3.9" data-path="press-resil.html"><a href="press-resil.html#modify-config.r-for-goals-with-multiple-elements"><i class="fa fa-check"></i><b>9.3.9</b> Modify config.R for goals with multiple elements</a></li>
+<li class="chapter" data-level="9.3.1" data-path="press_resil.html"><a href="press_resil.html#pressures-data-layers"><i class="fa fa-check"></i><b>9.3.1</b> Pressures data layers</a></li>
+<li class="chapter" data-level="9.3.2" data-path="press_resil.html"><a href="press_resil.html#pressures-matrix"><i class="fa fa-check"></i><b>9.3.2</b> Pressures matrix</a></li>
+<li class="chapter" data-level="9.3.3" data-path="press_resil.html"><a href="press_resil.html#how-to-modify-pressures-matrix-and-categories-in-the-toolbox"><i class="fa fa-check"></i><b>9.3.3</b> How to modify Pressures Matrix and Categories in the Toolbox</a></li>
+<li class="chapter" data-level="9.3.4" data-path="press_resil.html"><a href="press_resil.html#create-the-new-pressure-layers-and-save-in-the-layers-folder"><i class="fa fa-check"></i><b>9.3.4</b> Create the new pressure layers and save in the layers folder</a></li>
+<li class="chapter" data-level="9.3.5" data-path="press_resil.html"><a href="press_resil.html#register-the-new-pressure-layers-in-layers.csv"><i class="fa fa-check"></i><b>9.3.5</b> Register the new pressure layers in layers.csv’</a></li>
+<li class="chapter" data-level="9.3.6" data-path="press_resil.html"><a href="press_resil.html#register-in-pressures_categories.csv"><i class="fa fa-check"></i><b>9.3.6</b> Register in pressures_categories.csv</a></li>
+<li class="chapter" data-level="9.3.7" data-path="press_resil.html"><a href="press_resil.html#register-in-pressures_matrix.csv"><i class="fa fa-check"></i><b>9.3.7</b> Register in pressures_matrix.csv</a></li>
+<li class="chapter" data-level="9.3.8" data-path="press_resil.html"><a href="press_resil.html#identify-the-goals-affected-and-set-the-weighting"><i class="fa fa-check"></i><b>9.3.8</b> Identify the goals affected and set the weighting</a></li>
+<li class="chapter" data-level="9.3.9" data-path="press_resil.html"><a href="press_resil.html#modify-config.r-for-goals-with-multiple-elements"><i class="fa fa-check"></i><b>9.3.9</b> Modify config.R for goals with multiple elements</a></li>
 </ul></li>
-<li class="chapter" data-level="9.4" data-path="press-resil.html"><a href="press-resil.html#resilience-1"><i class="fa fa-check"></i><b>9.4</b> Resilience</a>
+<li class="chapter" data-level="9.4" data-path="press_resil.html"><a href="press_resil.html#resilience-1"><i class="fa fa-check"></i><b>9.4</b> Resilience</a>
 <ul>
-<li class="chapter" data-level="9.4.1" data-path="press-resil.html"><a href="press-resil.html#how-to-identify-and-quantify-resilience"><i class="fa fa-check"></i><b>9.4.1</b> How to identify and quantify resilience</a></li>
-<li class="chapter" data-level="9.4.2" data-path="press-resil.html"><a href="press-resil.html#how-to-modify-resilience-matrix-and-categories-in-the-toolbox"><i class="fa fa-check"></i><b>9.4.2</b> How to modify Resilience Matrix and Categories in the Toolbox</a></li>
+<li class="chapter" data-level="9.4.1" data-path="press_resil.html"><a href="press_resil.html#how-to-identify-and-quantify-resilience"><i class="fa fa-check"></i><b>9.4.1</b> How to identify and quantify resilience</a></li>
+<li class="chapter" data-level="9.4.2" data-path="press_resil.html"><a href="press_resil.html#how-to-modify-resilience-matrix-and-categories-in-the-toolbox"><i class="fa fa-check"></i><b>9.4.2</b> How to modify Resilience Matrix and Categories in the Toolbox</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="10" data-path="calcs-advanced.html"><a href="calcs-advanced.html"><i class="fa fa-check"></i><b>10</b> Calculations: advanced workflow</a>
@@ -378,7 +388,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ol>
 <p><br></p>
 <p>The workflow depends on the <code>calculate_scores.Rmd</code> file found the scenario folder of any tailored repo. We’ll also dive deeper into the code itself, focusing particularly on developing goal models in <code>functions.R</code>.
-<strong>Note:</strong> <em>earlier Toolbox versions have <code>calculate_scores.R</code> which calls <code>configure_toolbox.R</code>. Now, <code>calculate_scores.Rmd</code> has a section named “Configure Toolbox,” which has the equivalent code so it is possible to follow along with this tutorial even if your repository does not have the <code>.Rmd</code>.</em></p>
+<strong>Note:</strong> <em>earlier Toolbox versions have <code>calculate_scores.R</code> which calls <code>configure_toolbox.R</code>. Now, <code>calculate_scores.Rmd</code> has a section named “Configure Toolbox”, which has the equivalent code so it is possible to follow along with this tutorial even if your repository does not have the <code>.Rmd</code>.</em></p>
 <p>This is a lot to cover in a 2-hour training, and the purpose is to give you big take home messages and experience for what you need to begin calculating scores. But the Toolbox has a lot of moving parts, and we cannot cover all of it here. There are a lot of details and other operations that we won’t get into here and that will be coming in future tutorials (including tailoring pressures &amp; resilience, and how to change subgoals).</p>
 <div id="prerequisites-3" class="section level3" number="8.1.1">
 <h3><span class="header-section-number">8.1.1</span> Prerequisites</h3>
@@ -418,7 +428,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p><br></p>
 <p><code>calculate_scores.Rmd</code> will load the libraries you need and <code>ohicore</code> will check your book-keeping and configuration, and calculate OHI scores. <strong>Ultimately, it will save the scores for each goal and dimension in <code>scores.csv</code>.</strong> The ‘dimensions’ of OHI goal scores are Status, Trend, Pressures, Resilience, Likely Future State, and overall goal Score. Dimensions are calculated for each goal in a specific order, as we will see below. <code>calculate_scores.Rmd</code> will combine information from your tailored repository and calculate scores with OHI core functions from <code>ohicore</code>.</p>
 <p>Open <code>region2017/calculate_scores.Rmd</code> and let’s have a look at its operations. We will then run it line-by-line.</p>
-<p><code>calculate_scores.Rmd</code> is an <a href="https://rmarkdown.rstudio.com/">RMarkdown</a> file, which combines simply formatted text and R code and is really amazing for communication, including our OHI websites (see a 1-minute video <a href="https://vimeo.com/178485416">here</a>). For now, we will focus on the .Rmd file within the RStudio pane, and see that written text appears with a white background and R code appears with a grey background as a “code chunk.” You can run R code line-by-line, or as a whole chunk by clicking the green triangle at the top-right corner of the code chunk’s grey box.</p>
+<p><code>calculate_scores.Rmd</code> is an <a href="https://rmarkdown.rstudio.com/">RMarkdown</a> file, which combines simply formatted text and R code and is really amazing for communication, including our OHI websites (see a 1-minute video <a href="https://vimeo.com/178485416">here</a>). For now, we will focus on the .Rmd file within the RStudio pane, and see that written text appears with a white background and R code appears with a grey background as a “code chunk”. You can run R code line-by-line, or as a whole chunk by clicking the green triangle at the top-right corner of the code chunk’s grey box.</p>
 <p><img src="https://docs.google.com/drawings/d/e/2PACX-1vQ3JLCA6A1iXLMsPBMLTJJSsUGfD6mEKOEROUALlcSH6f-VMLOgPL0Kwe4S4YHackdHPXvSFPIQcBL7/pub?w=960&amp;h=720" /></p>
 <p><br></p>
 <p>Each of the following steps is its own section and code chunk within <code>calculate_scores.Rmd</code>.</p>
@@ -515,7 +525,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="output-combine-dimensions" class="section level4" number="8.3.4.3">
 <h4><span class="header-section-number">8.3.4.3</span> Output: Combine Dimensions</h4>
-<p>Finally, we see output as <code>CalculateAll()</code> combines the dimensions above in several ways. It calculates the Goal Scores and Likely Future State for each goal and subgoal. Then, it calculates ‘supragoals,’ which are goals that have subgoals, for example Food Provision (FP), which has the subgoals FIS (Wild-caught Fisheries) and Mariculture (MAR). Finally, it calculates the overall Index score for the entire Assessment Area using an area-weighted average.</p>
+<p>Finally, we see output as <code>CalculateAll()</code> combines the dimensions above in several ways. It calculates the Goal Scores and Likely Future State for each goal and subgoal. Then, it calculates ‘supragoals’, which are goals that have subgoals, for example Food Provision (FP), which has the subgoals FIS (Wild-caught Fisheries) and Mariculture (MAR). Finally, it calculates the overall Index score for the entire Assessment Area using an area-weighted average.</p>
 <div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="calcs-basic.html#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># ...</span></span>
 <span id="cb7-2"><a href="calcs-basic.html#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculating Goal Score and Likely Future for each region for FIS...</span></span>
 <span id="cb7-3"><a href="calcs-basic.html#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculating Goal Score and Likely Future for each region for MAR...</span></span>
@@ -640,15 +650,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="register-in-layers.csv" class="section level3" number="8.4.2">
 <h3><span class="header-section-number">8.4.2</span> Register in <code>layers.csv</code></h3>
 <p>Now that we have prepared and saved our data layer, we’ll register it in <code>layers.csv</code>. <code>layers.csv</code>is a registry that will direct <code>ohicore</code> to appropriate data layers, and has information about each data layer — which goal it is used for, filename, column names, etc. For further detail see Chapter <a href="prep-data.html#prep-data">7</a>.</p>
-<p>There is a data layer for <code>ao_access</code> that is already registered in <code>layers.csv</code>, but it is currently created from a file called “ao_access_gl2017.csv.” We will update this so the data layer is created from our new demo file (“ao_access_demo2017.csv”); this happens in the “filename” column of <code>layers.csv</code>.</p>
-<p>Open <code>region2017/layers.csv</code> in a spreadsheet software (i.e. Microsoft Excel or Open Office). Next, find <code>ao_access</code> in the “layer” column. Where it says “ao_access_gl2017.csv,” update this to say “ao_access_demo2017.csv” — the new data layer you just saved. Save this and close Excel.</p>
+<p>There is a data layer for <code>ao_access</code> that is already registered in <code>layers.csv</code>, but it is currently created from a file called “ao_access_gl2017.csv”. We will update this so the data layer is created from our new demo file (“ao_access_demo2017.csv”); this happens in the “filename” column of <code>layers.csv</code>.</p>
+<p>Open <code>region2017/layers.csv</code> in a spreadsheet software (i.e. Microsoft Excel or Open Office). Next, find <code>ao_access</code> in the “layer” column. Where it says “ao_access_gl2017.csv”, update this to say “ao_access_demo2017.csv” — the new data layer you just saved. Save this and close Excel.</p>
 <blockquote>
 <p>IMPORTANT! Be sure to close Excel after you have made these edits. On a PC, having <code>layers.csv</code> open in Excel will prohibit it from being accessed from R, and the Toolbox needs access to calculate scores!</p>
 </blockquote>
 </div>
 <div id="register-in-scenario_data_years.csv" class="section level3" number="8.4.3">
 <h3><span class="header-section-number">8.4.3</span> Register in <code>scenario_data_years.csv</code></h3>
-<p>Next let’s go to <code>region2017/conf/scenario_data_years.csv</code>. We can open this in RStudio: when you click on its name in the Files pane, select “View File.”</p>
+<p>Next let’s go to <code>region2017/conf/scenario_data_years.csv</code>. We can open this in RStudio: when you click on its name in the Files pane, select “View File”.</p>
 <p><code>scenario_data_years.csv</code> is a registry to organize year information for each layer, and helps set you up from the very beginning to be able to calculate repeated assessments. When you calculate OHI scores, you will be explicit about the year your completed assessment represents, and we call this the <code>scenario_year</code>. <code>data_year</code> is the most recent years available for that data layer.</p>
 <p>Let’s look at the <code>ao_access</code> layer. It turns out that the same <code>data_year</code>, 2013, is used for all <code>scenario_years</code> 2008:2017. This means that this data source has not been updated through time so the trends that are calculated will be flat. We can double-check our “ao_access_demo2017.csv” file to see that 2013 is the most recent data that we have. This means that our data layer is already registered here in <code>scenario_data_years.csv</code> and we do not need to make any changes.</p>
 <p>Depending on your local data, registering in <code>scenario_data_years.csv</code> may be more like confirming the information that is already registered. Should you delete some of those previous years? Well, the Trend calculations require at least 5 years of data or the Toolbox will give errors. You can delete some of the earliest years to remove some clutter (left over from the global assessment), definitely rerun <code>calculate_scores.Rmd</code> afterwards to make sure that there are no unexpected changes to <code>scores.csv</code></p>
@@ -760,7 +770,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2><span class="header-section-number">8.6</span> Explore <code>functions.R</code> goal models</h2>
 <p>Now, let’s explore a goal model. If we look in <code>calculate_scores.Rmd</code>, the code chunk that follows the Configure Toolbox section is to calculate scores using <code>ohicore::CalculateAll()</code>. This means that <code>ohicore</code> is running through the goal Status and Trend models, which are each <code>R</code> functions in the file <code>functions.R</code>. <code>functions.R</code> is in the <code>conf</code> folder of your tailored repo. We can navigate to it: <code>region2017/conf/functions.R</code>.</p>
 <p>In <code>functions.R</code>, each goal’s Status and Trend model is represented as an R function. You will be able modify the goal model within the confines of each function. You can run all of them at the once or each individually.</p>
-<p>Let’s look at the goal model for Artisanal Fishing Opportunity (AO) to continue our example. It has models developed from the most recent global assessment as a place for you to start ‘out-of-the-box.’</p>
+<p>Let’s look at the goal model for Artisanal Fishing Opportunity (AO) to continue our example. It has models developed from the most recent global assessment as a place for you to start ‘out-of-the-box’.</p>
 <blockquote>
 <p><strong>Tip</strong>: Clicking the bottom left corner of Console will show you a drop-down menu of all functions. It’s a shortcut to jump to the appropriate section or goal model</p>
 </blockquote>
@@ -901,7 +911,7 @@ status = (1 - D_{U}) * sustainability
 <p>Now let’s run the Calculate Scores chunk and save <code>scores.csv</code>.</p>
 <p>We can use Git’s differencing feature to see how our scores have changed. This is a great way to double-check and error-check that things are working the way you expected.</p>
 <p>We can also recreate the flower plots with our updated goal model. Then let’s commit and sync so we can see the differences on GitHub.com.</p>
-<p>My commit message here will be “toolbox-training: tailor AO goal model with original data layer.”</p>
+<p>My commit message here will be “toolbox-training: tailor AO goal model with original data layer”.</p>
 </div>
 <div id="recap-of-third-calculate_scores.rmd-run" class="section level3" number="8.7.4">
 <h3><span class="header-section-number">8.7.4</span> Recap of third <code>calculate_scores.Rmd</code> run</h3>
@@ -936,7 +946,7 @@ status = (1 - D_{U}) * sustainability
 <div id="register-in-layers.csv-1" class="section level3" number="8.8.2">
 <h3><span class="header-section-number">8.8.2</span> Register in <code>layers.csv</code></h3>
 <p>Now that we have prepared and saved our data layer, we’ll register it in <code>layers.csv</code>. This time, since we have added an additional data layer that has not been previously registered, we need to add a new row.</p>
-<p>Open <code>region2017/layers.csv</code> in a spreadsheet software (i.e. Microsoft Excel or Open Office). Add a new row for “ao_poverty,” and fill in the following information. We’ve added the row near the other AO data layers.</p>
+<p>Open <code>region2017/layers.csv</code> in a spreadsheet software (i.e. Microsoft Excel or Open Office). Add a new row for “ao_poverty”, and fill in the following information. We’ve added the row near the other AO data layers.</p>
 <p><img src="https://docs.google.com/drawings/d/1n9qMQuyOxfkZzTGgj2vGaGY7YwS_A3PMtDAjaKfc3Co/pub?w=960&amp;h=192" /></p>
 </div>
 <div id="register-in-scenario_data_years.csv-1" class="section level3" number="8.8.3">
@@ -987,7 +997,7 @@ status = (1 - D_{U}) * sustainability
 <h3><span class="header-section-number">8.8.6</span> Calculate scores, check, and sync</h3>
 <p>Everything is looking good in <code>functions.R</code> and in the Git tab that we’re looking at as we go along.</p>
 <p>Now let’s restart <code>R</code> and recalculate scores in <code>calculate_scores.Rmd</code>. We’ll see that <code>scores.csv</code> will also update, and we can check that only AO dimensions (except pressures and resilience since we haven’t changed them) and Index scores are affected.</p>
-<p>Let’s commit and sync. My commit message will be “toolbox-training: tailor AO goal model with a new data layer.”</p>
+<p>Let’s commit and sync. My commit message will be “toolbox-training: tailor AO goal model with a new data layer”.</p>
 </div>
 <div id="recap-of-fourth-calculate_scores.rmd-run" class="section level3" number="8.8.7">
 <h3><span class="header-section-number">8.8.7</span> Recap of fourth <code>calculate_scores.Rmd</code> run</h3>
@@ -1037,11 +1047,10 @@ status = (1 - D_{U}) * sustainability
         </div>
       </div>
 <a href="prep-data.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="press-resil.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="press_resil.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
-<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
 <script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
@@ -1060,6 +1069,7 @@ gitbook.start({
 "weibo": false,
 "instapaper": false,
 "vk": false,
+"whatsapp": false,
 "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
 },
 "fontsettings": {
@@ -1080,6 +1090,10 @@ gitbook.start({
 "text": null
 },
 "download": null,
+"search": {
+"engine": "fuse",
+"options": null
+},
 "toc": {
 "collapse": "subsection"
 }

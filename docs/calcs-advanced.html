@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 10 Calculations: advanced workflow | Ocean Health Index Toolbox Training</title>
   <meta name="description" content="This is the official Ocean Health Index Toolbox training." />
-  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 10 Calculations: advanced workflow | Ocean Health Index Toolbox Training" />
   <meta property="og:type" content="book" />
@@ -24,17 +24,18 @@
 <meta name="author" content="Ocean Health Index Team" />
 
 
-<meta name="date" content="2021-03-22" />
+<meta name="date" content="2021-10-03" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="press-resil.html"/>
+<link rel="prev" href="press_resil.html"/>
 <link rel="next" href="reporting.html"/>
-<script src="libs/header-attrs-2.7.2/header-attrs.js"></script>
-<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<script src="libs/header-attrs-2.11.2/header-attrs.js"></script>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -50,7 +51,8 @@
 
 
 
-
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
 
 
 <style type="text/css">
@@ -118,6 +120,7 @@ code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
+
 </head>
 
 <body>
@@ -175,7 +178,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li class="chapter" data-level="5.1" data-path="toolbox.html"><a href="toolbox.html#the-ohi-toolbox-and-open-data-science"><i class="fa fa-check"></i><b>5.1</b> The OHI Toolbox and open data science</a></li>
 <li class="chapter" data-level="5.2" data-path="toolbox.html"><a href="toolbox.html#how-you-will-work"><i class="fa fa-check"></i><b>5.2</b> How you will work</a></li>
-<li class="chapter" data-level="5.3" data-path="toolbox.html"><a href="toolbox.html#requesting-ohi-repositories"><i class="fa fa-check"></i><b>5.3</b> Requesting OHI repositories</a></li>
+<li class="chapter" data-level="5.3" data-path="toolbox.html"><a href="toolbox.html#create-your-ohi-toolbox-repository"><i class="fa fa-check"></i><b>5.3</b> Create your OHI Toolbox Repository</a>
+<ul>
+<li class="chapter" data-level="5.3.1" data-path="toolbox.html"><a href="toolbox.html#fork-the-template-repository"><i class="fa fa-check"></i><b>5.3.1</b> Fork the template repository</a></li>
+<li class="chapter" data-level="5.3.2" data-path="toolbox.html"><a href="toolbox.html#rename-your-repository"><i class="fa fa-check"></i><b>5.3.2</b> Rename your repository</a></li>
+<li class="chapter" data-level="5.3.3" data-path="toolbox.html"><a href="toolbox.html#clone-your-repository"><i class="fa fa-check"></i><b>5.3.3</b> Clone your repository</a></li>
+<li class="chapter" data-level="5.3.4" data-path="toolbox.html"><a href="toolbox.html#regions-and-assessment-area"><i class="fa fa-check"></i><b>5.3.4</b> Regions and Assessment Area</a></li>
+<li class="chapter" data-level="5.3.5" data-path="toolbox.html"><a href="toolbox.html#ready-to-start"><i class="fa fa-check"></i><b>5.3.5</b> Ready to start</a></li>
+</ul></li>
 </ul></li>
 <li class="chapter" data-level="6" data-path="toolbox-ecosystem.html"><a href="toolbox-ecosystem.html"><i class="fa fa-check"></i><b>6</b> Toolbox Ecosystem</a>
 <ul>
@@ -282,26 +292,26 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="8.9" data-path="calcs-basic.html"><a href="calcs-basic.html#chapter-recap-2"><i class="fa fa-check"></i><b>8.9</b> Chapter Recap</a></li>
 </ul></li>
-<li class="chapter" data-level="9" data-path="press-resil.html"><a href="press-resil.html"><i class="fa fa-check"></i><b>9</b> Pressures and Resilience</a>
+<li class="chapter" data-level="9" data-path="press_resil.html"><a href="press_resil.html"><i class="fa fa-check"></i><b>9</b> Pressures and Resilience</a>
 <ul>
-<li class="chapter" data-level="9.1" data-path="press-resil.html"><a href="press-resil.html#overview-5"><i class="fa fa-check"></i><b>9.1</b> Overview</a></li>
-<li class="chapter" data-level="9.2" data-path="press-resil.html"><a href="press-resil.html#identifying-indicators"><i class="fa fa-check"></i><b>9.2</b> Identifying indicators</a></li>
-<li class="chapter" data-level="9.3" data-path="press-resil.html"><a href="press-resil.html#pressures"><i class="fa fa-check"></i><b>9.3</b> Pressures</a>
+<li class="chapter" data-level="9.1" data-path="press_resil.html"><a href="press_resil.html#overview-5"><i class="fa fa-check"></i><b>9.1</b> Overview</a></li>
+<li class="chapter" data-level="9.2" data-path="press_resil.html"><a href="press_resil.html#identifying-indicators"><i class="fa fa-check"></i><b>9.2</b> Identifying indicators</a></li>
+<li class="chapter" data-level="9.3" data-path="press_resil.html"><a href="press_resil.html#pressures"><i class="fa fa-check"></i><b>9.3</b> Pressures</a>
 <ul>
-<li class="chapter" data-level="9.3.1" data-path="press-resil.html"><a href="press-resil.html#pressures-data-layers"><i class="fa fa-check"></i><b>9.3.1</b> Pressures data layers</a></li>
-<li class="chapter" data-level="9.3.2" data-path="press-resil.html"><a href="press-resil.html#pressures-matrix"><i class="fa fa-check"></i><b>9.3.2</b> Pressures matrix</a></li>
-<li class="chapter" data-level="9.3.3" data-path="press-resil.html"><a href="press-resil.html#how-to-modify-pressures-matrix-and-categories-in-the-toolbox"><i class="fa fa-check"></i><b>9.3.3</b> How to modify Pressures Matrix and Categories in the Toolbox</a></li>
-<li class="chapter" data-level="9.3.4" data-path="press-resil.html"><a href="press-resil.html#create-the-new-pressure-layers-and-save-in-the-layers-folder"><i class="fa fa-check"></i><b>9.3.4</b> Create the new pressure layers and save in the layers folder</a></li>
-<li class="chapter" data-level="9.3.5" data-path="press-resil.html"><a href="press-resil.html#register-the-new-pressure-layers-in-layers.csv"><i class="fa fa-check"></i><b>9.3.5</b> Register the new pressure layers in layers.csv’</a></li>
-<li class="chapter" data-level="9.3.6" data-path="press-resil.html"><a href="press-resil.html#register-in-pressures_categories.csv"><i class="fa fa-check"></i><b>9.3.6</b> Register in pressures_categories.csv</a></li>
-<li class="chapter" data-level="9.3.7" data-path="press-resil.html"><a href="press-resil.html#register-in-pressures_matrix.csv"><i class="fa fa-check"></i><b>9.3.7</b> Register in pressures_matrix.csv</a></li>
-<li class="chapter" data-level="9.3.8" data-path="press-resil.html"><a href="press-resil.html#identify-the-goals-affected-and-set-the-weighting"><i class="fa fa-check"></i><b>9.3.8</b> Identify the goals affected and set the weighting</a></li>
-<li class="chapter" data-level="9.3.9" data-path="press-resil.html"><a href="press-resil.html#modify-config.r-for-goals-with-multiple-elements"><i class="fa fa-check"></i><b>9.3.9</b> Modify config.R for goals with multiple elements</a></li>
+<li class="chapter" data-level="9.3.1" data-path="press_resil.html"><a href="press_resil.html#pressures-data-layers"><i class="fa fa-check"></i><b>9.3.1</b> Pressures data layers</a></li>
+<li class="chapter" data-level="9.3.2" data-path="press_resil.html"><a href="press_resil.html#pressures-matrix"><i class="fa fa-check"></i><b>9.3.2</b> Pressures matrix</a></li>
+<li class="chapter" data-level="9.3.3" data-path="press_resil.html"><a href="press_resil.html#how-to-modify-pressures-matrix-and-categories-in-the-toolbox"><i class="fa fa-check"></i><b>9.3.3</b> How to modify Pressures Matrix and Categories in the Toolbox</a></li>
+<li class="chapter" data-level="9.3.4" data-path="press_resil.html"><a href="press_resil.html#create-the-new-pressure-layers-and-save-in-the-layers-folder"><i class="fa fa-check"></i><b>9.3.4</b> Create the new pressure layers and save in the layers folder</a></li>
+<li class="chapter" data-level="9.3.5" data-path="press_resil.html"><a href="press_resil.html#register-the-new-pressure-layers-in-layers.csv"><i class="fa fa-check"></i><b>9.3.5</b> Register the new pressure layers in layers.csv’</a></li>
+<li class="chapter" data-level="9.3.6" data-path="press_resil.html"><a href="press_resil.html#register-in-pressures_categories.csv"><i class="fa fa-check"></i><b>9.3.6</b> Register in pressures_categories.csv</a></li>
+<li class="chapter" data-level="9.3.7" data-path="press_resil.html"><a href="press_resil.html#register-in-pressures_matrix.csv"><i class="fa fa-check"></i><b>9.3.7</b> Register in pressures_matrix.csv</a></li>
+<li class="chapter" data-level="9.3.8" data-path="press_resil.html"><a href="press_resil.html#identify-the-goals-affected-and-set-the-weighting"><i class="fa fa-check"></i><b>9.3.8</b> Identify the goals affected and set the weighting</a></li>
+<li class="chapter" data-level="9.3.9" data-path="press_resil.html"><a href="press_resil.html#modify-config.r-for-goals-with-multiple-elements"><i class="fa fa-check"></i><b>9.3.9</b> Modify config.R for goals with multiple elements</a></li>
 </ul></li>
-<li class="chapter" data-level="9.4" data-path="press-resil.html"><a href="press-resil.html#resilience-1"><i class="fa fa-check"></i><b>9.4</b> Resilience</a>
+<li class="chapter" data-level="9.4" data-path="press_resil.html"><a href="press_resil.html#resilience-1"><i class="fa fa-check"></i><b>9.4</b> Resilience</a>
 <ul>
-<li class="chapter" data-level="9.4.1" data-path="press-resil.html"><a href="press-resil.html#how-to-identify-and-quantify-resilience"><i class="fa fa-check"></i><b>9.4.1</b> How to identify and quantify resilience</a></li>
-<li class="chapter" data-level="9.4.2" data-path="press-resil.html"><a href="press-resil.html#how-to-modify-resilience-matrix-and-categories-in-the-toolbox"><i class="fa fa-check"></i><b>9.4.2</b> How to modify Resilience Matrix and Categories in the Toolbox</a></li>
+<li class="chapter" data-level="9.4.1" data-path="press_resil.html"><a href="press_resil.html#how-to-identify-and-quantify-resilience"><i class="fa fa-check"></i><b>9.4.1</b> How to identify and quantify resilience</a></li>
+<li class="chapter" data-level="9.4.2" data-path="press_resil.html"><a href="press_resil.html#how-to-modify-resilience-matrix-and-categories-in-the-toolbox"><i class="fa fa-check"></i><b>9.4.2</b> How to modify Resilience Matrix and Categories in the Toolbox</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="10" data-path="calcs-advanced.html"><a href="calcs-advanced.html"><i class="fa fa-check"></i><b>10</b> Calculations: advanced workflow</a>
@@ -508,12 +518,11 @@ To create a figure:
           </div>
         </div>
       </div>
-<a href="press-resil.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="press_resil.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
 <a href="reporting.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
-<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
 <script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
@@ -532,6 +541,7 @@ gitbook.start({
 "weibo": false,
 "instapaper": false,
 "vk": false,
+"whatsapp": false,
 "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
 },
 "fontsettings": {
@@ -552,6 +562,10 @@ gitbook.start({
 "text": null
 },
 "download": null,
+"search": {
+"engine": "fuse",
+"options": null
+},
 "toc": {
 "collapse": "subsection"
 }
