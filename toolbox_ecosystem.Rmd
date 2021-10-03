@@ -22,7 +22,9 @@ We will explore these files together on your own computer, but we will not be ca
 1. Clone the **toolbox-demo** repo from your GitHub account into RStudio into a folder called "github" in your home directory (filepath "~/github")
 1. Get comfortable: be set up with two screens if possible. You will be following along in RStudio on your own computer while also watching an instructor's screen or following this tutorial.
 
-Now you have set up your computer, let's open the `toolbox-demo` repository on your computer, and go from there.
+Now you have set up your computer, let's open the `toolbox-demo` repository on your computer, and go from there. 
+
+You can also watch a video recording of the following, identified in the OHI Onboarding Book: <http://ohi-science.org/onboarding/conduct>.
 
 ## Repository home folder (ex: `toolbox-demo`)
 

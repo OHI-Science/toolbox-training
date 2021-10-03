@@ -21,7 +21,9 @@ OHI assessments use collaborative open software so that they are transparent and
   
 Openness is an important part of how we work; we describe how and why in Lowndes *et al.* 2017, *Nature Ecology & Evolution:* [Our path to better science in less time using open data science tools](https://www.nature.com/articles/s41559-017-0160). Using the OHI Toolbox requires coding and using data science software; you can learn this in OHI's [Intro to Open Data Science](http://ohi-science.org/data-science-training/) training book.
 
-This Toolbox Training book will train you to prepare for and use the OHI Toolbox. It can be used to teach workshops or for self-paced learning.
+This Toolbox Training book will train you to prepare for and use the OHI Toolbox. It can be used to teach workshops or for self-paced learning. 
+
+If you're looking for a higher-level overview of what the OHI is and how to start thinking about it with your team, please see the [OHI Onboarding Book](http://ohi-science.org/onboarding/index.html).
 
 <br>
 
